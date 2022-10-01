@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ludum_dare_51_idle.mp3-9e4099cf797cac6867f9ab5207c68970.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/ludum_dare_51_idle.mp3"
+dest_files=[ "res://.import/ludum_dare_51_idle.mp3-9e4099cf797cac6867f9ab5207c68970.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
