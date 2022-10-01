@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/EventBar.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/circle_white.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Shader/EventBar.gdshader" type="Shader" id=4]
 [ext_resource path="res://Assets/Sprites/event_bar.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/question.png" type="Texture" id=6]
@@ -27,16 +28,32 @@ void fragment(){
 }"
 
 [sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
 shader = SubResource( 6 )
 shader_param/fill_color = Color( 1, 1, 1, 1 )
 shader_param/empty_color = Color( 1, 1, 1, 0 )
 shader_param/enabled = null
 shader_param/texture_resource = ExtResource( 6 )
 
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0.339773 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 9 )
+color = Color( 0.905882, 0.113725, 0.113725, 1 )
+
 [node name="EventBar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+greyed_out = Color( 0.376471, 0.376471, 0.376471, 1 )
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 anchor_left = 0.15
@@ -51,6 +68,18 @@ material = SubResource( 5 )
 margin_left = 13.8742
 margin_right = 702.926
 margin_bottom = 54.6
+
+[node name="FixedIcon" type="ColorRect" parent="."]
+material = SubResource( 7 )
+anchor_left = 0.236328
+anchor_top = 0.825
+anchor_right = 0.236328
+anchor_bottom = 0.825
+margin_right = 35.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Icon1" type="ColorRect" parent="."]
 material = SubResource( 7 )
@@ -123,3 +152,12 @@ margin_bottom = 35.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="TriggerParticles" type="Particles2D" parent="."]
+position = Vector2( 258, 511 )
+scale = Vector2( 0.2, 0.2 )
+emitting = false
+one_shot = true
+explosiveness = 0.6
+process_material = SubResource( 10 )
+texture = ExtResource( 2 )

@@ -6,7 +6,7 @@ signal progress_update(time)
 
 # level -> [event_number -> Event] fixed events and their timestamps
 var fixed_events = {
-	1: {
+	0: {
 		2: 	preload("res://Logic/Events/FixedEventTest.tscn").instance()
 	}
 }
@@ -27,10 +27,10 @@ func _process(delta: float) -> void:
 		if number_triggered in fixed_events_for_this_lv:
 			var fixed_event = fixed_events_for_this_lv[number_triggered]
 			emit_signal("trigger_event", fixed_event)
-		else:
-			# random event
-			var rand_index = randi() % len(random_events)
-			emit_signal("trigger_event", random_events[rand_index])
+			
+		# always a random event
+		var rand_index = randi() % len(random_events)
+		emit_signal("trigger_event", random_events[rand_index])
 
 
 func _on_UpdateUITimer_timeout() -> void:

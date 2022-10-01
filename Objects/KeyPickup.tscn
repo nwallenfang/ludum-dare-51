@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Logic/Pickup.gd" type="Script" id=1]
+[ext_resource path="res://Objects/KeyPickup.gd" type="Script" id=1]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -9,6 +9,8 @@ albedo_color = Color( 0.992157, 1, 0, 1 )
 
 [sub_resource type="SphereMesh" id=3]
 material = SubResource( 2 )
+radius = 0.5
+height = 1.0
 
 [node name="KeyPickup" type="Spatial"]
 script = ExtResource( 1 )
@@ -22,5 +24,7 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]

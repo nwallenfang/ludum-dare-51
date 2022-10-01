@@ -1,15 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node
-
-export var icon: Texture
-export var event_name: String
-
-func event():
-	print(\"fixed event \", event_name)
-"
+[ext_resource path="res://Assets/Sprites/death.png" type="Texture" id=1]
+[ext_resource path="res://Logic/Events/FixedEventTest.gd" type="Script" id=2]
 
 [node name="Node" type="Node"]
-script = SubResource( 1 )
+script = ExtResource( 2 )
+icon = ExtResource( 1 )
 event_name = "Fixed Event"
