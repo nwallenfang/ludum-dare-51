@@ -23,10 +23,6 @@ _global_script_class_icons={
 config/name="Ludum Dare 51"
 config/icon="res://icon.png"
 
-[autoload]
-
-Game="*res://Logic/Game.tscn"
-
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
