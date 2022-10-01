@@ -22,7 +22,7 @@ var mouse_beginning_set = false
 
 func _ready():
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	pass
+	$MeshInstance.visible = false
 	
 func _input(event: InputEvent) -> void:
 	if not mouse_beginning_set:
@@ -72,6 +72,8 @@ func _physics_process(delta) -> void:
 	velocity = move_and_slide_with_snap(velocity, snap, up_direction, 
 			stop_on_slope, 4, floor_max_angle)
 
+func _process(delta: float) -> void:
+	pass
 
 func direction_input() -> void:
 	direction = Vector3()

@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Ludum Dare 51"
-run/main_scene="res://Levels/FirstFloor.tscn"
+run/main_scene="res://Logic/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]

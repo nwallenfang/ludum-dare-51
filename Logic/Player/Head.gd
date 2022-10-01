@@ -14,6 +14,7 @@ var rot := Vector3()
 func _ready() -> void:
 	mouse_sensitivity = mouse_sensitivity / 1000
 	y_limit = deg2rad(y_limit)
+	Game.player_camera = $Camera
 
 
 # Called when there is an input event
