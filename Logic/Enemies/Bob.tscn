@@ -16,3 +16,11 @@ mesh = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.650215, 0, 0, 0, -2.84218e-08, 0.650215, 0, -0.650215, -2.84218e-08, 0, 0.872009, 0 )
 shape = SubResource( 2 )
+
+[node name="Hitbox" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2" type="CollisionShape" parent="Hitbox"]
+transform = Transform( 0.650215, 0, 0, 0, -2.84218e-08, 0.650215, 0, -0.650215, -2.84218e-08, 0, 0.872009, 0 )
+shape = SubResource( 2 )

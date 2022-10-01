@@ -99,3 +99,17 @@ func accelerate(delta: float) -> void:
 	
 	velocity.x = temp_vel.x
 	velocity.z = temp_vel.z
+
+var max_hp := 3
+var hp := max_hp
+
+func get_hurt():
+	hp = hp - 1
+	$HurtTimer.start()
+	print("hurt")
+	if hp <= 0:
+		Game.world.restart_level()
+
+func _on_HurtBox_area_entered(area):
+	if $HurtTimer.time_left == 0.0:
+		get_hurt()
