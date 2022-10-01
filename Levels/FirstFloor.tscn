@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/WallMaterial.tres" type="Material" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=8]
+[ext_resource path="res://addons/kenney_prototype_textures/purple/texture_01.png" type="Texture" id=9]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 9 )
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 5 )
@@ -333,9 +337,10 @@ stream = ExtResource( 8 )
 
 [node name="Ceilings" type="Node" parent="."]
 
-[node name="Floor" type="CSGBox" parent="Ceilings"]
+[node name="Ceiling1" type="CSGBox" parent="Ceilings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.33071, 0 )
 use_collision = true
 width = 16.0
 height = 0.5
 depth = 16.0
-material = ExtResource( 1 )
+material = SubResource( 1 )
