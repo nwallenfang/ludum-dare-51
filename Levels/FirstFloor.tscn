@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/WallMaterial.tres" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Levels/FirstFloor.gd" type="Script" id=5]
 [ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=8]
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 5 )
@@ -326,3 +327,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, -25 )
 
 [node name="Door" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.3, 0, 0, 0, 2.1, 0, 0, 0, 3.22, 17, 10.4, -26.7 )
+
+[node name="LevelStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
