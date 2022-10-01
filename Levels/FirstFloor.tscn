@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/WallMaterial.tres" type="Material" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=8]
 [ext_resource path="res://addons/kenney_prototype_textures/purple/texture_01.png" type="Texture" id=9]
+[ext_resource path="res://Objects/WallText.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 9 )
@@ -370,7 +371,7 @@ stream = ExtResource( 8 )
 [node name="Ceilings" type="Node" parent="."]
 
 [node name="Ceiling1" type="CSGBox" parent="Ceilings"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.33071, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.2009, 0 )
 use_collision = true
 width = 16.0
 height = 0.5
@@ -420,6 +421,121 @@ material = SubResource( 1 )
 [node name="Lights" type="Node" parent="."]
 
 [node name="OmniLight" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35911, 3.73974, -1.93502 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35911, 3.73974, -1.96414 )
 light_color = Color( 0.964706, 0.796078, 0.796078, 1 )
 light_energy = 4.617
+omni_range = 6.10732
+omni_attenuation = 1.18921
+
+[node name="Texts" type="Spatial" parent="."]
+
+[node name="WallText" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.09775, -7.69679 )
+
+[node name="WallText2" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.09775, 7.70092 )
+
+[node name="WallText3" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.8085, 5.1273, 7.72735 )
+
+[node name="WallText4" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -27.6513, 5.1273, -0.895537 )
+
+[node name="WallText5" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -27.6513, 5.1273, -14.3519 )
+
+[node name="WallText8" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -20.6483, 5.1273, -14.3519 )
+
+[node name="WallText6" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -27.6513, 5.1273, -26.5069 )
+
+[node name="WallText7" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3968, 5.1273, -34.7076 )
+
+[node name="WallText9" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.3862, 5.1273, -27.9247 )
+
+[node name="WallText10" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801, 5.1273, -30.4522 )
+
+[node name="WallText13" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -6.59397, 5.1273, -34.7713 )
+
+[node name="WallText14" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -6.59397, 11.434, -34.7713 )
+
+[node name="WallText15" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 2.76568, 5.1273, -34.7713 )
+
+[node name="WallText16" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 2.76568, 11.434, -34.7713 )
+
+[node name="WallText17" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 11.9537, 5.1273, -34.7713 )
+
+[node name="WallText25" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 16.5102, 5.1273, -29.1291 )
+
+[node name="WallText27" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 11.1958, -35.0443 )
+
+[node name="WallText36" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -7.35137e-08, 0, 1, 0, 1, 0, -1, 0, -7.35137e-08, 17.1513, 11.1958, -35.0443 )
+
+[node name="WallText37" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -7.35137e-08, 0, 1, 0, 1, 0, -1, 0, -7.35137e-08, 17.1513, 11.1958, -18.6161 )
+
+[node name="WallText28" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 11.1958, -23.9843 )
+
+[node name="WallText29" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 11.1958, -12.494 )
+
+[node name="WallText30" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 17.3414, -35.0443 )
+
+[node name="WallText31" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 17.3414, -23.9843 )
+
+[node name="WallText32" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 17.3414, -12.494 )
+
+[node name="WallText33" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 25.9512, -35.0443 )
+
+[node name="WallText34" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 25.9512, -23.9843 )
+
+[node name="WallText35" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 32.5901, 25.9512, -12.494 )
+
+[node name="WallText26" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 16.5102, 5.1273, -20.2835 )
+
+[node name="WallText18" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 11.9537, 11.434, -34.7713 )
+
+[node name="WallText19" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, 11.9537, 5.1273, -16.4628 )
+
+[node name="WallText20" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, 11.9537, 11.434, -16.4628 )
+
+[node name="WallText21" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, 2.59407, 5.1273, -16.4628 )
+
+[node name="WallText22" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, 2.59407, 11.434, -16.4628 )
+
+[node name="WallText23" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, -6.59397, 5.1273, -16.4628 )
+
+[node name="WallText24" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, -6.59397, 11.434, -16.4628 )
+
+[node name="WallText11" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801, 11.4617, -30.4106 )
+
+[node name="WallText12" parent="Texts" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801, 11.4617, -20.9796 )

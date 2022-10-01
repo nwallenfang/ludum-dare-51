@@ -1,7 +1,7 @@
 extends KinematicBody
 
 enum STATES {IDLE, AGGRO}
-var state = STATES.AGGRO
+var state = STATES.IDLE
 
 var walk_speed := .4
 export var gravity_multiplier := 3.0
@@ -72,3 +72,12 @@ func accelerate(delta: float) -> void:
 	
 	velocity.x = temp_vel.x
 	velocity.z = temp_vel.z
+
+var hp := 50
+func damage(amount: int):
+	hp -= amount
+	if hp <= 0:
+		self.queue_free()
+
+func trigger():
+	state = STATES.AGGRO
