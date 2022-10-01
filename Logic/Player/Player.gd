@@ -20,8 +20,11 @@ onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity")
 		* gravity_multiplier)
 var mouse_beginning_set = false
 
+var default_scale
+
 func _ready():
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	default_scale = self.scale
 	$MeshInstance.visible = false
 	
 func _input(event: InputEvent) -> void:

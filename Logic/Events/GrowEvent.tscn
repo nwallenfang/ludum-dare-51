@@ -6,4 +6,7 @@
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 icon = ExtResource( 2 )
-event_name = "Grow Event"
+event_name = "Growth Spurt"
+size_multiplier = 1.2
+
+[node name="Tween" type="Tween" parent="."]
