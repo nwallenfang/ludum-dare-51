@@ -5,5 +5,8 @@
 [node name="Events" type="Node"]
 script = ExtResource( 1 )
 
-[node name="MainTimer" type="Timer" parent="."]
-wait_time = 10.0
+[node name="UpdateUITimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="UpdateUITimer" to="." method="_on_UpdateUITimer_timeout"]
