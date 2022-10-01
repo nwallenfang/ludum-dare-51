@@ -27,7 +27,7 @@ func init_fixed_events():
 		new_icon.material = new_icon.material.duplicate()
 		new_icon.material.set_shader_param("texture_resource", fixed.icon)
 		new_icon.set("event_name", fixed.event_name)
-		new_icon.rect_position = get_node("%EventBar/Icon" + str(fixed_number)).rect_position
+		new_icon.rect_position = get_node("%Icon" + str(fixed_number)).rect_position
 		new_icon.rect_position.y = new_icon.rect_position.y - fixed_icon_translation
 		new_icon.modulate = greyed_out
 
