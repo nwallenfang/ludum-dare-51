@@ -38,7 +38,7 @@ func set_progress(seconds: float):
 	var max_sec = 10.0 * number_of_events
 	var normalized = seconds/max_sec
 	
-	
+		
 	$"%EventBar".material.set_shader_param("progress", normalized)
 
 

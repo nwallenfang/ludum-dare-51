@@ -12,4 +12,5 @@ func intro_over():
 	$CanvasLayer/EventBar.visible = true
 
 func trigger_event(event):
-	$CanvasLayer/EventName.text = event.event_name
+#	$CanvasLayer/EventName.text = event.event_name
+	get_tree().call_group("walltext", "set_text", event.event_name)
