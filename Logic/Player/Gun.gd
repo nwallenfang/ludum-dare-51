@@ -23,7 +23,7 @@ func _input(event: InputEvent):
 		var collider: Object = ray.get_collider().get_parent()
 
 		# If the target can be damaged
-		if collider is Enemy:
+		if collider.has_method("damage"):
 			# Call it with damage
 			collider.damage(10)
 			

@@ -6,3 +6,5 @@
 script = ExtResource( 1 )
 
 [node name="RayCast" type="RayCast" parent="."]
+collision_mask = 5
+collide_with_areas = true
