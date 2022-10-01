@@ -16,6 +16,11 @@ var random_events = [
 ]
 
 
+func reset():
+	time = 0.0
+	number_triggered = 0
+	
+
 var time: float
 var number_triggered = 0
 func _process(delta: float) -> void:

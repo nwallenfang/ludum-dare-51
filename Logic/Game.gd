@@ -5,6 +5,8 @@ var player
 var level_index := 0 # current level number
 var level_list := [] # all levels (just the path strings)
 var level # current level scene
+var world
+var player_camera: Camera
 
 func _ready() -> void:
 	# All Levels are added here in the beginning
@@ -15,9 +17,6 @@ func _ready() -> void:
 func event_triggered(event):
 	event.event()
 
-# When dying
-func restart_level():
-	get_tree().change_scene(level_list[level_index])
 
 # When reaching the end
 func load_next_level():
