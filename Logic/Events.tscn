@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Logic/Events.gd" type="Script" id=1]
+
+[node name="Events" type="Node"]
+script = ExtResource( 1 )
+
+[node name="MainTimer" type="Timer" parent="."]
+wait_time = 10.0
