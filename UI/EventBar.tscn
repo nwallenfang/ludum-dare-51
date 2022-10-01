@@ -56,19 +56,16 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 greyed_out = Color( 0.376471, 0.376471, 0.376471, 1 )
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-anchor_left = 0.028
-anchor_top = 0.791
-anchor_right = 0.968
-anchor_bottom = 1.0
-ratio = 12.62
-
-[node name="EventBar" type="ColorRect" parent="AspectRatioContainer"]
+[node name="EventBar" type="ColorRect" parent="."]
 unique_name_in_owner = true
 material = SubResource( 5 )
-margin_top = 24.5637
-margin_right = 962.56
-margin_bottom = 100.836
+anchor_left = 0.03125
+anchor_top = 0.848333
+anchor_right = 0.96875
+anchor_bottom = 0.956667
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="FixedIcon" type="ColorRect" parent="."]
 visible = false
@@ -92,133 +89,83 @@ explosiveness = 0.6
 process_material = SubResource( 10 )
 texture = ExtResource( 2 )
 
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-columns = 7
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.046
-anchor_right = 0.046
-margin_left = 25.8458
-margin_top = 499.164
-margin_right = 988.406
-margin_bottom = 575.436
-size_flags_horizontal = 15
-size_flags_vertical = 15
+anchor_left = 0.112305
+anchor_top = 0.84
+anchor_right = 1.00781
+anchor_bottom = 0.963333
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
-margin_right = 157.0
-margin_bottom = 76.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Icon1" type="ColorRect" parent="HBoxContainer/AspectRatioContainer"]
+[node name="Icon1" type="ColorRect" parent="HBoxContainer"]
 unique_name_in_owner = true
 material = SubResource( 7 )
-margin_left = 40.5
-margin_right = 116.5
-margin_bottom = 76.0
+margin_right = 149.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer"]
-margin_left = 161.0
-margin_right = 318.0
-margin_bottom = 76.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Icon2" type="ColorRect" parent="HBoxContainer/AspectRatioContainer2"]
+[node name="Icon2" type="ColorRect" parent="HBoxContainer"]
 unique_name_in_owner = true
 material = SubResource( 7 )
-margin_left = 40.5
-margin_right = 116.5
-margin_bottom = 76.0
+margin_left = 153.0
+margin_right = 303.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer"]
-margin_left = 322.0
-margin_right = 479.0
-margin_bottom = 76.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Icon3" type="ColorRect" parent="HBoxContainer/AspectRatioContainer3"]
+[node name="Icon3" type="ColorRect" parent="HBoxContainer"]
 unique_name_in_owner = true
 material = SubResource( 7 )
-margin_left = 40.5
-margin_right = 116.5
-margin_bottom = 76.0
+margin_left = 307.0
+margin_right = 456.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="HBoxContainer"]
-margin_left = 483.0
-margin_right = 640.0
-margin_bottom = 76.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Icon4" type="ColorRect" parent="HBoxContainer/AspectRatioContainer4"]
+[node name="Icon4" type="ColorRect" parent="HBoxContainer"]
 unique_name_in_owner = true
 material = SubResource( 7 )
-margin_left = 40.5
-margin_right = 116.5
-margin_bottom = 76.0
+margin_left = 460.0
+margin_right = 610.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer"]
-margin_left = 644.0
-margin_right = 801.0
-margin_bottom = 76.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Icon5" type="ColorRect" parent="HBoxContainer/AspectRatioContainer5"]
+[node name="Icon5" type="ColorRect" parent="HBoxContainer"]
 unique_name_in_owner = true
 material = SubResource( 7 )
-margin_left = 40.5
-margin_right = 116.5
-margin_bottom = 76.0
+margin_left = 614.0
+margin_right = 763.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="HBoxContainer"]
-margin_left = 805.0
-margin_right = 962.0
-margin_bottom = 76.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Icon6" type="ColorRect" parent="HBoxContainer/AspectRatioContainer6"]
+[node name="Icon6" type="ColorRect" parent="HBoxContainer"]
 unique_name_in_owner = true
 material = SubResource( 7 )
-margin_left = 40.5
-margin_right = 116.5
-margin_bottom = 76.0
+margin_left = 767.0
+margin_right = 917.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
