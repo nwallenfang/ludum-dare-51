@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/WallMaterial.tres" type="Material" id=2]
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Aufzug.tscn" type="PackedScene" id=4]
 
 [node name="Level1" type="Spatial"]
 
@@ -110,6 +111,11 @@ width = 2.74026
 height = 0.5
 depth = 2.51117
 material = ExtResource( 1 )
+
+[node name="Floor18" parent="Floors" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.434, 13.166, -39.194 )
+target_translation = Vector3( 0, 9.805, 0 )
+duration = 2.0
 
 [node name="Floor17" type="CSGBox" parent="Floors"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.9847, 13.1658, -39.1788 )
@@ -307,3 +313,6 @@ material = ExtResource( 2 )
 
 [node name="KinematicBody" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.00441, 0 )
+acceleration = 10
+deceleration = 15
+air_control = 0.4
