@@ -4,6 +4,9 @@ signal trigger_event(event)
 signal progress_update(time)
 
 
+func _ready() -> void:
+	set_process(false)
+
 # level -> [event_number -> Event] fixed events and their timestamps
 var fixed_events = {
 	0: {
@@ -15,6 +18,8 @@ var random_events = [
 	preload("res://Logic/Events/GrowEvent.tscn").instance()
 ]
 
+func intro_over():
+	set_process(true)
 
 func reset():
 	time = 0.0

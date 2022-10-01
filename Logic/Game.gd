@@ -8,6 +8,9 @@ var level # current level scene
 var world
 var player_camera: Camera
 
+var disable_music = true
+var skip_intro = false
+
 func _ready() -> void:
 	# All Levels are added here in the beginning
 	level_list.append("res://Levels/FirstFloor.tscn")

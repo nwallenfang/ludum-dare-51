@@ -2,6 +2,7 @@ extends KinematicBody
 class_name MovementController
 
 
+
 export var gravity_multiplier := 3.0
 export var speed := 10
 export var acceleration := 8
@@ -20,19 +21,26 @@ onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity")
 		* gravity_multiplier)
 var mouse_beginning_set = false
 
+
+var movement_disabled = true
+
 func _ready():
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$MeshInstance.visible = false
+	yield(get_tree(), "idle_frame")
 	
 func _input(event: InputEvent) -> void:
+	if movement_disabled:
+		return
 	if not mouse_beginning_set:
 		mouse_beginning_set = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit() # Quits the game
 		
-	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+	if not movement_disabled and event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		get_tree().set_input_as_handled()
 	
 	if event.is_action_pressed("change_mouse_input"):
 		match Input.get_mouse_mode():
@@ -43,6 +51,8 @@ func _input(event: InputEvent) -> void:
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta) -> void:
+	if movement_disabled:
+		return 
 	input_axis = Input.get_vector("ui_down", "ui_up",
 			"ui_left", "ui_right")
 	
