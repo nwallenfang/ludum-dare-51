@@ -9,17 +9,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="EventBar" parent="." instance=ExtResource( 1 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="FPS" type="Label" parent="."]
+[node name="EventBar" parent="CanvasLayer" instance=ExtResource( 1 )]
+
+[node name="FPS" type="Label" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 14.0
 text = "FPS:"
 
-[node name="EventName" type="Label" parent="."]
+[node name="EventName" type="Label" parent="CanvasLayer"]
 anchor_top = 0.683333
 anchor_right = 1.0
 anchor_bottom = 0.766
+margin_bottom = 4.40002
 custom_fonts/font = ExtResource( 3 )
 text = "Event Name"
 align = 1
