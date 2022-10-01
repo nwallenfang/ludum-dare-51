@@ -21,6 +21,10 @@ onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity")
 		* gravity_multiplier)
 var mouse_beginning_set = false
 
+var double_jump = false
+var used_second_jump = false
+var inverted_controls = false
+
 
 var movement_disabled = true
 var default_scale
@@ -54,6 +58,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta) -> void:
 	if movement_disabled:
 		return 
+	
 	input_axis = Input.get_vector("ui_down", "ui_up",
 			"ui_left", "ui_right")
 	
@@ -69,6 +74,8 @@ func _physics_process(delta) -> void:
 		if Input.is_action_just_pressed("jump"):
 			snap = Vector3.ZERO
 			velocity.y = jump_height
+			
+		used_second_jump = false
 	else:
 		# Workaround for 'vertical bump' when going off platform
 		if snap != Vector3.ZERO && velocity.y != 0:
@@ -77,6 +84,10 @@ func _physics_process(delta) -> void:
 		snap = Vector3.ZERO
 		
 		velocity.y -= gravity * delta
+		
+		if Input.is_action_just_pressed("jump") and double_jump and !used_second_jump:
+			velocity.y = jump_height
+			used_second_jump = true
 	
 	accelerate(delta)
 	
