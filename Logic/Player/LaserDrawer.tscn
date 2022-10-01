@@ -1,15 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://LaserDrawer.gd" type="Script" id=1]
-
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 1, 0, 0, 1 )
-emission_enabled = true
-emission = Color( 1, 0, 0, 1 )
-emission_energy = 1.0
-emission_operator = 0
-emission_on_uv2 = false
+[ext_resource path="res://Logic/Player/LaserDrawer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/Laser.tres" type="Material" id=2]
 
 [node name="LaserDrawer" type="ImmediateGeometry"]
-material_override = SubResource( 1 )
+material_override = ExtResource( 2 )
+cast_shadow = 0
 script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]

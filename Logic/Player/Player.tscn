@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Logic/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Logic/Player/Head.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Logic/Player/Sprint.gd" type="Script" id=3]
 [ext_resource path="res://Logic/Player/Gun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Sound/laser.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Sound/ludum_dare_51_idle.mp3" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -48,15 +47,11 @@ collision_mask = 2
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
 shape = SubResource( 3 )
 
-[node name="LaserStream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-bus = "Lowpass"
-
-[node name="IdleStream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-
 [node name="HurtTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="LaserStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_HurtTimer_timeout"]

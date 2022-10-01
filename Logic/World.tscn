@@ -4,34 +4,8 @@
 [ext_resource path="res://Logic/World.gd" type="Script" id=2]
 [ext_resource path="res://Logic/FollowCamera.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Shader/Vignette.gdshader" type="Shader" id=4]
-
-[sub_resource type="Shader" id=4]
-code = "shader_type canvas_item;
-
-uniform int pixelSize = 4;
-
-void fragment()
-{
-	
-	ivec2 size = textureSize(TEXTURE, 0);
-	
-	int xRes = size.x;
-	int yRes = size.y;
-	
-	float xFactor = float(xRes) / float(pixelSize);
-	float yFactor = float(yRes) / float(pixelSize);
-	
-	float grid_uv_x = round(UV.x * xFactor) / xFactor;
-	float grid_uv_y = round(UV.y * yFactor) / yFactor;
-	
-	vec4 text = texture(TEXTURE, vec2(grid_uv_x, grid_uv_y));
-	
-	COLOR = text;
-}"
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = SubResource( 4 )
-shader_param/pixelSize = 4
+[ext_resource path="res://Assets/Sound/ludum_dare_51_idle.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=6]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
@@ -53,14 +27,14 @@ script = ExtResource( 2 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 unique_name_in_owner = true
-material = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true
+stretch_shrink = 3
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 unique_name_in_owner = true
-size = Vector2( 854, 480 )
+size = Vector2( 341, 200 )
 size_override_stretch = true
 handle_input_locally = false
 render_target_update_mode = 3
@@ -81,3 +55,9 @@ anchor_bottom = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
+
+[node name="IdleStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Level1Stream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
