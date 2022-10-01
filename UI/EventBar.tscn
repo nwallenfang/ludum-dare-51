@@ -56,19 +56,105 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 greyed_out = Color( 0.376471, 0.376471, 0.376471, 1 )
 
-[node name="EventBar" type="ColorRect" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchor_left = 0.15
+anchor_top = 0.809
+anchor_right = 0.85
+anchor_bottom = 0.9
+ratio = 12.62
+
+[node name="EventBar" type="ColorRect" parent="AspectRatioContainer"]
 unique_name_in_owner = true
 material = SubResource( 5 )
-anchor_left = 0.03125
-anchor_top = 0.848333
-anchor_right = 0.96875
-anchor_bottom = 0.956667
+margin_left = 13.8742
+margin_right = 702.926
+margin_bottom = 54.6
+
+[node name="Icon1" type="ColorRect" parent="AspectRatioContainer/EventBar"]
+material = SubResource( 7 )
+anchor_left = 0.24707
+anchor_top = 0.823333
+anchor_right = 0.24707
+anchor_bottom = 0.823333
+margin_left = -77.7
+margin_top = -36.354
+margin_right = -42.7
+margin_bottom = -1.354
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon2" type="ColorRect" parent="AspectRatioContainer/EventBar"]
+material = SubResource( 7 )
+anchor_left = 0.358398
+anchor_top = 0.823333
+anchor_right = 0.358398
+anchor_bottom = 0.823333
+margin_left = -43.5001
+margin_top = -36.354
+margin_right = -8.50006
+margin_bottom = -1.354
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon3" type="ColorRect" parent="AspectRatioContainer/EventBar"]
+material = SubResource( 7 )
+anchor_left = 0.46875
+anchor_top = 0.823333
+anchor_right = 0.46875
+anchor_bottom = 0.823333
+margin_left = -9.59995
+margin_top = -36.354
+margin_right = 25.4001
+margin_bottom = -1.354
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon4" type="ColorRect" parent="AspectRatioContainer/EventBar"]
+material = SubResource( 7 )
+anchor_left = 0.581055
+anchor_top = 0.823333
+anchor_right = 0.581055
+anchor_bottom = 0.823333
+margin_left = 24.9001
+margin_top = -36.354
+margin_right = 59.9001
+margin_bottom = -1.354
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon5" type="ColorRect" parent="AspectRatioContainer/EventBar"]
+material = SubResource( 7 )
+anchor_left = 0.692383
+anchor_top = 0.823333
+anchor_right = 0.692383
+anchor_bottom = 0.823333
+margin_left = 59.1001
+margin_top = -36.354
+margin_right = 94.1001
+margin_bottom = -1.354
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon6" type="ColorRect" parent="AspectRatioContainer/EventBar"]
+material = SubResource( 7 )
+anchor_left = 0.804687
+anchor_top = 0.823333
+anchor_right = 0.804687
+anchor_bottom = 0.823333
+margin_left = 93.6
+margin_top = -36.354
+margin_right = 128.6
+margin_bottom = -1.354
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="FixedIcon" type="ColorRect" parent="."]
-visible = false
 material = SubResource( 7 )
 anchor_left = 0.236328
 anchor_top = 0.825
@@ -88,86 +174,3 @@ one_shot = true
 explosiveness = 0.6
 process_material = SubResource( 10 )
 texture = ExtResource( 2 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.112305
-anchor_top = 0.84
-anchor_right = 1.00781
-anchor_bottom = 0.963333
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Icon1" type="ColorRect" parent="HBoxContainer"]
-unique_name_in_owner = true
-material = SubResource( 7 )
-margin_right = 149.0
-margin_bottom = 74.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Icon2" type="ColorRect" parent="HBoxContainer"]
-unique_name_in_owner = true
-material = SubResource( 7 )
-margin_left = 153.0
-margin_right = 303.0
-margin_bottom = 74.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Icon3" type="ColorRect" parent="HBoxContainer"]
-unique_name_in_owner = true
-material = SubResource( 7 )
-margin_left = 307.0
-margin_right = 456.0
-margin_bottom = 74.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Icon4" type="ColorRect" parent="HBoxContainer"]
-unique_name_in_owner = true
-material = SubResource( 7 )
-margin_left = 460.0
-margin_right = 610.0
-margin_bottom = 74.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Icon5" type="ColorRect" parent="HBoxContainer"]
-unique_name_in_owner = true
-material = SubResource( 7 )
-margin_left = 614.0
-margin_right = 763.0
-margin_bottom = 74.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Icon6" type="ColorRect" parent="HBoxContainer"]
-unique_name_in_owner = true
-material = SubResource( 7 )
-margin_left = 767.0
-margin_right = 917.0
-margin_bottom = 74.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
