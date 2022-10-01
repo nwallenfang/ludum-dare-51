@@ -1,18 +1,15 @@
 extends Control
-
+class_name EventBar
 
 var number_of_events = 6
 
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-func init_event_bar():
-	pass
-
+	Events.connect("progress_update", self, "set_progress")
 
 func set_progress(seconds: float):
-	pass
+	var max_sec = 10.0 * number_of_events
+	var normalized = seconds/max_sec
+	
+	
+	# TODO check which icons should be changed etc
+	$"%EventBar".material.set_shader_param("progress", normalized)

@@ -1,20 +1,125 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/EventBar.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Shader/EventBar.gdshader" type="Shader" id=4]
+[ext_resource path="res://Assets/Sprites/event_bar.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/question.png" type="Texture" id=6]
 
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;"
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 4 )
+shader_param/progress = 0.167
+shader_param/fill_color = Color( 0.243137, 0.243137, 0.243137, 1 )
+shader_param/progress_color = Color( 0.8, 0.243137, 0.243137, 1 )
+shader_param/bar_sprite = ExtResource( 5 )
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D texture_resource;
+uniform vec4 fill_color: hint_color;
+uniform vec4 empty_color: hint_color;
+uniform bool enabled;
+
+void fragment(){
+	vec4 tex = texture(texture_resource, UV);
+	COLOR = tex * fill_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 6 )
+shader_param/fill_color = Color( 1, 1, 1, 1 )
+shader_param/empty_color = Color( 1, 1, 1, 0 )
+shader_param/enabled = null
+shader_param/texture_resource = ExtResource( 6 )
 
 [node name="EventBar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource( 2 )
-anchor_top = 0.861
-anchor_right = 1.0
-anchor_bottom = 0.922
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchor_left = 0.15
+anchor_top = 0.809
+anchor_right = 0.85
+anchor_bottom = 0.9
+ratio = 12.62
+
+[node name="EventBar" type="ColorRect" parent="AspectRatioContainer"]
+unique_name_in_owner = true
+material = SubResource( 5 )
+margin_left = 13.8742
+margin_right = 702.926
+margin_bottom = 54.6
+
+[node name="Icon1" type="ColorRect" parent="."]
+material = SubResource( 7 )
+anchor_left = 0.236328
+anchor_top = 0.825
+anchor_right = 0.236328
+anchor_bottom = 0.825
+margin_right = 35.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon2" type="ColorRect" parent="."]
+material = SubResource( 7 )
+anchor_left = 0.347656
+anchor_top = 0.825
+anchor_right = 0.347656
+anchor_bottom = 0.825
+margin_right = 35.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon3" type="ColorRect" parent="."]
+material = SubResource( 7 )
+anchor_left = 0.458008
+anchor_top = 0.825
+anchor_right = 0.458008
+anchor_bottom = 0.825
+margin_right = 35.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon4" type="ColorRect" parent="."]
+material = SubResource( 7 )
+anchor_left = 0.570313
+anchor_top = 0.825
+anchor_right = 0.570313
+anchor_bottom = 0.825
+margin_right = 35.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon5" type="ColorRect" parent="."]
+material = SubResource( 7 )
+anchor_left = 0.681641
+anchor_top = 0.825
+anchor_right = 0.681641
+anchor_bottom = 0.825
+margin_right = 35.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon6" type="ColorRect" parent="."]
+material = SubResource( 7 )
+anchor_left = 0.793945
+anchor_top = 0.825
+anchor_right = 0.793945
+anchor_bottom = 0.825
+margin_right = 35.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
