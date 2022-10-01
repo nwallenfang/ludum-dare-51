@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_Area_area_entered(area):
-	print("Hit Key")
+	Game.level.has_key = true

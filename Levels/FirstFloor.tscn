@@ -5,7 +5,7 @@
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Aufzug.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/FirstFloor.gd" type="Script" id=5]
-[ext_resource path="res://Objects/Pickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=6]
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 5 )
