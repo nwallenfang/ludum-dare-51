@@ -354,7 +354,7 @@ depth = 0.5
 material = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.75, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0 )
 acceleration = 10
 deceleration = 15
 air_control = 0.4

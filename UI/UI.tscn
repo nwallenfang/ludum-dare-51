@@ -1,9 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/EventBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UI.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Font/EventNameFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Font/EventNameFontSmaller.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Sprites/crosshair.png" type="Texture" id=5]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D texture_resource;
+uniform vec4 fill_color: hint_color;
+uniform vec4 empty_color: hint_color;
+uniform bool enabled;
+
+void fragment(){
+	vec4 tex = texture(texture_resource, UV);
+	COLOR = tex * fill_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/fill_color = null
+shader_param/empty_color = null
+shader_param/enabled = null
+shader_param/texture_resource = ExtResource( 5 )
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
@@ -45,3 +67,20 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Crosshair" type="Control" parent="CanvasLayer/CenterContainer"]
+material = SubResource( 2 )
+margin_left = 504.0
+margin_top = 292.0
+margin_right = 519.0
+margin_bottom = 307.0
+rect_min_size = Vector2( 15, 15 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CenterContainer/Crosshair"]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 7, 7 )
