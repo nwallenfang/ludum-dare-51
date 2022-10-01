@@ -8,5 +8,5 @@ func _ready() -> void:
 	Events.connect("trigger_event", self, "event_triggered")
 
 
-func event_triggered():
-	print("event")
+func event_triggered(event):
+	event.event()

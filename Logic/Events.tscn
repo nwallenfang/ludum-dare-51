@@ -9,4 +9,8 @@ script = ExtResource( 1 )
 wait_time = 0.2
 autostart = true
 
+[node name="EffectHandler" type="Node" parent="."]
+
+[node name="EventScenes" type="Node" parent="."]
+
 [connection signal="timeout" from="UpdateUITimer" to="." method="_on_UpdateUITimer_timeout"]
