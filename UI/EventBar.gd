@@ -49,5 +49,5 @@ func event_triggered(event):
 	var icon_node: ColorRect = get_node("%EventBar/Icon" + str(Events.number_triggered))
 	icon_node.material = icon_node.material.duplicate()
 	icon_node.material.set_shader_param("texture_resource", event.icon)
-	$TriggerParticles.position = icon_node.rect_position + 0.5 * icon_node.rect_size
+	$TriggerParticles.position = icon_node.rect_global_position + 0.5 * icon_node.rect_size
 	$TriggerParticles.restart()
