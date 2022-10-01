@@ -41,7 +41,7 @@ func _input(event: InputEvent) -> void:
 
 # When dying
 func restart_level():
-	$"%Viewport".remove_child($"%Viewport".get_children()[0])
+	$"%Viewport".remove_child(Game.level)
 	$"%Viewport".add_child(load(Game.level_list[Game.level_index]).instance())
 	Events.reset()
 	

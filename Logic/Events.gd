@@ -4,9 +4,6 @@ signal trigger_event(event)
 signal progress_update(time)
 
 
-func _ready() -> void:
-	set_process(false)
-
 # level -> [event_number -> Event] fixed events and their timestamps
 var fixed_events = {
 	0: {
@@ -15,7 +12,9 @@ var fixed_events = {
 }
 
 var random_events = [
-	preload("res://Logic/Events/GrowEvent.tscn").instance()
+	preload("res://Logic/Events/GrowEvent.tscn").instance(),
+	preload("res://Logic/Events/GravityEvent.tscn").instance(),
+	preload("res://Logic/Events/ShrinkEvent.tscn").instance()
 ]
 
 func intro_over():
@@ -25,6 +24,11 @@ func reset():
 	time = 0.0
 	number_triggered = 0
 	
+	
+func _ready():
+	set_process(false)
+	for event in random_events:
+		$EventScenes.add_child(event)
 
 var time: float
 var number_triggered = 0
@@ -39,8 +43,10 @@ func _process(delta: float) -> void:
 			emit_signal("trigger_event", fixed_event)
 			
 		# always a random event
-		var rand_index = randi() % len(random_events)
-		emit_signal("trigger_event", random_events[rand_index])
+		randomize()
+		var rand_index = 2#randi() % len(random_events)
+		emit_signal("trigger_event", $EventScenes.get_child(rand_index))
+		
 
 
 func _on_UpdateUITimer_timeout() -> void:

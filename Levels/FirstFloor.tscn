@@ -118,8 +118,8 @@ depth = 2.51117
 material = ExtResource( 1 )
 
 [node name="Floor18" parent="Floors" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.434, 13.166, -39.194 )
-target_translation = Vector3( 0, 9.805, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.434, 22.971, -39.194 )
+target_translation = Vector3( 0, -9.805, 0 )
 duration = 2.0
 
 [node name="Floor17" type="CSGBox" parent="Floors"]

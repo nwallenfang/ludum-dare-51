@@ -3,7 +3,7 @@ extends KinematicBody
 enum STATES {IDLE, AGGRO}
 var state = STATES.AGGRO
 
-var walk_speed := .2
+var walk_speed := .4
 export var gravity_multiplier := 3.0
 export var speed := 10
 export var acceleration := 8
