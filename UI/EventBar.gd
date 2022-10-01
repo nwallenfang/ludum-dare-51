@@ -21,8 +21,8 @@ func init_fixed_events():
 	for fixed_number in fixed_events:
 		var fixed = fixed_events[fixed_number]
 		i += 1
-		var new_icon = $FixedIcon.duplicate()
-		add_child(new_icon)
+		var new_icon = $FixedIcons/FixedIcon.duplicate()
+		$FixedIcons.add_child(new_icon)
 		new_icon.name = "FixedIcon" + str(fixed_number)
 		new_icon.material = new_icon.material.duplicate()
 		new_icon.material.set_shader_param("texture_resource", fixed.icon)
@@ -31,7 +31,8 @@ func init_fixed_events():
 		new_icon.rect_position.y = new_icon.rect_position.y - fixed_icon_translation
 		new_icon.modulate = greyed_out
 
-		
+func reset():
+	pass
 
 func set_progress(seconds: float):
 	var max_sec = 10.0 * number_of_events

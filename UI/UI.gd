@@ -4,7 +4,7 @@ func _ready() -> void:
 	Events.connect("trigger_event", self, "trigger_event")
 
 func _process(delta: float) -> void:
-		$CanvasLayer/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
+	$CanvasLayer/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
 
 func intro_over():
 	$CanvasLayer/IntroLabel.visible = false

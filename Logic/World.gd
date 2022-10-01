@@ -14,14 +14,14 @@ func _ready() -> void:
 	self.connect("intro_over", Ui, "intro_over")
 	if Game.skip_intro:
 		emit_signal("intro_over")
+	if not Game.disable_music:
+		$IdleStream.play()
 
 	$ViewportContainer/Viewport/FollowCamera.make_current()
 	
 	# TODO determine random potion color and set in material/vignette shader
 
 func intro_sequence():
-	if not Game.disable_music:
-		$IdleStream.play()
 	$Tween.reset_all()
 	$Tween.interpolate_property($"%VignetteRect".material, "shader_param/vignette_intensity", 0.0, 0.8, 0.8, Tween.TRANS_BOUNCE)
 	$Tween.start()
@@ -46,6 +46,8 @@ func _input(event: InputEvent) -> void:
 func restart_level():
 	$"%Viewport".remove_child(Game.level)
 	$"%Viewport".add_child(load(Game.level_list[Game.level_index]).instance())
+	set_process_input(true)
+	set_process_unhandled_input(true)
 	Events.reset()
 	
 

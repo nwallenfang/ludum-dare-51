@@ -9,7 +9,7 @@ var world
 var player_camera: Camera
 var previous_event
 
-var disable_music = true
+var disable_music = false
 var skip_intro = false
 
 func _ready() -> void:

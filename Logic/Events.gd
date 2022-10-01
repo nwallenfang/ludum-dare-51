@@ -12,7 +12,6 @@ var fixed_events = {
 }
 
 var random_events_start = [
-	preload("res://Logic/Events/GrowEvent.tscn").instance(),
 	preload("res://Logic/Events/GravityEvent.tscn").instance(),
 	preload("res://Logic/Events/ShrinkEvent.tscn").instance()
 ]
