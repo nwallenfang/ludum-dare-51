@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Logic/Enemies/Bob.gd" type="Script" id=1]
+
+[sub_resource type="CylinderMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=2]
+
+[node name="Bob" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.622536, 0, 0, 0, 0.780803, 0, 0, 0, 0.622536, 0, 0.821872, 0 )
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.650215, 0, 0, 0, -2.84218e-08, 0.650215, 0, -0.650215, -2.84218e-08, 0, 0.872009, 0 )
+shape = SubResource( 2 )
