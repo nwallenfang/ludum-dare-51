@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Logic/Enemies/Bob.gd" type="Script" id=1]
 
 [sub_resource type="CylinderMesh" id=1]
 
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.957103
+
 [sub_resource type="CapsuleShape" id=2]
+radius = 1.8592
 
 [node name="Bob" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -14,8 +18,8 @@ transform = Transform( 0.622536, 0, 0, 0, 0.780803, 0, 0, 0, 0.622536, 0, 0.8218
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.650215, 0, 0, 0, -2.84218e-08, 0.650215, 0, -0.650215, -2.84218e-08, 0, 0.872009, 0 )
-shape = SubResource( 2 )
+transform = Transform( 0.650215, 0, 0, 0, -2.84218e-08, 0.650215, 0, -0.650215, -2.84218e-08, 0, 0.960634, 0 )
+shape = SubResource( 3 )
 
 [node name="Hitbox" type="Area" parent="."]
 collision_layer = 0

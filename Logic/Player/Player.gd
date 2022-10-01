@@ -115,3 +115,7 @@ func get_hurt():
 func _on_HurtBox_area_entered(area):
 	if $HurtTimer.time_left == 0.0:
 		get_hurt()
+
+func _on_HurtTimer_timeout():
+	for a in $HurtBox.get_overlapping_areas():
+		_on_HurtBox_area_entered(a)
