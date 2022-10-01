@@ -4,7 +4,7 @@ extends Spatial
 export(NodePath) var cam_path := NodePath("Camera")
 onready var cam: Camera = get_node(cam_path)
 
-export var mouse_sensitivity := 2.0
+export var mouse_sensitivity := 5.0
 export var y_limit := 90.0
 var mouse_axis := Vector2()
 var rot := Vector3()
