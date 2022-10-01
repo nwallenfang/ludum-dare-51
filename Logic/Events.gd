@@ -11,11 +11,14 @@ var fixed_events = {
 	}
 }
 
-var random_events = [
+var random_events_start = [
 	preload("res://Logic/Events/GrowEvent.tscn").instance(),
 	preload("res://Logic/Events/GravityEvent.tscn").instance(),
 	preload("res://Logic/Events/ShrinkEvent.tscn").instance()
 ]
+
+var random_event_names_start = []
+var random_event_names
 
 func intro_over():
 	set_process(true)
@@ -23,12 +26,16 @@ func intro_over():
 func reset():
 	time = 0.0
 	number_triggered = 0
+	random_event_names = random_event_names_start.duplicate()
 	
 	
 func _ready():
 	set_process(false)
-	for event in random_events:
+	for event in random_events_start:
 		$EventScenes.add_child(event)
+		random_event_names_start.append(event.name)
+		
+	random_event_names = random_event_names_start.duplicate()
 
 var time: float
 var number_triggered = 0
@@ -44,8 +51,13 @@ func _process(delta: float) -> void:
 			
 		# always a random event
 		randomize()
-		var rand_index = 2#randi() % len(random_events)
-		emit_signal("trigger_event", $EventScenes.get_child(rand_index))
+		if len(random_event_names) == 0:
+			# reset early
+			random_event_names = random_event_names_start.duplicate()
+			
+		var rand_index = randi() % len(random_event_names)
+		var rand_name = random_event_names.pop_at(rand_index)
+		emit_signal("trigger_event", $EventScenes.get_node(rand_name))
 		
 
 

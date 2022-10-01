@@ -330,3 +330,12 @@ transform = Transform( 0.3, 0, 0, 0, 2.1, 0, 0, 0, 3.22, 17, 10.4, -26.7 )
 
 [node name="LevelStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[node name="Ceilings" type="Node" parent="."]
+
+[node name="Floor" type="CSGBox" parent="Ceilings"]
+use_collision = true
+width = 16.0
+height = 0.5
+depth = 16.0
+material = ExtResource( 1 )

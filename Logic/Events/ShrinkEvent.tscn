@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Logic/Events/ShrinkEvent.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/shrink.png" type="Texture" id=2]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
+icon = ExtResource( 2 )
+event_name = "Shrivelled up"
 size_multiplier = 0.5
 
 [node name="Tween" type="Tween" parent="."]

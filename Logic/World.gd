@@ -20,6 +20,8 @@ func _ready() -> void:
 	# TODO determine random potion color and set in material/vignette shader
 
 func intro_sequence():
+	if not Game.disable_music:
+		$IdleStream.play()
 	$Tween.reset_all()
 	$Tween.interpolate_property($"%VignetteRect".material, "shader_param/vignette_intensity", 0.0, 0.8, 0.8, Tween.TRANS_BOUNCE)
 	$Tween.start()
@@ -30,6 +32,7 @@ func intro_sequence():
 	yield($Tween, "tween_all_completed")
 	set_process_input(false)
 	set_process_unhandled_input(false)
+	$IdleStream.stop()
 	emit_signal("intro_over")
 
 func _input(event: InputEvent) -> void:
@@ -49,3 +52,6 @@ func restart_level():
 func intro_over():
 	yield(get_tree(), "idle_frame")
 	Game.player.movement_disabled = false
+	
+	if not Game.disable_music:
+		$Level1Stream.play()
