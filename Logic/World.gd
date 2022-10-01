@@ -44,6 +44,9 @@ func _input(event: InputEvent) -> void:
 
 # When dying
 func restart_level():
+	$Level1Stream.stop()
+	if not Game.disable_music:
+		$IdleStream.play()
 	$"%Viewport".remove_child(Game.level)
 	$"%Viewport".add_child(load(Game.level_list[Game.level_index]).instance())
 	set_process_input(true)
