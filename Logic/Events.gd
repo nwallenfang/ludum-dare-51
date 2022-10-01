@@ -6,7 +6,7 @@ signal progress_update(time)
 
 # level -> [event_number -> Event] fixed events and their timestamps
 var fixed_events = {
-	1: {
+	0: {
 		2: 	preload("res://Logic/Events/FixedEventTest.tscn").instance()
 	}
 }

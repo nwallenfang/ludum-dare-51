@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Logic/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Logic/Player/Head.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [sub_resource type="CapsuleMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="CapsuleShape" id=3]
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -31,3 +33,12 @@ script = ExtResource( 3 )
 
 [node name="LaserStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+bus = "Lowpass"
+
+[node name="HurtBox" type="Area" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="HurtBox"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
+shape = SubResource( 3 )
