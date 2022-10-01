@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/WallMaterial.tres" type="Material" id=2]
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Aufzug.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/FirstFloor.gd" type="Script" id=5]
+[ext_resource path="res://Objects/Pickup.tscn" type="PackedScene" id=6]
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 5 )
@@ -318,3 +319,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.00441, 0 )
 acceleration = 10
 deceleration = 15
 air_control = 0.4
+
+[node name="Pickup" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -3 )
