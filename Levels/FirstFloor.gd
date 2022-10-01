@@ -7,8 +7,7 @@ func _ready():
 	Game.player = $Player
 	has_key = false
 	
-	if not Game.disable_music:
-		$LevelStream.play()
+	
 
 func _physics_process(delta):
 	if Game.player.global_translation.y < -30:

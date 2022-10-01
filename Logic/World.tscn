@@ -4,6 +4,8 @@
 [ext_resource path="res://Logic/World.gd" type="Script" id=2]
 [ext_resource path="res://Logic/FollowCamera.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Shader/Vignette.gdshader" type="Shader" id=4]
+[ext_resource path="res://Assets/Sound/ludum_dare_51_idle.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=6]
 
 [sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
@@ -79,5 +81,13 @@ material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
+
+[node name="IdleStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Level1Stream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+

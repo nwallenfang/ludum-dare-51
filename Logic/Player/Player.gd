@@ -24,7 +24,6 @@ var mouse_beginning_set = false
 
 var movement_disabled = true
 var default_scale
-
 func _ready():
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	default_scale = self.scale
