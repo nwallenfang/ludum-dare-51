@@ -8,10 +8,10 @@ signal progress_update(time)
 var fixed_events = {
 	0: {
 		2: 	preload("res://Logic/Events/FixedEventTest.tscn").instance(),
-		1: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
+		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
 	},
 	1: {
-		1: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
+		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
 	},
 	2: {
 		2: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),

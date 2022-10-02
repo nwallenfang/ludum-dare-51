@@ -497,6 +497,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38677, 0.47914 )
 
 [node name="Potion" parent="DrinkAnimation/Spatial" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406672, 1.57277, -1.54685 )
+background = Color( 0, 1, 0.25098, 1 )
+background2 = Color( 0, 0.0627451, 1, 1 )
+bubbles = Color( 0.831373, 0.207843, 0.882353, 1 )
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_HurtTimer_timeout"]

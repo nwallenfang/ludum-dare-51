@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Objects/Level2Ceiling.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Level2Wall.tscn" type="PackedScene" id=2]
@@ -11,8 +11,7 @@
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/ExplosiveBarrel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Effects/LaserGrid.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Logic/Aufzug.gd" type="Script" id=12]
-[ext_resource path="res://Effects/Lightmaps/SecondFloor.lmbake" type="BakedLightmapData" id=13]
+[ext_resource path="res://Objects/Aufzug.gd" type="Script" id=12]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
@@ -1278,13 +1277,13 @@ transform = Transform( 1.2, 0, 0, 0, 8.86327, -0.250053, 0, 1.56283, 1.41812, -4
 transform = Transform( 1.15911, 2.32937, -3.72024e-10, -0.305864, 8.56126, -0.250053, -0.0539322, 1.50958, 1.41812, -49, -7.54259, -39.4299 )
 
 [node name="Floor12" parent="Platforms" instance=ExtResource( 6 )]
-transform = Transform( 1.2, 0, 0, 0, 7.37237, 0.82595, 0, -5.16219, 1.17958, -49, 8.90779, -46.6325 )
+transform = Transform( 1.2, 0, 0, 0, 7.37237, 0.82595, 0, -5.16219, 1.17958, -48.9, 8.90779, -46.6325 )
 
 [node name="Floor13" parent="Platforms" instance=ExtResource( 6 )]
-transform = Transform( 1.03923, -2.16, 1.85829e-08, 0.424264, 2.64545, -1.01823, 0.424264, 2.64545, 1.01823, -50.7321, 12.412, -47.4892 )
+transform = Transform( 1.03923, -2.16, 1.85827e-08, 0.424264, 2.64545, -1.01823, 0.424264, 2.64545, 1.01823, -50.7321, 12.412, -47.4892 )
 
 [node name="Floor14" parent="Platforms" instance=ExtResource( 6 )]
-transform = Transform( -0.848528, -3.0547, 3.56394e-08, 0.6, -2.16, -1.01823, 0.6, -2.16, 1.01823, -53.5605, 12.412, -47.4892 )
+transform = Transform( -0.848528, -3.0547, 3.56393e-08, 0.6, -2.16, -1.01823, 0.6, -2.16, 1.01823, -53.5605, 12.412, -47.4892 )
 
 [node name="Floor" type="Spatial" parent="."]
 
@@ -1533,7 +1532,6 @@ quality = 2
 use_hdr = false
 atlas_generate = false
 capture_enabled = false
-light_data = ExtResource( 13 )
 
 [node name="Lamps" type="Spatial" parent="."]
 
