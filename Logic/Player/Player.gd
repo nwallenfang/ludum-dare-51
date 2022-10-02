@@ -1,6 +1,7 @@
 extends KinematicBody
 class_name MovementController
 
+signal player_got_hurt
 
 
 export var gravity_multiplier := 3.0
@@ -131,6 +132,7 @@ func get_hurt():
 	hp = hp - 1
 	$HurtTimer.start()
 	print("hurt")
+	emit_signal("player_got_hurt", hp)
 	if hp <= 0:
 		Game.world.restart_level()
 

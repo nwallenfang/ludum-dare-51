@@ -9,7 +9,6 @@ func _process(delta: float) -> void:
 func intro_over():
 	$CanvasLayer/IntroLabel.visible = false
 	$CanvasLayer/EventBar.visible = true
-	$CanvasLayer/EventBar
 
 func trigger_event(event):
 #	$CanvasLayer/EventName.text = event.event_name
@@ -37,4 +36,5 @@ func trigger_event(event):
 	Game.text_screen_ui.set_text(event.event_name)
 
 func reset():
+	$CanvasLayer/EventBar.visible = false
 	$CanvasLayer/EventBar.reset()
