@@ -28,7 +28,8 @@ func draw_line(p1: Vector3, p2: Vector3):
 	
 	end()
 	
-	$Tween.interpolate_property(material_override, "shader_param/albedo:a", 1.0, 0.0, .65, Tween.TRANS_QUART, Tween.EASE_IN)
+	$Tween.interpolate_property(material_override, "shader_param/albedo:a", 1.0, 0.0, .55, Tween.TRANS_QUART, Tween.EASE_IN)
+	$Tween.interpolate_property(material_override, "shader_param/progress", 0.0, 0.8, .35, Tween.TRANS_QUART, Tween.EASE_IN)
 	$Tween.start()
 	yield($Tween,"tween_all_completed")
 	queue_free()

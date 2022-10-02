@@ -29,13 +29,12 @@ func _input(event: InputEvent):
 			
 		var hit_point: Vector3 = ray.get_collision_point()
 			
-		# TODO: Draw the laser
 		# TODO: Call laser sound
 		
 		var laser_drawer = laser_scene_path.instance()
 		get_tree().current_scene.add_child(laser_drawer)
 		
-		laser_drawer.draw_line(to_global(self.translation - Vector3(0,0.2,0)), hit_point)
+		laser_drawer.draw_line(Game.player.get_node("%GunHead").global_translation, hit_point)
 		
 		laser_sound.play()
 		

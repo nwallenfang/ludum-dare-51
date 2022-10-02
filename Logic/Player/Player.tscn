@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Logic/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Logic/Player/Head.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [sub_resource type="CapsuleMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="CubeMesh" id=6]
 
 [sub_resource type="CapsuleShape" id=3]
 
@@ -157,6 +159,17 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 
 [node name="Gun" parent="Head" instance=ExtResource( 4 )]
+
+[node name="GunModel" type="Spatial" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Head/GunModel"]
+transform = Transform( 0.0676559, 2.52905e-10, 0.0698985, 0.00176528, 0.0644473, -0.264704, -0.00533116, 0.0213401, 0.799407, 0.737, 1.47081, -0.380278 )
+mesh = SubResource( 6 )
+
+[node name="GunHead" type="Spatial" parent="Head/GunModel/MeshInstance"]
+unique_name_in_owner = true
+transform = Transform( 14.6795, 0.38302, -1.15672, 5.97856e-08, 13.9834, 4.63025, 0.0978963, -0.370731, 1.11961, 0.0165606, -0.0347672, -1.01977 )
 
 [node name="HurtBox" type="Area" parent="."]
 collision_layer = 8
