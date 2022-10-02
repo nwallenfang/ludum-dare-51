@@ -16,7 +16,8 @@ func _ready() -> void:
 	y_limit = deg2rad(y_limit)
 	Game.player_camera = $Camera
 	
-	rot.y = deg2rad(180.0)
+	if Game.level_index == 0:
+		rot.y = deg2rad(180.0)
 
 
 # Called when there is an input event

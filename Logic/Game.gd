@@ -5,7 +5,8 @@ signal viewport_texture_changed
 var player: Spatial
 
 var level_index := 0 # current level number
-var level_list := [] # all levels (just the path strings)
+var level_list := [preload("res://Levels/Tutorial.tscn"), 
+				preload("res://Levels/FirstFloor.tscn")] # all levels
 var level # current level scene
 var world
 var player_camera: Camera
@@ -21,10 +22,6 @@ var viewport_material: SpatialMaterial
 var text_screen_ui
 
 func _ready() -> void:
-	# All Levels are added here in the beginning
-	level_list.append("res://Levels/Tutorial.tscn")
-	level_list.append("res://Levels/FirstFloor.tscn")
-	
 	Events.connect("trigger_event", self, "event_triggered")
 
 func _process(delta: float) -> void:
@@ -51,6 +48,10 @@ func event_triggered(event):
 
 # When reaching the end
 func load_next_level():
+	world.fade_out(0.4)
+	yield(world, "fade_done")
+	
+	
 	if level_index == 0:
 		# going from tutorial to lv 1
 		world.intro_sequence_should_run = true
@@ -60,7 +61,7 @@ func load_next_level():
 		print("No Levels left")
 	else:
 		# TODO fix lag spike
-		var new_level = load(level_list[level_index]).instance()
+		var new_level = level_list[level_index].instance()
 		world.get_node("ViewportContainer/Viewport").remove_child(Game.level)
 		Game.level.queue_free()
 		Game.level = null
@@ -68,6 +69,8 @@ func load_next_level():
 		Game.level = new_level
 		
 	
+	world.fade_in(0.4)
+	yield(world, "fade_done")
 	
 	world.new_level()
 	emit_signal("viewport_texture_changed", viewport)

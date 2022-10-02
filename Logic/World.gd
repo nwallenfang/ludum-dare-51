@@ -97,10 +97,10 @@ func restart_level():
 	Ui.reset()
 	Events.reset()
 
-	$Tween.reset_all()
-	$Tween.interpolate_property($Fader, "modulate:a", 0.0, 1.0, 1.0)
-	$Tween.start()
-	yield($Tween, "tween_all_completed")
+#	$Tween.reset_all()
+#	$Tween.interpolate_property($Fader, "modulate:a", 0.0, 1.0, 1.0)
+#	$Tween.start()
+#	yield($Tween, "tween_all_completed")
 	
 	# vignette back to sleeping
 	$"%VignetteRect".material.set_shader_param("vignette_intensity", 2.4)
@@ -122,7 +122,6 @@ func player_hurt(hp_left):
 		mat.set_shader_param("vignette_intensity", 1 * hurt_base_strength)
 	if hp_left == 1:
 		mat.set_shader_param("vignette_intensity", 3 * hurt_base_strength)
-	
 
 
 func intro_over():
@@ -131,3 +130,19 @@ func intro_over():
 	
 	if not Game.disable_music:
 		$Level1Stream.play()
+
+signal fade_done
+func fade_out(duration):
+	$Tween.reset_all()
+	$Tween.interpolate_property($Fader, "modulate:a", 0.0, 1.0, duration)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	emit_signal("fade_done")
+	
+func fade_in(duration):
+	$Tween.reset_all()
+	$Tween.interpolate_property($Fader, "modulate:a", 1.0, 0.0, duration)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	emit_signal("fade_done")
+
