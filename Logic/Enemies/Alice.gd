@@ -11,8 +11,9 @@ func damage(amount: int):
 	hp -= amount
 	hurt_visuals()
 	if hp <= 0:
-		death_animation()
-		state = STATES.DEATH
+		if state != STATES.DEATH:
+			death_animation()
+			state = STATES.DEATH
 
 func trigger():
 	state = STATES.AGGRO
