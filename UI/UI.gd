@@ -32,7 +32,6 @@ func trigger_event(event):
 #			break
 #		else:
 #			yield(get_tree(),"idle_frame")
-	
 	Game.text_screen_ui.set_text(event.event_name)
 
 func reset():
