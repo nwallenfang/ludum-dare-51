@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/SimpleScreen.gd" type="Script" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="QuadMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+flags_unshaded = true
+
+[node name="SimpleScreen" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="OuterScreen" type="MeshInstance" parent="."]
+transform = Transform( 2.05018, 0, 0, 0, 1.2161, 0, 0, 0, 0.195142, 0, 0, 0 )
+mesh = SubResource( 1 )
+
+[node name="Screen" type="MeshInstance" parent="."]
+transform = Transform( 3.94249, 0, 0, 0, 2.40019, 0, 0, 0, 1, 0, 0, 0.191691 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
