@@ -1,6 +1,6 @@
 extends KinematicBody
 
-enum STATES {IDLE, AGGRO}
+enum STATES {IDLE, AGGRO, DASH, AFTER_DASH, DEATH}
 var state = STATES.IDLE
 
 var walk_speed := .4
@@ -19,8 +19,9 @@ var stop_on_slope := true
 onready var floor_max_angle: float = deg2rad(45.0)
 onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity") * gravity_multiplier)
 
-func _ready():
-	pass
+export var dash_chance := .2
+export var dash_range := 4.0
+export var dash_acc := 4.0
 
 func _physics_process(delta):
 	match state:
@@ -31,6 +32,18 @@ func _physics_process(delta):
 			direction_to_player.y = 0.0
 			var normalized_walk_direction := direction_to_player.normalized()
 			direction = normalized_walk_direction * walk_speed
+			
+			if dash_chance != 0.0:
+				if Game.player.global_translation.distance_to(self.global_translation) < dash_range:
+					if randf() < dash_chance * delta:
+						state = STATES.DASH
+			
+		STATES.DASH:
+			direction = Vector3.ZERO
+			dash()
+			state = STATES.AFTER_DASH
+		STATES.AFTER_DASH:
+			pass
 	
 	if is_on_floor():
 		snap = -get_floor_normal() - get_floor_velocity() * delta
@@ -80,4 +93,14 @@ func damage(amount: int):
 		self.queue_free()
 
 func trigger():
+	state = STATES.AGGRO
+
+func dash():
+	pass # TODO Warning
+	print("REEEE")
+	yield(get_tree().create_timer(1.5),"timeout")
+	direction = self.global_translation.direction_to(Game.player.global_translation) * dash_acc
+	yield(get_tree().create_timer(.4),"timeout")
+	direction = Vector3.ZERO
+	yield(get_tree().create_timer(1),"timeout")
 	state = STATES.AGGRO
