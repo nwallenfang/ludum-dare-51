@@ -2,6 +2,8 @@ extends Spatial
 
 
 func set_texture(viewport: Viewport):
+	if viewport == null:
+		return
 	print("yup")
 
 	
