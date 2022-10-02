@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
@@ -8,7 +8,9 @@
 [ext_resource path="res://Effects/Lightmaps/Tutorial.lmbake" type="BakedLightmapData" id=6]
 [ext_resource path="res://Assets/GLTF/chair.gltf" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Materials/LabFloorMaterial.tres" type="Material" id=9]
+[ext_resource path="res://Objects/LabFloor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/LabWall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/LabRoof.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
 
@@ -45,29 +47,46 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.73
 
 [node name="Floors" type="Spatial" parent="."]
 
-[node name="Floor1" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, 0 )
+[node name="Floor1" parent="Floors" instance=ExtResource( 9 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="Floors/Floor1"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/Floor1"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = ExtResource( 9 )
-
-[node name="StaticBody2" type="StaticBody" parent="Floors"]
+[node name="Floor2" parent="Floors" instance=ExtResource( 9 )]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -10 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody2"]
-shape = SubResource( 1 )
+[node name="Floor3" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -10 )
 
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody2"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
+[node name="Floor4" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -20 )
+
+[node name="Floor5" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -20 )
+
+[node name="Floor6" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -30 )
+
+[node name="Floor7" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -30 )
+
+[node name="Floor9" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -40 )
+
+[node name="Floor10" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -50 )
+
+[node name="Floor11" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -60 )
+
+[node name="Floor13" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -50 )
+
+[node name="Floor14" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -60 )
+
+[node name="Floor12" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -70 )
+
+[node name="Floor8" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -30 )
 
 [node name="Table" type="StaticBody" parent="Floors"]
 transform = Transform( 0.5, 0, -1.73205, 0, 0.2, 0, 0.866025, 0, 1, -2, 1.46595, -2 )
@@ -95,127 +114,6 @@ mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
 
-[node name="StaticBody4" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody4"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody4"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody3" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody3"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody3"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody5" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody5"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody5"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody7" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody7"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody7"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody8" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody8"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody8"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody9" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -30 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody9"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody9"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody10" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -30 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody10"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody10"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody11" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -30 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody11"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody11"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody12" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody12"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody12"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody13" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 5, 7, -10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody13"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody13"]
-transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0 )
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
 [node name="StaticBody6" type="StaticBody" parent="Floors"]
 transform = Transform( 1.7, 0, 0, 0, 10, 0, 0, 0, 1.7, 0, -9.8, -20 )
 
@@ -228,659 +126,114 @@ mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
 
-[node name="StaticBody14" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody14"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody14"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody18" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -30 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody18"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody18"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody22" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -40 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody22"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody22"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody27" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -50 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody27"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody27"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody28" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -50 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody28"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody28"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody29" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -60 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody29"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody29"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody30" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -60 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody30"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody30"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody32" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -70 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody32"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody32"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody19" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -30 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody19"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody19"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody20" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody20"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody20"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody21" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody21"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody21"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody15" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody15"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody15"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody16" type="StaticBody" parent="Floors"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, -5, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody16"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody16"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody17" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -40 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody17"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody17"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody23" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -50 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody23"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody23"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody24" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -60 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody24"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody24"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody31" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -70 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody31"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody31"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody25" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -60 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody25"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody25"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody26" type="StaticBody" parent="Floors"]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -50 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody26"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody26"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
 [node name="Trank" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1, 1.66503, -3 )
 
 [node name="Walls" type="Spatial" parent="."]
 
-[node name="StaticBody" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0, 2, 5 )
+[node name="StaticBody" parent="Walls" instance=ExtResource( 10 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody"]
-shape = SubResource( 1 )
+[node name="StaticBody2" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 5, 2, -5.96046e-08 )
 
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
+[node name="StaticBody3" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -5, 2, -5.96046e-08 )
 
-[node name="StaticBody2" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, 2, 0 )
+[node name="StaticBody7" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -5, 2, -10 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody2"]
-shape = SubResource( 1 )
+[node name="StaticBody8" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 10, 2, -10 )
 
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody2"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
+[node name="StaticBody16" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -5, 3.72529e-09, 0, 0, -8.74228e-09, -5, -1.19209e-07, -0.2, 2.18557e-07, 7, 2, -5 )
 
-[node name="StaticBody3" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, 0 )
+[node name="StaticBody37" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -1.5, 1.11759e-09, 0, 0, -8.74228e-09, -5, -1.19209e-07, -0.2, 2.18557e-07, 0.5, 9, -5 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody3"]
-shape = SubResource( 1 )
+[node name="StaticBody36" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -5, 3.72529e-09, 0, 0, -8.74228e-09, -5, -1.19209e-07, -0.2, 2.18557e-07, -6, 2, -5 )
 
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody3"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
+[node name="StaticBody9" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 10, 2, -20 )
 
-[node name="StaticBody4" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -1.5, 3.01992e-08, 0, -2.26494e-07, -0.2, 0, 5.5, -5 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody4"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody4"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody5" type="StaticBody" parent="Walls"]
-transform = Transform( 1.4, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 4, 2, -5 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody5"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6 )
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody6" type="StaticBody" parent="Walls"]
-transform = Transform( 2, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -3, 2, -5 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody6"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6 )
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody7" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, 2, -10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody7"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody7"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody8" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -1.66103e-08, -9.5, 0, 0.2, -2.18557e-07, 0, 2, -15 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody8"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody8"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody9" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 10, 2, -5 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody9"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody9"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody10" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 10, 2, -10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody10"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody10"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody11" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 10, 2, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody11"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody11"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody12" type="StaticBody" parent="Walls"]
+[node name="StaticBody10" parent="Walls" instance=ExtResource( 10 )]
 transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 10, 2, -25 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody12"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody12"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody13" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -1.31134e-08, -7.5, 0, 0.2, -2.18557e-07, 0, 0, -25 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody13"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody13"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody14" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, -5, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody14"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody14"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody15" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -15 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody15"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody15"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody16" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -15, 2, -20 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody16"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody16"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody17" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -15, 2, -30 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody17"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody17"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody18" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -35 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody18"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody18"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody27" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -45 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody27"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody27"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody28" type="StaticBody" parent="Walls"]
-transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -65 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody28"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody28"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody19" type="StaticBody" parent="Walls"]
+[node name="StaticBody14" parent="Walls" instance=ExtResource( 10 )]
 transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 10, 2, -35 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody19"]
-shape = SubResource( 1 )
+[node name="StaticBody19" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -35 )
 
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody19"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
+[node name="StaticBody11" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -2.18557e-08, -12.5, 0, 0.2, -2.18557e-07, 0, 2, -25 )
 
-[node name="StaticBody35" type="StaticBody" parent="Walls"]
+[node name="StaticBody12" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -2.09815e-08, -12, 0, 0.2, -2.18557e-07, 0, 2, -15 )
+
+[node name="StaticBody29" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 0, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, 0, 3.55271e-15, 5, -5, -20 )
+
+[node name="StaticBody30" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 0, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, 0, 3.55271e-15, -5, -5, -20 )
+
+[node name="StaticBody13" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -15 )
+
+[node name="StaticBody15" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -15, 2, -20 )
+
+[node name="StaticBody17" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -15, 2, -30 )
+
+[node name="StaticBody18" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 15, 2, -30 )
+
+[node name="StaticBody20" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, -40 )
+
+[node name="StaticBody35" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, 2, -40 )
+
+[node name="StaticBody38" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, -3, -50 )
+
+[node name="StaticBody39" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, -3, -60 )
+
+[node name="StaticBody40" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -6, -4, -60 )
+
+[node name="StaticBody41" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -6, -4, -50 )
+
+[node name="StaticBody21" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, -50 )
+
+[node name="StaticBody22" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, -60 )
+
+[node name="StaticBody23" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, -70 )
+
+[node name="StaticBody24" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, 2, -70 )
+
+[node name="StaticBody25" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -15, 2, -50 )
+
+[node name="StaticBody26" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -15, 2, -60 )
+
+[node name="StaticBody27" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -65 )
+
+[node name="StaticBody33" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -45 )
+
+[node name="StaticBody28" parent="Walls" instance=ExtResource( 10 )]
 transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0, 2, -75 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody35"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody35"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody20" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 15, 2, -30 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody20"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody20"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody21" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 5, 2, -40 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody21"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody21"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody22" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -5, 2, -40 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody22"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody22"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody29" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -5, -3, -50 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody29"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody29"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody31" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -6, -3.78969, -50 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody31"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody31"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody32" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -6, -3.78969, -60 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody32"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody32"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody30" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -5, -3, -60 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody30"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody30"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody23" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 5, 2, -50 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody23"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody23"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody24" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 5, 2, -60 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody24"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody24"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody33" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 5, 2, -70 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody33"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody33"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody34" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -5, 2, -70 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody34"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody34"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody25" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -15, 2, -60 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody25"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody25"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
-
-[node name="StaticBody26" type="StaticBody" parent="Walls"]
-transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -15, 2, -50 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody26"]
-shape = SubResource( 1 )
-
-[node name="Cube" type="MeshInstance" parent="Walls/StaticBody26"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
 
 [node name="Text" type="Spatial" parent="."]
 
@@ -1079,3 +432,49 @@ transform = Transform( 5.6, 0, 0, 0, 7.68, 0, 0, 0, 1, 0, 0, -44 )
 
 [node name="Flag" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.995106, 1.0035, -68.5432 )
+
+[node name="Ceilings" type="Spatial" parent="."]
+
+[node name="StaticBody" parent="Ceilings" instance=ExtResource( 11 )]
+
+[node name="StaticBody2" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -10 )
+
+[node name="StaticBody3" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -10 )
+
+[node name="StaticBody4" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -20 )
+
+[node name="StaticBody5" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -20 )
+
+[node name="StaticBody6" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -20 )
+
+[node name="StaticBody7" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -30 )
+
+[node name="StaticBody8" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -30 )
+
+[node name="StaticBody10" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -40 )
+
+[node name="StaticBody11" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -50 )
+
+[node name="StaticBody12" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -60 )
+
+[node name="StaticBody14" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -50 )
+
+[node name="StaticBody15" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -60 )
+
+[node name="StaticBody13" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -70 )
+
+[node name="StaticBody9" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
