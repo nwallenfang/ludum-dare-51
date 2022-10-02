@@ -93,10 +93,11 @@ func damage(amount: int):
 	hp -= amount
 	hurt_visuals()
 	if hp <= 0:
-		death_animation()
-		state = STATES.DEATH
-		direction = Vector3.ZERO
-		$Hitbox.queue_free()
+		if state != STATES.DEATH:
+			death_animation()
+			state = STATES.DEATH
+			direction = Vector3.ZERO
+			$Hitbox.queue_free()
 
 func trigger():
 	state = STATES.AGGRO
