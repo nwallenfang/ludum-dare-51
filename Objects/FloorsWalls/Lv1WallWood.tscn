@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Materials/Lv1WallWood.tres" type="Material" id=2]
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 10.022, 0.211157, 10.0064 )
+extents = Vector3( 25.5, 0.211157, 17.7 )
 
 [node name="Lv1FloorLab" instance=ExtResource( 1 )]
 

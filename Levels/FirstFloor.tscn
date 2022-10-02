@@ -348,7 +348,7 @@ transform = Transform( -2.23077e-08, 0, -0.510341, 0, 1, 0, 1, 0, -4.37114e-08, 
 transform = Transform( 1, 0, 0, 0, 0.3744, 0, 0, 0, 0.343, -21.4, 5.8, -15.7 )
 
 [node name="Lv1FloorLab13" parent="Walls" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 0.3744, 0, 0, 0, 0.47334, 17, 5.8, -25.7 )
+transform = Transform( 1, 0, 0, 0, 0.3744, 0, 0, 0, 0.47334, 17, 4.2, -25.7 )
 
 [node name="Lv1FloorLab11" parent="Walls" instance=ExtResource( 23 )]
 transform = Transform( -1.96701e-08, 0, 0.45, 0, 1.02, 0, -1, 0, -4.37114e-08, 1, -11, -35 )
@@ -472,13 +472,10 @@ transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -23.6862,
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801, 5.1273, -30.4522 )
 
 [node name="WallText13" parent="Texts" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -6.59397, 5.1273, -34.7713 )
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -6.59397, 5.9273, -34.7713 )
 
 [node name="WallText14" parent="Texts" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -6.59397, 11.434, -34.7713 )
-
-[node name="WallText16" parent="Texts" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 2.76568, 11.434, -34.7713 )
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.60603, 11.434, -34.7713 )
 
 [node name="WallText17" parent="Texts" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 13.2537, 5.1273, -34.7713 )
@@ -526,7 +523,7 @@ transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, 13.1537
 transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, 11.9537, 11.434, -16.4628 )
 
 [node name="WallText21" parent="Texts" instance=ExtResource( 10 )]
-transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, -1.40593, 10.1273, -16.4628 )
+transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, -3.50593, 7.5273, -16.4628 )
 
 [node name="WallText11" parent="Texts" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801, 11.4617, -30.4106 )
@@ -550,7 +547,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20495, 2.10565, -33.266 )
 transform = Transform( 0.7248, 0, 0, 0, 0.7248, 0, 0, 0, 0.7248, 23.6786, 23.922, -4.3085 )
 
 [node name="Door2" parent="." instance=ExtResource( 7 )]
-transform = Transform( -5.21811e-08, 0, -1.19377, 0, 1.19377, 0, 1.19377, 0, -5.21811e-08, 16.7094, 8.30906, -26.716 )
+transform = Transform( -5.21811e-08, 0, -1.19377, 0, 1.49221, 0, 1.19377, 0, -5.21811e-08, 16.7094, 8.70906, -26.716 )
 
 [node name="Door3" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1.19377, 0, 2.45137e-13, 0, 1.5519, 0, -2.45137e-13, 0, 1.19377, -24.2906, 2.22691, -8.716 )
