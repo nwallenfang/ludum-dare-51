@@ -69,6 +69,7 @@ func new_level():
 		set_process_input(true)
 		set_process_unhandled_input(true)
 		Game.player.movement_disabled = true
+		Game.player.connect("player_got_hurt", self, "player_hurt")
 
 # When dying
 var already_restarting = false
@@ -88,7 +89,7 @@ func restart_level():
 	$"%Viewport".remove_child(Game.level)
 	Game.level.queue_free()
 	Game.level = null
-	$"%Viewport".add_child(load(Game.level_list[Game.level_index]).instance())
+	$"%Viewport".add_child(Game.level_list[Game.level_index].instance())
 	if intro_sequence_should_run:
 		set_process_input(true)
 		set_process_unhandled_input(true)

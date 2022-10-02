@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
 [ext_resource path="res://Levels/Tutorial.gd" type="Script" id=3]
-[ext_resource path="res://Assets/GLTF/Trank.gltf" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Potion.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Materials/ScreenMaterial.tres" type="Material" id=5]
 [ext_resource path="res://Effects/Lightmaps/Tutorial.lmbake" type="BakedLightmapData" id=6]
 [ext_resource path="res://Assets/GLTF/chair.gltf" type="PackedScene" id=7]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Effects/Ubershader.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Font/WalltextFont.tres" type="DynamicFont" id=13]
 [ext_resource path="res://Assets/Font/WalltextFontSmaller.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Objects/TestTube_Holder.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
 
@@ -132,9 +133,6 @@ mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
 
-[node name="Trank" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1, 1.66503, -3 )
-
 [node name="Walls" type="Spatial" parent="."]
 
 [node name="StaticBody" parent="Walls" instance=ExtResource( 10 )]
@@ -247,7 +245,7 @@ transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0, 2,
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 3, 4.70083 )
 generate_lightmap = false
 pixel_size = 0.018
-text = "look around"
+text = "turn around"
 font = ExtResource( 13 )
 
 [node name="Label3D2" type="Label3D" parent="Text"]
@@ -496,3 +494,24 @@ transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
 
 [node name="Ubershader" parent="." instance=ExtResource( 12 )]
 transform = Transform( 0.0348362, 0, 0, 0, 0.0348362, 0, 0, 0, 0.0348362, -2.00813, 2.33504, 4.65104 )
+
+[node name="Potion2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.535625, 0, 1.69662, 0, 1.77916, 0, -1.69662, 0, 0.535625, -3.45701, 1.66567, -1.46444 )
+background = Color( 0.87451, 0.760784, 0.141176, 1 )
+background2 = Color( 0.921569, 0.690196, 0.14902, 1 )
+bubbles = Color( 0.427451, 0.760784, 0.172549, 1 )
+
+[node name="Potion3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.535625, 0, 1.69662, 0, 1.77916, 0, -1.69662, 0, 0.535625, -2.35652, 1.66567, -1.47026 )
+background = Color( 0.333333, 0.866667, 0.0627451, 1 )
+background2 = Color( 0.180392, 0.360784, 0.835294, 1 )
+bubbles = Color( 0.905882, 0.905882, 0.905882, 1 )
+
+[node name="Potion4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.535625, 0, 1.69662, 0, 1.77916, 0, -1.69662, 0, 0.535625, -1.23438, 1.66567, -2.96414 )
+background = Color( 0.0627451, 0.780392, 0.729412, 1 )
+background2 = Color( 0.470588, 0.298039, 0.298039, 1 )
+bubbles = Color( 0.917647, 0.12549, 0.905882, 1 )
+
+[node name="TestTube_Holder" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1.43487, 0, 0.785829, 0, 1.63596, 0, -0.785829, 0, 1.43487, -2.43272, 1.66382, -2.45509 )
