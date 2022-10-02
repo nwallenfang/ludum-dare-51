@@ -1,0 +1,214 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "TrashBin",
+            "scale" : [
+                0.2285224199295044,
+                0.2285224199295044,
+                0.2285224199295044
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Trashbag",
+            "scale" : [
+                0.2285224199295044,
+                0.2285224199295044,
+                0.2285224199295044
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "TrashBin",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.28450992703437805,
+                    0.8549792170524597,
+                    0.4520658850669861,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.7909448742866516
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Trashbag",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.018848661333322525,
+                    0.018848661333322525,
+                    0.018848661333322525,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.16141732037067413
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.009",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.010",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 132,
+            "max" : [
+                0.906134307384491,
+                2.8787975311279297,
+                1.2560726404190063
+            ],
+            "min" : [
+                -0.906134307384491,
+                0,
+                -1.2560726404190063
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 132,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 132,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 204,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 275,
+            "max" : [
+                0.9725512862205505,
+                2.9966821670532227,
+                1.3318912982940674
+            ],
+            "min" : [
+                -0.9707959890365601,
+                0.9637717008590698,
+                -1.3323014974594116
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 275,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 275,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 1506,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1584,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1584,
+            "byteOffset" : 1584
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1056,
+            "byteOffset" : 3168
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 408,
+            "byteOffset" : 4224
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3300,
+            "byteOffset" : 4632
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3300,
+            "byteOffset" : 7932
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2200,
+            "byteOffset" : 11232
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3012,
+            "byteOffset" : 13432
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 16444,
+            "uri" : "TrashBin.bin"
+        }
+    ]
+}
