@@ -62,6 +62,7 @@ func restart_level():
 	if already_restarting:
 		return
 	already_restarting = true
+	Events.set_process(false)
 	$Tween.reset_all()
 	$Tween.interpolate_property($Fader, "modulate:a", 0.0, 1.0, 1.0)
 	$Tween.start()

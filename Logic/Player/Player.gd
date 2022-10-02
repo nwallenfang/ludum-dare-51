@@ -151,3 +151,6 @@ func drink_animation():
 	$DrinkAnimation.play("drink")
 	yield($DrinkAnimation, "animation_finished")
 	$DrinkAnimation.queue_free()
+	
+func play_key_sound():
+	$PickupStream.play()

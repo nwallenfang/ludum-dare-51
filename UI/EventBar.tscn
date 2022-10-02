@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/EventBar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/circle_white.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/fire_noise_test3.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Shader/EventBar.gdshader" type="Shader" id=4]
 [ext_resource path="res://Assets/Sprites/event_bar.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/question.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Shader/EventBarBG.gdshader" type="Shader" id=7]
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 4 )
@@ -50,6 +52,28 @@ scale = 1.3
 scale_curve = SubResource( 9 )
 color = Color( 0.905882, 0.113725, 0.113725, 1 )
 
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 7 )
+shader_param/scale = Vector2( 3, 0.8 )
+shader_param/speed = 0.2
+shader_param/direction = Vector2( -0.1, 0.9 )
+shader_param/mod_color = Color( 0.937255, 0.4, 0.0745098, 1 )
+shader_param/mod_color_2 = Color( 0.854902, 0.815686, 0.396078, 1 )
+shader_param/noise = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.670588, 0.239216, 0.239216, 1 )
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color( 0.729412, 0.0823529, 0.0823529, 0.00784314 )
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
 [node name="EventBar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -59,10 +83,13 @@ question_mark_tex = ExtResource( 6 )
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 anchor_left = 0.15
-anchor_top = 0.809
+anchor_top = 0.876667
 anchor_right = 0.85
-anchor_bottom = 0.9
+anchor_bottom = 0.967667
 ratio = 12.62
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="EventBar" type="ColorRect" parent="AspectRatioContainer"]
 unique_name_in_owner = true
@@ -178,3 +205,12 @@ margin_bottom = 35.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Background" type="Panel" parent="."]
+show_behind_parent = true
+material = SubResource( 12 )
+anchor_left = 0.166
+anchor_top = 0.854
+anchor_right = 0.853
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 13 )
