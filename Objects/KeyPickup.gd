@@ -2,6 +2,7 @@ extends Spatial
 
 func _on_Area_area_entered(area):
 	Game.level.has_key = true
+	Game.player.play_key_sound()
 	self.queue_free()
 
 func _ready():

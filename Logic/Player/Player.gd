@@ -146,3 +146,11 @@ func _on_HurtBox_area_entered(area):
 func _on_HurtTimer_timeout():
 	for a in $HurtBox.get_overlapping_areas():
 		_on_HurtBox_area_entered(a)
+
+func drink_animation():
+	$DrinkAnimation.play("drink")
+	yield($DrinkAnimation, "animation_finished")
+	$DrinkAnimation.queue_free()
+	
+func play_key_sound():
+	$PickupStream.play()

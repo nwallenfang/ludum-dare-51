@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Logic/Events.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/big_event.wav" type="AudioStream" id=2]
 
 [node name="Events" type="Node"]
 script = ExtResource( 1 )
@@ -12,5 +13,9 @@ autostart = true
 [node name="EffectHandler" type="Node" parent="."]
 
 [node name="EventScenes" type="Node" parent="."]
+
+[node name="WarningStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -21.849
 
 [connection signal="timeout" from="UpdateUITimer" to="." method="_on_UpdateUITimer_timeout"]

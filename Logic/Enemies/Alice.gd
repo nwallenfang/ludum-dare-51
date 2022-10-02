@@ -44,6 +44,7 @@ func make_shot():
 
 const DEATH_EFFECT = preload("res://Effects/DeathEffect.tscn")
 func death_animation():
+	$DeathStream.play()
 	$AnimationPlayer.play("death")
 	yield(get_tree().create_timer(1),"timeout")
 	var death_effect = DEATH_EFFECT.instance()
