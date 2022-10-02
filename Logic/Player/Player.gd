@@ -22,6 +22,8 @@ onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity")
 		* gravity_multiplier)
 var mouse_beginning_set = false
 
+var knockback := Vector3.ZERO
+
 var double_jump = false
 var used_second_jump = false
 var inverted_controls = false
@@ -90,8 +92,13 @@ func _physics_process(delta) -> void:
 		if Input.is_action_just_pressed("jump") and double_jump and !used_second_jump:
 			velocity.y = jump_height
 			used_second_jump = true
+			
+	if knockback != Vector3.ZERO:
+		velocity += knockback
+		knockback = Vector3.ZERO
 	
 	accelerate(delta)
+	
 	
 	velocity = move_and_slide_with_snap(velocity, snap, up_direction, 
 			stop_on_slope, 4, floor_max_angle)
@@ -142,6 +149,7 @@ func get_hurt():
 func _on_HurtBox_area_entered(area):
 	if $HurtTimer.time_left == 0.0:
 		get_hurt()
+		knockback = area.get_parent().global_translation.direction_to(self.global_translation) * 30.0
 
 func _on_HurtTimer_timeout():
 	for a in $HurtBox.get_overlapping_areas():
