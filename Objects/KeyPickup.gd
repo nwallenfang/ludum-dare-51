@@ -5,6 +5,7 @@ func _on_Area_area_entered(area):
 	self.queue_free()
 
 func _ready():
+	$AnimationPlayer.play("dance")
 	while true:
 		$Tween.reset_all()
 		

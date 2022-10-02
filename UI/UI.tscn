@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/EventBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UI.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Font/IntroFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Sprites/question.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/crosshair.png" type="Texture" id=5]
 
 [sub_resource type="Shader" id=1]
@@ -25,6 +26,28 @@ shader_param/fill_color = null
 shader_param/empty_color = null
 shader_param/enabled = null
 shader_param/texture_resource = ExtResource( 5 )
+
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D texture_resource;
+uniform vec4 fill_color: hint_color;
+uniform vec4 empty_color: hint_color;
+uniform bool enabled;
+
+void fragment(){
+	vec4 tex = texture(texture_resource, UV);
+	COLOR = tex * fill_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = SubResource( 6 )
+shader_param/fill_color = Color( 1, 1, 1, 1 )
+shader_param/empty_color = Color( 1, 1, 1, 0 )
+shader_param/enabled = null
+shader_param/texture_resource = ExtResource( 4 )
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
@@ -70,3 +93,10 @@ rect_min_size = Vector2( 15, 15 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 5 )
 offset = Vector2( 7, 7 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/CenterContainer"]
+material = SubResource( 7 )
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
