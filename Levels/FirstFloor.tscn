@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/WallMaterial.tres" type="Material" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=8]
 [ext_resource path="res://addons/kenney_prototype_textures/purple/texture_01.png" type="Texture" id=9]
 [ext_resource path="res://Objects/WallText.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 9 )
@@ -539,3 +541,11 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801
 
 [node name="WallText12" parent="Texts" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801, 11.4617, -20.9796 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Bob" parent="Enemies" groups=["trigger0"] instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3543, 2.91198, -4.45571 )
+
+[node name="TriggerArea" parent="Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 3.43126, 0, 0, 0, 4.05946, -10.5046, 2.69733, -0.290967 )

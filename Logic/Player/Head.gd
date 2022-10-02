@@ -26,10 +26,16 @@ func _input(event: InputEvent) -> void:
 
 
 func camera_rotation() -> void:
-	# Horizontal mouse look.
-	rot.y -= mouse_axis.x * mouse_sensitivity
-	# Vertical mouse look.
-	rot.x = clamp(rot.x - mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
+	if Game.player.inverted_controls:
+		# Horizontal mouse look.
+		rot.y += mouse_axis.x * mouse_sensitivity
+		# Vertical mouse look.
+		rot.x = clamp(rot.x + mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
+	else:
+		# Horizontal mouse look.
+		rot.y -= mouse_axis.x * mouse_sensitivity
+		# Vertical mouse look.
+		rot.x = clamp(rot.x - mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
 	
 	get_owner().rotation.y = rot.y
 	rotation.x = rot.x

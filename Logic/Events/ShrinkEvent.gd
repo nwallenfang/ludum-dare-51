@@ -2,7 +2,8 @@ extends Node
 
 export var icon: Texture
 export var event_name: String
-export var size_multiplier: float = 1.5
+export var size_multiplier: float
+
 
 func event():
 	$Tween.reset_all()
