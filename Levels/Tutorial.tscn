@@ -482,3 +482,76 @@ transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
 
 [node name="Ubershader" parent="." instance=ExtResource( 12 )]
 transform = Transform( 0.0348362, 0, 0, 0, 0.0348362, 0, 0, 0, 0.0348362, -2.00813, 2.33504, 4.67118 )
+
+[node name="Text" type="Spatial" parent="Ubershader"]
+
+[node name="Label3D" type="Label3D" parent="Ubershader/Text"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 3, 4.70083 )
+generate_lightmap = false
+pixel_size = 0.018
+text = "Use your mouse 
+to look around"
+font = ExtResource( 5 )
+
+[node name="Label3D2" type="Label3D" parent="Ubershader/Text"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.76371, 3, -2.38419e-07 )
+generate_lightmap = false
+pixel_size = 0.025
+text = "Use WASD
+to move"
+font = ExtResource( 5 )
+
+[node name="Label3D4" type="Label3D" parent="Ubershader/Text"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.128663, 3, -14.7714 )
+generate_lightmap = false
+pixel_size = 0.025
+text = "Press space
+to jump"
+font = ExtResource( 5 )
+
+[node name="Label3D5" type="Label3D" parent="Ubershader/Text"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -24.7664 )
+generate_lightmap = false
+pixel_size = 0.018
+text = "Please don't die.
+Your bodily 
+functions are 
+important to us."
+font = ExtResource( 5 )
+
+[node name="Label3D6" type="Label3D" parent="Ubershader/Text"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.53306, -34.7664 )
+generate_lightmap = false
+pixel_size = 0.018
+text = "You research the
+effects of new
+experimental
+medicine"
+font = ExtResource( 5 )
+
+[node name="Label3D7" type="Label3D" parent="Ubershader/Text"]
+transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 4.75903, 3.76879, -39.695 )
+generate_lightmap = false
+pixel_size = 0.016
+text = "Every ten 
+seconds you will 
+make a breakthrough 
+in science"
+font = ExtResource( 5 )
+
+[node name="Label3D8" type="Label3D" parent="Ubershader/Text"]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -14.241, 3.76879, -50.3154 )
+generate_lightmap = false
+pixel_size = 0.015
+text = "During tests you may
+meet other rowdy 
+subjects"
+font = ExtResource( 5 )
+
+[node name="Label3D9" type="Label3D" parent="Ubershader/Text"]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -14.241, 3.76879, -59.8387 )
+generate_lightmap = false
+pixel_size = 0.017
+text = "Use left click
+to zap them"
+font = ExtResource( 5 )

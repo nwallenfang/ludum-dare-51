@@ -20,7 +20,7 @@ func _ready() -> void:
 	if not Game.disable_music:
 		$IdleStream.play()
 
-	$ViewportContainer/Viewport/FollowCamera.make_current()
+#	$ViewportContainer/Viewport/FollowCamera.make_current()
 	
 	set_process_input(false)
 	set_process_unhandled_input(false)
