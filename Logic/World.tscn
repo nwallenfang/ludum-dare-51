@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Tutorial.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Logic/World.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Assets/Sound/ludum_dare_51_idle.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=6]
 [ext_resource path="res://new_default_env.tres" type="Environment" id=7]
-[ext_resource path="res://Logic/2DViewport.gd" type="Script" id=9]
 [ext_resource path="res://UI/TextScreenUI.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ShaderMaterial" id=2]
@@ -29,7 +28,6 @@ size = Vector2( 256, 256 )
 hdr = false
 usage = 0
 render_target_v_flip = true
-script = ExtResource( 9 )
 
 [node name="2DText" parent="Viewport2D" instance=ExtResource( 10 )]
 

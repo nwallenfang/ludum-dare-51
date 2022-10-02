@@ -61,7 +61,6 @@ func _input(event: InputEvent) -> void:
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta) -> void:
 	if movement_disabled:
-		print("Can't move")
 		return 
 		
 	
