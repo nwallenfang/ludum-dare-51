@@ -1,13 +1,11 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Aufzug.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/FirstFloor.gd" type="Script" id=5]
 [ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/DoorNew.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=8]
-[ext_resource path="res://addons/kenney_prototype_textures/purple/texture_01.png" type="Texture" id=9]
 [ext_resource path="res://Objects/WallText.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=12]
@@ -84,9 +82,6 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="SpatialMaterial" id=6]
-albedo_texture = ExtResource( 9 )
-
 [sub_resource type="BoxShape" id=7]
 
 [sub_resource type="ArrayMesh" id=8]
@@ -112,14 +107,6 @@ roughness = 0.71
 script = ExtResource( 5 )
 
 [node name="Floors" type="Spatial" parent="."]
-
-[node name="Floor12" type="CSGBox" parent="Floors"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9237, 8.16155, -19.8556 )
-use_collision = true
-width = 15.954
-height = 0.5
-depth = 41.6847
-material = ExtResource( 1 )
 
 [node name="Floor18" parent="Floors" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.434, 22.971, -39.194 )
@@ -149,6 +136,9 @@ transform = Transform( 0.5445, 0, 0, 0, 1, 0, 0, 0, 1, 10.9, 8.102, -25.5 )
 
 [node name="Lv1FloorCarpet15" parent="Floors" instance=ExtResource( 18 )]
 transform = Transform( 0.5445, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 2.202, -25.5 )
+
+[node name="Lv1FloorCarpet16" parent="Floors" instance=ExtResource( 18 )]
+transform = Transform( 0.92565, 0, 0, 0, 1, 0, 0, 0, 1.7, 25.9, 8.202, -25.5 )
 
 [node name="Lv1FloorCarpet13" parent="Floors" instance=ExtResource( 18 )]
 transform = Transform( -7.21238e-08, 0, -1, 0, 1, 0, 1.39219, 0, -3.68815e-08, 39.8, 23.002, -23 )
@@ -221,10 +211,8 @@ transform = Transform( 0.120817, 0, 0, 0, 1, 0, 0, 0, 0.137592, 27, 12.8, -39 )
 
 [node name="Walls" type="Spatial" parent="."]
 
-[node name="CSG" type="Spatial" parent="Walls"]
-
 [node name="Lv1WallLab" parent="Walls" instance=ExtResource( 19 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 2.1, 0, -1, 0, -4.37114e-08, -1.3, 2.4, -8.5 )
+transform = Transform( -4.37114e-08, 0, 1.1, 0, 2.1, 0, -1, 0, -4.80825e-08, -1.8, 2.4, -8.5 )
 
 [node name="Lv1WallLab2" parent="Walls" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1.98, 0, -1, 0, -4.37114e-08, 8.7, 2.4, -8.5 )
@@ -275,7 +263,7 @@ transform = Transform( -1.33846e-08, 0, -0.306204, 0, 1, 0, 1, 0, -4.37114e-08, 
 transform = Transform( 1, 0, -3.03268e-08, 0, 1, 0, -3.03268e-08, 0, 0.306204, -11.7, 8, -10.4 )
 
 [node name="Lv1FloorLab8" parent="Walls" instance=ExtResource( 20 )]
-transform = Transform( -3.55562e-08, 0, -0.813432, -1, -4.37114e-08, 4.37114e-08, -1.00536e-07, 2.3, 4.39458e-15, -27.6, 10.2, -6.6 )
+transform = Transform( -3.55562e-08, 0, -0.813432, -1, -4.37114e-08, 4.37114e-08, -1.00536e-07, 2.3, 4.39458e-15, -28.2, 10.2, -6.8 )
 
 [node name="Lv1FloorLab9" parent="Walls" instance=ExtResource( 20 )]
 transform = Transform( -0.119514, -5.22412e-09, 1.12948e-08, 1.07569e-08, 2.1748e-16, 0.132267, -4.06238e-08, 0.929364, 1.77572e-15, -11.2, 9.2, 0.399998 )
@@ -302,7 +290,10 @@ transform = Transform( -1.96701e-08, 0, 0.45, 0, 1.02, 0, -1, 0, -4.37114e-08, 1
 transform = Transform( 1, 0, 2.40413e-08, 0, 1.02, 0, 2.88495e-08, 0, 0.54, 17, -24, -35 )
 
 [node name="Lv1FloorLab14" parent="Walls" instance=ExtResource( 23 )]
-transform = Transform( -1, 0, -6.33815e-08, 0, 1.02, 0, 6.33815e-08, 0, -0.45, -12, 27.1, -44 )
+transform = Transform( -0.2, 0, -1.35896e-08, 0, 0.2856, 0, 3.01992e-08, 0, -0.09, -11.9, 8.6, -31 )
+
+[node name="Lv1FloorLab22" parent="Walls" instance=ExtResource( 23 )]
+transform = Transform( -0.2, 4.31244e-08, 5.94021e-16, 0, -1.2484e-08, 0.09, 3.01992e-08, 0.2856, 3.93402e-09, -11.6, 13.2, -21.4 )
 
 [node name="Lv1FloorLab18" parent="Walls" instance=ExtResource( 23 )]
 transform = Transform( -0.3, 0, -1.90145e-08, -4.75361e-08, -1.33757e-08, 0.3375, -2.07787e-15, 0.306, 1.47526e-08, 17, 15.1, -37.2 )
@@ -367,62 +358,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 4.3, -21.2 )
 [node name="LevelStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
-[node name="Ceilings" type="Node" parent="."]
-
-[node name="Ceiling1" type="CSGBox" parent="Ceilings"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.2009, 0 )
-visible = false
-use_collision = true
-width = 16.0
-height = 0.5
-depth = 16.0
-material = SubResource( 6 )
-
-[node name="Ceiling2" type="CSGBox" parent="Ceilings"]
-transform = Transform( 1.38179, 0, 0, 0, 1, 0, 0, 0, 1, -19.1413, 8.33071, 0 )
-visible = false
-use_collision = true
-width = 16.0
-height = 0.5
-depth = 29.1828
-material = SubResource( 6 )
-
-[node name="Ceiling9" type="CSGBox" parent="Ceilings"]
-transform = Transform( 2.64016e-15, 4.37114e-08, 1, 4.7139e-08, 1, -4.37114e-08, -0.303371, -3.41146e-08, 1.91069e-15, -27.0252, 8.33071, -15.561 )
-visible = false
-use_collision = true
-width = 12.3578
-height = 0.5
-depth = 16.0
-material = SubResource( 6 )
-
-[node name="Ceiling3" type="CSGBox" parent="Ceilings"]
-transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, -8.36837, 15.026, -26.5418 )
-visible = false
-use_collision = true
-width = 31.3862
-height = 0.5
-depth = 49.7728
-material = SubResource( 6 )
-
-[node name="Ceiling6" type="CSGBox" parent="Ceilings"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2484, 32.6931, -17.9514 )
-visible = false
-use_collision = true
-width = 31.3862
-height = 0.5
-depth = 49.7728
-material = SubResource( 6 )
-
-[node name="Ceiling7" type="CSGBox" parent="Ceilings"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 26.2484, 32.6931, 3.64246 )
-visible = false
-use_collision = true
-width = 31.3862
-height = 0.5
-depth = 49.7728
-material = SubResource( 6 )
-
 [node name="Lights" type="Node" parent="."]
 
 [node name="OmniLight" type="OmniLight" parent="Lights"]
@@ -458,9 +393,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3968, 5.1273, -34.7076 )
 [node name="WallText9" parent="Texts" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -23.6862, 5.1273, -27.9247 )
 
-[node name="WallText10" parent="Texts" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801, 5.1273, -30.4522 )
-
 [node name="WallText13" parent="Texts" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -6.59397, 5.9273, -34.7713 )
 
@@ -492,7 +424,7 @@ transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 33.5901
 transform = Transform( -1.39091e-08, 0, -1, 0, 1, 0, 1, 0, -1.39091e-08, 33.5901, 25.9512, -17.194 )
 
 [node name="WallText18" parent="Texts" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 11.9537, 11.434, -34.7713 )
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 13.2537, 11.434, -34.7713 )
 
 [node name="WallText19" parent="Texts" instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, 13.1537, 5.1273, -16.4628 )
@@ -502,9 +434,6 @@ transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, 11.9537
 
 [node name="WallText21" parent="Texts" instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -1.17225e-07, 0, 1, 0, 1.17225e-07, 0, -1, -3.50593, 7.5273, -16.4628 )
-
-[node name="WallText11" parent="Texts" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.801, 11.4617, -30.4106 )
 
 [node name="Enemies" type="Node" parent="."]
 
