@@ -25,8 +25,6 @@ export var dash_acc := 3.0
 
 func _physics_process(delta):
 	match state:
-		STATES.IDLE:
-			pass
 		STATES.AGGRO:
 			var direction_to_player := self.global_translation.direction_to(Game.player.global_translation)
 			direction_to_player.y = 0.0
@@ -40,12 +38,9 @@ func _physics_process(delta):
 			
 		STATES.DASH:
 			direction = Vector3.ZERO
-			dash()
 			state = STATES.AFTER_DASH
-		STATES.AFTER_DASH:
-			pass
-		STATES.DEATH:
-			pass
+			dash()
+			
 	
 	if is_on_floor():
 		snap = -get_floor_normal() - get_floor_velocity() * delta
@@ -100,7 +95,8 @@ func damage(amount: int):
 			$Hitbox.queue_free()
 
 func trigger():
-	state = STATES.AGGRO
+	if state == STATES.IDLE:
+		state = STATES.AGGRO
 
 func dash():
 	pass # TODO Warning
@@ -112,6 +108,8 @@ func dash():
 	yield(get_tree().create_timer(.3),"timeout")
 	direction = Vector3.ZERO
 	yield(get_tree().create_timer(1),"timeout")
+	if state == STATES.DEATH:
+		return
 	state = STATES.AGGRO
 
 const DEATH_EFFECT = preload("res://Effects/DeathEffect.tscn")

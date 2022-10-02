@@ -16,7 +16,8 @@ func damage(amount: int):
 			state = STATES.DEATH
 
 func trigger():
-	state = STATES.AGGRO
+	if state == STATES.IDLE:
+		state = STATES.AGGRO
 
 var dist_to_player: float
 
