@@ -19,9 +19,9 @@ var stop_on_slope := true
 onready var floor_max_angle: float = deg2rad(45.0)
 onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity") * gravity_multiplier)
 
-export var dash_chance := .2
-export var dash_range := 4.0
-export var dash_acc := 4.0
+export var dash_chance := .5
+export var dash_range := 5.0
+export var dash_acc := 3.0
 
 func _physics_process(delta):
 	match state:
@@ -100,7 +100,7 @@ func dash():
 	print("REEEE")
 	yield(get_tree().create_timer(1.5),"timeout")
 	direction = self.global_translation.direction_to(Game.player.global_translation) * dash_acc
-	yield(get_tree().create_timer(.4),"timeout")
+	yield(get_tree().create_timer(.3),"timeout")
 	direction = Vector3.ZERO
 	yield(get_tree().create_timer(1),"timeout")
 	state = STATES.AGGRO
