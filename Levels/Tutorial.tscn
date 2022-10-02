@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Objects/LabFloor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/LabWall.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/LabRoof.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Effects/Ubershader.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
 
@@ -478,3 +479,6 @@ transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -70 )
 
 [node name="StaticBody9" parent="Ceilings" instance=ExtResource( 11 )]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
+
+[node name="Ubershader" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.0348362, 0, 0, 0, 0.0348362, 0, 0, 0, 0.0348362, -2.00813, 2.33504, 4.67118 )
