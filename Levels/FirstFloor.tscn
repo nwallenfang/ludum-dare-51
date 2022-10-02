@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/WallMaterial.tres" type="Material" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/SimpleScreen.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Logic/Enemies/Alice.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 9 )
@@ -569,5 +570,8 @@ transform = Transform( 0.999941, 0, 0.0108906, 0, 1, 0, -0.0108906, 0, 0.999941,
 [node name="Screen" parent="SimpleScreen" index="1"]
 transform = Transform( 3.94249, 0, 0, 0, 2.40019, 0, 0, 0, 1, -0.000908732, 0, 0.275129 )
 material/0 = SubResource( 3 )
+
+[node name="Flag" parent="." instance=ExtResource( 15 )]
+transform = Transform( 0.7248, 0, 0, 0, 0.7248, 0, 0, 0, 0.7248, 23.6786, 23.922, -4.3085 )
 
 [editable path="SimpleScreen"]
