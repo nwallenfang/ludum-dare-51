@@ -50,11 +50,12 @@ func _process(delta: float) -> void:
 	if time > (number_triggered + 1) * 10.0:
 		number_triggered += 1
 		# trigger event
-		var fixed_events_for_this_lv = fixed_events[Game.level_index]
-		if number_triggered in fixed_events_for_this_lv:
-			var fixed_event = fixed_events_for_this_lv[number_triggered]
-			emit_signal("trigger_event", fixed_event)
-			$WarningStream.play()
+		if Game.level_index in fixed_events:
+			var fixed_events_for_this_lv = fixed_events[Game.level_index]
+			if number_triggered in fixed_events_for_this_lv:
+				var fixed_event = fixed_events_for_this_lv[number_triggered]
+				emit_signal("trigger_event", fixed_event)
+				$WarningStream.play()
 			
 		# always a random event
 		randomize()
