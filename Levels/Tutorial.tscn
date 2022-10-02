@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Effects/Lightmaps/Tutorial.lmbake" type="BakedLightmapData" id=6]
 [ext_resource path="res://Assets/GLTF/chair.gltf" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Materials/LabFloorMaterial.tres" type="Material" id=9]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
 
@@ -44,17 +45,17 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.73
 
 [node name="Floors" type="Spatial" parent="."]
 
-[node name="StaticBody" type="StaticBody" parent="Floors"]
+[node name="Floor1" type="StaticBody" parent="Floors"]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Floors/Floor1"]
 shape = SubResource( 1 )
 
-[node name="Cube" type="MeshInstance" parent="Floors/StaticBody"]
+[node name="Cube" type="MeshInstance" parent="Floors/Floor1"]
 use_in_baked_light = true
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
+material/0 = ExtResource( 9 )
 
 [node name="StaticBody2" type="StaticBody" parent="Floors"]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -10 )
