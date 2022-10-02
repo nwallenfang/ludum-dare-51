@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Materials/FloorMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/WallMaterial.tres" type="Material" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Objects/WallText.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Logic/Enemies/Alice.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 9 )
@@ -549,3 +550,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3543, 2.91198, -4.45571 )
 
 [node name="TriggerArea" parent="Enemies" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 3.43126, 0, 0, 0, 4.05946, -10.5046, 2.69733, -0.290967 )
+
+[node name="TriggerArea2" parent="Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 3.43126, 0, 0, 0, 4.05946, -12.3341, 4.34394, -20.1468 )
+id = 1
+
+[node name="Alice" parent="Enemies" groups=["trigger1"] instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20495, 2.10565, -33.266 )

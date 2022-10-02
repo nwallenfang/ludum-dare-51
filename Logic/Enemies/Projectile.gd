@@ -6,10 +6,10 @@ var height: float
 
 var fly_offset : float setget set_fly_offset
 
-func fly(start: Vector3, end: Vector3, height: float, speed: float):
-	self.start = start
-	self.end = end
-	self.height = height
+func fly(start_: Vector3, end_: Vector3, height_: float, speed: float):
+	self.start = start_
+	self.end = end_
+	self.height = height_
 	var start_2d := Vector2(start.x, start.z)
 	var end_2d := Vector2(end.x, end.z)
 	var dist_2d := start_2d.distance_to(end_2d)
@@ -29,6 +29,7 @@ const SPLASH = preload("res://Logic/Enemies/ProjectileSplash.tscn")
 func crash():
 	var splash = SPLASH.instance()
 	get_tree().current_scene.add_child(splash)
+	splash.global_translation = self.global_translation
 	queue_free()
 
 

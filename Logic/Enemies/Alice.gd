@@ -1,6 +1,6 @@
 extends Spatial
 
-export var shooting_distance := 10.0
+export var shooting_distance := 20.0
 export var projectile_curve_height := .2
 
 enum STATES {IDLE, AGGRO, SHOOTING, SHOOT_COOLDOWN}
@@ -38,4 +38,5 @@ const PROJECTILE = preload("res://Logic/Enemies/Projectile.tscn")
 func make_shot():
 	var projectile = PROJECTILE.instance()
 	get_tree().current_scene.add_child(projectile)
-	projectile.fly($"%ShotPoint".global_translation, Game.player.global_translation, dist_to_player * projectile_curve_height, 5.0)
+	projectile.global_translation = $"%ShotPoint".global_translation
+	projectile.fly($"%ShotPoint".global_translation, Game.player.global_translation, dist_to_player * projectile_curve_height, 8.0)
