@@ -27,6 +27,12 @@ func _ready() -> void:
 	
 	Events.connect("trigger_event", self, "event_triggered")
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("jump_to_next_level"):
+		print("jump")
+		Game.load_next_level()
+
+
 func set_2d_viewport(viewport_t):
 	viewport = viewport_t
 	emit_signal("viewport_texture_changed", viewport)
@@ -63,4 +69,5 @@ func load_next_level():
 		
 	
 	
-	world.new_level()	
+	world.new_level()
+	emit_signal("viewport_texture_changed", viewport)
