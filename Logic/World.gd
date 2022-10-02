@@ -102,7 +102,7 @@ func restart_level():
 	Events.reset()
 	Game.player.movement_disabled = true
 	Game.emit_signal("viewport_texture_changed", Game.viewport)
-
+	Game.player.connect("player_got_hurt", self, "player_hurt")
 #	$Tween.reset_all()
 #	$Tween.interpolate_property($Fader, "modulate:a", 0.0, 1.0, 1.0)
 #	$Tween.start()

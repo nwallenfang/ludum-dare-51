@@ -29,8 +29,9 @@ func init_fixed_events():
 		var fixed = fixed_events[fixed_number]
 		i += 1
 		var new_icon = $FixedIcons/FixedIcon.duplicate()
-		$FixedIcons.add_child(new_icon)
 		new_icon.name = "FixedIcon" + str(fixed_number)
+		$FixedIcons.add_child(new_icon, true)
+
 		new_icon.visible = true
 		new_icon.material = new_icon.material.duplicate()
 		new_icon.material.set_shader_param("texture_resource", fixed.icon)
@@ -54,9 +55,12 @@ func set_progress(seconds: float):
 
 
 func event_triggered(event):
-	if Events.number_triggered > 6:
-		return
-	
+	# if there is a fixed event for this, it should modulate to fully white
+	# later animate it as well with a looping tween probably
+	print("triggered: ", str(Events.number_triggered))
+	if $FixedIcons.has_node("FixedIcon" + str(Events.number_triggered)):
+		var fixed_icon = $FixedIcons.get_node("FixedIcon" + str(Events.number_triggered))
+		fixed_icon.modulate = Color.white
 	
 	var icon_node: ColorRect = get_node("%EventBar/Icon" + str(Events.number_triggered))
 	icon_node.material = icon_node.material.duplicate()

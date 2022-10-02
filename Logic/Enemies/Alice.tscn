@@ -184,6 +184,7 @@ unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03179, 0 )
 
 [node name="EnenmyStationaryBottom" type="MeshInstance" parent="Model"]
+material_overlay = ExtResource( 2 )
 mesh = SubResource( 6 )
 
 [node name="EnemySationaryHat" type="MeshInstance" parent="Model/EnenmyStationaryBottom"]

@@ -76,9 +76,9 @@ func load_next_level():
 		world.get_node("IdleStream").play(0.2)
 		
 		
-	
+	emit_signal("viewport_texture_changed", viewport)	
 	world.fade_in(0.4)
 	yield(world, "fade_done")
 	
 	world.new_level()
-	emit_signal("viewport_texture_changed", viewport)
+

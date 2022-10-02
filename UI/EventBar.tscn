@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://UI/EventBar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/circle_white.png" type="Texture" id=2]
@@ -7,11 +7,12 @@
 [ext_resource path="res://Assets/Sprites/event_bar.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/question.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Shader/EventBarBG.gdshader" type="Shader" id=7]
+[ext_resource path="res://Assets/Shader/EventBarLarger.gdshader" type="Shader" id=8]
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 4 )
 shader_param/progress = 0.167
-shader_param/fill_color = Color( 0.243137, 0.243137, 0.243137, 1 )
+shader_param/fill_color = Color( 0, 0, 0, 1 )
 shader_param/progress_color = Color( 0.8, 0.243137, 0.243137, 1 )
 shader_param/bar_sprite = ExtResource( 5 )
 
@@ -74,6 +75,13 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 8 )
+shader_param/progress = 0.167
+shader_param/fill_color = Color( 0.243137, 0.243137, 0.243137, 1 )
+shader_param/progress_color = Color( 0.8, 0.243137, 0.243137, 1 )
+shader_param/bar_sprite = ExtResource( 5 )
+
 [node name="EventBar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -93,7 +101,7 @@ __meta__ = {
 
 [node name="EventBar" type="ColorRect" parent="AspectRatioContainer"]
 unique_name_in_owner = true
-material = SubResource( 5 )
+material = SubResource( 14 )
 margin_left = 13.8742
 margin_right = 702.926
 margin_bottom = 54.6
@@ -200,8 +208,9 @@ anchor_left = 0.236328
 anchor_top = 0.825
 anchor_right = 0.236328
 anchor_bottom = 0.825
-margin_right = 35.0
-margin_bottom = 35.0
+margin_right = 36.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 18, 18 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -214,3 +223,17 @@ anchor_top = 0.854
 anchor_right = 0.853
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 13 )
+
+[node name="EventBarLarger" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource( 5 )
+anchor_left = 0.150391
+anchor_top = 0.869
+anchor_right = 0.779
+anchor_bottom = 0.975
+rect_scale = Vector2( 1.1, 1.1 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
