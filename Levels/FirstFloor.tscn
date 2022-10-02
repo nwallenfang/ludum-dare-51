@@ -6,7 +6,7 @@
 [ext_resource path="res://Objects/Aufzug.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/FirstFloor.gd" type="Script" id=5]
 [ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/DoorNew.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=8]
 [ext_resource path="res://addons/kenney_prototype_textures/purple/texture_01.png" type="Texture" id=9]
 [ext_resource path="res://Objects/WallText.tscn" type="PackedScene" id=10]
@@ -306,6 +306,14 @@ height = 24.4242
 depth = 0.5
 material = ExtResource( 2 )
 
+[node name="Wall25" type="CSGBox" parent="Walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.8815, 24.08, -26.6461 )
+use_collision = true
+width = 5.29107
+height = 24.4242
+depth = 0.5
+material = ExtResource( 2 )
+
 [node name="Wall19" type="CSGBox" parent="Walls"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.8812, 20.1835, -18.9369 )
 use_collision = true
@@ -370,9 +378,6 @@ air_control = 0.4
 
 [node name="Pickup" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, -25 )
-
-[node name="Door" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.3, 0, 0, 0, 2.1, 0, 0, 0, 3.22, 17, 10.4, -26.7 )
 
 [node name="LevelStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
@@ -573,5 +578,8 @@ material/0 = SubResource( 3 )
 
 [node name="Flag" parent="." instance=ExtResource( 15 )]
 transform = Transform( 0.7248, 0, 0, 0, 0.7248, 0, 0, 0, 0.7248, 23.6786, 23.922, -4.3085 )
+
+[node name="Door2" parent="." instance=ExtResource( 7 )]
+transform = Transform( -5.21811e-08, 0, -1.19377, 0, 1.19377, 0, 1.19377, 0, -5.21811e-08, 16.7094, 8.30906, -26.716 )
 
 [editable path="SimpleScreen"]

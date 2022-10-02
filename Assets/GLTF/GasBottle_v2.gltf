@@ -1,0 +1,198 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "GasBottle_v2",
+            "scale" : [
+                0.5,
+                0.5,
+                0.5
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material.007",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.44797849655151367,
+                    0.036711592227220535,
+                    0.02590673230588436,
+                    1
+                ],
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Material.006",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.7642737030982971,
+                    0.7294957041740417,
+                    0.8000000715255737,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.16535432636737823
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.015",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 621,
+            "max" : [
+                0.5971265435218811,
+                1.85567045211792,
+                0.5971265435218811
+            ],
+            "min" : [
+                -0.5971265435218811,
+                0,
+                -0.5971265435218811
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 621,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 621,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2010,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 671,
+            "max" : [
+                0.36739951372146606,
+                1.9167239665985107,
+                0.3673994243144989
+            ],
+            "min" : [
+                -0.3673994541168213,
+                1.7720656394958496,
+                -0.3673994541168213
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 671,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 671,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 3546,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 7452,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7452,
+            "byteOffset" : 7452
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4968,
+            "byteOffset" : 14904
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4020,
+            "byteOffset" : 19872
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8052,
+            "byteOffset" : 23892
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8052,
+            "byteOffset" : 31944
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5368,
+            "byteOffset" : 39996
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7092,
+            "byteOffset" : 45364
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 52456,
+            "uri" : "GasBottle_v2.bin"
+        }
+    ]
+}
