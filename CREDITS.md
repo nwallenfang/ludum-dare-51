@@ -7,3 +7,5 @@
 - https://www.materialmaker.org/material?id=506
 - https://thenounproject.com/icon/laser-190316/
 - https://thenounproject.com/icon/destruction-4884732/
+- https://thenounproject.com/icon/run-4018015/
+- https://thenounproject.com/icon/fog-174928/

@@ -26,9 +26,11 @@ var random_events_start = [
 	preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
 	preload("res://Logic/Events/BananaEvent.tscn").instance(),
 	preload("res://Logic/Events/ExplosionEvent.tscn").instance(),
-	preload("res://Logic/Events/SecondGunEvent.tscn").instance()
+	preload("res://Logic/Events/SecondGunEvent.tscn").instance(),
+	preload("res://Logic/Events/RunEvent.tscn").instance(),
+	preload("res://Logic/Events/FogEvent.tscn").instance(),
+	preload("res://Logic/Events/EmptyEvent.tscn").instance()
 ]
-
 var random_event_names_start = []
 var random_event_names
 
@@ -40,6 +42,8 @@ func reset():
 	time = 0.0
 	number_triggered = 0
 	random_event_names = random_event_names_start.duplicate()
+	if Game.previous_event != null:
+		Game.previous_event.end_event()
 	
 	
 func _ready():

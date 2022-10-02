@@ -28,6 +28,7 @@ var double_jump = false
 var used_second_jump = false
 var inverted_controls = false
 var invincible = false
+var infinite_run = false
 
 
 var movement_disabled = false
@@ -67,6 +68,8 @@ func _physics_process(delta) -> void:
 	
 	input_axis = Input.get_vector("ui_down", "ui_up",
 			"ui_left", "ui_right")
+	if infinite_run:
+		input_axis[0] = 1
 	
 	direction_input()
 	
