@@ -9,3 +9,4 @@ func _ready():
 			if cc is Particles:
 				cc.one_shot = true
 				cc.emitting = true
+	$LaserDrawer.draw_line(self.global_translation, self.global_translation+ Vector3.UP * .01)

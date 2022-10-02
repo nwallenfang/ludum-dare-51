@@ -8,6 +8,7 @@ func _ready():
 	has_key = false
 	
 	$Player.rotate_y(deg2rad(-180.0))
+	$Player/DrinkAnimation.queue_free()
 	
 	
 
