@@ -1,12 +1,60 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
 [ext_resource path="res://Levels/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://Assets/GLTF/Trank.gltf" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Font/EventNameFont.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Levels/Tutorial.lmbake" type="BakedLightmapData" id=6]
+[ext_resource path="res://Levels/Cube7.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GLTF/chair.gltf" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Cube26.png" type="Texture" id=8]
+[ext_resource path="res://Levels/Trank.png" type="Texture" id=9]
+[ext_resource path="res://Levels/Cube2.png" type="Texture" id=10]
+[ext_resource path="res://Levels/Cube23.png" type="Texture" id=11]
+[ext_resource path="res://Levels/Cube28.png" type="Texture" id=12]
+[ext_resource path="res://Levels/Cube12.png" type="Texture" id=13]
+[ext_resource path="res://Levels/Cube20.png" type="Texture" id=14]
+[ext_resource path="res://Levels/Cube29.png" type="Texture" id=15]
+[ext_resource path="res://Levels/Cube44.png" type="Texture" id=16]
+[ext_resource path="res://Levels/Cube37.png" type="Texture" id=17]
+[ext_resource path="res://Levels/Cube36.png" type="Texture" id=18]
+[ext_resource path="res://Levels/Cube46.png" type="Texture" id=19]
+[ext_resource path="res://Levels/Cube39.png" type="Texture" id=20]
+[ext_resource path="res://Levels/Cube43.png" type="Texture" id=21]
+[ext_resource path="res://Levels/Cube6.png" type="Texture" id=22]
+[ext_resource path="res://Levels/TrankInner.png" type="Texture" id=23]
+[ext_resource path="res://Levels/Cube8.png" type="Texture" id=24]
+[ext_resource path="res://Levels/Cube41.png" type="Texture" id=25]
+[ext_resource path="res://Levels/Cube19.png" type="Texture" id=26]
+[ext_resource path="res://Levels/Cube32.png" type="Texture" id=27]
+[ext_resource path="res://Levels/Cube24.png" type="Texture" id=28]
+[ext_resource path="res://Levels/Cube30.png" type="Texture" id=29]
+[ext_resource path="res://Levels/Cube31.png" type="Texture" id=30]
+[ext_resource path="res://Levels/Cube33.png" type="Texture" id=31]
+[ext_resource path="res://Levels/Cube38.png" type="Texture" id=32]
+[ext_resource path="res://Levels/Cube14.png" type="Texture" id=33]
+[ext_resource path="res://Levels/Cube35.png" type="Texture" id=34]
+[ext_resource path="res://Levels/Cube3.png" type="Texture" id=35]
+[ext_resource path="res://Levels/Cube16.png" type="Texture" id=36]
+[ext_resource path="res://Levels/Cube15.png" type="Texture" id=37]
+[ext_resource path="res://Levels/Cube4.png" type="Texture" id=38]
+[ext_resource path="res://Levels/Chair.png" type="Texture" id=39]
+[ext_resource path="res://Levels/Cube34.png" type="Texture" id=40]
+[ext_resource path="res://Levels/Cube40.png" type="Texture" id=41]
+[ext_resource path="res://Levels/Cube18.png" type="Texture" id=42]
+[ext_resource path="res://Levels/Cube17.png" type="Texture" id=43]
+[ext_resource path="res://Levels/Cube22.png" type="Texture" id=44]
+[ext_resource path="res://Levels/Cube9.png" type="Texture" id=45]
+[ext_resource path="res://Levels/Cube27.png" type="Texture" id=46]
+[ext_resource path="res://Levels/Cube11.png" type="Texture" id=47]
+[ext_resource path="res://Levels/Cube21.png" type="Texture" id=48]
+[ext_resource path="res://Levels/Cube13.png" type="Texture" id=49]
+[ext_resource path="res://Levels/Cube25.png" type="Texture" id=50]
+[ext_resource path="res://Levels/Cube42.png" type="Texture" id=51]
+[ext_resource path="res://Levels/Cube10.png" type="Texture" id=52]
+[ext_resource path="res://Levels/Cube.png" type="Texture" id=53]
+[ext_resource path="res://Levels/Cube45.png" type="Texture" id=54]
+[ext_resource path="res://Levels/Cube5.png" type="Texture" id=55]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -29,6 +77,9 @@ surfaces/0 = {
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.517647, 0.517647, 0.517647, 1 )
 roughness = 0.71
+
+[sub_resource type="BakedLightmapData" id=5]
+user_data = [ NodePath("../Floors/StaticBody/Cube"), ExtResource( 53 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody2/Cube"), ExtResource( 10 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Table/Cube"), ExtResource( 35 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Table2/Cube"), ExtResource( 38 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody4/Cube"), ExtResource( 55 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody3/Cube"), ExtResource( 22 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody5/Cube"), ExtResource( 6 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody7/Cube"), ExtResource( 24 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody8/Cube"), ExtResource( 45 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody9/Cube"), ExtResource( 52 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody10/Cube"), ExtResource( 47 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody11/Cube"), ExtResource( 13 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody12/Cube"), ExtResource( 49 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody13/Cube"), ExtResource( 33 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody6/Cube"), ExtResource( 37 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody14/Cube"), ExtResource( 36 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody18/Cube"), ExtResource( 43 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody22/Cube"), ExtResource( 42 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody19/Cube"), ExtResource( 26 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody20/Cube"), ExtResource( 14 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody21/Cube"), ExtResource( 48 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody15/Cube"), ExtResource( 44 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody16/Cube"), ExtResource( 11 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody17/Cube"), ExtResource( 28 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Trank/Trank"), ExtResource( 9 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Trank/Trank/TrankInner"), ExtResource( 23 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody/Cube"), ExtResource( 50 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody2/Cube"), ExtResource( 8 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody3/Cube"), ExtResource( 46 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody4/Cube"), ExtResource( 12 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody5/Cube"), ExtResource( 15 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody6/Cube"), ExtResource( 29 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody7/Cube"), ExtResource( 30 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody8/Cube"), ExtResource( 27 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody9/Cube"), ExtResource( 31 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody10/Cube"), ExtResource( 40 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody11/Cube"), ExtResource( 34 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody12/Cube"), ExtResource( 18 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody13/Cube"), ExtResource( 17 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody14/Cube"), ExtResource( 32 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody15/Cube"), ExtResource( 20 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody16/Cube"), ExtResource( 41 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody17/Cube"), ExtResource( 25 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody18/Cube"), ExtResource( 51 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody19/Cube"), ExtResource( 21 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody20/Cube"), ExtResource( 16 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody21/Cube"), ExtResource( 54 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody22/Cube"), ExtResource( 19 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Objects/StaticBody/chair/Chair"), ExtResource( 39 ), -1, Rect2( 0, 0, 1, 1 ), -1 ]
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.289265, 0.491648, 0.275386 )
@@ -391,6 +442,7 @@ transform = Transform( 1.4, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 4, 
 shape = SubResource( 1 )
 
 [node name="Cube" type="MeshInstance" parent="Walls/StaticBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6 )
 use_in_baked_light = true
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
@@ -403,6 +455,7 @@ transform = Transform( 2, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -3, 2
 shape = SubResource( 1 )
 
 [node name="Cube" type="MeshInstance" parent="Walls/StaticBody6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6 )
 use_in_baked_light = true
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
@@ -604,7 +657,7 @@ material/0 = SubResource( 3 )
 
 [node name="Label3D" type="Label3D" parent="Text"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 3, 4.70083 )
-use_in_baked_light = true
+generate_lightmap = false
 pixel_size = 0.025
 text = "Use your mouse 
 to look around"
@@ -612,31 +665,23 @@ font = ExtResource( 5 )
 
 [node name="Label3D2" type="Label3D" parent="Text"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.76371, 3, -2.38419e-07 )
-use_in_baked_light = true
+generate_lightmap = false
 pixel_size = 0.025
 text = "Use WASD
 to move"
 font = ExtResource( 5 )
 
-[node name="Label3D3" type="Label3D" parent="Text"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -14.7714 )
-use_in_baked_light = true
-pixel_size = 0.025
-text = "Use shift 
-to run"
-font = ExtResource( 5 )
-
 [node name="Label3D4" type="Label3D" parent="Text"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.79923, 3, -19.7714 )
-use_in_baked_light = true
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -0.200771, 3, -14.7714 )
+generate_lightmap = false
 pixel_size = 0.025
-text = "Use space
+text = "Press space
 to jump"
 font = ExtResource( 5 )
 
 [node name="Label3D5" type="Label3D" parent="Text"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -24.7664 )
-use_in_baked_light = true
+generate_lightmap = false
 pixel_size = 0.023
 text = "Please don't die.
 Your bodily 
@@ -646,7 +691,7 @@ font = ExtResource( 5 )
 
 [node name="Label3D6" type="Label3D" parent="Text"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.53306, -34.7664 )
-use_in_baked_light = true
+generate_lightmap = false
 pixel_size = 0.023
 text = "You research the
 effects of new
@@ -656,7 +701,7 @@ font = ExtResource( 5 )
 
 [node name="Label3D7" type="Label3D" parent="Text"]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 4.75903, 3.76879, -39.8387 )
-use_in_baked_light = true
+generate_lightmap = false
 pixel_size = 0.021
 text = "Every ten 
 seconds you will 
@@ -668,7 +713,12 @@ font = ExtResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19 )
 extents = Vector3( 16, 10, 29 )
 quality = 0
-light_data = ExtResource( 6 )
+bounces = 1
+use_hdr = false
+default_texels_per_unit = 1.0
+atlas_generate = false
+capture_enabled = false
+light_data = SubResource( 5 )
 
 [node name="Lights" type="Spatial" parent="."]
 
