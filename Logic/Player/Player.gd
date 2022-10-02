@@ -25,6 +25,7 @@ var mouse_beginning_set = false
 var double_jump = false
 var used_second_jump = false
 var inverted_controls = false
+var invincible = false
 
 
 var movement_disabled = true
@@ -136,6 +137,7 @@ func get_hurt():
 		emit_signal("player_got_hurt", hp)
 		if hp <= 0:
 			Game.world.restart_level()
+
 
 func _on_HurtBox_area_entered(area):
 	if $HurtTimer.time_left == 0.0:
