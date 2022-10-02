@@ -12,7 +12,7 @@ var player_camera: Camera
 var previous_event
 
 var disable_music = false
-var skip_intro = true
+var skip_intro = false
 
 #var viewport_texture: ViewportTexture setget set_viewport_texture
 var viewport: Viewport setget set_2d_viewport

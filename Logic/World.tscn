@@ -32,6 +32,10 @@ shader_param/vignette_rgb = Color( 0.337255, 0.929412, 0.0352941, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+intro_color = Color( 0.109804, 0.105882, 0.105882, 1 )
+potion_color = Color( 0.337255, 0.929412, 0.0352941, 1 )
+hurt_color = Color( 0.764706, 0.247059, 0.247059, 1 )
+hurt_base_strength = 0.6
 
 [node name="Viewport2D" type="Viewport" parent="."]
 size = Vector2( 256, 256 )
@@ -83,6 +87,13 @@ material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Fader" type="ColorRect" parent="."]
+unique_name_in_owner = true
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 7 )
 
@@ -91,3 +102,5 @@ stream = ExtResource( 5 )
 
 [node name="Level1Stream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="VeryHurtAnimation" type="AnimationPlayer" parent="."]
