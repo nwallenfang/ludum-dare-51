@@ -12,6 +12,9 @@ var fixed_events = {
 	},
 	1: {
 		1: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
+	},
+	2: {
+		2: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),
 	}
 }
 
