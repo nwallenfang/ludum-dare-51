@@ -1,0 +1,1682 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Objects/Level2Ceiling.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Level2Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/SecondFloor.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Level2Floor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Logic/Enemies/Alice.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/ExplosiveBarrel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Effects/LaserGrid.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Logic/Aufzug.gd" type="Script" id=12]
+[ext_resource path="res://Effects/Lightmaps/SecondFloor.lmbake" type="BakedLightmapData" id=13]
+[ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=14]
+
+[sub_resource type="Animation" id=1]
+resource_name = "BridgeBoom"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Platforms/Floor19:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -44, -0.25, 0, 0.25, 0, -44, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Platforms/Floor19:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 23.5768, -0.25, 0, 0.25, 0, -2.39606, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Platforms/Floor19:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -34.7787, -0.25, 0, 0.25, 0, -33.5903, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Platforms/Floor18:translation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -39, -0.25, 0, 0.25, 0, -39, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Platforms/Floor18:translation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 21.9294, -0.25, 0, 0.25, 0, 3.0444, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Platforms/Floor18:translation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -36.3102, -0.25, 0, 0.25, 0, -33.9957, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Platforms/Floor18:rotation_degrees:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( -10, -0.25, 0, 0.25, 0, -10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Platforms/Floor18:rotation_degrees:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Platforms/Floor18:rotation_degrees:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Platforms/Floor6:translation:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( -34, -0.25, 0, 0.25, 0, -34, -0.25, 0, 0.25, 0, -28, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("Platforms/Floor6:translation:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 11.6199, -0.25, 0, 0.25, 0, 11.4471, -0.25, 0, 0.25, 0, 2.81219, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Platforms/Floor6:translation:z")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( -48.7083, -0.25, 0, 0.25, 0, -42.3861, -0.25, 0, 0.25, 0, -33.0709, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("Platforms/Floor6:rotation_degrees:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 20, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 140, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("Platforms/Floor6:rotation_degrees:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("Platforms/Floor6:rotation_degrees:z")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("Platforms/Floor20:translation:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( -24, -0.25, 0, 0.25, 0, -23, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("Platforms/Floor20:translation:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 11.188, -0.25, 0, 0.25, 0, 0.167363, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("Platforms/Floor20:translation:z")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( -32.9028, -0.25, 0, 0.25, 0, -34.7857, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("Platforms/Floor7:translation:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( -39, -0.25, 0, 0.25, 0, -38, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/19/type = "bezier"
+tracks/19/path = NodePath("Platforms/Floor7:translation:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"points": PoolRealArray( 12.4881, -0.25, 0, 0.25, 0, 7.52206, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/20/type = "bezier"
+tracks/20/path = NodePath("Platforms/Floor7:translation:z")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"points": PoolRealArray( -43.7843, -0.25, 0, 0.25, 0, -35.701, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/21/type = "bezier"
+tracks/21/path = NodePath("Platforms/Floor7:rotation_degrees:x")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"points": PoolRealArray( -10, -0.25, 0, 0.25, 0, 140, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/22/type = "bezier"
+tracks/22/path = NodePath("Platforms/Floor7:rotation_degrees:y")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/23/type = "bezier"
+tracks/23/path = NodePath("Platforms/Floor7:rotation_degrees:z")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/24/type = "bezier"
+tracks/24/path = NodePath("Platforms/Floor8:translation:x")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"points": PoolRealArray( -39, -0.25, 0, 0.25, 0, -39, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/25/type = "bezier"
+tracks/25/path = NodePath("Platforms/Floor8:translation:y")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"points": PoolRealArray( 1.55141, -0.25, 0, 0.25, 0, -2.30532, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/26/type = "bezier"
+tracks/26/path = NodePath("Platforms/Floor8:translation:z")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"points": PoolRealArray( -44.9343, -0.25, 0, 0.25, 0, -40.3381, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/27/type = "bezier"
+tracks/27/path = NodePath("Platforms/Floor8:rotation_degrees:x")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"points": PoolRealArray( 10, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/28/type = "bezier"
+tracks/28/path = NodePath("Platforms/Floor8:rotation_degrees:y")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/29/type = "bezier"
+tracks/29/path = NodePath("Platforms/Floor8:rotation_degrees:z")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/30/type = "bezier"
+tracks/30/path = NodePath("Platforms/Floor21:translation:x")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"points": PoolRealArray( -32, -0.25, 0, 0.25, 0, -33.134, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/31/type = "bezier"
+tracks/31/path = NodePath("Platforms/Floor21:translation:y")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"points": PoolRealArray( 17.0054, -0.25, 0, 0.25, 0, 3.2534, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/32/type = "bezier"
+tracks/32/path = NodePath("Platforms/Floor21:translation:z")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"points": PoolRealArray( -35.4419, -0.25, 0, 0.25, 0, -33.0171, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/33/type = "bezier"
+tracks/33/path = NodePath("Platforms/Floor21:rotation_degrees:x")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"points": PoolRealArray( -10, -0.25, 0, 0.25, 0, -10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/34/type = "bezier"
+tracks/34/path = NodePath("Platforms/Floor21:rotation_degrees:y")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 7.8502e-07, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/35/type = "bezier"
+tracks/35/path = NodePath("Platforms/Floor21:rotation_degrees:z")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 60, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/36/type = "bezier"
+tracks/36/path = NodePath("Platforms/Floor9:translation:x")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"points": PoolRealArray( -44, -0.25, 0, 0.25, 0, -44, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/37/type = "bezier"
+tracks/37/path = NodePath("Platforms/Floor9:translation:y")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"points": PoolRealArray( 13.8413, -0.25, 0, 0.25, 0, 5.02597, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/38/type = "bezier"
+tracks/38/path = NodePath("Platforms/Floor9:translation:z")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"points": PoolRealArray( -48.964, -0.25, 0, 0.25, 0, -32.7321, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/39/type = "bezier"
+tracks/39/path = NodePath("Platforms/Floor9:rotation_degrees:x")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"points": PoolRealArray( 20, -0.25, 0, 0.25, 0, -10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/40/type = "bezier"
+tracks/40/path = NodePath("Platforms/Floor9:rotation_degrees:y")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/41/type = "bezier"
+tracks/41/path = NodePath("Platforms/Floor9:rotation_degrees:z")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/42/type = "bezier"
+tracks/42/path = NodePath("Platforms/Floor10:translation:x")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"points": PoolRealArray( -49, -0.25, 0, 0.25, 0, -46.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/43/type = "bezier"
+tracks/43/path = NodePath("Platforms/Floor10:translation:y")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"points": PoolRealArray( 13.9939, -0.25, 0, 0.25, 0, 9.69379, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/44/type = "bezier"
+tracks/44/path = NodePath("Platforms/Floor10:translation:z")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"points": PoolRealArray( -41.0035, -0.25, 0, 0.25, 0, -37.9606, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/45/type = "bezier"
+tracks/45/path = NodePath("Platforms/Floor10:rotation_degrees:x")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/keys = {
+"points": PoolRealArray( -10, -0.25, 0, 0.25, 0, 70, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/46/type = "bezier"
+tracks/46/path = NodePath("Platforms/Floor10:rotation_degrees:y")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -180, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/47/type = "bezier"
+tracks/47/path = NodePath("Platforms/Floor10:rotation_degrees:z")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 150, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/48/type = "bezier"
+tracks/48/path = NodePath("Platforms/Floor14:translation:x")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/keys = {
+"points": PoolRealArray( -53.5605, -0.25, 0, 0.25, 0, -51.1482, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/49/type = "bezier"
+tracks/49/path = NodePath("Platforms/Floor14:translation:y")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/keys = {
+"points": PoolRealArray( 12.412, -0.25, 0, 0.25, 0, 10.15, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/50/type = "bezier"
+tracks/50/path = NodePath("Platforms/Floor14:translation:z")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"points": PoolRealArray( -47.4892, -0.25, 0, 0.25, 0, -43.9372, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/51/type = "bezier"
+tracks/51/path = NodePath("Platforms/Floor14:rotation_degrees:x")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"points": PoolRealArray( 45, -0.25, 0, 0.25, 0, -18.1925, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/52/type = "bezier"
+tracks/52/path = NodePath("Platforms/Floor14:rotation_degrees:y")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"points": PoolRealArray( 2.00542e-06, -0.25, 0, 0.25, 0, -111.054, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/53/type = "bezier"
+tracks/53/path = NodePath("Platforms/Floor14:rotation_degrees:z")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"points": PoolRealArray( 135, -0.25, 0, 0.25, 0, -2.28659, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/54/type = "bezier"
+tracks/54/path = NodePath("Platforms/Floor13:translation:x")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/keys = {
+"points": PoolRealArray( -50.7321, -0.25, 0, 0.25, 0, -50.9157, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/55/type = "bezier"
+tracks/55/path = NodePath("Platforms/Floor13:translation:y")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/keys = {
+"points": PoolRealArray( 12.412, -0.25, 0, 0.25, 0, 11.3569, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/56/type = "bezier"
+tracks/56/path = NodePath("Platforms/Floor13:translation:z")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"points": PoolRealArray( -47.4892, -0.25, 0, 0.25, 0, -46.7375, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/57/type = "bezier"
+tracks/57/path = NodePath("Platforms/Floor13:rotation_degrees:x")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"points": PoolRealArray( 45, -0.25, 0, 0.25, 0, 3.84098, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/58/type = "bezier"
+tracks/58/path = NodePath("Platforms/Floor13:rotation_degrees:y")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"points": PoolRealArray( 1.04565e-06, -0.25, 0, 0.25, 0, 20.7536, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/59/type = "bezier"
+tracks/59/path = NodePath("Platforms/Floor13:rotation_degrees:z")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/keys = {
+"points": PoolRealArray( 30, -0.25, 0, 0.25, 0, -5.75357, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Platforms/Floor19:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -44, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Platforms/Floor19:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 23.5768, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Platforms/Floor19:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -34.7787, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Platforms/Floor18:translation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -39, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Platforms/Floor18:translation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 21.9294, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Platforms/Floor18:translation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -36.3102, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Platforms/Floor18:rotation_degrees:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( -10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Platforms/Floor18:rotation_degrees:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Platforms/Floor18:rotation_degrees:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Platforms/Floor6:translation:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( -34, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("Platforms/Floor6:translation:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 11.6199, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Platforms/Floor6:translation:z")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( -48.7083, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("Platforms/Floor6:rotation_degrees:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 20, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("Platforms/Floor6:rotation_degrees:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("Platforms/Floor6:rotation_degrees:z")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("Platforms/Floor20:translation:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( -24, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("Platforms/Floor20:translation:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 11.188, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("Platforms/Floor20:translation:z")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( -32.9028, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("Platforms/Floor7:translation:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( -39, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/19/type = "bezier"
+tracks/19/path = NodePath("Platforms/Floor7:translation:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"points": PoolRealArray( 12.4881, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/20/type = "bezier"
+tracks/20/path = NodePath("Platforms/Floor7:translation:z")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"points": PoolRealArray( -43.7843, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/21/type = "bezier"
+tracks/21/path = NodePath("Platforms/Floor7:rotation_degrees:x")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"points": PoolRealArray( -10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/22/type = "bezier"
+tracks/22/path = NodePath("Platforms/Floor7:rotation_degrees:y")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/23/type = "bezier"
+tracks/23/path = NodePath("Platforms/Floor7:rotation_degrees:z")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/24/type = "bezier"
+tracks/24/path = NodePath("Platforms/Floor8:translation:x")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"points": PoolRealArray( -39, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/25/type = "bezier"
+tracks/25/path = NodePath("Platforms/Floor8:translation:y")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"points": PoolRealArray( 1.55141, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/26/type = "bezier"
+tracks/26/path = NodePath("Platforms/Floor8:translation:z")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"points": PoolRealArray( -44.9343, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/27/type = "bezier"
+tracks/27/path = NodePath("Platforms/Floor8:rotation_degrees:x")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"points": PoolRealArray( 10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/28/type = "bezier"
+tracks/28/path = NodePath("Platforms/Floor8:rotation_degrees:y")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/29/type = "bezier"
+tracks/29/path = NodePath("Platforms/Floor8:rotation_degrees:z")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/30/type = "bezier"
+tracks/30/path = NodePath("Platforms/Floor21:translation:x")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"points": PoolRealArray( -32, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/31/type = "bezier"
+tracks/31/path = NodePath("Platforms/Floor21:translation:y")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"points": PoolRealArray( 17.0054, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/32/type = "bezier"
+tracks/32/path = NodePath("Platforms/Floor21:translation:z")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"points": PoolRealArray( -35.4419, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/33/type = "bezier"
+tracks/33/path = NodePath("Platforms/Floor21:rotation_degrees:x")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"points": PoolRealArray( -10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/34/type = "bezier"
+tracks/34/path = NodePath("Platforms/Floor21:rotation_degrees:y")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/35/type = "bezier"
+tracks/35/path = NodePath("Platforms/Floor21:rotation_degrees:z")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/36/type = "bezier"
+tracks/36/path = NodePath("Platforms/Floor9:translation:x")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"points": PoolRealArray( -44, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/37/type = "bezier"
+tracks/37/path = NodePath("Platforms/Floor9:translation:y")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"points": PoolRealArray( 13.8413, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/38/type = "bezier"
+tracks/38/path = NodePath("Platforms/Floor9:translation:z")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"points": PoolRealArray( -48.964, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/39/type = "bezier"
+tracks/39/path = NodePath("Platforms/Floor9:rotation_degrees:x")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"points": PoolRealArray( 20, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/40/type = "bezier"
+tracks/40/path = NodePath("Platforms/Floor9:rotation_degrees:y")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/41/type = "bezier"
+tracks/41/path = NodePath("Platforms/Floor9:rotation_degrees:z")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/42/type = "bezier"
+tracks/42/path = NodePath("Platforms/Floor10:translation:x")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"points": PoolRealArray( -49, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/43/type = "bezier"
+tracks/43/path = NodePath("Platforms/Floor10:translation:y")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"points": PoolRealArray( 13.9939, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/44/type = "bezier"
+tracks/44/path = NodePath("Platforms/Floor10:translation:z")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"points": PoolRealArray( -41.0035, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/45/type = "bezier"
+tracks/45/path = NodePath("Platforms/Floor10:rotation_degrees:x")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/keys = {
+"points": PoolRealArray( -10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/46/type = "bezier"
+tracks/46/path = NodePath("Platforms/Floor10:rotation_degrees:y")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/47/type = "bezier"
+tracks/47/path = NodePath("Platforms/Floor10:rotation_degrees:z")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/48/type = "bezier"
+tracks/48/path = NodePath("Platforms/Floor14:translation:x")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/keys = {
+"points": PoolRealArray( -53.5605, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/49/type = "bezier"
+tracks/49/path = NodePath("Platforms/Floor14:translation:y")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/keys = {
+"points": PoolRealArray( 12.412, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/50/type = "bezier"
+tracks/50/path = NodePath("Platforms/Floor14:translation:z")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"points": PoolRealArray( -47.4892, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/51/type = "bezier"
+tracks/51/path = NodePath("Platforms/Floor14:rotation_degrees:x")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"points": PoolRealArray( 45, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/52/type = "bezier"
+tracks/52/path = NodePath("Platforms/Floor14:rotation_degrees:y")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"points": PoolRealArray( 2.00542e-06, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/53/type = "bezier"
+tracks/53/path = NodePath("Platforms/Floor14:rotation_degrees:z")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"points": PoolRealArray( 135, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/54/type = "bezier"
+tracks/54/path = NodePath("Platforms/Floor13:translation:x")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/keys = {
+"points": PoolRealArray( -50.7321, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/55/type = "bezier"
+tracks/55/path = NodePath("Platforms/Floor13:translation:y")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/keys = {
+"points": PoolRealArray( 12.412, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/56/type = "bezier"
+tracks/56/path = NodePath("Platforms/Floor13:translation:z")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"points": PoolRealArray( -47.4892, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/57/type = "bezier"
+tracks/57/path = NodePath("Platforms/Floor13:rotation_degrees:x")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"points": PoolRealArray( 45, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/58/type = "bezier"
+tracks/58/path = NodePath("Platforms/Floor13:rotation_degrees:y")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"points": PoolRealArray( 1.04565e-06, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/59/type = "bezier"
+tracks/59/path = NodePath("Platforms/Floor13:rotation_degrees:z")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/keys = {
+"points": PoolRealArray( 30, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="Level2" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Platforms" type="Spatial" parent="."]
+
+[node name="Floor2" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 5, 0, 0, 0, 1.2, -2, -4, -15 )
+
+[node name="Floor3" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 5, 0, 0, 0, 1.2, 2, -3, -21 )
+
+[node name="Floor4" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 5, 0, 0, 0, 1.2, 0, -2, -27 )
+
+[node name="Floor5" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 5, 0, 0, 0, 1.2, -4, -1, -30 )
+
+[node name="Floor6" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 4.69846, -0.410424, 0, 1.7101, 1.12763, -34, 11.6199, -48.7083 )
+
+[node name="Floor20" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 4.69846, -0.410424, 0, 1.7101, 1.12763, -24, 11.188, -32.9028 )
+
+[node name="Floor9" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 4.69846, -0.410424, 0, 1.7101, 1.12763, -44, 13.8413, -48.964 )
+
+[node name="Floor19" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 4.69846, -0.410424, 0, 1.7101, 1.12763, -44, 23.5768, -34.7787 )
+
+[node name="Floor7" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 4.92404, 0.208378, 0, -0.868241, 1.18177, -39, 12.4881, -43.7843 )
+
+[node name="Floor18" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 4.92404, 0.208378, 0, -0.868241, 1.18177, -39, 21.9294, -36.3102 )
+
+[node name="Floor21" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 4.92404, 0.208378, 0, -0.868241, 1.18177, -32, 17.0054, -35.4419 )
+
+[node name="Floor8" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 8.86327, -0.250053, 0, 1.56283, 1.41812, -39, 1.55141, -44.9343 )
+
+[node name="Floor15" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 8.86327, -0.250053, 0, 1.56283, 1.41812, -39, -9.39564, -34.6795 )
+
+[node name="Floor16" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 8.45723, 0.492509, 0, -3.07818, 1.35316, -28, -7.34352, -29.0413 )
+
+[node name="Floor10" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 4.92404, 0.208378, 0, -0.868241, 1.18177, -49, 13.9939, -41.0035 )
+
+[node name="Floor11" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 8.86327, -0.250053, 0, 1.56283, 1.41812, -49, 3.17373, -42.6174 )
+
+[node name="Floor17" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.15911, 2.32937, -3.72024e-10, -0.305864, 8.56126, -0.250053, -0.0539322, 1.50958, 1.41812, -49, -7.54259, -39.4299 )
+
+[node name="Floor12" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 7.37237, 0.82595, 0, -5.16219, 1.17958, -49, 8.90779, -46.6325 )
+
+[node name="Floor13" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.03923, -2.16, 1.85829e-08, 0.424264, 2.64545, -1.01823, 0.424264, 2.64545, 1.01823, -50.7321, 12.412, -47.4892 )
+
+[node name="Floor14" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( -0.848528, -3.0547, 3.56394e-08, 0.6, -2.16, -1.01823, 0.6, -2.16, 1.01823, -53.5605, 12.412, -47.4892 )
+
+[node name="Floor" type="Spatial" parent="."]
+
+[node name="Floor1" parent="Floor" instance=ExtResource( 6 )]
+transform = Transform( 10, 0, 0, 0, 0.2, 0, 0, 0, 6, 0, 0, -4 )
+
+[node name="Floor3" parent="Floor" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-07, 0, -6, 0, 0.2, 0, 10, 0, -2.62268e-07, -13, 5, -31 )
+
+[node name="Floor7" parent="Floor" instance=ExtResource( 6 )]
+transform = Transform( -7.43094e-07, 0, -6, 0, 0.2, 0, 17, 0, -2.62268e-07, -59, 17, -32 )
+
+[node name="Floor5" parent="Floor" instance=ExtResource( 6 )]
+transform = Transform( -1.96701e-07, 0, -5.4, 0, 0.2, 0, 4.5, 0, -2.36041e-07, -19, 15, -45.4 )
+
+[node name="Floor6" parent="Floor" instance=ExtResource( 6 )]
+transform = Transform( 3.81838, 0, -3.81838, 0, 0.2, 0, 3.81838, 0, 3.81838, -24.4444, 15, -49.5012 )
+
+[node name="Floor4" parent="Floor" instance=ExtResource( 6 )]
+transform = Transform( -1.45471e-07, 0, -2.268, 0, 0.2, 0, 3.328, 0, -9.91374e-08, -10.2, 15, -45.3 )
+script = ExtResource( 12 )
+target_translation = Vector3( 0, -10, 0 )
+
+[node name="Tween" type="Tween" parent="Floor/Floor4"]
+
+[node name="Floor2" parent="Floor" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 1.2, -4, 5, -22 )
+
+[node name="Wall" type="Spatial" parent="."]
+
+[node name="StaticBody" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 0.2, -5, 1, 2 )
+
+[node name="StaticBody2" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 0.2, 5, 1, 2 )
+
+[node name="StaticBody3" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -2.18557e-07, 0, 0.2, 0, 5, 0, -5, 0, -8.74228e-09, 10, 1, -3 )
+
+[node name="StaticBody7" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -2.18557e-07, 0, 0.2, 0, 8.5, 0, -3, 0, -5.24537e-09, 4.8, 1, -10.8 )
+
+[node name="StaticBody9" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 5.1, 0, -5.94475e-09, 0, 5, 0, -8.74228e-08, 0, 0.2, -0.2, -5.2, -9.8 )
+
+[node name="StaticBody8" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -1.31134e-07, 0, 0.2, 0, 9.5, 0, -3, 0, -8.74228e-09, -4.78568, 1, -10.8 )
+
+[node name="StaticBody11" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -1.31134e-07, 0, 0.2, 0, 9.5, 0, -5.4, 0, -1.57361e-08, -4.78568, 1, -19.2 )
+
+[node name="StaticBody15" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -4, 0, -3.01992e-08, 0, 9.5, 0, 6.03983e-07, 0, -0.2, -9, 1.3, -24.4 )
+
+[node name="StaticBody18" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, -16.2, 1.2, -24.4 )
+
+[node name="StaticBody30" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -11.664, 0, -3.01992e-08, 0, 21.85, 0, 1.76122e-06, 0, -0.2, -31.1, 5.5, -24.4 )
+
+[node name="StaticBody38" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -5.832, 0, -3.01992e-08, 0, 21.85, 0, 8.80608e-07, 0, -0.2, -47.2, 5.5, -24.4 )
+
+[node name="StaticBody34" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 1.9668e-06, 8.5087e-07, -0.2, -5.832, 7.56906, 0, 10.1013, 4.37, 3.89414e-08, -33.2, 22.2971, -26.7806 )
+
+[node name="StaticBody19" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, -16.2, -0.2, -40.9 )
+
+[node name="StaticBody27" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, -20.2, -0.2, -40.9 )
+
+[node name="StaticBody28" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -4.39877, 0, 0.141421, 0, 9.5, 0, -4.39877, 0, -0.141421, -27.3418, 5.4, -45.2134 )
+
+[node name="StaticBody24" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -3.24, 0, -3.01992e-08, 0, 5.7, 0, 4.89226e-07, 0, -0.2, -10.2, 15, -40.9 )
+
+[node name="StaticBody26" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -6.48, 0, -3.01992e-08, 0, 5.7, 0, 9.78453e-07, 0, -0.2, -18.2, 15, -40.9 )
+
+[node name="StaticBody20" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, -10.2, -4.4, -40.9 )
+
+[node name="StaticBody17" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -2.69087e-07, 0, 0.2, 0, 9.5, 0, -6.156, 0, -8.74228e-09, -7.28568, -4.6, -27.4 )
+
+[node name="StaticBody32" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -4.03631e-07, 0, 0.2, 0, 9.5, 0, -9.234, 0, -8.74228e-09, -18.7857, -4.6, -33.4 )
+
+[node name="StaticBody12" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -1.31134e-07, 0, 0.2, 0, 9.5, 0, -5.4, 0, -1.57361e-08, 4.81432, 1, -19.2 )
+
+[node name="StaticBody13" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -1.31134e-07, 0, 0.2, 0, 9.5, 0, -4.32, 0, -1.25889e-08, 4.81432, 1, -28.9 )
+
+[node name="StaticBody14" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 6.912, 0, -2.67125e-09, 0, 9.5, 0, 9.23185e-08, 0, 0.2, -0.1, 1, -33 )
+
+[node name="StaticBody16" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -1.88833e-07, 0, -0.2, 0, 9.5, 0, 4.32, 0, -8.74228e-09, -7.2, 1, -37.1 )
+
+[node name="StaticBody31" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 9.90499e-15, -4.15258e-07, -0.2, -5.184, -4.15258e-07, 2.64698e-23, -2.266e-07, 9.5, -8.74228e-09, -7.2, 15, -32.1 )
+
+[node name="StaticBody21" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -1.88833e-07, 0, -0.2, 0, 19.5415, 0, 4.32, 0, -8.74228e-09, -7.2, 1, -45.1 )
+
+[node name="StaticBody22" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -1.88833e-07, 0, -0.2, 0, 13.775, 0, 4.32, 0, -8.74228e-09, -13.2, 1, -45.1 )
+
+[node name="StaticBody23" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -9.936, 0, 3.01992e-08, 0, 21.489, 0, -1.50029e-06, 0, -0.2, -16.2, 1, -49.1 )
+
+[node name="StaticBody25" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -9.936, 0, 3.01992e-08, 0, 22.3486, 0, -1.50029e-06, 0, -0.2, -36, 2, -49.1 )
+
+[node name="StaticBody35" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -9.78505, 0.388079, -1.74846e-08, 1.72537, 2.2009, 0, 8.55436e-07, -3.39269e-08, -0.2, -35.293, 24.5039, -41.1 )
+
+[node name="StaticBody36" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 9.936, 0, 0, 0, 2.23486, 0, 0, 0, 0.2, -22.9601, 22.5937, -41.1 )
+
+[node name="StaticBody37" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 3.9744, 0, 0, 0, 2.23486, 0, 0, 0, 1.12, -29.3601, 22.5937, -40 )
+
+[node name="StaticBody29" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -9.936, 0, 3.01992e-08, 0, 23.6379, 0, -1.50029e-06, 0, -0.2, -55.9, 1, -49.1 )
+
+[node name="StaticBody39" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -9.59839e-07, 0, -0.2, 0, 23.6379, 0, 21.9586, 0, -8.74228e-09, -64.9, 1, -32.6 )
+
+[node name="StaticBody41" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 10.9793, 0, 0, 0, 23.6379, 0, 0, 0, 0.2, -63.9, 1, -15 )
+
+[node name="StaticBody33" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 2.78584e-06, 0, 0.2, 0, 23.6379, 0, -14.3078, 0, 3.89414e-08, -52.9, -6.8, -36.1 )
+
+[node name="StaticBody40" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( 2.78584e-06, 0, 0.2, 0, 23.6379, 0, -14.3078, 0, 3.89414e-08, -52.9, 3.2, -14.1 )
+
+[node name="StaticBody10" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -4.725, 0, -2.75382e-08, 0, 2.85, 0, 2.62268e-07, 0, -0.2, -0.0856789, 9, -12.4 )
+
+[node name="StaticBody5" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -5, 0, 0, 0, 5, 0, 2.38419e-07, 0, -0.2, 10, 1, -8 )
+
+[node name="StaticBody6" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -5, 0, 0, 0, 5, 0, 7.15256e-07, 0, -0.2, -10, 1, -8 )
+
+[node name="StaticBody4" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -2.18557e-07, 0, 0.2, 0, 5, 0, -5, 0, -8.74228e-09, -10, 1, -3 )
+
+[node name="Ceiling" type="Spatial" parent="."]
+
+[node name="StaticBody" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 5, 6, -3 )
+
+[node name="StaticBody2" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -5, 6, -3 )
+
+[node name="StaticBody3" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 2.56, 5, 6, -10 )
+
+[node name="StaticBody6" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 7, 0, 0, 0, 0.2, 0, 0, 0, 5.12, -0.2, 10, -29 )
+
+[node name="StaticBody8" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 13.552, 0, 0, 0, 0.173205, -5.48352, 0, 0.1, 9.49774, -19.9, 15.0981, -31.8301 )
+
+[node name="StaticBody7" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 4.2, 0, 0, 0, 0.2, 0, 0, 0, 4.096, -11.3, 20.4, -45 )
+
+[node name="StaticBody9" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 5.04, 0, 0, 0, 0.2, 0, 0, 0, 4.096, -19.8, 20.4, -45 )
+
+[node name="StaticBody11" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 25.8552, 0, 0, 0, 0.2, 0, 0, 0, 13.312, -56.8, 24.4, -37 )
+
+[node name="StaticBody12" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 6.25696, 0, 0, 0, 0.2, 0, 0, 0, 13.312, -58.7, 24.4, -19 )
+
+[node name="StaticBody10" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 11.4159, 0.0347297, 0, -2.01293, 0.196962, 0, 0, 0, 4.096, -35.9269, 22.421, -45 )
+
+[node name="StaticBody5" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 0.196962, -1.1558, 0, 0.0347296, 6.55488, 0, 9, -18 )
+
+[node name="StaticBody4" parent="Ceiling" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 2.56, -5, 6, -10 )
+
+[node name="Enemies" type="Spatial" parent="."]
+
+[node name="Alice1" parent="Enemies" groups=["trigger5"] instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1.2, 0, 0.736, 0, 1, 0, -5.24536e-08, -3.6, 5.41165, -22 )
+
+[node name="Alice1 Trigger" parent="Enemies" instance=ExtResource( 8 )]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1.5, -2, 1, -15 )
+id = 5
+
+[node name="Bob" parent="Enemies" groups=["trigger6"] instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 5, -38 )
+
+[node name="Bob2" parent="Enemies" groups=["trigger6"] instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, -39 )
+
+[node name="Bob3" parent="Enemies" groups=["trigger6"] instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5, -38 )
+
+[node name="Bob123 Trigger" parent="Enemies" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 2.5, 0, 0, 0, 4.4, -8, 7, -29 )
+id = 6
+
+[node name="Alice" parent="Enemies" groups=["trigger6"] instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.9, -32 )
+
+[node name="Alice2" parent="Enemies" groups=["trigger6"] instance=ExtResource( 7 )]
+transform = Transform( -1, 1.30766e-07, -7.54979e-08, 0, 0.5, 0.866025, 1.50996e-07, 0.866025, -0.5, -48.6, 12.7, -47.3464 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
+
+[node name="LevelStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Objects" type="Spatial" parent="."]
+
+[node name="ExplosiveBarrel" parent="Objects" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, -36 )
+
+[node name="LaserGrid" parent="Objects" instance=ExtResource( 11 )]
+transform = Transform( 3.11922, 0, 0, 0, 1, 0, 0, 0, 2.49537, -34, -5, -34 )
+script = null
+
+[node name="Flag" parent="Objects" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 19, -22 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BridgeBoom = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 6, -27 )
+extents = Vector3( 49, 29, 39 )
+quality = 2
+use_hdr = false
+atlas_generate = false
+capture_enabled = false
+light_data = ExtResource( 13 )
+
+[node name="Lamps" type="Spatial" parent="."]
+
+[node name="OmniLight" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 4.8, -3 )
+light_color = Color( 0.427451, 1, 0.329412, 1 )
+light_energy = 8.78
+
+[node name="OmniLight2" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.8, -3 )
+light_color = Color( 0.329412, 1, 1, 1 )
+light_energy = 8.78
+
+[node name="OmniLight3" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.3, -22 )
+light_color = Color( 0.380392, 1, 0.329412, 1 )
+light_energy = 8.78
+
+[node name="OmniLight19" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 11.3, -30 )
+light_color = Color( 0.380392, 1, 0.329412, 1 )
+light_energy = 6.888
+shadow_enabled = true
+omni_range = 16.211
+omni_attenuation = 1.93187
+
+[node name="OmniLight21" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 19.3, -30 )
+light_color = Color( 0.380392, 1, 0.329412, 1 )
+light_energy = 1.555
+shadow_enabled = true
+omni_range = 51.852
+omni_attenuation = 1.93187
+
+[node name="OmniLight20" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 11.3, -41.4 )
+light_color = Color( 0.380392, 1, 0.329412, 1 )
+light_energy = 6.888
+shadow_enabled = true
+omni_range = 16.211
+omni_attenuation = 1.93187
+
+[node name="OmniLight4" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, -4, -29 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 9.397
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight5" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -4, -32 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight6" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -4, -44 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight7" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -4, -45 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight16" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -4, -40 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight17" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51, -4, -43 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight8" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -4, -31 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight18" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, -4, -29 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight9" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, -4, -30 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight11" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33, -4, -29 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight12" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, -4, -36 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight13" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -4, -42 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight14" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, -4, -42 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight15" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, -4, -42 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
+
+[node name="OmniLight10" type="OmniLight" parent="Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47, -4, -35 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 11.289
+omni_range = 7.151
+omni_attenuation = 1.93187
