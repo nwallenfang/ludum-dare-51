@@ -34,6 +34,7 @@ func intro_over():
 	set_process(true)
 
 func reset():
+	set_process(false)
 	time = 0.0
 	number_triggered = 0
 	random_event_names = random_event_names_start.duplicate()

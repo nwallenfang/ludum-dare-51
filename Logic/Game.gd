@@ -68,6 +68,7 @@ func load_next_level():
 		Game.level = null
 		world.get_node("ViewportContainer/Viewport").add_child(new_level)
 		Game.level = new_level
+		Events.reset()
 		
 	
 	world.fade_in(0.4)
