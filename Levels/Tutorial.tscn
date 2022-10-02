@@ -481,4 +481,4 @@ transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -70 )
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
 
 [node name="Ubershader" parent="." instance=ExtResource( 12 )]
-transform = Transform( 0.0348362, 0, 0, 0, 0.0348362, 0, 0, 0, 0.0348362, -2.00813, 2.33504, 4.67118 )
+transform = Transform( 0.0348362, 0, 0, 0, 0.0348362, 0, 0, 0, 0.0348362, -2.00813, 2.33504, 4.65104 )
