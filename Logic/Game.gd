@@ -18,6 +18,8 @@ var skip_intro = false
 var viewport: Viewport setget set_2d_viewport
 var viewport_material: SpatialMaterial
 
+var text_screen_ui
+
 
 
 func _ready() -> void:

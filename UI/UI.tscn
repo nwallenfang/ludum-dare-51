@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/EventBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UI.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Font/EventNameFont.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Font/EventNameFontSmaller.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Font/IntroFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Sprites/crosshair.png" type="Texture" id=5]
 
 [sub_resource type="Shader" id=1]
@@ -42,25 +41,12 @@ margin_right = 40.0
 margin_bottom = 14.0
 text = "FPS:"
 
-[node name="EventName" type="Label" parent="CanvasLayer"]
-visible = false
-anchor_top = 0.683333
-anchor_right = 1.0
-anchor_bottom = 0.766
-margin_bottom = 4.40002
-custom_fonts/font = ExtResource( 4 )
-text = "Event Name"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="IntroLabel" type="Label" parent="CanvasLayer"]
 anchor_top = 0.683333
 anchor_right = 1.0
 anchor_bottom = 0.766
-margin_top = 1.00024
-margin_bottom = 5.40027
+margin_top = 9.00018
+margin_bottom = 18.4
 custom_fonts/font = ExtResource( 3 )
 text = "Click to drink totally safe potion"
 align = 1

@@ -34,13 +34,13 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="Viewport2D" type="Viewport" parent="."]
-size = Vector2( 128, 128 )
+size = Vector2( 256, 256 )
 hdr = false
 usage = 0
 render_target_v_flip = true
 script = ExtResource( 9 )
 
-[node name="Control" parent="Viewport2D" instance=ExtResource( 10 )]
+[node name="2DText" parent="Viewport2D" instance=ExtResource( 10 )]
 
 [node name="Camera2D" type="Camera2D" parent="Viewport2D"]
 

@@ -56,6 +56,7 @@ func restart_level():
 	$"%Viewport".add_child(load(Game.level_list[Game.level_index]).instance())
 	set_process_input(true)
 	set_process_unhandled_input(true)
+	Ui.reset()
 	Events.reset()
 	
 

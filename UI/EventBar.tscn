@@ -55,6 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 greyed_out = Color( 0.376471, 0.376471, 0.376471, 1 )
+question_mark_tex = ExtResource( 6 )
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 anchor_left = 0.15
@@ -163,7 +164,7 @@ explosiveness = 0.6
 process_material = SubResource( 10 )
 texture = ExtResource( 2 )
 
-[node name="FixedIcons" type="Node" parent="."]
+[node name="FixedIcons" type="Control" parent="."]
 
 [node name="FixedIcon" type="ColorRect" parent="FixedIcons"]
 visible = false
