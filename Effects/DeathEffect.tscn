@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Effects/DeathEffect.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+max_value = 10.0
+_data = [ Vector2( 0, 6.77273 ), 0.0, -28.3878, 0, 1, Vector2( 0.238579, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 1, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.388325, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.85533, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 2, 0 )
+angular_velocity = 137.8
+angular_velocity_random = 1.0
+radial_accel_curve = SubResource( 2 )
+scale = 8.0
+scale_random = 0.55
+scale_curve = SubResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=6]
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+size = Vector2( 0.1, 0.1 )
+
+[node name="DeathEffect" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.361775, 0 )
+emitting = false
+amount = 12
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB( -5.35332, -0.987255, -5.39989, 8.76856, 13.4668, 10.9114 )
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 7 )

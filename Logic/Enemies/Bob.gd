@@ -44,6 +44,8 @@ func _physics_process(delta):
 			state = STATES.AFTER_DASH
 		STATES.AFTER_DASH:
 			pass
+		STATES.DEATH:
+			pass
 	
 	if is_on_floor():
 		snap = -get_floor_normal() - get_floor_velocity() * delta
@@ -89,8 +91,12 @@ func accelerate(delta: float) -> void:
 var hp := 50
 func damage(amount: int):
 	hp -= amount
+	hurt_visuals()
 	if hp <= 0:
-		self.queue_free()
+		death_animation()
+		state = STATES.DEATH
+		direction = Vector3.ZERO
+		$Hitbox.queue_free()
 
 func trigger():
 	state = STATES.AGGRO
@@ -99,8 +105,27 @@ func dash():
 	pass # TODO Warning
 	print("REEEE")
 	yield(get_tree().create_timer(1.5),"timeout")
+	if state == STATES.DEATH:
+		return
 	direction = self.global_translation.direction_to(Game.player.global_translation) * dash_acc
 	yield(get_tree().create_timer(.3),"timeout")
 	direction = Vector3.ZERO
 	yield(get_tree().create_timer(1),"timeout")
 	state = STATES.AGGRO
+
+const DEATH_EFFECT = preload("res://Effects/DeathEffect.tscn")
+func death_animation():
+	$AnimationPlayer.play("death")
+	yield(get_tree().create_timer(1),"timeout")
+	var death_effect = DEATH_EFFECT.instance()
+	get_tree().current_scene.add_child(death_effect)
+	death_effect.global_translation = $"%DeathEffectSpawn".global_translation
+	queue_free()
+
+func hurt_visuals():
+	for m in $Model.get_children():
+		if m is MeshInstance:
+			m = m as MeshInstance
+			if m.material_overlay != null:
+				$HurtTween.interpolate_property(m.material_overlay, "albedo_color:a", .7, .0, .4)
+	$HurtTween.start()

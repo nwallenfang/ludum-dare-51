@@ -18,6 +18,8 @@ func fly(start_: Vector3, end_: Vector3, height_: float, speed: float):
 	$Tween.interpolate_property(self, "global_translation:z", start.z, end.z, time)
 	$Tween.interpolate_property(self, "fly_offset", 0.0, 1.0, time)
 	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	crash()
 
 func set_fly_offset(x: float):
 	fly_offset = x

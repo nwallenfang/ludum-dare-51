@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Logic/Enemies/Alice.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/RedOverlay.tres" type="Material" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.629402
@@ -9,6 +10,37 @@ height = 1.12596
 [sub_resource type="CapsuleMesh" id=2]
 
 [sub_resource type="CylinderMesh" id=3]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Model:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -180, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Model:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -180, 0 ), Vector3( -90, -180, 0 ) ]
+}
 
 [node name="Alice" type="Spatial"]
 script = ExtResource( 1 )
@@ -26,17 +58,29 @@ wait_time = 4.0
 one_shot = true
 
 [node name="Model" type="Spatial" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Model"]
 transform = Transform( 0.510391, 0, 0, 0, -3.12205e-08, 0.714242, 0, -0.510391, -2.23099e-08, 0, 0.92331, 0 )
+material_overlay = ExtResource( 2 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 
 [node name="MeshInstance2" type="MeshInstance" parent="Model"]
 transform = Transform( 0.132765, 0, 0, 0, -0.169149, 0.12519, 0, -0.479042, -0.0442042, 0, 1.36361, 0.556296 )
+material_overlay = ExtResource( 2 )
 mesh = SubResource( 3 )
 
 [node name="ShotPoint" type="Spatial" parent="Model/MeshInstance2"]
 unique_name_in_owner = true
 transform = Transform( 3.84432, -2.84217e-14, 0, 7.10543e-15, 0.947328, -0.468099, 7.10543e-15, 1.27997, 5.07281, 0, -0.980557, -0.118666 )
+
+[node name="DeathEffectSpawn" type="Spatial" parent="Model"]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03179, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/death = SubResource( 5 )
+
+[node name="HurtTween" type="Tween" parent="."]
