@@ -1,6 +1,6 @@
 extends Node
 
-var player
+var player : Spatial
 
 var level_index := 0 # current level number
 var level_list := [] # all levels (just the path strings)
