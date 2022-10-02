@@ -159,6 +159,7 @@ unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.952006, 0 )
 
 [node name="EnemyChargerBase" type="MeshInstance" parent="Model"]
+material_overlay = ExtResource( 2 )
 mesh = SubResource( 8 )
 
 [node name="EnemyChargerEye" type="MeshInstance" parent="Model/EnemyChargerBase"]

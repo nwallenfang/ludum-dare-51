@@ -123,9 +123,10 @@ func death_animation():
 	queue_free()
 
 func hurt_visuals():
+	$HurtTween.reset_all()
 	for m in $Model.get_children():
 		if m is MeshInstance:
 			m = m as MeshInstance
 			if m.material_overlay != null:
-				$HurtTween.interpolate_property(m.material_overlay, "albedo_color:a", .7, .0, .4)
+				$HurtTween.interpolate_property(m.material_overlay, "albedo_color:a", .85, .0, .4)
 	$HurtTween.start()
