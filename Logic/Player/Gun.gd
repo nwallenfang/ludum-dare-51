@@ -25,6 +25,14 @@ func _input(event: InputEvent):
 		var hit_normal: Vector3 = ray.get_collision_normal()
 		
 		if not Events.explosion_on_shot:
+			if Events.second_gun:
+				if collider.has_method("damage"):
+					# Call it with damage
+					collider.damage(10)
+				else:
+					var stain = LASER_STAIN.instance()
+					get_tree().current_scene.add_child(stain)
+					stain.global_translation = hit_point + hit_normal * .05 + Vector3.UP * .1
 			# If the target can be damaged
 			if collider.has_method("damage"):
 				# Call it with damage
@@ -38,10 +46,14 @@ func _input(event: InputEvent):
 			get_tree().current_scene.add_child(ex)
 			ex.global_translation = hit_point + hit_normal * .2
 			
-			
+		
+		if Events.second_gun:
+			var laser_drawer = laser_scene_path.instance()
+			get_tree().current_scene.add_child(laser_drawer)
+			laser_drawer.draw_line(Game.player.get_node("%GunHead2").global_translation, hit_point + Vector3.UP * .1)
+		
 		var laser_drawer = laser_scene_path.instance()
 		get_tree().current_scene.add_child(laser_drawer)
-		
 		laser_drawer.draw_line(Game.player.get_node("%GunHead").global_translation, hit_point)
 		
 		laser_sound.play()

@@ -25,7 +25,8 @@ var random_events_start = [
 	preload("res://Logic/Events/ControlEvent.tscn").instance(),
 	preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
 	preload("res://Logic/Events/BananaEvent.tscn").instance(),
-	preload("res://Logic/Events/ExplosionEvent.tscn").instance()
+	preload("res://Logic/Events/ExplosionEvent.tscn").instance(),
+	preload("res://Logic/Events/SecondGunEvent.tscn").instance()
 ]
 
 var random_event_names_start = []
@@ -78,3 +79,4 @@ func _on_UpdateUITimer_timeout() -> void:
 	emit_signal("progress_update", time)
 
 var explosion_on_shot := false
+var second_gun := false

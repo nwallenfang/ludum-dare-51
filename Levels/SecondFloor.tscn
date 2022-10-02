@@ -1,18 +1,20 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Objects/Level2Ceiling.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Level2Wall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/SecondFloor.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=5]
-[ext_resource path="res://Level2Floor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Level2Floor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Logic/Enemies/Alice.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/ExplosiveBarrel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Effects/LaserGrid.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Aufzug.gd" type="Script" id=12]
+[ext_resource path="res://Objects/Level2Floor2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Levels/second/SecondFloor.lmbake" type="BakedLightmapData" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BridgeBoom"
@@ -23,7 +25,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( -44, -0.25, 0, 0.25, 0, -44, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -44, -0.25, 0, 0.25, 0, -44, -0.25, 0, 0.3, 0.555557 ),
 "times": PoolRealArray( 0, 1 )
 }
 tracks/1/type = "bezier"
@@ -1287,21 +1289,6 @@ transform = Transform( -0.848528, -3.0547, 3.56393e-08, 0.6, -2.16, -1.01823, 0.
 
 [node name="Floor" type="Spatial" parent="."]
 
-[node name="Floor1" parent="Floor" instance=ExtResource( 6 )]
-transform = Transform( 10, 0, 0, 0, 0.2, 0, 0, 0, 6, 0, 0, -4 )
-
-[node name="Floor3" parent="Floor" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-07, 0, -6, 0, 0.2, 0, 10, 0, -2.62268e-07, -13, 5, -31 )
-
-[node name="Floor7" parent="Floor" instance=ExtResource( 6 )]
-transform = Transform( -7.43094e-07, 0, -6, 0, 0.2, 0, 17, 0, -2.62268e-07, -59, 17, -32 )
-
-[node name="Floor5" parent="Floor" instance=ExtResource( 6 )]
-transform = Transform( -1.96701e-07, 0, -5.4, 0, 0.2, 0, 4.5, 0, -2.36041e-07, -19, 15, -45.4 )
-
-[node name="Floor6" parent="Floor" instance=ExtResource( 6 )]
-transform = Transform( 3.81838, 0, -3.81838, 0, 0.2, 0, 3.81838, 0, 3.81838, -24.4444, 15, -49.5012 )
-
 [node name="Floor4" parent="Floor" instance=ExtResource( 6 )]
 transform = Transform( -1.45471e-07, 0, -2.268, 0, 0.2, 0, 3.328, 0, -9.91374e-08, -10.2, 15, -45.3 )
 script = ExtResource( 12 )
@@ -1311,6 +1298,23 @@ target_translation = Vector3( 0, -10, 0 )
 
 [node name="Floor2" parent="Floor" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 1.2, -4, 5, -22 )
+
+[node name="StaticBody" parent="Floor" instance=ExtResource( 13 )]
+
+[node name="StaticBody5" parent="Floor" instance=ExtResource( 13 )]
+transform = Transform( 5.4, 0, 0, 0, 0.2, 0, 0, 0, 10, -19, 15, -51 )
+
+[node name="StaticBody6" parent="Floor" instance=ExtResource( 13 )]
+transform = Transform( 3.81838, 0, -7.07107, 0, 0.2, 0, 3.81838, 0, 7.07107, -21.192, 14.9, -52.7678 )
+
+[node name="StaticBody3" parent="Floor" instance=ExtResource( 13 )]
+transform = Transform( 10, 0, 0, 0, 0.2, 0, 0, 0, 10, -63, 17, -39 )
+
+[node name="StaticBody4" parent="Floor" instance=ExtResource( 13 )]
+transform = Transform( 10, 0, 0, 0, 0.2, 0, 0, 0, 10, -63, 17, -19 )
+
+[node name="StaticBody2" parent="Floor" instance=ExtResource( 13 )]
+transform = Transform( 5.985, 0, 0, 0, 0.2, 0, 0, 0, 10, -13, 5, -30.6 )
 
 [node name="Wall" type="Spatial" parent="."]
 
@@ -1342,16 +1346,22 @@ transform = Transform( -4, 0, -3.01992e-08, 0, 9.5, 0, 6.03983e-07, 0, -0.2, -9,
 transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, -16.2, 1.2, -24.4 )
 
 [node name="StaticBody30" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( -11.664, 0, -3.01992e-08, 0, 21.85, 0, 1.76122e-06, 0, -0.2, -31.1, 5.5, -24.4 )
+transform = Transform( -5, 0, -3.01992e-08, 0, 20, 0, 7.54979e-07, 0, -0.2, -24.5, 5.5, -24.4 )
 
 [node name="StaticBody38" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( -5.832, 0, -3.01992e-08, 0, 21.85, 0, 8.80608e-07, 0, -0.2, -47.2, 5.5, -24.4 )
+transform = Transform( -5, 0, -3.01992e-08, 0, 20, 0, 7.54979e-07, 0, -0.2, -34.5, 5.5, -24.4 )
+
+[node name="StaticBody42" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -5, 0, -3.01992e-08, 0, 20, 0, 7.54979e-07, 0, -0.2, -44.5, 5.5, -24.4 )
+
+[node name="StaticBody43" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -5, 0, -3.01992e-08, 0, 20, 0, 7.54979e-07, 0, -0.2, -47.9, 5.5, -24.3 )
 
 [node name="StaticBody34" parent="Wall" instance=ExtResource( 2 )]
 transform = Transform( 1.9668e-06, 8.5087e-07, -0.2, -5.832, 7.56906, 0, 10.1013, 4.37, 3.89414e-08, -33.2, 22.2971, -26.7806 )
 
 [node name="StaticBody19" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, -16.2, -0.2, -40.9 )
+transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, -16.2, -0.2, -40.8 )
 
 [node name="StaticBody27" parent="Wall" instance=ExtResource( 2 )]
 transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, -20.2, -0.2, -40.9 )
@@ -1360,7 +1370,7 @@ transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, 
 transform = Transform( -4.39877, 0, 0.141421, 0, 9.5, 0, -4.39877, 0, -0.141421, -27.3418, 5.4, -45.2134 )
 
 [node name="StaticBody24" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( -3.24, 0, -3.01992e-08, 0, 5.7, 0, 4.89226e-07, 0, -0.2, -10.2, 15, -40.9 )
+transform = Transform( -3.24, 0, -3.01992e-08, 0, 5.7, 0, 4.89226e-07, 0, -0.2, -8.5, 15, -40.9 )
 
 [node name="StaticBody26" parent="Wall" instance=ExtResource( 2 )]
 transform = Transform( -6.48, 0, -3.01992e-08, 0, 5.7, 0, 9.78453e-07, 0, -0.2, -18.2, 15, -40.9 )
@@ -1372,7 +1382,10 @@ transform = Transform( -3.24, 0, -3.01992e-08, 0, 9.5, 0, 4.89226e-07, 0, -0.2, 
 transform = Transform( -2.69087e-07, 0, 0.2, 0, 9.5, 0, -6.156, 0, -8.74228e-09, -7.28568, -4.6, -27.4 )
 
 [node name="StaticBody32" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( -4.03631e-07, 0, 0.2, 0, 9.5, 0, -9.234, 0, -8.74228e-09, -18.7857, -4.6, -33.4 )
+transform = Transform( -2.42179e-07, 0, 0.2, 0, 9.5, 0, -5.5404, 0, -8.74228e-09, -18.7857, -4.6, -29.4 )
+
+[node name="StaticBody44" parent="Wall" instance=ExtResource( 2 )]
+transform = Transform( -2.42179e-07, 0, 0.2, 0, 9.5, 0, -5.5404, 0, -8.74228e-09, -18.7857, -4.6, -40.5 )
 
 [node name="StaticBody12" parent="Wall" instance=ExtResource( 2 )]
 transform = Transform( -1.31134e-07, 0, 0.2, 0, 9.5, 0, -5.4, 0, -1.57361e-08, 4.81432, 1, -19.2 )
@@ -1384,13 +1397,13 @@ transform = Transform( -1.31134e-07, 0, 0.2, 0, 9.5, 0, -4.32, 0, -1.25889e-08, 
 transform = Transform( 6.912, 0, -2.67125e-09, 0, 9.5, 0, 9.23185e-08, 0, 0.2, -0.1, 1, -33 )
 
 [node name="StaticBody16" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( -1.88833e-07, 0, -0.2, 0, 9.5, 0, 4.32, 0, -8.74228e-09, -7.2, 1, -37.1 )
+transform = Transform( -1.88833e-07, 0, -0.2, 0, 9.5, 0, 4.32, 0, -8.74228e-09, -7.2, 0.3, -37.1 )
 
 [node name="StaticBody31" parent="Wall" instance=ExtResource( 2 )]
 transform = Transform( 9.90499e-15, -4.15258e-07, -0.2, -5.184, -4.15258e-07, 2.64698e-23, -2.266e-07, 9.5, -8.74228e-09, -7.2, 15, -32.1 )
 
 [node name="StaticBody21" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( -1.88833e-07, 0, -0.2, 0, 19.5415, 0, 4.32, 0, -8.74228e-09, -7.2, 1, -45.1 )
+transform = Transform( -1.88833e-07, 0, -0.2, 0, 19.5415, 0, 4.32, 0, -8.74228e-09, -7.3, 1, -45.1 )
 
 [node name="StaticBody22" parent="Wall" instance=ExtResource( 2 )]
 transform = Transform( -1.88833e-07, 0, -0.2, 0, 13.775, 0, 4.32, 0, -8.74228e-09, -13.2, 1, -45.1 )
@@ -1423,7 +1436,7 @@ transform = Transform( 10.9793, 0, 0, 0, 23.6379, 0, 0, 0, 0.2, -63.9, 1, -15 )
 transform = Transform( 2.78584e-06, 0, 0.2, 0, 23.6379, 0, -14.3078, 0, 3.89414e-08, -52.9, -6.8, -36.1 )
 
 [node name="StaticBody40" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( 2.78584e-06, 0, 0.2, 0, 23.6379, 0, -14.3078, 0, 3.89414e-08, -52.9, 3.2, -14.1 )
+transform = Transform( 2.78583e-06, 0, 0.2, 0, 9.45516, 0, -14.3078, 0, 3.89414e-08, -52.9, 26.3, -14.1 )
 
 [node name="StaticBody10" parent="Wall" instance=ExtResource( 2 )]
 transform = Transform( -4.725, 0, -2.75382e-08, 0, 2.85, 0, 2.62268e-07, 0, -0.2, -0.0856789, 9, -12.4 )
@@ -1446,7 +1459,7 @@ transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 5, 6, -3 )
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -5, 6, -3 )
 
 [node name="StaticBody3" parent="Ceiling" instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 2.56, 5, 6, -10 )
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 2.56, 5, 5.9, -10 )
 
 [node name="StaticBody6" parent="Ceiling" instance=ExtResource( 1 )]
 transform = Transform( 7, 0, 0, 0, 0.2, 0, 0, 0, 5.12, -0.2, 10, -29 )
@@ -1455,7 +1468,7 @@ transform = Transform( 7, 0, 0, 0, 0.2, 0, 0, 0, 5.12, -0.2, 10, -29 )
 transform = Transform( 13.552, 0, 0, 0, 0.173205, -5.48352, 0, 0.1, 9.49774, -19.9, 15.0981, -31.8301 )
 
 [node name="StaticBody7" parent="Ceiling" instance=ExtResource( 1 )]
-transform = Transform( 4.2, 0, 0, 0, 0.2, 0, 0, 0, 4.096, -11.3, 20.4, -45 )
+transform = Transform( 4.2, 0, 0, 0, 0.2, 0, 0, 0, 4.096, -10.6, 20.4, -45 )
 
 [node name="StaticBody9" parent="Ceiling" instance=ExtResource( 1 )]
 transform = Transform( 5.04, 0, 0, 0, 0.2, 0, 0, 0, 4.096, -19.8, 20.4, -45 )
@@ -1464,7 +1477,7 @@ transform = Transform( 5.04, 0, 0, 0, 0.2, 0, 0, 0, 4.096, -19.8, 20.4, -45 )
 transform = Transform( 25.8552, 0, 0, 0, 0.2, 0, 0, 0, 13.312, -56.8, 24.4, -37 )
 
 [node name="StaticBody12" parent="Ceiling" instance=ExtResource( 1 )]
-transform = Transform( 6.25696, 0, 0, 0, 0.2, 0, 0, 0, 13.312, -58.7, 24.4, -19 )
+transform = Transform( 6.25696, 0, 0, 0, 0.2, 0, 0, 0, 13.312, -58.7, 24.5, -19 )
 
 [node name="StaticBody10" parent="Ceiling" instance=ExtResource( 1 )]
 transform = Transform( 11.4159, 0.0347297, 0, -2.01293, 0.196962, 0, 0, 0, 4.096, -35.9269, 22.421, -45 )
@@ -1473,7 +1486,7 @@ transform = Transform( 11.4159, 0.0347297, 0, -2.01293, 0.196962, 0, 0, 0, 4.096
 transform = Transform( 5, 0, 0, 0, 0.196962, -1.1558, 0, 0.0347296, 6.55488, 0, 9, -18 )
 
 [node name="StaticBody4" parent="Ceiling" instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 2.56, -5, 6, -10 )
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 2.56, -5, 5.9, -10 )
 
 [node name="Enemies" type="Spatial" parent="."]
 
@@ -1498,10 +1511,10 @@ transform = Transform( 1, 0, 0, 0, 2.5, 0, 0, 0, 4.4, -8, 7, -29 )
 id = 6
 
 [node name="Alice" parent="Enemies" groups=["trigger6"] instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.9, -32 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.44476, -32 )
 
 [node name="Alice2" parent="Enemies" groups=["trigger6"] instance=ExtResource( 7 )]
-transform = Transform( -1, 1.30766e-07, -7.54979e-08, 0, 0.5, 0.866025, 1.50996e-07, 0.866025, -0.5, -48.6, 12.7, -47.3464 )
+transform = Transform( -1, 1.30766e-07, -7.54979e-08, 0, 0.5, 0.866025, 1.50996e-07, 0.866025, -0.5, -48.4, 13.0029, -46.6144 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
@@ -1522,16 +1535,18 @@ script = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 19, -22 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 5.0
 anims/BridgeBoom = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 6, -27 )
 extents = Vector3( 49, 29, 39 )
-quality = 2
+quality = 0
 use_hdr = false
 atlas_generate = false
 capture_enabled = false
+light_data = ExtResource( 15 )
 
 [node name="Lamps" type="Spatial" parent="."]
 
@@ -1539,16 +1554,22 @@ capture_enabled = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 4.8, -3 )
 light_color = Color( 0.427451, 1, 0.329412, 1 )
 light_energy = 8.78
+omni_range = 16.952
+omni_attenuation = 3.03143
 
 [node name="OmniLight2" type="OmniLight" parent="Lamps"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.8, -3 )
 light_color = Color( 0.329412, 1, 1, 1 )
 light_energy = 8.78
+omni_range = 13.0
+omni_attenuation = 3.03143
 
 [node name="OmniLight3" type="OmniLight" parent="Lamps"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.3, -22 )
 light_color = Color( 0.380392, 1, 0.329412, 1 )
 light_energy = 8.78
+omni_range = 14.553
+omni_attenuation = 2.82843
 
 [node name="OmniLight19" type="OmniLight" parent="Lamps"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 11.3, -30 )
@@ -1627,8 +1648,8 @@ omni_attenuation = 1.93187
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, -4, -29 )
 light_color = Color( 1, 0, 0, 1 )
 light_energy = 11.289
-omni_range = 7.151
-omni_attenuation = 1.93187
+omni_range = 13.711
+omni_attenuation = 3.4822
 
 [node name="OmniLight9" type="OmniLight" parent="Lamps"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, -4, -30 )

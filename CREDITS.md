@@ -4,3 +4,6 @@
 - https://thenounproject.com/icon/confusion-168763/
 - cybereal cracked floor!
 - https://www.materialmaker.org/material?id=191
+- https://www.materialmaker.org/material?id=506
+- https://thenounproject.com/icon/laser-190316/
+- https://thenounproject.com/icon/destruction-4884732/

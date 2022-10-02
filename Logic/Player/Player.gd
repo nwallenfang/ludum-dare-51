@@ -156,6 +156,8 @@ func _on_HurtTimer_timeout():
 		_on_HurtBox_area_entered(a)
 
 func drink_animation():
+	if not has_node("DrinkAnimation"):
+		return
 	$DrinkAnimation.play("drink")
 	yield($DrinkAnimation, "animation_finished")
 	$DrinkAnimation.queue_free()
