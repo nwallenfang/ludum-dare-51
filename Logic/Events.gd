@@ -54,6 +54,7 @@ func _process(delta: float) -> void:
 		if number_triggered in fixed_events_for_this_lv:
 			var fixed_event = fixed_events_for_this_lv[number_triggered]
 			emit_signal("trigger_event", fixed_event)
+			$WarningStream.play()
 			
 		# always a random event
 		randomize()

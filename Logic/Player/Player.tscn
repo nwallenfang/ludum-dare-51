@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Logic/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Logic/Player/Head.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sound/key_pickup.wav" type="AudioStream" id=3]
 [ext_resource path="res://Logic/Player/Gun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Sound/laser.ogg" type="AudioStream" id=5]
 
@@ -49,6 +50,10 @@ one_shot = true
 
 [node name="LaserStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+
+[node name="PickupStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.757
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_HurtTimer_timeout"]
