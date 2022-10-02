@@ -68,9 +68,11 @@ color = Color( 0, 0, 0, 1 )
 environment = ExtResource( 7 )
 
 [node name="IdleStream" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource( 5 )
 
 [node name="Level1Stream" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource( 6 )
 
 [node name="VeryHurtAnimation" type="AnimationPlayer" parent="."]
