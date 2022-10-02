@@ -72,6 +72,9 @@ func load_next_level():
 		
 		Ui.reset()
 		
+		world.get_node("Level1Stream").stop()
+		world.get_node("IdleStream").play(0.2)
+		
 		
 	
 	world.fade_in(0.4)
