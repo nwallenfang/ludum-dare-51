@@ -450,6 +450,7 @@ transform = Transform( 14.6795, 0.38302, -1.15672, 7.07907e-08, 13.9834, 4.63025
 [node name="Banana" type="MeshInstance" parent="Head/GunModel"]
 unique_name_in_owner = true
 transform = Transform( 0.0515458, -0.0523509, 0.307602, -0.161233, -0.27139, -0.0191698, 0.267139, -0.153698, -0.0709232, 0.857016, 1.7782, -0.934508 )
+visible = false
 mesh = SubResource( 9 )
 
 [node name="HurtBox" type="Area" parent="."]

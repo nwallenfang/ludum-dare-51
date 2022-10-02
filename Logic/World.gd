@@ -78,6 +78,7 @@ func restart_level():
 		return
 	already_restarting = true
 	
+	
 	Game.player.get_node("DeathAnimation").play("death")
 	
 	Events.set_process(false)
@@ -100,6 +101,7 @@ func restart_level():
 			$IdleStream.play()
 	Ui.reset()
 	Events.reset()
+	Game.player.movement_disabled = true
 
 #	$Tween.reset_all()
 #	$Tween.interpolate_property($Fader, "modulate:a", 0.0, 1.0, 1.0)

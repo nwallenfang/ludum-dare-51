@@ -70,6 +70,9 @@ func load_next_level():
 		Game.level = new_level
 		Events.reset()
 		
+		Ui.reset()
+		
+		
 	
 	world.fade_in(0.4)
 	yield(world, "fade_done")
