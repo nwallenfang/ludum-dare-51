@@ -13,6 +13,7 @@
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/SimpleScreen.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Logic/Enemies/Alice.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 9 )
@@ -563,3 +564,9 @@ transform = Transform( 3.94249, 0, 0, 0, 2.40019, 0, 0, 0, 1, -0.000908732, 0, 0
 material/0 = SubResource( 3 )
 
 [editable path="SimpleScreen"]
+[node name="TriggerArea2" parent="Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 3.43126, 0, 0, 0, 4.05946, -12.3341, 4.34394, -20.1468 )
+id = 1
+
+[node name="Alice" parent="Enemies" groups=["trigger1"] instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20495, 2.10565, -33.266 )

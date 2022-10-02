@@ -12,7 +12,7 @@ var player_camera: Camera
 var previous_event
 
 var disable_music = false
-var skip_intro = false
+var skip_intro = true
 
 #var viewport_texture: ViewportTexture setget set_viewport_texture
 var viewport: Viewport setget set_2d_viewport
@@ -24,6 +24,7 @@ var text_screen_ui
 
 func _ready() -> void:
 	# All Levels are added here in the beginning
+	level_list.append("res://Levels/Tutorial.tscn")
 	level_list.append("res://Levels/FirstFloor.tscn")
 	
 	Events.connect("trigger_event", self, "event_triggered")
