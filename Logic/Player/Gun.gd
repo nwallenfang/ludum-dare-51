@@ -8,9 +8,8 @@ onready var ray: RayCast = get_node(ray_path)
 var laser_sound_path := NodePath("../../LaserStream")
 onready var laser_sound: AudioStreamPlayer = get_node(laser_sound_path)
 
-func _ready():
-	pass
-
+const LASER_STAIN = preload("res://Effects/LaserStain.tscn")
+const EXPLOSION = preload("res://Effects/Explosion.tscn")
 func _input(event: InputEvent):
 	if not Game.player.movement_disabled and Input.is_action_just_pressed("shoot"):
 		# Update the ray and get the collided object
@@ -22,20 +21,28 @@ func _input(event: InputEvent):
 
 		var collider: Object = ray.get_collider().get_parent()
 
-		# If the target can be damaged
-		if collider.has_method("damage"):
-			# Call it with damage
-			collider.damage(10)
-			
 		var hit_point: Vector3 = ray.get_collision_point()
-			
-		# TODO: Draw the laser
-		# TODO: Call laser sound
+		var hit_normal: Vector3 = ray.get_collision_normal()
 		
+		if not Events.explosion_on_shot:
+			# If the target can be damaged
+			if collider.has_method("damage"):
+				# Call it with damage
+				collider.damage(10)
+			else:
+				var stain = LASER_STAIN.instance()
+				get_tree().current_scene.add_child(stain)
+				stain.global_translation = hit_point + hit_normal * .05
+		else:
+			var ex = EXPLOSION.instance()
+			get_tree().current_scene.add_child(ex)
+			ex.global_translation = hit_point + hit_normal * .2
+			
+			
 		var laser_drawer = laser_scene_path.instance()
 		get_tree().current_scene.add_child(laser_drawer)
 		
-		laser_drawer.draw_line(to_global(self.translation - Vector3(0,0.2,0)), hit_point)
+		laser_drawer.draw_line(Game.player.get_node("%GunHead").global_translation, hit_point)
 		
 		laser_sound.play()
 		

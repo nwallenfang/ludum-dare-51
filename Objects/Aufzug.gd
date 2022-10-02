@@ -5,8 +5,6 @@ export var duration: float = 1
 
 var target: Vector3
 
-onready var parent = get_parent()
-
 func _ready():
 	while true:
 		$Tween.reset_all()

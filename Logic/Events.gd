@@ -12,6 +12,9 @@ var fixed_events = {
 	},
 	1: {
 		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
+	},
+	2: {
+		2: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),
 	}
 }
 
@@ -20,7 +23,9 @@ var random_events_start = [
 	preload("res://Logic/Events/ShrinkEvent.tscn").instance(),
 	preload("res://Logic/Events/JumpEvent.tscn").instance(),
 	preload("res://Logic/Events/ControlEvent.tscn").instance(),
-	preload("res://Logic/Events/InvincibleEvent.tscn").instance()
+	preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
+	preload("res://Logic/Events/BananaEvent.tscn").instance(),
+	preload("res://Logic/Events/ExplosionEvent.tscn").instance()
 ]
 
 var random_event_names_start = []
@@ -30,6 +35,7 @@ func intro_over():
 	set_process(true)
 
 func reset():
+	set_process(false)
 	time = 0.0
 	number_triggered = 0
 	random_event_names = random_event_names_start.duplicate()
@@ -66,8 +72,9 @@ func _process(delta: float) -> void:
 		var rand_index = randi() % len(random_event_names)
 		var rand_name = random_event_names.pop_at(rand_index)
 		emit_signal("trigger_event", $EventScenes.get_node(rand_name))
-		
 
 
 func _on_UpdateUITimer_timeout() -> void:
 	emit_signal("progress_update", time)
+
+var explosion_on_shot := false
