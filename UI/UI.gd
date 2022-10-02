@@ -17,3 +17,4 @@ func trigger_event(event):
 func reset():
 	$CanvasLayer/EventBar.visible = false
 	$CanvasLayer/EventBar.reset()
+	$CanvasLayer/EventBar.init_fixed_events()

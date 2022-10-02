@@ -29,6 +29,8 @@ func _input(event: InputEvent) -> void:
 
 
 func camera_rotation() -> void:
+	if Game.player.movement_disabled:
+		return
 	if Game.player.inverted_controls:
 		# Horizontal mouse look.
 		rot.y += mouse_axis.x * mouse_sensitivity
