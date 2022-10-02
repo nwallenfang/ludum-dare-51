@@ -312,11 +312,12 @@ mesh = SubResource( 6 )
 
 [node name="GunHead" type="Spatial" parent="Head/GunModel/GunStandard"]
 unique_name_in_owner = true
-transform = Transform( 14.6795, 0.38302, -1.15672, 5.97856e-08, 13.9834, 4.63025, 0.0978963, -0.370731, 1.11961, 0.0165606, -0.0347672, -1.01977 )
+transform = Transform( 14.6795, 0.38302, -1.15672, 7.07907e-08, 13.9834, 4.63025, 0.0978963, -0.370731, 1.11961, 0.0165615, -0.0347672, -1.01977 )
 
 [node name="Banana" type="MeshInstance" parent="Head/GunModel"]
 unique_name_in_owner = true
 transform = Transform( 0.0432119, -0.0438868, 0.257869, -0.135165, -0.227512, -0.0160704, 0.223948, -0.128848, -0.0594564, 0.857016, 1.7782, -0.975683 )
+visible = false
 mesh = SubResource( 9 )
 
 [node name="HurtBox" type="Area" parent="."]

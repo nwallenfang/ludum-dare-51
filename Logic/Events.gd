@@ -24,7 +24,8 @@ var random_events_start = [
 	preload("res://Logic/Events/JumpEvent.tscn").instance(),
 	preload("res://Logic/Events/ControlEvent.tscn").instance(),
 	preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
-	preload("res://Logic/Events/BananaEvent.tscn").instance()
+	preload("res://Logic/Events/BananaEvent.tscn").instance(),
+	preload("res://Logic/Events/ExplosionEvent.tscn").instance()
 ]
 
 var random_event_names_start = []
@@ -71,8 +72,9 @@ func _process(delta: float) -> void:
 		var rand_index = randi() % len(random_event_names)
 		var rand_name = random_event_names.pop_at(rand_index)
 		emit_signal("trigger_event", $EventScenes.get_node(rand_name))
-		
 
 
 func _on_UpdateUITimer_timeout() -> void:
 	emit_signal("progress_update", time)
+
+var explosion_on_shot := false
