@@ -8,8 +8,8 @@ func _process(delta: float) -> void:
 
 func intro_over():
 	$CanvasLayer/IntroLabel.visible = false
-	$CanvasLayer/EventName.visible = true
 	$CanvasLayer/EventBar.visible = true
+	$CanvasLayer/EventBar
 
 func trigger_event(event):
 #	$CanvasLayer/EventName.text = event.event_name
@@ -34,5 +34,7 @@ func trigger_event(event):
 #		else:
 #			yield(get_tree(),"idle_frame")
 	
-	#get_tree().call_group("walltext", "set_text", event.event_name)
-	pass
+	Game.text_screen_ui.set_text(event.event_name)
+
+func reset():
+	$CanvasLayer/EventBar.reset()

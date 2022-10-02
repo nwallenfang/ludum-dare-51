@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Font/WalltextFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/TextScreenUI.gd" type="Script" id=2]
+
+[node name="TextScreenUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.196078, 0.380392, 0.0941176, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+unique_name_in_owner = true
+margin_left = 384.0
+margin_top = 172.0
+margin_right = 640.0
+margin_bottom = 428.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 1 )
+text = "HALLO"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 16.0

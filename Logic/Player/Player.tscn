@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Logic/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Logic/Player/Head.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Logic/Player/Sprint.gd" type="Script" id=3]
 [ext_resource path="res://Logic/Player/Gun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Sound/laser.ogg" type="AudioStream" id=5]
 
@@ -28,9 +27,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 
 [node name="Gun" parent="Head" instance=ExtResource( 4 )]
-
-[node name="Sprint" type="Node" parent="."]
-script = ExtResource( 3 )
 
 [node name="HurtBox" type="Area" parent="."]
 collision_layer = 8

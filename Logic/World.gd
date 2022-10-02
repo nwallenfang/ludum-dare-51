@@ -19,6 +19,11 @@ func _ready() -> void:
 
 	$ViewportContainer/Viewport/FollowCamera.make_current()
 	
+	
+#	print("path quad : ", viewport_tex.viewport_path)
+	Game.viewport = $Viewport2D
+#	$ViewportContainer/Viewport/Quad2.get_active_material(0).albedo_texture = viewport_tex
+	
 	# TODO determine random potion color and set in material/vignette shader
 
 func intro_sequence():
@@ -51,6 +56,7 @@ func restart_level():
 	$"%Viewport".add_child(load(Game.level_list[Game.level_index]).instance())
 	set_process_input(true)
 	set_process_unhandled_input(true)
+	Ui.reset()
 	Events.reset()
 	
 
