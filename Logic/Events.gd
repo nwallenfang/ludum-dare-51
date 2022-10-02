@@ -23,7 +23,8 @@ var random_events_start = [
 	preload("res://Logic/Events/ShrinkEvent.tscn").instance(),
 	preload("res://Logic/Events/JumpEvent.tscn").instance(),
 	preload("res://Logic/Events/ControlEvent.tscn").instance(),
-	preload("res://Logic/Events/InvincibleEvent.tscn").instance()
+	preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
+	preload("res://Logic/Events/BananaEvent.tscn").instance()
 ]
 
 var random_event_names_start = []

@@ -31,7 +31,6 @@ func _input(event: InputEvent):
 			var stain = LASER_STAIN.instance()
 			get_tree().current_scene.add_child(stain)
 			stain.global_translation = hit_point + hit_normal * .05
-			print("==")
 		
 		var laser_drawer = laser_scene_path.instance()
 		get_tree().current_scene.add_child(laser_drawer)
