@@ -7,6 +7,7 @@ var height: float
 var fly_offset : float setget set_fly_offset
 
 func fly(start_: Vector3, end_: Vector3, height_: float, speed: float):
+	look_at(end_, Vector3.UP)
 	self.start = start_
 	self.end = end_
 	self.height = height_

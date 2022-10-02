@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/GLTF/TrashBin.gltf" type="PackedScene" id=1]
+
+[node name="TrashBin" instance=ExtResource( 1 )]
