@@ -130,7 +130,7 @@ var max_hp := 3
 var hp := max_hp
 
 func get_hurt():
-	if !invincible:
+	if !invincible and $HurtTimer.time_left == 0.0:
 		hp = hp - 1
 		$HurtTimer.start()
 		print("hurt")

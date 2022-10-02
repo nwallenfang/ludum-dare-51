@@ -7,7 +7,11 @@ signal progress_update(time)
 # level -> [event_number -> Event] fixed events and their timestamps
 var fixed_events = {
 	0: {
-		2: 	preload("res://Logic/Events/FixedEventTest.tscn").instance()
+		2: 	preload("res://Logic/Events/FixedEventTest.tscn").instance(),
+		1: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
+	},
+	1: {
+		1: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
 	}
 }
 

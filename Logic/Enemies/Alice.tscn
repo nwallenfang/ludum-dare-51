@@ -58,7 +58,7 @@ wait_time = 4.0
 one_shot = true
 
 [node name="Model" type="Spatial" parent="."]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0 )
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Model"]
 transform = Transform( 0.510391, 0, 0, 0, -3.12205e-08, 0.714242, 0, -0.510391, -2.23099e-08, 0, 0.92331, 0 )
