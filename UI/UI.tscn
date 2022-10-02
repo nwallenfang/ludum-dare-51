@@ -65,6 +65,7 @@ margin_bottom = 14.0
 text = "FPS:"
 
 [node name="IntroLabel" type="Label" parent="CanvasLayer"]
+visible = false
 anchor_top = 0.683333
 anchor_right = 1.0
 anchor_bottom = 0.766

@@ -20,8 +20,6 @@ var viewport_material: SpatialMaterial
 
 var text_screen_ui
 
-
-
 func _ready() -> void:
 	# All Levels are added here in the beginning
 	level_list.append("res://Levels/Tutorial.tscn")
@@ -47,8 +45,22 @@ func event_triggered(event):
 
 # When reaching the end
 func load_next_level():
+	if level_index == 0:
+		# going from tutorial to lv 1
+		world.intro_sequence_should_run = true
+		
 	level_index = level_index + 1
 	if level_index >= level_list.size():
 		print("No Levels left")
 	else:
-		get_tree().change_scene(level_list[level_index])
+		# TODO fix lag spike
+		var new_level = load(level_list[level_index]).instance()
+		world.get_node("ViewportContainer/Viewport").remove_child(Game.level)
+		Game.level.queue_free()
+		Game.level = null
+		world.get_node("ViewportContainer/Viewport").add_child(new_level)
+		Game.level = new_level
+		
+	
+	
+	world.new_level()	

@@ -43,7 +43,7 @@ extents = Vector3( 0.289265, 0.491648, 0.275386 )
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.736706, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.736706, 0 )
 
 [node name="Floors" type="Spatial" parent="."]
 

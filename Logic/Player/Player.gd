@@ -28,7 +28,7 @@ var inverted_controls = false
 var invincible = false
 
 
-var movement_disabled = true
+var movement_disabled = false
 var default_scale
 func _ready():
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

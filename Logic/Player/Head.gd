@@ -15,6 +15,8 @@ func _ready() -> void:
 	mouse_sensitivity = mouse_sensitivity / 1000
 	y_limit = deg2rad(y_limit)
 	Game.player_camera = $Camera
+	
+	rot.y = deg2rad(180.0)
 
 
 # Called when there is an input event
