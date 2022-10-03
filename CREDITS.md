@@ -12,3 +12,5 @@
 - https://thenounproject.com/icon/eye-4303378/
 - https://thenounproject.com/icon/laser-206489/
 - https://thenounproject.com/icon/empty-194055/
+- https://thenounproject.com/icon/eye-4303378/
+- https://thenounproject.com/icon/eye-closed-2616528/

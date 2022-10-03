@@ -58,7 +58,7 @@ func intro_sequence():
 	emit_signal("intro_over")
 
 func _input(event: InputEvent) -> void:
-	print("aaaa")
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 #	if movement_disabled:
 #		return
