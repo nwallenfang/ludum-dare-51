@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Assets/GLTF/Table.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Lamp.tscn" type="PackedScene" id=2]
@@ -25,6 +25,11 @@
 [ext_resource path="res://Objects/FloorsWalls/neu/Lv1WallWoodN.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/Materials/Planks2.tres" type="Material" id=24]
 [ext_resource path="res://Assets/Materials/OtherWoodPlanksEtc.tres" type="Material" id=25]
+[ext_resource path="res://Assets/GLTF/chair.gltf" type="PackedScene" id=26]
+[ext_resource path="res://Objects/TestTube_Holder.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Objects/GasBottle_v1.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Objects/TrashBin.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/GLTF/Certifacte.gltf" type="PackedScene" id=30]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 9.93161, 0.222879, 10 )
@@ -607,3 +612,45 @@ transform = Transform( 0.0174888, 0, -2.0491, 0, 2.04918, 0, 2.0491, 0, 0.017488
 
 [node name="Poster" parent="Deco" instance=ExtResource( 9 )]
 transform = Transform( 6.23378, 0, 0, 0, 6.23378, 0, 0, 0, 6.23378, -18.9535, 5.41853, -8.44699 )
+
+[node name="Table4" parent="Deco" instance=ExtResource( 1 )]
+transform = Transform( -2.04908, 0, -0.0195987, 0, 2.04918, 0, 0.0195987, 0, -2.04908, -26.887, 1.84794, 1.28914 )
+
+[node name="GasBottle_v1" parent="Deco" instance=ExtResource( 28 )]
+transform = Transform( -2.99986, 0, -0.0286925, 0, 3, 0, 0.0286925, 0, -2.99986, -15.4588, 1.91366, -7.48808 )
+
+[node name="GasBottle_v2" parent="Deco" instance=ExtResource( 28 )]
+transform = Transform( -2.99986, 0, -0.0286925, 0, 3, 0, 0.0286925, 0, -2.99986, -12.9402, 1.91366, -7.48808 )
+
+[node name="GasBottle_v3" parent="Deco" instance=ExtResource( 28 )]
+transform = Transform( -2.99986, 0, -0.0286925, 0, 3, 0, 0.0286925, 0, -2.99986, -14.1845, 1.91366, -7.48808 )
+
+[node name="GasBottle_v4" parent="Deco" instance=ExtResource( 28 )]
+transform = Transform( 0.0110903, -2.79969, -1.07778, 2.99986, 0.000837624, 0.0286925, -0.0264758, -1.07784, 2.79956, -12.6476, 2.32457, -5.20395 )
+
+[node name="TrashBin" parent="Deco" instance=ExtResource( 29 )]
+transform = Transform( 0.686834, 0, -1.33351, 0, 1.5, 0, 1.33351, 0, 0.686834, -29.5001, 1.83039, -1.74821 )
+
+[node name="Poster2" parent="Deco" instance=ExtResource( 9 )]
+transform = Transform( -2.72487e-07, 0, 6.23378, 0, 6.23378, 0, -6.23378, 0, -2.72487e-07, -30.7649, 5.41853, 2.9286 )
+
+[node name="TestTube_Holder" parent="Deco" instance=ExtResource( 27 )]
+transform = Transform( 0.814238, 0, 1.82675, 0, 2, 0, -1.82675, 0, 0.814238, 9.04507, 1.66782, 4.38309 )
+
+[node name="chair" parent="Deco" instance=ExtResource( 26 )]
+transform = Transform( -0.071516, -1.58028, 1.22377, -1.9983, 0.0313067, -0.0763515, 0.0411723, -1.22545, -1.58005, -25.2102, 2.31614, 3.95026 )
+
+[node name="chair2" parent="Deco" instance=ExtResource( 26 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -25.7353, 1.91366, -0.927312 )
+
+[node name="Certifacte" parent="Deco" instance=ExtResource( 30 )]
+transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -26.9672, 4.77963, -24.3002 )
+
+[node name="TrashBin2" parent="Deco" instance=ExtResource( 29 )]
+transform = Transform( 1.36787, 0, -0.615577, 0, 1.5, 0, 0.615577, 0, 1.36787, -12.7133, 1.87689, -16.3689 )
+
+[node name="chair3" parent="Deco" instance=ExtResource( 26 )]
+transform = Transform( 1.50667, 0, -1.31528, 0, 2, 0, 1.31528, 0, 1.50667, 15.1703, 2.38134, -33.6902 )
+
+[node name="chair4" parent="Deco" instance=ExtResource( 26 )]
+transform = Transform( -1.98412, -0.244122, 0.0607344, 0.001119, 0.474287, 1.94295, -0.251561, 1.92755, -0.470383, 16.0032, 2.80706, -30.5303 )
