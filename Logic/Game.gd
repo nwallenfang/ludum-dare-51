@@ -88,7 +88,8 @@ func load_next_level():
 		world.get_node("Level1Stream").stop()
 		world.get_node("IdleStream").play(0.2)
 		
-		text_screen_ui.set_text("Click to drink")
+		if level_index < number_of_levels - 1:
+			text_screen_ui.set_text("Click to drink")
 		
 		
 	emit_signal("viewport_texture_changed", viewport)	
