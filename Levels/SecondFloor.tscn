@@ -1331,6 +1331,7 @@ target_translation = Vector3( 0, -10, 0 )
 transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 1.2, -4, 5, -22 )
 
 [node name="StaticBody" parent="Floor" instance=ExtResource( 13 )]
+transform = Transform( 10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 1, 0 )
 
 [node name="StaticBody5" parent="Floor" instance=ExtResource( 13 )]
 transform = Transform( 5.4, 0, 0, 0, 0.2, 0, 0, 0, 10, -19, 15, -51 )
@@ -1362,7 +1363,7 @@ transform = Transform( -2.18557e-07, 0, 0.2, 0, 5, 0, -5, 0, -8.74228e-09, 10, 1
 transform = Transform( -2.18557e-07, 0, 0.2, 0, 8.5, 0, -3, 0, -5.24537e-09, 4.8, 1, -10.8 )
 
 [node name="StaticBody9" parent="Wall" instance=ExtResource( 2 )]
-transform = Transform( 5.1, 0, -5.94475e-09, 0, 5, 0, -8.74228e-08, 0, 0.2, -0.2, -5.2, -9.8 )
+transform = Transform( 5.1, 0, -5.94475e-09, 0, 5, 0, -8.74228e-08, 0, 0.2, -0.2, -4.2, -9.8 )
 
 [node name="StaticBody8" parent="Wall" instance=ExtResource( 2 )]
 transform = Transform( -1.31134e-07, 0, 0.2, 0, 9.5, 0, -3, 0, -8.74228e-09, -4.78568, 1, -10.8 )
@@ -1542,7 +1543,7 @@ transform = Transform( 1, 0, 0, 0, 2.5, 0, 0, 0, 4.4, -8, 7, -29 )
 id = 6
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0 )
 
 [node name="LevelStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -1553,14 +1554,14 @@ stream = ExtResource( 5 )
 transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -15, 5, -36 )
 
 [node name="LaserGrid" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 3.11922, 0, 0, 0, 1, 0, 0, 0, 2.49537, -34, -5, -34 )
-script = null
+transform = Transform( 7.79805, 0, 0, 0, 1, 0, 0, 0, 6.98704, -34, -6, -34 )
+speed = 0.0
 
 [node name="Flag" parent="Objects" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 17.9, -22 )
 
 [node name="SimpleScreen2" parent="Objects" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 3, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 3.4, -8 )
 
 [node name="SimpleScreen3" parent="Objects" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6.9, -32.9 )
@@ -1608,7 +1609,7 @@ transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -25.8, 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4, 8.1, -40.8 )
 
 [node name="SimpleScreen" parent="Objects" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4, 3, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4, 3.4, -8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BridgeBoom = SubResource( 1 )
