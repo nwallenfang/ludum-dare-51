@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Effects/LaserGrid.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/laser_grid.ogg" type="AudioStream" id=2]
 
 [sub_resource type="Shader" id=1]
 code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
@@ -72,3 +73,8 @@ transform = Transform( -6.70917, 0, 0, 0, 1, 0, 0, 0, -6.70917, 0, 0, 0 )
 material_override = SubResource( 2 )
 use_in_baked_light = true
 mesh = SubResource( 3 )
+
+[node name="MenacingStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -80.0
+autoplay = true
