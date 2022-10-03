@@ -7,6 +7,6 @@
 script = ExtResource( 1 )
 icon = ExtResource( 2 )
 event_name = "Shrivel up"
-size_multiplier = 0.5
+size_multiplier = 0.2
 
 [node name="Tween" type="Tween" parent="."]
