@@ -28,7 +28,7 @@ void vertex() {
 void fragment() {
 	vec2 base_uv = UV;
 	vec4 albedo_tex = texture(texture_albedo,base_uv);
-	ALBEDO = texture(noise, UV).rgb - 0.3;
+	ALBEDO = texture(noise, UV).rgb;
 }
 "
 
@@ -38,7 +38,7 @@ persistence = 0.0
 lacunarity = 4.0
 
 [sub_resource type="NoiseTexture" id=10]
-flags = 2
+flags = 3
 width = 64
 height = 64
 noise = SubResource( 9 )
