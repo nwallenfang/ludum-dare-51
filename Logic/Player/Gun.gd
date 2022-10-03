@@ -10,6 +10,7 @@ onready var laser_sound: AudioStreamPlayer = get_node(laser_sound_path)
 
 const LASER_STAIN = preload("res://Effects/LaserStain.tscn")
 const EXPLOSION = preload("res://Effects/Explosion.tscn")
+const HIT_PARTICLES = preload("res://Effects/HitParticles.tscn")
 func _input(event: InputEvent):
 	if Game.settings_open:
 		return
@@ -38,6 +39,10 @@ func _input(event: InputEvent):
 				if collider.has_method("damage"):
 					# Call it with damage
 					collider.damage(10)
+					var hit = HIT_PARTICLES.instance()
+					get_tree().current_scene.add_child(hit)
+					hit.global_translation = hit_point
+					hit.particles_look_at(hit_normal)
 				else:
 					var stain = LASER_STAIN.instance()
 					get_tree().current_scene.add_child(stain)
@@ -46,6 +51,10 @@ func _input(event: InputEvent):
 			if collider.has_method("damage"):
 				# Call it with damage
 				collider.damage(10)
+				var hit = HIT_PARTICLES.instance()
+				get_tree().current_scene.add_child(hit)
+				hit.global_translation = hit_point
+				hit.particles_look_at(hit_normal)
 			else:
 				var stain = LASER_STAIN.instance()
 				get_tree().current_scene.add_child(stain)

@@ -2,6 +2,7 @@ extends Control
 
 func _ready() -> void:
 	Events.connect("trigger_event", self, "trigger_event")
+	$IconGrow.play("RESET")
 
 
 

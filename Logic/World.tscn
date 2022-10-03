@@ -75,6 +75,7 @@ stream = ExtResource( 5 )
 [node name="Level1Stream" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource( 3 )
-volume_db = -10.0
+volume_db = -13.0
+mix_target = 2
 
 [node name="VeryHurtAnimation" type="AnimationPlayer" parent="."]

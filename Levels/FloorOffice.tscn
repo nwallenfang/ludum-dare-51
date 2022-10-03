@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
@@ -20,6 +20,9 @@
 [ext_resource path="res://Objects/Locker.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/GLTF/TestTube_v2.gltf" type="PackedScene" id=19]
 [ext_resource path="res://Objects/Table.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/GLTF/Chairv2.gltf" type="PackedScene" id=21]
+[ext_resource path="res://Objects/GasBottle_v1.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/GasBottle_v2.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
 
@@ -479,6 +482,7 @@ mesh = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.5086, 0, -35 )
 extents = Vector3( 104.189, 21.1205, 45 )
 quality = 3
+bounces = 5
 use_hdr = false
 default_texels_per_unit = 1.0
 atlas_generate = false
@@ -550,7 +554,7 @@ transform = Transform( -0.0140495, 0, -0.999901, 0, 1, 0, 0.999901, 0, -0.014049
 transform = Transform( -0.660749, 0, -0.750607, 0, 1, 0, 0.750607, 0, -0.660749, -21.18, 0, -51.7742 )
 
 [node name="Alice" parent="Enemies" groups=["trigger3"] instance=ExtResource( 13 )]
-transform = Transform( -0.1144, 0, 0.993435, 0, 1, 0, -0.993435, 0, -0.1144, 5.67208, 0.200001, -19.9731 )
+transform = Transform( -0.1144, 0, 0.993435, 0, 1, 0, -0.993435, 0, -0.1144, 5.67208, 0.200001, -20.4687 )
 
 [node name="Alice2" parent="Enemies" groups=["trigger7"] instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120.407, 7.23808, -20.5022 )
@@ -593,7 +597,6 @@ id = 7
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -130.343, 8.00349, -10.212 )
 
 [node name="Ceilings" type="Spatial" parent="."]
-visible = false
 
 [node name="StaticBody4" parent="Ceilings" instance=ExtResource( 11 )]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -20 )
@@ -748,6 +751,24 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 4, 
 [node name="WallText6" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 4, -40 )
 
+[node name="WallText9" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 4, -50 )
+
+[node name="WallText11" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 4, -45 )
+
+[node name="WallText12" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 4, -25 )
+
+[node name="WallText13" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4, -25 )
+
+[node name="WallText14" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10, 4, -20 )
+
+[node name="WallText10" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 4, -60 )
+
 [node name="WallText2" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 4, -75 )
 
@@ -756,6 +777,39 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4, -35 )
 
 [node name="WallText8" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 4, -35 )
+
+[node name="WallText15" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40, 4, -25 )
+
+[node name="WallText16" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 4, -35 )
+
+[node name="WallText17" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 4, -25.0164 )
+
+[node name="WallText19" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -85, 4, -20.0164 )
+
+[node name="WallText22" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -110, 4, -24.9089 )
+
+[node name="WallText23" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -120, 4, -24.9089 )
+
+[node name="WallText24" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -120, 4, 4.95117 )
+
+[node name="WallText25" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -110, 4, 4.95117 )
+
+[node name="WallText21" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -80, 4, -5.01637 )
+
+[node name="WallText20" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -85, 4, -30.0164 )
+
+[node name="WallText18" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 4, -35.0164 )
 
 [node name="WallText3" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31, 4, -65 )
@@ -783,8 +837,106 @@ transform = Transform( 0.996391, 0, -0.0848778, 0, 1, 0, 0.0848778, 0, 0.996391,
 [node name="TestTube_v5" parent="Deco/Regal" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.598291, 2.91672, -0.0261154 )
 
-[node name="Table" parent="Deco" instance=ExtResource( 20 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18.733, 0.268047, -59.5624 )
+[node name="Table3" parent="Deco" instance=ExtResource( 20 )]
+transform = Transform( -1, 0, -2.38498e-08, 0, 1, 0, 2.38498e-08, 0, -1, -18.2957, 0.246214, -59.4876 )
+
+[node name="Chairv2" parent="Deco/Table3" instance=ExtResource( 21 )]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0.751747, -0.0636206, 1.76162 )
+
+[node name="Chairv3" parent="Deco/Table3" instance=ExtResource( 21 )]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -1.46607, -0.0636206, 1.76162 )
+
+[node name="Chairv4" parent="Deco/Table3" instance=ExtResource( 21 )]
+transform = Transform( 2, 0, 2.38419e-07, 0, 2, 0, -2.38419e-07, 0, 2, 0.751747, -0.0636206, -1.7201 )
+
+[node name="Chairv5" parent="Deco/Table3" instance=ExtResource( 21 )]
+transform = Transform( 2, 0, 2.38419e-07, 0, 2, 0, -2.38419e-07, 0, 2, -1.39676, -0.0636206, -1.7201 )
 
 [node name="Table2" parent="Deco" instance=ExtResource( 20 )]
 transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -10.3138, 0.268047, -50.4253 )
+
+[node name="Chairv2" parent="Deco/Table2" instance=ExtResource( 21 )]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0.751747, -0.0636206, 1.76162 )
+
+[node name="Chairv3" parent="Deco/Table2" instance=ExtResource( 21 )]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -1.46607, -0.0636206, 1.76162 )
+
+[node name="Chairv4" parent="Deco/Table2" instance=ExtResource( 21 )]
+transform = Transform( 2, 0, 2.38419e-07, 0, 2, 0, -2.38419e-07, 0, 2, 0.751747, -0.0636206, -1.7201 )
+
+[node name="Chairv5" parent="Deco/Table2" instance=ExtResource( 21 )]
+transform = Transform( 2, 0, 2.38419e-07, 0, 2, 0, -2.38419e-07, 0, 2, -1.39676, -0.0636206, -1.7201 )
+
+[node name="GasBottle_v1" parent="Deco" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -3.75907, 0.226821, -73.913 )
+
+[node name="GasBottle_v2" parent="Deco" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -3.75907, 0.226821, -72.9498 )
+
+[node name="GasBottle_v3" parent="Deco" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -2.44263, 0.226821, -73.913 )
+
+[node name="GasBottle_v4" parent="Deco" instance=ExtResource( 23 )]
+transform = Transform( -2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -5.88561, 0.1191, -63.9968 )
+
+[node name="GasBottle_v5" parent="Deco" instance=ExtResource( 23 )]
+transform = Transform( -2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -7.3432, 0.1191, -63.9968 )
+
+[node name="GasBottle_v6" parent="Deco" instance=ExtResource( 23 )]
+transform = Transform( 2, 0, 6.03983e-07, 0, 2, 0, -6.03983e-07, 0, 2, -12.0729, 0.357299, -16.5888 )
+
+[node name="GasBottle_v7" parent="Deco" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -13.5534, 0.226821, -17.611 )
+
+[node name="Chairv5" parent="Deco" instance=ExtResource( 21 )]
+transform = Transform( 1.5675, 0, 1.24216, 0, 2, 0, -1.24216, 0, 1.5675, 9.12077, 0.354195, -23.963 )
+
+[node name="Regal2" parent="Deco" instance=ExtResource( 17 )]
+transform = Transform( -0.00134346, -0.999158, 0.0410166, 0.0327089, -0.0410386, -0.998622, 0.999464, 0, 0.0327365, 9.68701, 0.896496, -17.352 )
+
+[node name="Row2" type="Spatial" parent="Deco"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82.6164, 0.461205, -28.0045 )
+
+[node name="Regal3" parent="Deco/Row2" instance=ExtResource( 17 )]
+
+[node name="Regal4" parent="Deco/Row2" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80506, 0, 0 )
+
+[node name="Regal5" parent="Deco/Row2" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.867, 0, 0 )
+
+[node name="Row" type="Spatial" parent="Deco"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82.5323, 0.230602, -34.0976 )
+
+[node name="Regal3" parent="Deco/Row" instance=ExtResource( 17 )]
+
+[node name="Regal4" parent="Deco/Row" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80506, 0, 0 )
+
+[node name="Regal5" parent="Deco/Row" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.867, 0, 0 )
+
+[node name="Row3" type="Spatial" parent="Deco"]
+transform = Transform( 0.00122177, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00122177, -66.0776, 0.461205, -23.746 )
+
+[node name="Regal3" parent="Deco/Row3" instance=ExtResource( 17 )]
+
+[node name="Regal4" parent="Deco/Row3" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80506, 0, 0 )
+
+[node name="Regal5" parent="Deco/Row3" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.867, 0, 0 )
+
+[node name="Regal3" parent="Deco" instance=ExtResource( 17 )]
+transform = Transform( -0.000348556, 0.999156, -0.041072, 0.0327089, -0.0410386, -0.998622, -0.999465, -0.0016915, -0.032667, -75.7326, 0.896496, -8.25734 )
+
+[node name="Row4" type="Spatial" parent="Deco"]
+transform = Transform( -0.999944, 0, 0.0106114, 0, 1, 0, -0.0106114, 0, -0.999944, -67.9531, 0.461205, -11.7068 )
+
+[node name="Regal3" parent="Deco/Row4" instance=ExtResource( 17 )]
+
+[node name="Regal4" parent="Deco/Row4" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80506, 0, 0 )
+
+[node name="Regal5" parent="Deco/Row4" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.867, 0, 0 )
