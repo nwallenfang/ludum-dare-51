@@ -14,7 +14,7 @@ func trigger_event(event):
 	# show event icon in middle of screen
 	Game.text_screen_ui.set_text(event.event_name)
 	$CanvasLayer/EventIcon.material.set_shader_param("texture_resource", event.icon)
-	$IconGrow.play("grow")
+	$IconGrow.play("screen")
 
 func reset():
 	$CanvasLayer/EventBar.visible = false
