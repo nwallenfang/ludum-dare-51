@@ -62,7 +62,7 @@ func _physics_process(delta):
 	
 	
 	velocity = move_and_slide_with_snap(velocity, snap, up_direction, stop_on_slope, 4, floor_max_angle)
-	self.look_at(self.translation - velocity, Vector3.UP)
+	self.look_at(Game.player.global_translation, Vector3.UP)
 
 func accelerate(delta: float) -> void:
 	# Using only the horizontal velocity, interpolate towards the input.
