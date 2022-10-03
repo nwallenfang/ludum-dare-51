@@ -147,8 +147,8 @@ func _on_HurtTimer_timeout():
 func drink_animation():
 	if not has_node("DrinkAnimation"):
 		return
-	$DrinkAnimation.play("drink")
-	yield($DrinkAnimation, "animation_finished")
+	$DrinkAnimation/DrinkAnimationPlayer.play("drink")
+	yield($DrinkAnimation/DrinkAnimationPlayer, "animation_finished")
 	$DrinkAnimation.queue_free()
 	
 func play_key_sound():
