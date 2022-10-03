@@ -20,7 +20,6 @@ onready var floor_max_angle: float = deg2rad(45.0)
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity") 
 		* gravity_multiplier)
-var mouse_beginning_set = false
 
 var knockback := Vector3.ZERO
 
@@ -39,25 +38,7 @@ func _ready():
 	$MeshInstance.visible = false
 	yield(get_tree(), "idle_frame")
 	
-func _input(event: InputEvent) -> void:
-	if movement_disabled:
-		return
-	if not mouse_beginning_set:
-		mouse_beginning_set = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().quit() # Quits the game
-		
-	if not movement_disabled and event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		get_tree().set_input_as_handled()
-	
-	if event.is_action_pressed("change_mouse_input"):
-		match Input.get_mouse_mode():
-			Input.MOUSE_MODE_CAPTURED:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			Input.MOUSE_MODE_VISIBLE:
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta) -> void:

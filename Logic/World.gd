@@ -1,6 +1,8 @@
 extends Control
 
 
+var mouse_beginning_set = false
+
 # gets set to true after Tutorial
 var intro_sequence_should_run := false
 
@@ -58,6 +60,26 @@ func intro_sequence():
 	emit_signal("intro_over")
 
 func _input(event: InputEvent) -> void:
+	if not mouse_beginning_set:
+		mouse_beginning_set = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#	if movement_disabled:
+#		return
+
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit() # Quits the game
+		
+	# not movement_disabled
+	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		get_tree().set_input_as_handled()
+	
+	if event.is_action_pressed("change_mouse_input"):
+		match Input.get_mouse_mode():
+			Input.MOUSE_MODE_CAPTURED:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			Input.MOUSE_MODE_VISIBLE:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event is InputEventMouseButton:  # TODO
 		event = event as InputEventMouseButton
 		if event.pressed:
@@ -100,7 +122,8 @@ func restart_level():
 			$IdleStream.play()
 	Ui.reset()
 	Events.reset()
-	Game.player.movement_disabled = true
+	if Game.level_index > 0:
+		Game.player.movement_disabled = true
 	Game.emit_signal("viewport_texture_changed", Game.viewport)
 	Game.player.connect("player_got_hurt", self, "player_hurt")
 #	$Tween.reset_all()
