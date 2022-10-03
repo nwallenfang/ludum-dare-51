@@ -14,7 +14,7 @@
 [ext_resource path="res://Objects/Aufzug.gd" type="Script" id=12]
 [ext_resource path="res://Objects/Level2Floor2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Levels/second/SecondFloor.lmbake" type="BakedLightmapData" id=15]
+[ext_resource path="res://Effects/Lightmaps/SecondFloor/SecondFloor.lmbake" type="BakedLightmapData" id=15]
 [ext_resource path="res://Objects/SimpleScreen.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Animation" id=1]
@@ -1267,8 +1267,17 @@ transform = Transform( 1.2, 0, 0, 0, 8.86327, -0.250053, 0, 1.56283, 1.41812, -3
 [node name="Floor15" parent="Platforms" instance=ExtResource( 6 )]
 transform = Transform( 1.2, 0, 0, 0, 8.86327, -0.250053, 0, 1.56283, 1.41812, -39, -9.39564, -34.6795 )
 
+[node name="Floor31" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 8.96575, 0.125505, 0, -0.784405, 1.43452, -43, -9.22199, -35.6643 )
+
+[node name="Floor29" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 8.86327, -0.250053, 0, 1.56283, 1.41812, -34, -8.41083, -34.5059 )
+
 [node name="Floor16" parent="Platforms" instance=ExtResource( 6 )]
 transform = Transform( 1.2, 0, 0, 0, 8.45723, 0.492509, 0, -3.07818, 1.35316, -28, -7.34352, -29.0413 )
+
+[node name="Floor30" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 0, 0, 8.96575, 0.125505, 0, -0.784402, 1.43452, -23, -5.46414, -29.7253 )
 
 [node name="Floor10" parent="Platforms" instance=ExtResource( 6 )]
 transform = Transform( 1.2, 0, 0, 0, 4.92404, 0.208378, 0, -0.868241, 1.18177, -49, 13.9939, -41.0035 )
@@ -1278,6 +1287,27 @@ transform = Transform( 1.2, 0, 0, 0, 8.86327, -0.250053, 0, 1.56283, 1.41812, -4
 
 [node name="Floor17" parent="Platforms" instance=ExtResource( 6 )]
 transform = Transform( 1.15911, 2.32937, -3.72024e-10, -0.305864, 8.56126, -0.250053, -0.0539322, 1.50958, 1.41812, -49, -7.54259, -39.4299 )
+
+[node name="Floor22" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( -0.310583, 8.69333, 1.86625e-07, -1.1415, -2.29398, -0.250053, -0.201277, -0.404492, 1.41812, -58.2617, 3.55637, -34.4266 )
+
+[node name="Floor23" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.29329e-07, 9, 1.27698e-07, -1.12763, 6.38503e-07, 0.492508, 0.410424, -1.08173e-06, 1.35315, -58.2617, 3.83139, -31.1401 )
+
+[node name="Floor27" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 1.28655e-08, 9, 2.00036e-07, -1.08757, 6.15819e-07, -0.608569, -0.507141, -1.09231e-06, 1.30508, -58.2617, 12.4084, -31.8218 )
+
+[node name="Floor28" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 6.20098e-08, 9, 1.94554e-07, -1.18177, 6.69158e-07, -0.250053, -0.208378, -1.11673e-06, 1.41812, -58.2617, 14.3478, -35.3685 )
+
+[node name="Floor24" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 8.39772e-08, -1.41678e-06, 1.44, -1.19543, -0.784402, 8.06321e-08, 0.104587, -8.96575, -2.34605e-07, -46.2617, 5.25921, -21.5688 )
+
+[node name="Floor25" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( 0.310583, -1.10641e-06, 1.39093, -1.1547, -0.784402, 0.371281, 0.101023, -8.96575, -0.032483, -43.0029, 7.54701, -18.7575 )
+
+[node name="Floor26" parent="Platforms" instance=ExtResource( 6 )]
+transform = Transform( -0.599999, -1.70991e-06, 1.24707, -1.03528, -0.784402, -0.717259, 0.090575, -8.96575, 0.0627518, -48.8678, 10.1068, -18.9815 )
 
 [node name="Floor12" parent="Platforms" instance=ExtResource( 6 )]
 transform = Transform( 1.2, 0, 0, 0, 7.37237, 0.82595, 0, -5.16219, 1.17958, -48.9, 8.90779, -46.6325 )
@@ -1511,9 +1541,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5, -38 )
 transform = Transform( 1, 0, 0, 0, 2.5, 0, 0, 0, 4.4, -8, 7, -29 )
 id = 6
 
-[node name="Alice" parent="Enemies" groups=["trigger6"] instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.44476, -32 )
-
 [node name="Alice2" parent="Enemies" groups=["trigger6"] instance=ExtResource( 7 )]
 transform = Transform( -1, 1.30766e-07, -7.54979e-08, 0, 0.5, 0.866025, 1.50996e-07, 0.866025, -0.5, -48.4, 13.0029, -46.6144 )
 
@@ -1568,14 +1595,11 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -64.8, 
 [node name="SimpleScreen13" parent="Objects" instance=ExtResource( 16 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -64.8, 20.7, -30.9 )
 
-[node name="SimpleScreen14" parent="Objects" instance=ExtResource( 16 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -52.8, 11.7, -30.9 )
-
 [node name="SimpleScreen15" parent="Objects" instance=ExtResource( 16 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -52.8, 11.7, -38.9 )
 
 [node name="SimpleScreen16" parent="Objects" instance=ExtResource( 16 )]
-transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -46.8, 11.7, -24.5 )
+transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -40.8, 14.7, -24.5 )
 
 [node name="SimpleScreen17" parent="Objects" instance=ExtResource( 16 )]
 transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -36.8, 8.9, -24.5 )
@@ -1590,7 +1614,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4, 8.1, -40.8 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4, 3, -8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 5.0
 anims/BridgeBoom = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
