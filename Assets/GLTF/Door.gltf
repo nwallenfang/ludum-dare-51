@@ -12,7 +12,9 @@
             "name" : "Scene",
             "nodes" : [
                 0,
-                1
+                1,
+                2,
+                3
             ]
         }
     ],
@@ -24,12 +26,42 @@
         {
             "mesh" : 1,
             "name" : "Door"
+        },
+        {
+            "mesh" : 2,
+            "name" : "Door.001",
+            "rotation" : [
+                0,
+                1,
+                0,
+                -1.6292068494294654e-07
+            ],
+            "translation" : [
+                4.172664642333984,
+                0,
+                0
+            ]
+        },
+        {
+            "mesh" : 3,
+            "name" : "DoorFrame.001",
+            "rotation" : [
+                0,
+                1,
+                0,
+                -1.6292068494294654e-07
+            ],
+            "translation" : [
+                4.1623663902282715,
+                0,
+                0
+            ]
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "Material.022",
+            "name" : "DoorFrame",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.42460548877716064,
@@ -42,7 +74,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "Material.021",
+            "name" : "DoorBlue",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.059492528438568115,
@@ -61,7 +93,7 @@
                     "transmissionFactor" : 1
                 }
             },
-            "name" : "Material.014",
+            "name" : "Glass",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.800000011920929,
@@ -117,6 +149,52 @@
                         "TEXCOORD_0" : 14
                     },
                     "indices" : 15,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.007",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 16,
+                        "NORMAL" : 17,
+                        "TEXCOORD_0" : 18
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 19,
+                        "NORMAL" : 20,
+                        "TEXCOORD_0" : 21
+                    },
+                    "indices" : 11,
+                    "material" : 2
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 22,
+                        "NORMAL" : 23,
+                        "TEXCOORD_0" : 24
+                    },
+                    "indices" : 15,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.012",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 25,
+                        "NORMAL" : 26,
+                        "TEXCOORD_0" : 27
+                    },
+                    "indices" : 3,
                     "material" : 0
                 }
             ]
@@ -258,6 +336,118 @@
             "componentType" : 5123,
             "count" : 60,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 126,
+            "max" : [
+                2.080556869506836,
+                2.7717626094818115,
+                0.05966077744960785
+            ],
+            "min" : [
+                0.00045117735862731934,
+                -0.0017116982489824295,
+                -0.05966077744960785
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5126,
+            "count" : 126,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 126,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 19,
+            "componentType" : 5126,
+            "count" : 8,
+            "max" : [
+                1.8314158916473389,
+                2.605668783187866,
+                0
+            ],
+            "min" : [
+                0.24959224462509155,
+                0.7747491002082825,
+                0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 20,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 21,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 22,
+            "componentType" : 5126,
+            "count" : 40,
+            "max" : [
+                2.080556869506836,
+                0.6819540858268738,
+                0.05966077744960785
+            ],
+            "min" : [
+                0.00045114755630493164,
+                -0.0017116982489824295,
+                -0.05966077744960785
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 23,
+            "componentType" : 5126,
+            "count" : 40,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 24,
+            "componentType" : 5126,
+            "count" : 40,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 25,
+            "componentType" : 5126,
+            "count" : 132,
+            "max" : [
+                2.080556869506836,
+                2.968371629714966,
+                0.3080078661441803
+            ],
+            "min" : [
+                -0.23765282332897186,
+                -0.20014140009880066,
+                -0.30801093578338623
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 26,
+            "componentType" : 5126,
+            "count" : 132,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 27,
+            "componentType" : 5126,
+            "count" : 132,
+            "type" : "VEC2"
         }
     ],
     "bufferViews" : [
@@ -340,11 +530,71 @@
             "buffer" : 0,
             "byteLength" : 120,
             "byteOffset" : 10728
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1512,
+            "byteOffset" : 10848
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1512,
+            "byteOffset" : 12360
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1008,
+            "byteOffset" : 13872
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 14880
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 14976
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 64,
+            "byteOffset" : 15072
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480,
+            "byteOffset" : 15136
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480,
+            "byteOffset" : 15616
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 320,
+            "byteOffset" : 16096
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1584,
+            "byteOffset" : 16416
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1584,
+            "byteOffset" : 18000
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1056,
+            "byteOffset" : 19584
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 10848,
+            "byteLength" : 20640,
             "uri" : "Door.bin"
         }
     ]
