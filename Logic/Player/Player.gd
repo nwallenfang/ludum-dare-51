@@ -153,3 +153,6 @@ func drink_animation():
 	
 func play_key_sound():
 	$PickupStream.play()
+
+func show_gun():
+	$Head/GunModel.visible = true

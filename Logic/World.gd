@@ -53,6 +53,7 @@ func intro_sequence():
 	set_process_input(false)
 	set_process_unhandled_input(false)
 	$IdleStream.stop()
+	Game.player.show_gun()
 	print("INTRO OVER")
 	emit_signal("intro_over")
 
