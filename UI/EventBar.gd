@@ -32,10 +32,14 @@ func update_health_bar(hp):
 
 func init_fixed_events():
 	# remove all the fixed icons that are currently present
-	for i in $FixedIcons.get_child_count()-1:
-		var possible_icon = $FixedIcons.get_child(i+1)
-		if possible_icon != null:
-			possible_icon.queue_free()
+	for n in $FixedIcons.get_children():
+		if n.name != "FixedIcon":
+			$FixedIcons.remove_child(n)
+			n.queue_free()
+#	for i in $FixedIcons.get_child_count()-1:
+#		var possible_icon = $FixedIcons.get_child(i+1)
+#		if possible_icon != null:
+#			possible_icon.queue_free()
 	
 	var fixed_events = Events.fixed_events[Game.level_index]
 	var amount = len(fixed_events)
