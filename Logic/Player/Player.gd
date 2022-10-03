@@ -10,7 +10,7 @@ export var acceleration := 8
 export var deceleration := 10
 export(float, 0.0, 1.0, 0.05) var air_control := 0.3
 export var jump_height := 12
-export var jump_extra_frames := 0.5
+export var jump_extra_frames:float = 0.2
 var direction := Vector3()
 var input_axis := Vector2()
 var velocity := Vector3()
@@ -74,7 +74,7 @@ func _physics_process(delta) -> void:
 			has_jumped = true
 			
 		used_second_jump = false
-	elif extra_frame_idx < jump_extra_frames * 1000:
+	elif extra_frame_idx < jump_extra_frames:
 		if !has_jumped and Input.is_action_just_pressed("jump"):
 			snap = Vector3.ZERO
 			velocity.y = jump_height
