@@ -104,10 +104,10 @@ surfaces/0 = {
 radius = 0.957103
 
 [sub_resource type="CapsuleShape" id=2]
-radius = 1.8592
+radius = 1.92229
 
 [sub_resource type="CapsuleShape" id=4]
-radius = 0.613648
+radius = 0.821257
 
 [sub_resource type="Animation" id=6]
 length = 0.001
@@ -137,7 +137,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 90, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( -90, 0, 0 ) ]
 }
 
 [node name="Bob" type="KinematicBody"]
@@ -159,7 +159,7 @@ unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.952006, 0 )
 
 [node name="EnemyChargerBase" type="MeshInstance" parent="Model"]
-transform = Transform( -1, -2.0779e-14, -8.74228e-08, -3.60645e-14, 1, 1.74846e-07, 8.74228e-08, 1.74846e-07, -1, 0, 0, 0 )
+transform = Transform( -1.35661, -2.8189e-14, -1.18599e-07, -4.89255e-14, 1.35661, 2.37198e-07, 1.18599e-07, 2.37198e-07, -1.35661, 0, 0, 0 )
 material_overlay = ExtResource( 2 )
 mesh = SubResource( 8 )
 

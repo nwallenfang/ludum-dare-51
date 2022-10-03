@@ -15,4 +15,4 @@ func _ready():
 
 func _on_Area_area_entered(area):
 	if area.get_parent().has_method("damage"):
-		area.get_parent().damage(20)
+		area.get_parent().damage(40)
