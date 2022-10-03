@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/FirstFloor.png-ce6b192c5d4c35004a35f89c4c14ce60.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Effects/Lightmaps/FirstFloorX/FirstFloor.png"
+dest_files=[ "res://.import/FirstFloor.png-ce6b192c5d4c35004a35f89c4c14ce60.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=true
+slices/horizontal=1
+slices/vertical=2

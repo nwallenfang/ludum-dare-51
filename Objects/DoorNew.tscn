@@ -213,35 +213,35 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18017, 0 )
 shape = SubResource( 8 )
 
 [node name="DoorFrame" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10848, 0, 0 )
 use_in_baked_light = true
 mesh = SubResource( 9 )
 
 [node name="DoorFrame2" type="MeshInstance" parent="."]
-transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 2, 0, 0 )
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 2.04524, 0, 0 )
 use_in_baked_light = true
 mesh = SubResource( 9 )
 
 [node name="Door" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1158, 0, 0 )
 use_in_baked_light = true
 mesh = SubResource( 10 )
 
-[node name="StaticBody" type="StaticBody" parent="Door"]
-transform = Transform( 0.999848, 0, -0.0174524, 0, 1, 0, 0.0174524, 0, 0.999848, 0, 0, 0 )
+[node name="StaticBody2" type="StaticBody" parent="Door"]
+transform = Transform( 0.999848, 0, -0.0174524, 0, 1, 0, 0.0174524, 0, 0.999848, 0.115802, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Door/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Door/StaticBody2"]
 transform = Transform( 0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="Door2" type="MeshInstance" parent="."]
-transform = Transform( -1, -8.74228e-08, -8.74228e-08, -8.74228e-08, 1, 0, -8.74228e-08, -7.64274e-15, 1, 2, 0, 0 )
+transform = Transform( -1, -8.74228e-08, -8.74228e-08, -8.74228e-08, 1, 0, -8.74228e-08, -7.64274e-15, 1, 2.06785, 0, 0 )
 use_in_baked_light = true
 mesh = SubResource( 10 )
 skeleton = NodePath("../Door")
 
 [node name="StaticBody" type="StaticBody" parent="Door2"]
-transform = Transform( -0.999848, -8.74095e-08, 0.0174525, -8.74228e-08, 1, -5.01833e-15, 0.0174525, 1.52575e-09, 0.999848, 2, 0, 0 )
+transform = Transform( -0.999848, -8.74095e-08, 0.0174525, -8.74228e-08, 1, -4.97705e-15, 0.0174525, 1.52575e-09, 0.999848, 2.06785, 5.9316e-09, 5.9316e-09 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Door2/StaticBody"]
 shape = SubResource( 4 )

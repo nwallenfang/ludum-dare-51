@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
+[ext_resource path="res://Objects/Lamp.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Aufzug.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/FirstFloor.gd" type="Script" id=5]
@@ -123,7 +124,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6997, 22.5025, 0.08075 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3003, 1.7025, 1.58075 )
 
 [node name="Lv1FloorLab" parent="Floors" instance=ExtResource( 17 )]
-transform = Transform( 0.647419, 0.380247, 0, -0.266173, 0.924885, 0, 0, 0, 1, -8.13246, 0.37153, 0.817343 )
+transform = Transform( 0.647419, 0.380247, 0, -0.266173, 0.924885, 0, 0, 0, 0.85754, -8.13246, 0.37153, 0.0856943 )
 
 [node name="Lv1FloorCarpet" parent="Floors" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4, 1.702, -18.5 )
@@ -257,7 +258,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.475, -27.2, 0, -18.5 )
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -32, 0, -28.2 )
 
 [node name="Lv1FloorLab4" parent="Walls" instance=ExtResource( 20 )]
-transform = Transform( -1.33846e-08, 0, -0.306204, 0, 1, 0, 1, 0, -4.37114e-08, -15.2, 0, -8.6 )
+transform = Transform( -1.33846e-08, 0, -0.306204, 0, 1, 0, 1, 0, -4.37114e-08, -15.4305, 0, -8.65815 )
 
 [node name="Lv1FloorLab17" parent="Walls" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, -3.03268e-08, 0, 1, 0, -3.03268e-08, 0, 0.306204, -11.7, 8, -10.4 )
@@ -266,7 +267,7 @@ transform = Transform( 1, 0, -3.03268e-08, 0, 1, 0, -3.03268e-08, 0, 0.306204, -
 transform = Transform( -3.55562e-08, 0, -0.813432, -1, -4.37114e-08, 4.37114e-08, -1.00536e-07, 2.3, 4.39458e-15, -28.2, 10.2, -6.8 )
 
 [node name="Lv1FloorLab9" parent="Walls" instance=ExtResource( 20 )]
-transform = Transform( -0.119514, -5.22412e-09, 1.12948e-08, 1.07569e-08, 2.1748e-16, 0.132267, -4.06238e-08, 0.929364, 1.77572e-15, -11.2, 9.2, 0.399998 )
+transform = Transform( -0.104047, -4.54805e-09, -0.0650771, -0.0588025, -2.57034e-09, 0.11515, -4.06238e-08, 0.929364, 1.77572e-15, -12.5565, 10.0233, 0.399998 )
 
 [node name="Lv1FloorLab10" parent="Walls" instance=ExtResource( 20 )]
 transform = Transform( -1.86265e-08, -5.55112e-16, -0.132267, -0.119514, -5.22412e-09, 2.04891e-08, -4.06238e-08, 0.929364, 1.77572e-15, -8.6, 7.7, 0.399998 )
@@ -275,7 +276,7 @@ transform = Transform( -1.86265e-08, -5.55112e-16, -0.132267, -0.119514, -5.2241
 transform = Transform( -8.7e-09, 0, -0.199033, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -23.1, 8.8, -8.6 )
 
 [node name="Lv1FloorLab6" parent="Walls" instance=ExtResource( 20 )]
-transform = Transform( -2.23077e-08, 0, -0.510341, 0, 1, 0, 1, 0, -4.37114e-08, -37.4, 0, -8.6 )
+transform = Transform( -6.86479e-09, 0, -0.157048, 0, 0.547406, 0, 1, 0, -4.37114e-08, -30.0389, 7.0504, -8.6 )
 
 [node name="Lv1FloorLab2" parent="Walls" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 0.3744, 0, 0, 0, 0.343, -21.4, 5.8, -15.7 )
@@ -287,7 +288,7 @@ transform = Transform( 1, 0, 0, 0, 0.3744, 0, 0, 0, 0.47334, 17, 4.2, -25.7 )
 transform = Transform( -1.96701e-08, 0, 0.45, 0, 1.02, 0, -1, 0, -4.37114e-08, 1, -11, -35 )
 
 [node name="Lv1FloorLab15" parent="Walls" instance=ExtResource( 23 )]
-transform = Transform( 1, 0, 2.40413e-08, 0, 1.02, 0, 2.88495e-08, 0, 0.54, 17, -24, -35 )
+transform = Transform( 1, 0, 2.40413e-08, 0, 1.02, 0, 2.88495e-08, 0, 0.54, 17, -24, -24.8922 )
 
 [node name="Lv1FloorLab14" parent="Walls" instance=ExtResource( 23 )]
 transform = Transform( -0.2, 0, -1.35896e-08, 0, 0.2856, 0, 3.01992e-08, 0, -0.09, -11.9, 8.6, -31.6 )
@@ -360,20 +361,51 @@ stream = ExtResource( 8 )
 
 [node name="Lights" type="Node" parent="."]
 
-[node name="OmniLight" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0 )
-
-[node name="OmniLight2" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5.1, 2 )
-light_color = Color( 0.054902, 0.92549, 0.92549, 1 )
-light_energy = 2.0
-omni_range = 13.954
-
 [node name="SpotLight" type="SpotLight" parent="Lights"]
-transform = Transform( 0.621298, 0.202804, -0.756875, 0, 0.965926, 0.258819, 0.783574, -0.160804, 0.600128, 8, 6, -17 )
+transform = Transform( 0.439255, 0.826502, -0.352066, -0.439393, 0.539479, 0.718259, 0.783574, -0.160804, 0.600128, 8, 6.82288, -17 )
 light_color = Color( 0.976471, 0.447059, 0.447059, 1 )
 light_energy = 6.306
 spot_range = 18.377
+__meta__ = {
+"_editor_description_": "w"
+}
+
+[node name="SpotLight3" type="SpotLight" parent="Lights"]
+transform = Transform( -0.170116, -0.984542, -0.0416899, 0.597555, -0.0694245, -0.798817, 0.783574, -0.160804, 0.600128, 1.63869, 0.908619, -31.5859 )
+light_color = Color( 0.976471, 0.447059, 0.447059, 1 )
+light_energy = 6.306
+shadow_enabled = true
+spot_range = 13.636
+__meta__ = {
+"_editor_description_": "w"
+}
+
+[node name="SpotLight4" type="SpotLight" parent="Lights"]
+transform = Transform( 0.170116, 0.984542, 0.0416899, 0.597555, -0.0694245, -0.798817, -0.783574, 0.160804, -0.600128, -6.19586, 2.48074, -19.3648 )
+light_color = Color( 0.976471, 0.447059, 0.447059, 1 )
+light_energy = 6.306
+shadow_enabled = true
+spot_range = 13.636
+__meta__ = {
+"_editor_description_": "w"
+}
+
+[node name="SpotLight6" type="SpotLight" parent="Lights"]
+transform = Transform( -0.170116, -0.984542, -0.0416898, 0.597555, -0.0694245, -0.798817, 0.783574, -0.160804, 0.600128, -6.19586, 0.3745, -33.3702 )
+light_color = Color( 0.976471, 0.447059, 0.447059, 1 )
+light_energy = 6.306
+shadow_enabled = true
+spot_range = 13.636
+__meta__ = {
+"_editor_description_": "w"
+}
+
+[node name="SpotLight5" type="SpotLight" parent="Lights"]
+transform = Transform( 0.170116, 0.984542, 0.0416899, 0.597555, -0.0694245, -0.798817, -0.783574, 0.160804, -0.600128, -1.09558, 3.5486, -19.3648 )
+light_color = Color( 0.976471, 0.447059, 0.447059, 1 )
+light_energy = 6.306
+shadow_enabled = true
+spot_range = 13.636
 __meta__ = {
 "_editor_description_": "w"
 }
@@ -387,10 +419,31 @@ __meta__ = {
 "_editor_description_": "w"
 }
 
+[node name="Lamp" parent="Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.45014, 0 )
+
+[node name="Lamp2" parent="Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.114, 9.92844, 0 )
+
+[node name="Lamp3" parent="Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.114, 9.92844, -25.1567 )
+
+[node name="Lamp7" parent="Lights" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.8527, 15.0562, -25.1567 )
+
+[node name="Lamp4" parent="Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1331, 32.4944, -32.0031 )
+
+[node name="Lamp5" parent="Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1331, 32.4944, -17.9193 )
+
+[node name="Lamp6" parent="Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1331, 32.4944, -3.72311 )
+
 [node name="Texts" type="Spatial" parent="."]
 
 [node name="WallText" parent="Texts" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.09775, -7.69679 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.09775, -8.48623 )
 
 [node name="WallText2" parent="Texts" instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.09775, 7.70092 )
