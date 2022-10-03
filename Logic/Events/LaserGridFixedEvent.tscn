@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Logic/Events/LaserGridFixedEvent.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/laser.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/laser2.png" type="Texture" id=2]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
