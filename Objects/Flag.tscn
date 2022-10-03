@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Models/FlagModel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Flag.gd" type="Script" id=2]
+[ext_resource path="res://Effects/SpinCircle.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -157,5 +158,8 @@ collision_mask = 0
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1.6169, 0, 0, 0, 1.6169, 0, 0, 0, 0.853422, 1.71303, 1.66047, 0 )
 shape = SubResource( 3 )
+
+[node name="SpinCircle" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.67278, 0, 0, 0, 1.64023, 0.328404, 0, -0.328404, 1.64023, 0, 2.39187, 0 )
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
