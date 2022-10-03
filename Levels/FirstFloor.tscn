@@ -114,6 +114,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.434, 22.971, -39.194 )
 target_translation = Vector3( 0, -9.805, 0 )
 duration = 2.0
 
+[node name="Floor19" parent="Floors" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7772, 19.6324, -14.0791 )
+target_translation = Vector3( 0, -9.805, 0 )
+duration = 2.0
+
+[node name="Alice3" parent="Floors/Floor19" groups=["trigger4"] instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.063324, 0.243822, -0.136407 )
+
 [node name="Lv1FloorLab1" parent="Floors" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69967, -0.297503, 1.58075 )
 
@@ -543,11 +551,15 @@ transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926,
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 3.7, 18.4, 11, -26 )
 id = 4
 
-[node name="Alice3" parent="Enemies" groups=["trigger4"] instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 23, -9.8 )
+[node name="TriggerArea5" parent="Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1.87354, 0, 0, 0, 2, 0, 0, 0, 1.46594, 31.5908, 25.0463, -33.5142 )
+id = 5
 
 [node name="Alice4" parent="Enemies" groups=["trigger4"] instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 23, -9.8 )
+
+[node name="Bob5" parent="Enemies" groups=["trigger5"] instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.5283, 23.2249, -12.5053 )
 
 [node name="Flag" parent="." instance=ExtResource( 15 )]
 transform = Transform( 0.7248, 0, 0, 0, 0.7248, 0, 0, 0, 0.7248, 27.6786, 23.922, -2.3085 )

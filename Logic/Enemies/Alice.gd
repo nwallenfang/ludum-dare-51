@@ -1,6 +1,6 @@
 extends Spatial
 
-export var shooting_distance := 20.0
+export var shooting_distance := 30.0
 export var projectile_curve_height := .2
 
 enum STATES {IDLE, AGGRO, SHOOTING, SHOOT_COOLDOWN, DEATH}
