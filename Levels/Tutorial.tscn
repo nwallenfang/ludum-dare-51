@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
 [ext_resource path="res://Levels/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://Objects/Potion.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Materials/ScreenMaterial.tres" type="Material" id=5]
-[ext_resource path="res://Effects/Lightmaps/Tutorial.lmbake" type="BakedLightmapData" id=6]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Tutorial.lmbake" type="BakedLightmapData" id=6]
 [ext_resource path="res://Assets/GLTF/chair.gltf" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/LabFloor.tscn" type="PackedScene" id=9]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Assets/Font/WalltextFont.tres" type="DynamicFont" id=13]
 [ext_resource path="res://Assets/Font/WalltextFontSmaller.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Objects/TestTube_Holder.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Objects/ExplosiveBarrel.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
 
@@ -345,20 +344,20 @@ light_cull_mask = 4294966273
 shadow_enabled = true
 
 [node name="SpotLight" type="SpotLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -11.0033, 5.78665, -51.0072 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -11.0033, 6.58665, -51.0072 )
 light_color = Color( 0.737255, 1, 0.992157, 1 )
-light_energy = 4.963
-light_indirect_energy = 6.578
-light_bake_mode = 2
+light_energy = 1.44
+light_indirect_energy = 4.963
 shadow_enabled = true
+spot_range = 26.796
 
 [node name="SpotLight2" type="SpotLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -11.0033, 5.78665, -60.0072 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -11.0033, 6.58665, -59.0072 )
 light_color = Color( 0.737255, 1, 0.992157, 1 )
-light_energy = 8.633
-light_indirect_energy = 6.578
-light_bake_mode = 2
+light_energy = 1.44
+light_indirect_energy = 4.963
 shadow_enabled = true
+spot_range = 26.796
 
 [node name="OmniLight2" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51146, 6.43379, -10.0824 )
@@ -386,6 +385,8 @@ light_indirect_energy = 3.495
 light_bake_mode = 2
 light_cull_mask = 4294966273
 shadow_enabled = true
+omni_range = 13.483
+omni_attenuation = 4.14106
 
 [node name="OmniLight5" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.908996, 5.5863, -28.5724 )
@@ -516,6 +517,3 @@ bubbles = Color( 0.917647, 0.12549, 0.905882, 1 )
 
 [node name="TestTube_Holder" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1.43487, 0, 0.785829, 0, 1.63596, 0, -0.785829, 0, 1.43487, -2.43272, 1.66382, -2.45509 )
-
-[node name="ExplosiveBarrel" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7 )
