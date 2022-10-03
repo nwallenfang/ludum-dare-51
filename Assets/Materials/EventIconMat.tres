@@ -15,19 +15,19 @@ void fragment() {
 }
 "
 
-[sub_resource type="OpenSimplexNoise" id=9]
+[sub_resource type="OpenSimplexNoise" id=15]
 period = 0.1
 persistence = 0.0
 lacunarity = 4.0
 
-[sub_resource type="NoiseTexture" id=10]
+[sub_resource type="NoiseTexture" id=16]
 flags = 2
 width = 64
 height = 64
-noise = SubResource( 9 )
+noise = SubResource( 15 )
 noise_offset = Vector2( 1.02577, 0 )
 
 [resource]
 resource_local_to_scene = true
 shader = SubResource( 11 )
-shader_param/noise = SubResource( 10 )
+shader_param/noise = SubResource( 16 )
