@@ -1,8 +1,5 @@
 extends Control
 
-
-var mouse_beginning_set = false
-
 # gets set to true after Tutorial
 var intro_sequence_should_run := false
 
@@ -24,8 +21,8 @@ func _ready() -> void:
 
 #	$ViewportContainer/Viewport/FollowCamera.make_current()
 	
-	set_process_input(false)
-	set_process_unhandled_input(false)
+	#set_process_input(false)
+	#set_process_unhandled_input(false)
 	
 	Game.viewport = $Viewport2D
 	
@@ -60,9 +57,8 @@ func intro_sequence():
 	emit_signal("intro_over")
 
 func _input(event: InputEvent) -> void:
-	if not mouse_beginning_set:
-		mouse_beginning_set = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	print("aaaa")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 #	if movement_disabled:
 #		return
 
@@ -72,7 +68,7 @@ func _input(event: InputEvent) -> void:
 	# not movement_disabled
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		get_tree().set_input_as_handled()
+		
 	
 	if event.is_action_pressed("change_mouse_input"):
 		match Input.get_mouse_mode():
@@ -82,7 +78,7 @@ func _input(event: InputEvent) -> void:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event is InputEventMouseButton:  # TODO
 		event = event as InputEventMouseButton
-		if event.pressed:
+		if event.pressed and Game.level_index != 0:
 			intro_sequence()
 			get_tree().set_input_as_handled()
 

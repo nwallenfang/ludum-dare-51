@@ -152,8 +152,8 @@ omni_range = 7.51348
 
 [node name="Tween" type="Tween" parent="."]
 
-[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
-
 [node name="BoomStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -29.714
+volume_db = -18.353
+
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
