@@ -27,6 +27,8 @@ func _ready() -> void:
 	Game.viewport = $Viewport2D
 	
 	Game.player.connect("player_got_hurt", self, "player_hurt")
+	Game.player.connect("player_got_hurt", Ui.get_node("CanvasLayer/EventBar"), "update_health_bar")
+	
 	
 	$"%VignetteRect".material.set_shader_param("vignette_intensity", 2.4)
 	$"%VignetteRect".material.set_shader_param("vignette_rgb", intro_color)
@@ -91,6 +93,7 @@ func new_level():
 		set_process_unhandled_input(true)
 		Game.player.movement_disabled = true
 		Game.player.connect("player_got_hurt", self, "player_hurt")
+		Game.player.connect("player_got_hurt", Ui.get_node("CanvasLayer/EventBar"), "update_health_bar")
 
 # When dying
 var already_restarting = false

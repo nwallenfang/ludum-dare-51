@@ -8,12 +8,27 @@ export var greyed_out: Color
 
 export var question_mark_tex: Texture
 
+export var full_health_color: Color
+export var partial_health_color: Color
+export var low_health_color: Color
+
 func _ready() -> void:
 	Events.connect("progress_update", self, "set_progress")
 	Events.connect("trigger_event", self, "event_triggered")
+
 	# TODO on new level reload fixed !!!
 	init_fixed_events()
+	
 
+
+func update_health_bar(hp):
+	# TODO trigger blink animation
+	if hp == 3:
+		$Background.material.set_shader_param("mod_color", full_health_color)
+	if hp == 2:
+		$Background.material.set_shader_param("mod_color", partial_health_color)
+	if hp == 1:
+		$Background.material.set_shader_param("mod_color", low_health_color)
 
 func init_fixed_events():
 	# remove all the fixed icons that are currently present

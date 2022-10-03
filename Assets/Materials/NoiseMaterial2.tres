@@ -28,7 +28,7 @@ void vertex() {
 void fragment() {
 	vec2 base_uv = UV;
 	vec4 albedo_tex = texture(texture_albedo,base_uv);
-	ALBEDO = texture(noise, UV).rgb;
+	ALBEDO = texture(noise, UV).rgb - 0.3;
 }
 "
 
@@ -38,10 +38,11 @@ persistence = 0.0
 lacunarity = 4.0
 
 [sub_resource type="NoiseTexture" id=10]
-flags = 3
+flags = 2
 width = 64
 height = 64
 noise = SubResource( 9 )
+noise_offset = Vector2( 0.846769, 0 )
 
 [resource]
 resource_local_to_scene = true

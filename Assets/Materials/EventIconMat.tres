@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Sprites/banana.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=11]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
+
+shader_type spatial;
+render_mode async_visible,blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx,unshaded;
+
+uniform sampler2D icon;
+uniform sampler2D noise;
+
+
+void fragment() {
+	ALBEDO = texture(icon, UV).rgb * (texture(noise, UV).rgb - 0.3);
+}
+"
+
+[sub_resource type="OpenSimplexNoise" id=9]
+period = 0.1
+persistence = 0.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=10]
+flags = 2
+width = 64
+height = 64
+noise = SubResource( 9 )
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource( 11 )
+shader_param/icon = ExtResource( 1 )
+shader_param/noise = SubResource( 10 )

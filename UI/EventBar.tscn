@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://UI/EventBar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/circle_white.png" type="Texture" id=2]
@@ -58,12 +58,11 @@ shader = ExtResource( 7 )
 shader_param/scale = Vector2( 3, 0.8 )
 shader_param/speed = 0.2
 shader_param/direction = Vector2( -0.1, 0.9 )
-shader_param/mod_color = Color( 0.937255, 0.4, 0.0745098, 1 )
-shader_param/mod_color_2 = Color( 0.854902, 0.815686, 0.396078, 1 )
+shader_param/mod_color = Color( 0.592157, 0.901961, 0.180392, 1 )
+shader_param/mod_color_2 = Color( 0.407843, 1, 0, 1 )
 shader_param/noise = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.670588, 0.239216, 0.239216, 1 )
 border_width_left = 30
 border_width_top = 30
 border_width_right = 30
@@ -82,12 +81,18 @@ shader_param/fill_color = Color( 0.243137, 0.243137, 0.243137, 1 )
 shader_param/progress_color = Color( 0.8, 0.243137, 0.243137, 1 )
 shader_param/bar_sprite = ExtResource( 5 )
 
+[sub_resource type="Animation" id=15]
+resource_name = "get_hit"
+
 [node name="EventBar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 greyed_out = Color( 0.376471, 0.376471, 0.376471, 1 )
 question_mark_tex = ExtResource( 6 )
+full_health_color = Color( 0.254902, 0.952941, 0.0588235, 1 )
+partial_health_color = Color( 0.929412, 0.784314, 0.12549, 1 )
+low_health_color = Color( 0.941176, 0.223529, 0.0823529, 1 )
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 anchor_left = 0.15
@@ -218,9 +223,9 @@ __meta__ = {
 [node name="Background" type="Panel" parent="."]
 show_behind_parent = true
 material = SubResource( 12 )
-anchor_left = 0.166
-anchor_top = 0.854
-anchor_right = 0.853
+anchor_left = 0.05
+anchor_top = 0.84
+anchor_right = 0.95
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 13 )
 
@@ -238,4 +243,5 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="GetHitBlink" type="AnimationPlayer" parent="."]
+anims/get_hit = SubResource( 15 )

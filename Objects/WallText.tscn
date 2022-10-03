@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Materials/NoiseMaterial2.tres" type="Material" id=1]
 [ext_resource path="res://Objects/WallText.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Materials/EventIconMat.tres" type="Material" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -24,6 +25,61 @@ flags_unshaded = true
 
 [sub_resource type="QuadMesh" id=6]
 
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Test:material/0:shader_param/noise:noise_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Test2:material/0:shader_param/noise:noise_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.02577, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "noise_run"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Test:material/0:shader_param/noise:noise_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 2, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Test2:material/0:shader_param/noise:noise_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 2, 0 ) ]
+}
+
 [node name="WallText" type="Spatial" groups=["walltext"]]
 script = ExtResource( 2 )
 
@@ -45,3 +101,14 @@ visible = false
 mesh = SubResource( 6 )
 skeleton = NodePath("")
 material/0 = ExtResource( 1 )
+
+[node name="Test2" type="MeshInstance" parent="."]
+transform = Transform( 1.94185, 0, 2.04495, 0, 3.88371, 0, -3.36339, 0, 1.18065, -6.60706, 0, 7.84643 )
+visible = false
+mesh = SubResource( 6 )
+skeleton = NodePath("")
+material/0 = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/noise_run = SubResource( 8 )

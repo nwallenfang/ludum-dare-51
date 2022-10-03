@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		else:
 			show_settings()
 
-	$CanvasLayer/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
+#	$CanvasLayer/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
 
 func intro_over():
 	$CanvasLayer/IntroLabel.visible = false
@@ -37,6 +37,7 @@ func trigger_event(event):
 func reset():
 	$CanvasLayer/EventBar.visible = false
 	$CanvasLayer/EventBar.reset()
+	$CanvasLayer/EventBar.update_health_bar(3)
 	$CanvasLayer/EventBar.init_fixed_events()
 
 
