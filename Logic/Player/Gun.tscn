@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Logic/Player/Gun.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/laser_autofire.ogg" type="AudioStream" id=2]
 
 [node name="Gun" type="Spatial"]
 script = ExtResource( 1 )
@@ -12,3 +13,9 @@ collide_with_areas = true
 [node name="Firerate" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="AutofireSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+
+[connection signal="timeout" from="Firerate" to="." method="_on_Firerate_timeout"]
