@@ -32,7 +32,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Ludum Dare 51"
+config/name="ExperiMental"
 run/main_scene="res://Logic/World.tscn"
 config/icon="res://icon.png"
 
