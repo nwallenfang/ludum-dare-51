@@ -10,6 +10,7 @@ export var acceleration := 8
 export var deceleration := 10
 export(float, 0.0, 1.0, 0.05) var air_control := 0.3
 export var jump_height := 12
+export var jump_extra_frames := 10
 var direction := Vector3()
 var input_axis := Vector2()
 var velocity := Vector3()
@@ -32,6 +33,9 @@ var infinite_run = false
 
 var movement_disabled = false
 var default_scale
+
+var extra_frame_idx = 0
+
 func _ready():
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	default_scale = self.scale
@@ -55,6 +59,7 @@ func _physics_process(delta) -> void:
 	direction_input()
 	
 	if is_on_floor():
+		extra_frame_idx = 0
 		snap = -get_floor_normal() - get_floor_velocity() * delta
 		
 		# Workaround for sliding down after jump on slope
@@ -66,6 +71,12 @@ func _physics_process(delta) -> void:
 			velocity.y = jump_height
 			
 		used_second_jump = false
+	elif extra_frame_idx < jump_extra_frames:
+		if Input.is_action_just_pressed("jump"):
+			snap = Vector3.ZERO
+			velocity.y = jump_height
+		extra_frame_idx += 1
+		velocity.y -= gravity * delta
 	else:
 		# Workaround for 'vertical bump' when going off platform
 		if snap != Vector3.ZERO && velocity.y != 0:
