@@ -15,6 +15,9 @@ var fixed_events = {
 	},
 	2: {
 		3: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),
+	},
+	3: {
+		4: 	preload("res://Logic/Events/ArenaLaserGridFixedEvent.tscn").instance()
 	}
 }
 

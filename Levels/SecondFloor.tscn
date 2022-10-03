@@ -1295,10 +1295,10 @@ transform = Transform( -0.310583, 8.69333, 1.86625e-07, -1.1415, -2.29398, -0.25
 transform = Transform( 1.29329e-07, 9, 1.27698e-07, -1.12763, 6.38503e-07, 0.492508, 0.410424, -1.08173e-06, 1.35315, -58.2617, 3.83139, -31.1401 )
 
 [node name="Floor27" parent="Platforms" instance=ExtResource( 6 )]
-transform = Transform( 1.28655e-08, 9, 2.00036e-07, -1.08757, 6.15819e-07, -0.608569, -0.507141, -1.09231e-06, 1.30508, -58.2617, 12.4084, -31.8218 )
+transform = Transform( 6.27932e-08, 9, 1.89224e-07, -1.18177, 6.69158e-07, -0.250051, -0.208377, -1.08291e-06, 1.41812, -58.2617, 11.4236, -31.9954 )
 
 [node name="Floor28" parent="Platforms" instance=ExtResource( 6 )]
-transform = Transform( 6.20098e-08, 9, 1.94554e-07, -1.18177, 6.69158e-07, -0.250053, -0.208378, -1.11673e-06, 1.41812, -58.2617, 14.3478, -35.3685 )
+transform = Transform( 7.15256e-08, 4.5, -1.24707, -1.18177, -1.35345, -0.125027, -0.208378, 7.67582, 0.70906, -53.6995, 14.4219, -41.5476 )
 
 [node name="Floor24" parent="Platforms" instance=ExtResource( 6 )]
 transform = Transform( 8.39772e-08, -1.41678e-06, 1.44, -1.19543, -0.784402, 8.06321e-08, 0.104587, -8.96575, -2.34605e-07, -46.2617, 5.25921, -21.5688 )
@@ -1529,20 +1529,17 @@ transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1.5, -2, 1, -15 )
 id = 5
 
 [node name="Bob" parent="Enemies" groups=["trigger6"] instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 5, -38 )
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -13, 5, -38 )
 
 [node name="Bob2" parent="Enemies" groups=["trigger6"] instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, -39 )
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -15, 5, -39 )
 
 [node name="Bob3" parent="Enemies" groups=["trigger6"] instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5, -38 )
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -17, 5, -38 )
 
 [node name="Bob123 Trigger" parent="Enemies" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 2.5, 0, 0, 0, 4.4, -8, 7, -29 )
 id = 6
-
-[node name="Alice2" parent="Enemies" groups=["trigger6"] instance=ExtResource( 7 )]
-transform = Transform( -1, 1.30766e-07, -7.54979e-08, 0, 0.5, 0.866025, 1.50996e-07, 0.866025, -0.5, -48.4, 13.0029, -46.6144 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
@@ -1553,7 +1550,7 @@ stream = ExtResource( 5 )
 [node name="Objects" type="Spatial" parent="."]
 
 [node name="ExplosiveBarrel" parent="Objects" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, -36 )
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -15, 5, -36 )
 
 [node name="LaserGrid" parent="Objects" instance=ExtResource( 11 )]
 transform = Transform( 3.11922, 0, 0, 0, 1, 0, 0, 0, 2.49537, -34, -5, -34 )

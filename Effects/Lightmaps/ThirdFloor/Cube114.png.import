@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Cube114.png-d06e6127546d1bbcbb44c13176043a64.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Effects/Lightmaps/ThirdFloor/Cube114.png"
+dest_files=[ "res://.import/Cube114.png-d06e6127546d1bbcbb44c13176043a64.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=true
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
