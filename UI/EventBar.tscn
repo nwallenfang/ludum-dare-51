@@ -85,6 +85,7 @@ shader_param/bar_sprite = ExtResource( 5 )
 resource_name = "get_hit"
 
 [node name="EventBar" type="Control"]
+modulate = Color( 1, 1, 1, 0.776471 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
