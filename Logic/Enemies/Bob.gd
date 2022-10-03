@@ -60,7 +60,10 @@ func _physics_process(delta):
 	
 	accelerate(delta)
 	
+	
 	velocity = move_and_slide_with_snap(velocity, snap, up_direction, stop_on_slope, 4, floor_max_angle)
+	if (self.translation - velocity).length() > 0.2:
+		self.look_at(to_global(self.translation - velocity), Vector3.UP)
 
 func accelerate(delta: float) -> void:
 	# Using only the horizontal velocity, interpolate towards the input.
