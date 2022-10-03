@@ -45,7 +45,11 @@ func _on_Button_pressed() -> void:
 	hide_settings()
 
 
-
+func to_credits():
+	$"%Crosshair".visible = false
+	$CanvasLayer/SettingsIcon.visible = false
+	$CanvasLayer/FLabel.visible = false
+	$CanvasLayer/CreditsUI.visible = true
 
 func _on_SensitivitySlider_value_changed(value: float) -> void:
 	Game.set_sensitivity(Game.min_sensitivity + value * (Game.max_sensitivity - Game.min_sensitivity))

@@ -40,6 +40,10 @@ func init_fixed_events():
 #		var possible_icon = $FixedIcons.get_child(i+1)
 #		if possible_icon != null:
 #			possible_icon.queue_free()
+
+	if Game.level_index == Game.number_of_levels - 1:
+		# we're in credit level
+		return
 	
 	var fixed_events = Events.fixed_events[Game.level_index]
 	var amount = len(fixed_events)

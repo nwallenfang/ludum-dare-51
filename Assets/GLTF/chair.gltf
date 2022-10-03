@@ -6,7 +6,188 @@
     "scene" : 0,
     "scenes" : [
         {
-            "name" : "Scene"
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Chair"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "EnemySationaryBody",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.13224133849143982,
+                    0.20239953696727753,
+                    0.2140285223722458,
+                    1
+                ],
+                "roughnessFactor" : 0.8070865869522095
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Material.006",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.7642737030982971,
+                    0.7294957041740417,
+                    0.8000000715255737,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.6181102395057678
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.009",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 249,
+            "max" : [
+                0.3046683967113495,
+                0.5290080308914185,
+                0.30466845631599426
+            ],
+            "min" : [
+                -0.30466845631599426,
+                -0.0014326274394989014,
+                -0.3293783366680145
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 249,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 249,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 1218,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 89,
+            "max" : [
+                0.3046683371067047,
+                1.1398893594741821,
+                0.30466845631599426
+            ],
+            "min" : [
+                -0.30466845631599426,
+                0.4689505696296692,
+                -0.35408833622932434
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 89,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 89,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 450,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 2988,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2988,
+            "byteOffset" : 2988
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1992,
+            "byteOffset" : 5976
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2436,
+            "byteOffset" : 7968
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1068,
+            "byteOffset" : 10404
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1068,
+            "byteOffset" : 11472
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 712,
+            "byteOffset" : 12540
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 900,
+            "byteOffset" : 13252
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 14152,
+            "uri" : "Chairv2.bin"
         }
     ]
 }

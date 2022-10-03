@@ -1,10 +1,114 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Levels/SecondFloor.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cameras/MainCamera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 3.92459, 4.51989, -18.8005 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cameras/Cutscene1:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 3.92459, 4.51989, -18.8005 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cameras/MainCamera:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 2.10213, 32.6479, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "credits"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cameras/MainCamera:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 8, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 3.92459, 4.51989, -18.8005 ), Vector3( 0.498, 6.36, -27.1 ), Vector3( -20, 7, -28 ), Vector3( -32, -5.6, -28 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cameras/MainCamera:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 8, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.10213, 32.6479, 0 ), Vector3( 2.102, 78, 0 ), Vector3( 0, 90, 0 ), Vector3( -90, 90, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 14.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fade_out"
+} ]
+}
 
 [node name="Credits" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Level2" parent="." instance=ExtResource( 3 )]
+
+[node name="CreditAnimation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/credits = SubResource( 1 )
+
+[node name="Cameras" type="Spatial" parent="."]
+
+[node name="MainCamera" type="Camera" parent="Cameras"]
+transform = Transform( 0.842002, 0.0197884, 0.539112, 0, 0.999327, -0.0366809, -0.539475, 0.0308854, 0.841435, 3.92459, 4.51989, -18.8005 )
+current = true
+
+[node name="Cutscene1" type="Camera" parent="Cameras"]
+transform = Transform( 0.842002, 0.0197884, 0.539112, 0, 0.999327, -0.0366809, -0.539475, 0.0308854, 0.841435, 3.92459, 4.51989, -18.8005 )
+
+[node name="Cutscene2" type="Camera" parent="Cameras"]
+transform = Transform( 0.194544, 0.03598, 0.980234, 0, 0.999327, -0.0366809, -0.980894, 0.00713606, 0.194413, 0.4984, 6.36239, -27.1614 )
+
+[node name="Cutscene3" type="Camera" parent="Cameras"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 7, -28 )
+
+[node name="Cutscene4" type="Camera" parent="Cameras"]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -32, -5.6, -28 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

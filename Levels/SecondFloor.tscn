@@ -1554,11 +1554,10 @@ transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -15, 5, -36
 
 [node name="LaserGrid" parent="Objects" instance=ExtResource( 11 )]
 transform = Transform( 3.11922, 0, 0, 0, 1, 0, 0, 0, 2.49537, -34, -5, -34 )
-visible = true
 script = null
 
 [node name="Flag" parent="Objects" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 19, -22 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 17.9, -22 )
 
 [node name="SimpleScreen2" parent="Objects" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 3, -8 )

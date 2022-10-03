@@ -159,6 +159,7 @@ func player_hurt(hp_left):
 func intro_over():
 	yield(get_tree(), "idle_frame")
 	Game.player.movement_disabled = false
+	Game.player.gravity_multiplier = 3
 	
 	if not Game.disable_music:
 		$Level1Stream.play()
