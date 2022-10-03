@@ -262,7 +262,7 @@ flags_unshaded = true
 
 [sub_resource type="QuadMesh" id=6]
 
-[sub_resource type="Shader" id=7]
+[sub_resource type="Shader" id=35]
 code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
 
 shader_type spatial;
@@ -299,7 +299,7 @@ period = 0.1
 persistence = 0.0
 lacunarity = 4.0
 
-[sub_resource type="NoiseTexture" id=10]
+[sub_resource type="NoiseTexture" id=36]
 flags = 2
 width = 64
 height = 64
@@ -307,7 +307,7 @@ noise = SubResource( 9 )
 
 [sub_resource type="ShaderMaterial" id=14]
 resource_local_to_scene = true
-shader = SubResource( 7 )
+shader = SubResource( 35 )
 shader_param/albedo = Color( 1, 1, 1, 1 )
 shader_param/specular = 0.5
 shader_param/metallic = 0.0
@@ -317,9 +317,9 @@ shader_param/uv1_scale = Vector3( 1, 1, 1 )
 shader_param/uv1_offset = Vector3( 0, 0, 0 )
 shader_param/uv2_scale = Vector3( 1, 1, 1 )
 shader_param/uv2_offset = Vector3( 0, 0, 0 )
-shader_param/noise = SubResource( 10 )
+shader_param/noise = SubResource( 36 )
 
-[sub_resource type="Shader" id=21]
+[sub_resource type="Shader" id=37]
 code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
 
 shader_type spatial;
@@ -339,7 +339,7 @@ period = 0.1
 persistence = 0.0
 lacunarity = 4.0
 
-[sub_resource type="NoiseTexture" id=16]
+[sub_resource type="NoiseTexture" id=38]
 flags = 2
 width = 64
 height = 64
@@ -348,8 +348,8 @@ noise_offset = Vector2( 1.02577, 0 )
 
 [sub_resource type="ShaderMaterial" id=22]
 resource_local_to_scene = true
-shader = SubResource( 21 )
-shader_param/noise = SubResource( 16 )
+shader = SubResource( 37 )
+shader_param/noise = SubResource( 38 )
 
 [sub_resource type="Animation" id=18]
 length = 0.001
@@ -405,6 +405,12 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0.2, 0 ) ]
 }
+
+[sub_resource type="DynamicFont" id=23]
+size = 128
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="Animation" id=19]
 tracks/0/type = "bezier"
@@ -1611,12 +1617,6 @@ tracks/59/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="DynamicFont" id=23]
-size = 128
-outline_size = 5
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
-
 [node name="Spatial" type="Spatial"]
 
 [node name="Level2" type="Spatial" parent="."]
@@ -1760,6 +1760,13 @@ material/0 = SubResource( 22 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Level2/Platforms/WallText"]
 anims/RESET = SubResource( 18 )
 anims/noise_run = SubResource( 8 )
+
+[node name="Label3D" type="Label3D" parent="Level2/Platforms/WallText"]
+transform = Transform( 0.99992, 0, 0.0126351, 0, 1, 0, -0.0126351, 0, 0.99992, 0.85524, 1.89392, 0.953512 )
+pixel_size = 0.0164
+text = "EXPERI
+MENTAL"
+font = SubResource( 23 )
 
 [node name="Floor" type="Spatial" parent="Level2"]
 
@@ -2148,13 +2155,6 @@ light_color = Color( 1, 0, 0, 1 )
 light_energy = 11.289
 omni_range = 7.151
 omni_attenuation = 1.93187
-
-[node name="Label3D" type="Label3D" parent="Level2"]
-transform = Transform( 0.814176, 0, -0.580618, 0, 1, 0, 0.580618, 0, 0.814176, -34.791, 3.50014, -37.948 )
-pixel_size = 0.0164
-text = "EXPERI
-MENTAL"
-font = SubResource( 23 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.614251, 0.00547939, -0.789092, 0, 0.999976, 0.00694375, 0.789111, -0.00426521, 0.614236, -40.5894, 2.18529, -32.1373 )

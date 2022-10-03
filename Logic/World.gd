@@ -128,6 +128,7 @@ func restart_level():
 		Game.player.movement_disabled = true
 	Game.emit_signal("viewport_texture_changed", Game.viewport)
 	Game.player.connect("player_got_hurt", self, "player_hurt")
+	Game.player.connect("player_got_hurt", Ui.get_node("CanvasLayer/EventBar"), "update_health_bar")
 #	$Tween.reset_all()
 #	$Tween.interpolate_property($Fader, "modulate:a", 0.0, 1.0, 1.0)
 #	$Tween.start()

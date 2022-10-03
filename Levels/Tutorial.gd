@@ -7,7 +7,7 @@ func _ready():
 	Game.player = $Player
 	has_key = false
 	
-	$Player.rotate_y(deg2rad(-180.0))
+#	$Player.rotate_y(deg2rad(27.751))
 	$Player/DrinkAnimation.queue_free()
 	
 	Game.player.show_gun()

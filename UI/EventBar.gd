@@ -77,7 +77,8 @@ func set_progress(seconds: float):
 func event_triggered(event):
 	# if there is a fixed event for this, it should modulate to fully white
 	# later animate it as well with a looping tween probably
-	print("triggered: ", str(Events.number_triggered))
+	if Events.number_triggered > 6:
+		return
 	if $FixedIcons.has_node("FixedIcon" + str(Events.number_triggered)):
 		var fixed_icon = $FixedIcons.get_node("FixedIcon" + str(Events.number_triggered))
 		fixed_icon.modulate = Color.white

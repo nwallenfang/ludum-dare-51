@@ -555,9 +555,6 @@ id = 2
 [node name="Alice2" parent="Enemies" groups=["trigger1"] instance=ExtResource( 14 )]
 transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 5.79505, 8.40565, -33.266 )
 
-[node name="Bob4" parent="Enemies" groups=["trigger1"] instance=ExtResource( 11 )]
-transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -18, 2, -11 )
-
 [node name="TriggerArea4" parent="Enemies" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 3.7, 18.4, 11, -26 )
 id = 4
