@@ -8,6 +8,8 @@ var intro_sequence_should_run := false
 # var b: String = "text"
 signal intro_over
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Game.world = self
@@ -37,7 +39,11 @@ func _ready() -> void:
 
 export var intro_color: Color
 export var potion_color: Color
+var intro_running = false
 func intro_sequence():
+	if intro_running:
+		return
+	intro_running = true
 	Game.text_screen_ui.set_text("thank you")
 	Game.player.drink_animation()
 	$Tween.reset_all()
@@ -59,6 +65,7 @@ func intro_sequence():
 	Game.player.show_gun()
 	print("INTRO OVER")
 	emit_signal("intro_over")
+	intro_running = false
 
 func _input(event: InputEvent) -> void:
 	if not Game.settings_open:

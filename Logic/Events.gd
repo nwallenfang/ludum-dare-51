@@ -16,27 +16,27 @@ var fixed_events = {
 	2: {
 		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
 	},
-	4: {
-		3: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),
-	},
 	3: {
 		4: 	preload("res://Logic/Events/ArenaLaserGridFixedEvent.tscn").instance()
+	},
+	4: {
+		3: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),
 	}
 }
 
 var random_events_start = [
 	preload("res://Logic/Events/GravityEvent.tscn").instance(),
-	preload("res://Logic/Events/ShrinkEvent.tscn").instance(),
-	preload("res://Logic/Events/JumpEvent.tscn").instance(),
-	preload("res://Logic/Events/ControlEvent.tscn").instance(),
-	preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
-	preload("res://Logic/Events/BananaEvent.tscn").instance(),
-	preload("res://Logic/Events/ExplosionEvent.tscn").instance(),
-	preload("res://Logic/Events/SecondGunEvent.tscn").instance(),
-	#preload("res://Logic/Events/RunEvent.tscn").instance(),
-	preload("res://Logic/Events/FogEvent.tscn").instance(),
-	preload("res://Logic/Events/EmptyEvent.tscn").instance(),
-	preload("res://Logic/Events/FovEvent.tscn").instance(),
+	preload("res://Logic/Events/DiscoEvent.tscn").instance(),
+#	preload("res://Logic/Events/ShrinkEvent.tscn").instance(),
+#	preload("res://Logic/Events/JumpEvent.tscn").instance(),
+#	preload("res://Logic/Events/ControlEvent.tscn").instance(),
+#	preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
+#	preload("res://Logic/Events/BananaEvent.tscn").instance(),
+#	preload("res://Logic/Events/ExplosionEvent.tscn").instance(),
+#	preload("res://Logic/Events/SecondGunEvent.tscn").instance(),
+#	preload("res://Logic/Events/FogEvent.tscn").instance(),
+#	preload("res://Logic/Events/EmptyEvent.tscn").instance(),
+#	preload("res://Logic/Events/FovEvent.tscn").instance(),
 ]
 var random_event_names_start = []
 var random_event_names

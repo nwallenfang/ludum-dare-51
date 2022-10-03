@@ -7,7 +7,6 @@ var screen_materials = []
 onready var screen = $Screen
 
 var noise_icon_material = preload("res://Assets/Materials/EventIconMat.tres")
-var only_noise_material = preload("res://Assets/Materials/NoiseMaterial2.tres")
 	
 func set_texture(viewport: Viewport):
 	if viewport == null:
@@ -45,29 +44,25 @@ func new_event_triggered(event):
 #			# Noise
 #			var noise_obj: OpenSimplexNoise = noise_material.get_shader_param("noise").noise
 #			screen.material_override = noise_material
-	if $ChangeScreenTimer.is_stopped():
-		yield(get_tree().create_timer(randf()), "timeout")
-		$ChangeScreenTimer.start(min_wait + (max_wait - min_wait) * randf())
 
 
-var min_wait = 1.1
-var max_wait = 1.7
+var min_wait = 0.9
+var max_wait = 1.6
 func _ready() -> void:
 	viewport_material = $Screen.get_active_material(0).duplicate()
 	Game.connect("viewport_texture_changed", self, "set_texture")
 	Events.connect("trigger_event", self, "new_event_triggered")
 	$AnimationPlayer.play("noise_run")
+	
+	
+#	yield(get_tree().create_timer(randf()), "timeout")
+#	$ChangeScreenTimer.start(min_wait + (max_wait - min_wait) * randf())
 
 
-
-export var change_screen_chance = 0.18
+export var change_screen_chance = 0.33
 func _on_ChangeScreenTimer_timeout() -> void:
 	if randf() < change_screen_chance:
 		if screen.material_override == noise_icon_material:
-			screen.material_override = only_noise_material
-			yield(get_tree().create_timer(0.3 + 0.4 * randf()), "timeout")
 			screen.material_override = viewport_material
-		elif screen.material_override == viewport_material:
-			screen.material_override = only_noise_material
-			yield(get_tree().create_timer(0.3 + 0.4 * randf()), "timeout")
+		else:
 			screen.material_override = noise_icon_material

@@ -95,7 +95,7 @@
 [ext_resource path="res://Effects/Lightmaps/Tutorial/Trank4.png" type="Texture" id=93]
 [ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner5.png" type="Texture" id=94]
 [ext_resource path="res://Assets/Font/Fyodor-Bold.ttf" type="DynamicFontData" id=95]
-[ext_resource path="res://Objects/WallText.gd" type="Script" id=96]
+[ext_resource path="res://Levels/WallTexMuelll.gd" type="Script" id=96]
 
 [sub_resource type="BoxShape" id=1]
 
