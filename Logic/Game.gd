@@ -7,7 +7,8 @@ var player: Spatial
 var level_index := 0 # current level number
 var level_list := [preload("res://Levels/Tutorial.tscn"), 
 				preload("res://Levels/FirstFloor.tscn"),
-				preload("res://Levels/SecondFloor.tscn")] # all levels
+				preload("res://Levels/SecondFloor.tscn"),
+				preload("res://Levels/ThirdFloor.tscn")] # all levels
 var level # current level scene
 var world
 var player_camera: Camera
