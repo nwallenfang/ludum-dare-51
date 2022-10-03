@@ -596,7 +596,6 @@ id = 7
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -130.343, 8.00349, -10.212 )
 
 [node name="Ceilings" type="Spatial" parent="."]
-visible = false
 
 [node name="StaticBody4" parent="Ceilings" instance=ExtResource( 11 )]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -20 )
@@ -751,6 +750,24 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 4, 
 [node name="WallText6" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 4, -40 )
 
+[node name="WallText9" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 4, -50 )
+
+[node name="WallText11" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 4, -45 )
+
+[node name="WallText12" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 4, -25 )
+
+[node name="WallText13" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4, -25 )
+
+[node name="WallText14" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10, 4, -20 )
+
+[node name="WallText10" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 4, -60 )
+
 [node name="WallText2" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 4, -75 )
 
@@ -759,6 +776,39 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4, -35 )
 
 [node name="WallText8" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 4, -35 )
+
+[node name="WallText15" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40, 4, -25 )
+
+[node name="WallText16" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 4, -35 )
+
+[node name="WallText17" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 4, -25.0164 )
+
+[node name="WallText19" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -85, 4, -20.0164 )
+
+[node name="WallText22" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -110, 4, -24.9089 )
+
+[node name="WallText23" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -120, 4, -24.9089 )
+
+[node name="WallText24" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -120, 4, 4.95117 )
+
+[node name="WallText25" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -110, 4, 4.95117 )
+
+[node name="WallText21" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -80, 4, -5.01637 )
+
+[node name="WallText20" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -85, 4, -30.0164 )
+
+[node name="WallText18" parent="Screen" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 4, -35.0164 )
 
 [node name="WallText3" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31, 4, -65 )
