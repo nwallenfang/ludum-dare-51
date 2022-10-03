@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ludum_dare_51.ogg-ea6f0a521e33b326e84959f816b1a3f9.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

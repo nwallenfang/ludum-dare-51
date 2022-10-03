@@ -34,11 +34,6 @@ export var max_sensitivity := 0.015
 func _ready() -> void:
 	Events.connect("trigger_event", self, "event_triggered")
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("jump_to_next_level"):
-		print("jump")
-		Game.load_next_level()
-
 func set_sensitivity(val):
 	player.get_node("Head").mouse_sensitivity = val
 

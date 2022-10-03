@@ -96,7 +96,7 @@ anims/credits = SubResource( 1 )
 [node name="Cameras" type="Spatial" parent="."]
 
 [node name="MainCamera" type="Camera" parent="Cameras"]
-transform = Transform( 0.842002, 0.0197884, 0.539112, 0, 0.999327, -0.0366809, -0.539475, 0.0308854, 0.841435, 3.92459, 4.51989, -18.8005 )
+transform = Transform( 0.842002, 0.0197884, 0.539112, 0, 0.999327, -0.0366809, -0.539475, 0.0308853, 0.841435, 3.92459, 4.51989, -18.8005 )
 current = true
 
 [node name="Cutscene1" type="Camera" parent="Cameras"]
