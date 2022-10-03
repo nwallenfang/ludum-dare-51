@@ -10,7 +10,7 @@ export var acceleration := 8
 export var deceleration := 10
 export(float, 0.0, 1.0, 0.05) var air_control := 0.3
 export var jump_height := 12
-export var jump_extra_frames := 10
+export var jump_extra_frames := 0.5
 var direction := Vector3()
 var input_axis := Vector2()
 var velocity := Vector3()
@@ -71,11 +71,11 @@ func _physics_process(delta) -> void:
 			velocity.y = jump_height
 			
 		used_second_jump = false
-	elif extra_frame_idx < jump_extra_frames:
+	elif extra_frame_idx < jump_extra_frames * 1000:
 		if Input.is_action_just_pressed("jump"):
 			snap = Vector3.ZERO
 			velocity.y = jump_height
-		extra_frame_idx += 1
+		extra_frame_idx += delta
 		velocity.y -= gravity * delta
 	else:
 		# Workaround for 'vertical bump' when going off platform
