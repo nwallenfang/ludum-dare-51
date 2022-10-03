@@ -3,7 +3,7 @@ class_name EventBar
 
 var number_of_events = 6
 
-const fixed_icon_translation = 50
+const fixed_icon_translation = 80
 export var greyed_out: Color
 
 export var question_mark_tex: Texture
@@ -38,6 +38,7 @@ func init_fixed_events():
 		new_icon.set("event_name", fixed.event_name)
 		new_icon.rect_global_position = get_node("%EventBar/Icon" + str(fixed_number)).rect_global_position
 		new_icon.rect_global_position.y = new_icon.rect_global_position.y - fixed_icon_translation
+		new_icon.rect_global_position.x = new_icon.rect_global_position.x - 0.2 * fixed_icon_translation
 		new_icon.modulate = greyed_out
 
 func reset():

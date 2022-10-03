@@ -36,6 +36,7 @@ func _ready() -> void:
 export var intro_color: Color
 export var potion_color: Color
 func intro_sequence():
+	Game.text_screen_ui.set_text("thank you")
 	Game.player.drink_animation()
 	$Tween.reset_all()
 	$Tween.interpolate_property($"%VignetteRect".material, "shader_param/vignette_intensity", null, 0.4, 0.4, Tween.TRANS_QUART)
@@ -130,7 +131,7 @@ func restart_level():
 	# vignette back to sleeping
 	$"%VignetteRect".material.set_shader_param("vignette_intensity", 2.4)
 	$"%VignetteRect".material.set_shader_param("vignette_rgb", intro_color)
-	
+	Game.text_screen_ui.set_text("Click to drink")
 	$Tween.reset_all()
 	$Tween.interpolate_property($Fader, "modulate:a", 1.0, 0.0, 0.4)
 	$Tween.start()

@@ -51,7 +51,9 @@ func event_triggered(event):
 func load_next_level():
 	world.fade_out(0.4)
 	yield(world, "fade_done")
-	
+	world.get_node("IdleStream").stop()
+	world.get_node("Level1Stream").stop()
+	yield(get_tree(), "idle_frame")
 	
 	if level_index == 0:
 		# going from tutorial to lv 1
