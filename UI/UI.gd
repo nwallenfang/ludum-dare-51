@@ -3,7 +3,25 @@ extends Control
 func _ready() -> void:
 	Events.connect("trigger_event", self, "trigger_event")
 
+
+
+func show_settings():
+	Game.settings_open = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$CanvasLayer/Settings.visible = true
+	
+func hide_settings():
+	Game.settings_open = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$CanvasLayer/Settings.visible = false
+
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("open_settings"):
+		if $CanvasLayer/Settings.visible:
+			hide_settings()
+		else:
+			show_settings()
+
 	$CanvasLayer/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
 
 func intro_over():
@@ -20,3 +38,17 @@ func reset():
 	$CanvasLayer/EventBar.visible = false
 	$CanvasLayer/EventBar.reset()
 	$CanvasLayer/EventBar.init_fixed_events()
+
+
+func _on_Button_pressed() -> void:
+	hide_settings()
+
+
+
+
+func _on_SensitivitySlider_value_changed(value: float) -> void:
+	Game.set_sensitivity(Game.min_sensitivity + value * (Game.max_sensitivity - Game.min_sensitivity))
+
+
+func _on_SoundSlider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(0, linear2db(value))

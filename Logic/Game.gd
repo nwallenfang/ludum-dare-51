@@ -22,6 +22,11 @@ var viewport_material: SpatialMaterial
 
 var text_screen_ui
 
+var settings_open = false
+
+export var min_sensitivity := 0.001
+export var max_sensitivity := 0.015
+
 func _ready() -> void:
 	Events.connect("trigger_event", self, "event_triggered")
 
@@ -30,6 +35,8 @@ func _process(delta: float) -> void:
 		print("jump")
 		Game.load_next_level()
 
+func set_sensitivity(val):
+	player.get_node("Head").mouse_sensitivity = val
 
 func set_2d_viewport(viewport_t):
 	viewport = viewport_t

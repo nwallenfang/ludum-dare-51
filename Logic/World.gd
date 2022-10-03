@@ -59,8 +59,8 @@ func intro_sequence():
 	emit_signal("intro_over")
 
 func _input(event: InputEvent) -> void:
-
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if not Game.settings_open:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 #	if movement_disabled:
 #		return
 
@@ -69,7 +69,8 @@ func _input(event: InputEvent) -> void:
 		
 	# not movement_disabled
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if not Game.settings_open:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 	
 	if event.is_action_pressed("change_mouse_input"):

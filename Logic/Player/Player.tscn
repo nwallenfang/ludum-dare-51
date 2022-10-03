@@ -13,7 +13,6 @@
 [sub_resource type="CapsuleMesh" id=13]
 
 [sub_resource type="CapsuleShape" id=2]
-height = 1.29279
 
 [sub_resource type="CubeMesh" id=6]
 
@@ -511,7 +510,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406672, 1.57277, -1.54685 )
 background = Color( 0, 1, 0.25098, 1 )
 background2 = Color( 0, 0.0627451, 1, 1 )
 bubbles = Color( 0.831373, 0.207843, 0.882353, 1 )
-make_random_colors = true
 
 [node name="DrinkAnimationPlayer" type="AnimationPlayer" parent="DrinkAnimation"]
 root_node = NodePath("../..")

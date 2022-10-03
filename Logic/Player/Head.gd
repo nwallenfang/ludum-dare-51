@@ -4,7 +4,7 @@ extends Spatial
 export(NodePath) var cam_path := NodePath("Camera")
 onready var cam: Camera = get_node(cam_path)
 
-export var mouse_sensitivity := 5.0
+export var mouse_sensitivity := 0.005
 export var y_limit := 90.0
 var mouse_axis := Vector2()
 var rot := Vector3()
@@ -12,7 +12,6 @@ var rot := Vector3()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	mouse_sensitivity = mouse_sensitivity / 1000
 	y_limit = deg2rad(y_limit)
 	Game.player_camera = $Camera
 	
