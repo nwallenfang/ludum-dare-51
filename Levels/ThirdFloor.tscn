@@ -531,7 +531,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
 [node name="Lifts" type="Spatial" parent="Objects"]
 
 [node name="Aufzug" parent="Objects/Lifts" instance=ExtResource( 7 )]
-transform = Transform( 3, 0, 0, 0, 0.2, 0, 0, 0, 3, 0, 0, -13 )
+transform = Transform( 3, 0, 0, 0, 2, 0, 0, 0, 3, 0, -0.388929, -13 )
 target_translation = Vector3( 0, 7, 0 )
 
 [node name="ExplosiveBarrel" parent="Objects" instance=ExtResource( 13 )]
