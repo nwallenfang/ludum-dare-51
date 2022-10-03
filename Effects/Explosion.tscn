@@ -150,3 +150,5 @@ light_energy = 10.0
 omni_range = 7.51348
 
 [node name="Tween" type="Tween" parent="."]
+
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
