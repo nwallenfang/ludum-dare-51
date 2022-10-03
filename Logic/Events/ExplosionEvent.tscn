@@ -6,6 +6,6 @@
 [node name="Node2" type="Node"]
 script = ExtResource( 1 )
 icon = ExtResource( 2 )
-event_name = "Explosions"
+event_name = "Explosion"
 
 [node name="Tween" type="Tween" parent="."]
