@@ -9,7 +9,7 @@ export var speed := 10
 export var acceleration := 8
 export var deceleration := 10
 export(float, 0.0, 1.0, 0.05) var air_control := 0.3
-export var jump_height := 10
+export var jump_height := 12
 var direction := Vector3()
 var input_axis := Vector2()
 var velocity := Vector3()
@@ -138,7 +138,7 @@ func get_hurt():
 func _on_HurtBox_area_entered(area):
 	if $HurtTimer.time_left == 0.0:
 		get_hurt()
-		knockback = area.get_parent().global_translation.direction_to(self.global_translation) * 30.0
+		knockback = area.get_parent().global_translation.direction_to(self.global_translation + Vector3.UP) * 24.0
 
 func _on_HurtTimer_timeout():
 	for a in $HurtBox.get_overlapping_areas():
