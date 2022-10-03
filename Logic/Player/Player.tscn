@@ -532,6 +532,8 @@ one_shot = true
 
 [node name="LaserStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -6.117
+bus = "Laser Lowpass"
 
 [node name="PickupStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -539,11 +541,13 @@ volume_db = -10.645
 
 [node name="HurtStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -18.369
+volume_db = -13.125
+bus = "Pain"
 
 [node name="DieStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = -4.608
+bus = "Pain"
 
 [node name="DeathAnimation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 8 )
