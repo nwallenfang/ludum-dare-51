@@ -15,41 +15,42 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Chair"
+            "name" : "Regal"
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "EnemySationaryBody",
+            "name" : "RegalPrimary",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.13224133849143982,
-                    0.20239953696727753,
-                    0.2140285223722458,
+                    0.08000731468200684,
+                    0.04713316634297371,
+                    0.02792283333837986,
                     1
                 ],
-                "roughnessFactor" : 0.8070865869522095
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
             }
         },
         {
             "doubleSided" : true,
-            "name" : "Material.006",
+            "name" : "RegalSecondary",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.7642737030982971,
-                    0.7294957041740417,
-                    0.8000000715255737,
+                    0.13758207857608795,
+                    0.13758207857608795,
+                    0.13758207857608795,
                     1
                 ],
                 "metallicFactor" : 0,
-                "roughnessFactor" : 0.6181102395057678
+                "roughnessFactor" : 0.5
             }
         }
     ],
     "meshes" : [
         {
-            "name" : "Cylinder.009",
+            "name" : "Cylinder.013",
             "primitives" : [
                 {
                     "attributes" : {
@@ -76,118 +77,118 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 249,
+            "count" : 128,
             "max" : [
-                0.3046683967113495,
-                0.5290080308914185,
-                0.30466845631599426
+                0.8976308107376099,
+                1.5572751760482788,
+                0.26658159494400024
             ],
             "min" : [
-                -0.30466845631599426,
-                -0.0014326274394989014,
-                -0.3293783366680145
+                -0.8976308107376099,
+                0.371684193611145,
+                -0.26658159494400024
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 249,
+            "count" : 128,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 249,
+            "count" : 128,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 1218,
+            "count" : 216,
             "type" : "SCALAR"
         },
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 89,
+            "count" : 160,
             "max" : [
-                0.3046683371067047,
-                1.1398893594741821,
-                0.30466845631599426
+                0.8286432027816772,
+                1.5572751760482788,
+                0.21115851402282715
             ],
             "min" : [
-                -0.30466845631599426,
-                0.4689505696296692,
-                -0.35408833622932434
+                -0.8286432027816772,
+                0,
+                -0.21115851402282715
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 89,
+            "count" : 160,
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 89,
+            "count" : 160,
             "type" : "VEC2"
         },
         {
             "bufferView" : 7,
             "componentType" : 5123,
-            "count" : 450,
+            "count" : 264,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 2988,
+            "byteLength" : 1536,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 2988,
-            "byteOffset" : 2988
+            "byteLength" : 1536,
+            "byteOffset" : 1536
         },
         {
             "buffer" : 0,
-            "byteLength" : 1992,
-            "byteOffset" : 5976
+            "byteLength" : 1024,
+            "byteOffset" : 3072
         },
         {
             "buffer" : 0,
-            "byteLength" : 2436,
-            "byteOffset" : 7968
+            "byteLength" : 432,
+            "byteOffset" : 4096
         },
         {
             "buffer" : 0,
-            "byteLength" : 1068,
-            "byteOffset" : 10404
+            "byteLength" : 1920,
+            "byteOffset" : 4528
         },
         {
             "buffer" : 0,
-            "byteLength" : 1068,
-            "byteOffset" : 11472
+            "byteLength" : 1920,
+            "byteOffset" : 6448
         },
         {
             "buffer" : 0,
-            "byteLength" : 712,
-            "byteOffset" : 12540
+            "byteLength" : 1280,
+            "byteOffset" : 8368
         },
         {
             "buffer" : 0,
-            "byteLength" : 900,
-            "byteOffset" : 13252
+            "byteLength" : 528,
+            "byteOffset" : 9648
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 14152,
-            "uri" : "Chairv2.bin"
+            "byteLength" : 10176,
+            "uri" : "Regal.bin"
         }
     ]
 }

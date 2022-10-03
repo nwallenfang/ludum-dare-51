@@ -188,6 +188,7 @@ material_overlay = ExtResource( 2 )
 mesh = SubResource( 6 )
 
 [node name="EnemySationaryHat" type="MeshInstance" parent="Model/EnenmyStationaryBottom"]
+material_overlay = ExtResource( 2 )
 mesh = SubResource( 7 )
 
 [node name="EnenmyStationaryCannon" type="MeshInstance" parent="Model/EnenmyStationaryBottom"]
@@ -208,6 +209,7 @@ transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013881, 0, 0 )
 mesh = SubResource( 10 )
 
 [node name="EnenmyStationaryHead" type="MeshInstance" parent="Model/EnenmyStationaryBottom"]
+material_overlay = ExtResource( 2 )
 mesh = SubResource( 11 )
 
 [node name="ShotPoint" type="Spatial" parent="Model/EnenmyStationaryBottom/EnenmyStationaryHead"]

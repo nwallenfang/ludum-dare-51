@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
@@ -16,6 +16,10 @@
 [ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/Lamp.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objects/WallText.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Regal.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/Locker.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/GLTF/TestTube_v2.gltf" type="PackedScene" id=19]
+[ext_resource path="res://Objects/Table.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
 
@@ -758,3 +762,29 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31, 4, 
 
 [node name="WallText4" parent="Screen" instance=ExtResource( 16 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 35, 4, -70 )
+
+[node name="Deco" type="Spatial" parent="."]
+
+[node name="Locker" parent="Deco" instance=ExtResource( 18 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20.6819, 0.135344, -66.2416 )
+
+[node name="Regal" parent="Deco" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8658, 0.115301, -66.1145 )
+
+[node name="TestTube_v2" parent="Deco/Regal" instance=ExtResource( 19 )]
+transform = Transform( 0.993146, 0, 0.116879, 0, 1, 0, -0.116879, 0, 0.993146, 1.06446, 2.91672, -0.0261154 )
+
+[node name="TestTube_v3" parent="Deco/Regal" instance=ExtResource( 19 )]
+transform = Transform( 0.997598, 0, -0.069269, 0, 1, 0, 0.069269, 0, 0.997598, 0.540234, 2.91672, -0.0261154 )
+
+[node name="TestTube_v4" parent="Deco/Regal" instance=ExtResource( 19 )]
+transform = Transform( 0.996391, 0, -0.0848778, 0, 1, 0, 0.0848778, 0, 0.996391, -0.0423908, 2.91672, -0.0261154 )
+
+[node name="TestTube_v5" parent="Deco/Regal" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.598291, 2.91672, -0.0261154 )
+
+[node name="Table" parent="Deco" instance=ExtResource( 20 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18.733, 0.268047, -59.5624 )
+
+[node name="Table2" parent="Deco" instance=ExtResource( 20 )]
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -10.3138, 0.268047, -50.4253 )

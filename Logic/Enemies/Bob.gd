@@ -131,5 +131,5 @@ func hurt_visuals():
 		if m is MeshInstance:
 			m = m as MeshInstance
 			if m.material_overlay != null:
-				$HurtTween.interpolate_property(m.material_overlay, "albedo_color:a", .85, .0, .4)
+				$HurtTween.interpolate_property(m.material_overlay, "albedo_color:a", 1, .0, .4)
 	$HurtTween.start()
