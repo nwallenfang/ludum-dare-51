@@ -49,6 +49,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=8]
 resource_name = "noise_run"
+length = 4.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Test:material/0:shader_param/noise:noise_offset")
@@ -69,10 +70,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0.2, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0.9, 0 ) ]
 }
 
 [node name="WallText" type="Spatial" groups=["walltext"]]

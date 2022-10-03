@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
@@ -94,6 +94,8 @@
 [ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner3.png" type="Texture" id=92]
 [ext_resource path="res://Effects/Lightmaps/Tutorial/Trank4.png" type="Texture" id=93]
 [ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner5.png" type="Texture" id=94]
+[ext_resource path="res://Assets/Font/Fyodor-Bold.ttf" type="DynamicFontData" id=95]
+[ext_resource path="res://Objects/WallText.gd" type="Script" id=96]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -126,11 +128,178 @@ user_data = [ NodePath("../Player/DrinkAnimation/Spatial/Potion/Trank"), ExtReso
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.289265, 0.491648, 0.275386 )
 
+[sub_resource type="CubeMesh" id=22]
+
+[sub_resource type="SpatialMaterial" id=23]
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+roughness = 0.67
+
+[sub_resource type="QuadMesh" id=24]
+
+[sub_resource type="SpatialMaterial" id=25]
+resource_local_to_scene = true
+flags_unshaded = true
+
+[sub_resource type="QuadMesh" id=26]
+
+[sub_resource type="Shader" id=7]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
+
+shader_type spatial;
+render_mode async_visible,blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx,unshaded;
+uniform vec4 albedo : hint_color;
+uniform sampler2D texture_albedo : hint_albedo;
+uniform float specular;
+uniform float metallic;
+uniform float roughness : hint_range(0,1);
+uniform float point_size : hint_range(0,128);
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+uniform sampler2D noise;
+
+void vertex() {
+	UV=UV*uv1_scale.xy+uv1_offset.xy;
+}
+
+
+
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = texture(noise, UV).rgb - 0.3;
+}
+"
+
+[sub_resource type="OpenSimplexNoise" id=27]
+period = 0.1
+persistence = 0.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=10]
+flags = 2
+width = 64
+height = 64
+noise = SubResource( 27 )
+
+[sub_resource type="ShaderMaterial" id=28]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/noise = SubResource( 10 )
+
+[sub_resource type="Shader" id=21]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
+
+shader_type spatial;
+render_mode async_visible,blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx,unshaded;
+
+uniform sampler2D icon;
+uniform sampler2D noise;
+
+
+void fragment() {
+	ALBEDO = texture(icon, UV).rgb * (texture(noise, UV).rgb - 0.7);
+}
+"
+
+[sub_resource type="OpenSimplexNoise" id=29]
+period = 0.1
+persistence = 0.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=16]
+flags = 2
+width = 64
+height = 64
+noise = SubResource( 29 )
+noise_offset = Vector2( 1.02577, 0 )
+
+[sub_resource type="ShaderMaterial" id=30]
+resource_local_to_scene = true
+shader = SubResource( 21 )
+shader_param/noise = SubResource( 16 )
+
+[sub_resource type="Animation" id=31]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Test:material/0:shader_param/noise:noise_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Test2:material/0:shader_param/noise:noise_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.02577, 0 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "noise_run"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Test:material/0:shader_param/noise:noise_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0.2, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Test2:material/0:shader_param/noise:noise_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0.8, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=33]
+size = 128
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 95 )
+
 [node name="Tutorial" type="Spatial"]
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.736706, 0 )
+transform = Transform( 0.884979, 0, 0.46563, 0, 1, 0, -0.46563, 0, 0.884979, -0.831547, 0.736706, 0.371768 )
 
 [node name="Floors" type="Spatial" parent="."]
 
@@ -329,12 +498,12 @@ text = "turn around"
 font = ExtResource( 13 )
 
 [node name="Label3D2" type="Label3D" parent="Text"]
-transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.669118, 5.18381, -4.75335 )
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.423372, 5.18381, -4.75335 )
 generate_lightmap = false
 pixel_size = 0.0183
 double_sided = false
-text = "WASD to 
-move"
+text = "[WASD]
+ to move"
 font = ExtResource( 14 )
 
 [node name="Label3D4" type="Label3D" parent="Text"]
@@ -569,7 +738,7 @@ transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -70 )
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
 
 [node name="Ubershader" parent="." instance=ExtResource( 12 )]
-transform = Transform( 0.0348362, 0, 0, 0, 0.0348362, 0, 0, 0, 0.0348362, -2.00813, 2.33504, 4.65104 )
+transform = Transform( 0.0348362, 0, 0, 0, 0.0348362, 0, 0, 0, 0.0348362, -3.47999, 2.14002, -1.48356 )
 
 [node name="Potion2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.535625, 0, 1.69662, 0, 1.77916, 0, -1.69662, 0, 0.535625, -3.45701, 1.66567, -1.46444 )
@@ -591,3 +760,44 @@ bubbles = Color( 0.917647, 0.12549, 0.905882, 1 )
 
 [node name="TestTube_Holder" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1.43487, 0, 0.785829, 0, 1.63596, 0, -0.785829, 0, 1.43487, -2.43272, 1.66382, -2.45509 )
+
+[node name="WallText" type="Spatial" parent="." groups=["walltext"]]
+transform = Transform( 0.228995, 0, 0.121129, 0, 0.259058, 0, -0.121129, 0, 0.228995, -3.79789, 2.63018, -3.98064 )
+script = ExtResource( 96 )
+
+[node name="OuterScreen" type="MeshInstance" parent="WallText"]
+transform = Transform( 4.72285, 0, -2.23517e-08, 0, 4.72285, 0, 2.38419e-07, 0, 0.13224, 0.919174, 1.50192, -0.214359 )
+mesh = SubResource( 22 )
+skeleton = NodePath("")
+material/0 = SubResource( 23 )
+
+[node name="Screen" type="MeshInstance" parent="WallText"]
+transform = Transform( 3.88371, 0, 0, 0, 3.88371, 0, 0, 0, 2.3613, -11.0575, 0, -4.52607 )
+visible = false
+mesh = SubResource( 24 )
+skeleton = NodePath("")
+material/0 = SubResource( 25 )
+
+[node name="Test" type="MeshInstance" parent="WallText"]
+transform = Transform( 1.94185, 0, 2.04495, 0, 3.88371, 0, -3.36339, 0, 1.18065, -4.5712, 0, 3.60531 )
+visible = false
+mesh = SubResource( 26 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="Test2" type="MeshInstance" parent="WallText"]
+transform = Transform( 8.44603, 0, 7.15256e-07, 0, 8.44604, 0, 4.76837e-07, 0, 5.13521, 0.894875, 1.67494, -0.0170879 )
+mesh = SubResource( 26 )
+skeleton = NodePath("")
+material/0 = SubResource( 30 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WallText"]
+anims/RESET = SubResource( 31 )
+anims/noise_run = SubResource( 32 )
+
+[node name="Label3D" type="Label3D" parent="WallText"]
+transform = Transform( 0.99992, 0, 0.0126353, 0, 1, 0, -0.0126353, 0, 0.99992, 1.03344, 1.56642, 0.951262 )
+pixel_size = 0.0164
+text = "EXPERI
+MENTAL"
+font = SubResource( 33 )
