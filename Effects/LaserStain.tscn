@@ -62,7 +62,7 @@ process_material = SubResource( 11 )
 draw_pass_1 = SubResource( 10 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
 
 [node name="Tween" type="Tween" parent="."]

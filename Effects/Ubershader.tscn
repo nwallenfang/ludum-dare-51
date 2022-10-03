@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Objects/Potion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Effects/Ubershader.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Effects/Explosion.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Materials/RedOverlay.tres" type="Material" id=8]
 [ext_resource path="res://Logic/Player/LaserDrawer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Effects/LaserStain.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -24,6 +26,9 @@ transform = Transform( 0.258845, 0, 0, 0, 0.258845, 0, 0, 0, 0.258845, 0, 0, 0 )
 [node name="DeathEffect" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.0172964, 0, 0, 0, 0.0172964, 0, 0, 0, 0.0172964, 0, 0, 0 )
 script = null
+
+[node name="Particles" parent="DeathEffect" index="0"]
+emitting = false
 
 [node name="Explosion" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.0355128, 0, 0, 0, 0.0355128, 0, 0, 0, 0.0355128, 0, 0, 0 )
@@ -52,6 +57,20 @@ mesh = SubResource( 1 )
 [node name="LaserDrawer" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0461758, 0 )
 
+[node name="LaserStain" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.0741782, 0, 0, 0, 0.0741782, 0, 0, 0, 0.0741782, 0, 0, 0 )
+script = null
+
+[node name="KeyPickup" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.0436068, 0, 0, 0, 0.0436068, 0, 0, 0, 0.0436068, 0, 0, 0 )
+script = null
+
+[node name="Area" parent="KeyPickup" index="0"]
+monitoring = false
+monitorable = false
+
 [editable path="DeathEffect"]
 [editable path="Explosion"]
 [editable path="ProjectileSplash"]
+[editable path="LaserStain"]
+[editable path="KeyPickup"]

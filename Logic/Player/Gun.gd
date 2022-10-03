@@ -12,6 +12,10 @@ const LASER_STAIN = preload("res://Effects/LaserStain.tscn")
 const EXPLOSION = preload("res://Effects/Explosion.tscn")
 func _input(event: InputEvent):
 	if not Game.player.movement_disabled and Input.is_action_just_pressed("shoot"):
+		if $Firerate.time_left > 0.0:
+			return
+		$Firerate.start()
+		
 		# Update the ray and get the collided object
 		ray.set_cast_to(Vector3(0,0,-10000000000))
 		ray.force_raycast_update()
