@@ -6,7 +6,9 @@ var ray_path := NodePath("RayCast")
 onready var ray: RayCast = get_node(ray_path)
 
 var laser_sound_path := NodePath("../../LaserStream")
+var banana_sound_path := NodePath("../../BananaStream")
 onready var laser_sound: AudioStreamPlayer = get_node(laser_sound_path)
+onready var banana_sound: AudioStreamPlayer = get_node(banana_sound_path)
 
 const LASER_STAIN = preload("res://Effects/LaserStain.tscn")
 const EXPLOSION = preload("res://Effects/Explosion.tscn")
@@ -74,6 +76,9 @@ func _input(event: InputEvent):
 		get_tree().current_scene.add_child(laser_drawer)
 		laser_drawer.draw_line(Game.player.get_node("%GunHead").global_translation, hit_point)
 		
-		laser_sound.play()
+		if not Events.banana:
+			laser_sound.play()
+		else:
+			banana_sound.play()
 		
 
