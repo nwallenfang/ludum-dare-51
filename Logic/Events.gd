@@ -33,7 +33,6 @@ var random_events_start = [
 	preload("res://Logic/Events/BananaEvent.tscn").instance(),
 	preload("res://Logic/Events/ExplosionEvent.tscn").instance(),
 	preload("res://Logic/Events/SecondGunEvent.tscn").instance(),
-	#preload("res://Logic/Events/RunEvent.tscn").instance(),
 	preload("res://Logic/Events/FogEvent.tscn").instance(),
 	preload("res://Logic/Events/EmptyEvent.tscn").instance(),
 	preload("res://Logic/Events/FovEvent.tscn").instance(),

@@ -60,11 +60,13 @@ func event_triggered(event):
 
 # When reaching the end
 func load_next_level():
-	world.fade_out(0.4)
-	yield(world, "fade_done")
+	Game.player.movement_disabled = true
 	world.get_node("IdleStream").stop()
 	world.get_node("Level1Stream").stop()
 	yield(get_tree(), "idle_frame")
+
+	world.fade_out(0.4)
+	yield(world, "fade_done")
 	
 	if level_index == 0:
 		# going from tutorial to lv 1
@@ -85,16 +87,14 @@ func load_next_level():
 		
 		Ui.reset()
 		
-		world.get_node("Level1Stream").stop()
 		world.get_node("IdleStream").play(0.2)
 		
 		if level_index < number_of_levels - 1:
 			text_screen_ui.set_text("Click to drink")
-		
+	world.new_level()	
 		
 	emit_signal("viewport_texture_changed", viewport)	
 	world.fade_in(0.4)
 	yield(world, "fade_done")
 	
-	world.new_level()
 
