@@ -22,6 +22,7 @@ void fragment() {
 "
 
 [resource]
+resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/albedo = Color( 1, 0.219608, 0.219608, 1 )
 shader_param/progress = 0.0

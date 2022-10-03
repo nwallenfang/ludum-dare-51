@@ -129,7 +129,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"points": PoolRealArray( 500, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 499, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/7/type = "bezier"
@@ -139,7 +139,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"points": PoolRealArray( 241, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 288, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "bezier"
@@ -269,10 +269,10 @@ modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 7 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -12.0
-margin_top = 241.0
-margin_right = 20.0
-margin_bottom = 273.0
+margin_left = -13.0
+margin_top = 288.0
+margin_right = 19.0
+margin_bottom = 320.0
 rect_min_size = Vector2( 32, 32 )
 rect_pivot_offset = Vector2( 16, 16 )
 size_flags_horizontal = 3
