@@ -5,6 +5,8 @@ var fixed_materials = []
 var screen_materials = []
 
 onready var screen = $Screen
+
+var noise_material = preload("res://Assets/Materials/NoiseMaterial2.tres")
 	
 func set_texture(viewport: Viewport):
 	if viewport == null:
@@ -18,10 +20,40 @@ func set_texture(viewport: Viewport):
 	screen_materials.clear()
 	screen_materials = fixed_materials.duplicate()
 	screen_materials.append(viewport_material)
+	screen.material_override = viewport_material
 
 
 func new_event_triggered(event):
 	screen.material_override = viewport_material
+	var rand_index = randi() % 4
+	
+#	match rand_index:
+#		0: 
+#			# Event name / 2D Viewport
+#			screen.material_override = viewport_material
+#		1:
+#			# Event icon
+#			# Noise
+#			var noise_obj: OpenSimplexNoise = noise_material.get_shader_param("noise").noise
+#			screen.material_override = noise_material
+#			var tween = create_tween().set_loops()
+#			tween.tween_property(noise_obj, "noise_offset", 10.0, 1.5)
+#			tween.play()
+#		2:
+#			# Noise
+#			var noise_obj: OpenSimplexNoise = noise_material.get_shader_param("noise").noise
+#			screen.material_override = noise_material
+#			var tween = create_tween().set_loops()
+#			tween.tween_property(noise_obj, "noise_offset", 10.0, 1.5)
+#			tween.play()
+#		3:
+#			# Healthbar
+#			# Noise
+#			var noise_obj: OpenSimplexNoise = noise_material.get_shader_param("noise").noise
+#			screen.material_override = noise_material
+#			var tween = create_tween().set_loops()
+#			tween.tween_property(noise_obj, "noise_offset", 10.0, 1.5)
+#			tween.play()
 
 
 func _ready() -> void:
