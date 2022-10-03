@@ -14,3 +14,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13447, 0.467534, 0 )
 shape = SubResource( 1 )
 
 [node name="TableMesh" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00294948, 0, 0.00354624 )

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Speaker.gltf-b60621c12e56606cd9ba40a9896423b2.scn"
+path="res://.import/Locker.gltf-7c6f05e15652fc4b3e215cee0993ea35.scn"
 
 [deps]
 
-source_file="res://Assets/GLTF/Speaker.gltf"
-dest_files=[ "res://.import/Speaker.gltf-b60621c12e56606cd9ba40a9896423b2.scn" ]
+source_file="res://Assets/GLTF/Locker.gltf"
+dest_files=[ "res://.import/Locker.gltf-7c6f05e15652fc4b3e215cee0993ea35.scn" ]
 
 [params]
 
