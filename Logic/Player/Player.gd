@@ -126,10 +126,13 @@ func get_hurt():
 	if !invincible and $HurtTimer.time_left == 0.0:
 		hp = hp - 1
 		$HurtTimer.start()
-		print("hurt")
+
 		emit_signal("player_got_hurt", hp)
 		if hp <= 0:
 			Game.world.restart_level()
+			$DieStream.play()
+		else:
+			$HurtStream.play()
 
 
 func _on_HurtBox_area_entered(area):
