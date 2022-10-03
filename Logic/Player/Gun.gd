@@ -12,6 +12,8 @@ const LASER_STAIN = preload("res://Effects/LaserStain.tscn")
 const EXPLOSION = preload("res://Effects/Explosion.tscn")
 func _input(event: InputEvent):
 	if not Game.player.movement_disabled and Input.is_action_just_pressed("shoot"):
+		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		if $Firerate.time_left > 0.0:
 			return
 		$Firerate.start()

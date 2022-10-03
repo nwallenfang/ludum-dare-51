@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Effects/Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/boom.ogg" type="AudioStream" id=2]
 
 [sub_resource type="SphereMesh" id=1]
 radius = 3.0
@@ -150,5 +151,9 @@ light_energy = 10.0
 omni_range = 7.51348
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="BoomStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -18.353
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]

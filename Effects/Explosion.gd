@@ -1,6 +1,7 @@
 extends Spatial
 
 func _ready():
+	$BoomStream.play()
 	$Particles.emitting = true
 	$Particles2.emitting = true
 	$Particles3.emitting = true
