@@ -1,7 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/GLTF/EnemySationaryBody.material" type="Material" id=1]
-[ext_resource path="res://Assets/GLTF/Material_006.material" type="Material" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "LampSeeling_Cube020"
@@ -19,6 +18,18 @@ surfaces/0 = {
 "vertex_count": 152
 }
 
+[sub_resource type="SpatialMaterial" id=3]
+resource_name = "Material.006"
+vertex_color_use_as_albedo = true
+params_cull_mode = 2
+albedo_color = Color( 0.906332, 0.906332, 0.906332, 1 )
+roughness = 0.61811
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 2.29
+emission_operator = 0
+emission_on_uv2 = false
+
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "LampSeeling_Cylinder016"
 lightmap_size_hint = Vector2( 54, 38 )
@@ -29,7 +40,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194743,
 "index_count": 84,
-"material": ExtResource( 2 ),
+"material": SubResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 44
