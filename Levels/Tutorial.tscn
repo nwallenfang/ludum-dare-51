@@ -1,11 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
 [ext_resource path="res://Levels/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://Objects/Potion.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Materials/ScreenMaterial.tres" type="Material" id=5]
-[ext_resource path="res://Effects/Lightmaps/Tutorial/Tutorial.lmbake" type="BakedLightmapData" id=6]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GLTF/chair.gltf" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/LabFloor.tscn" type="PackedScene" id=9]
@@ -15,8 +15,85 @@
 [ext_resource path="res://Assets/Font/WalltextFont.tres" type="DynamicFont" id=13]
 [ext_resource path="res://Assets/Font/WalltextFontSmaller.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Objects/TestTube_Holder.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank.png" type="Texture" id=16]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube3.png" type="Texture" id=17]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner2.png" type="Texture" id=18]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube.png" type="Texture" id=19]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube2.png" type="Texture" id=20]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube5.png" type="Texture" id=21]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube4.png" type="Texture" id=22]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube7.png" type="Texture" id=23]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube8.png" type="Texture" id=24]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube6.png" type="Texture" id=25]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube9.png" type="Texture" id=26]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube10.png" type="Texture" id=27]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube11.png" type="Texture" id=28]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube14.png" type="Texture" id=29]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube12.png" type="Texture" id=30]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube15.png" type="Texture" id=31]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube13.png" type="Texture" id=32]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube19.png" type="Texture" id=33]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube18.png" type="Texture" id=34]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube16.png" type="Texture" id=35]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube17.png" type="Texture" id=36]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube21.png" type="Texture" id=37]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube20.png" type="Texture" id=38]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube23.png" type="Texture" id=39]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube22.png" type="Texture" id=40]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube24.png" type="Texture" id=41]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube25.png" type="Texture" id=42]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube26.png" type="Texture" id=43]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube29.png" type="Texture" id=44]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube27.png" type="Texture" id=45]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube28.png" type="Texture" id=46]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube32.png" type="Texture" id=47]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube30.png" type="Texture" id=48]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube31.png" type="Texture" id=49]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube35.png" type="Texture" id=50]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube33.png" type="Texture" id=51]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube34.png" type="Texture" id=52]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube38.png" type="Texture" id=53]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube36.png" type="Texture" id=54]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube37.png" type="Texture" id=55]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube39.png" type="Texture" id=58]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube41.png" type="Texture" id=59]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube40.png" type="Texture" id=60]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube42.png" type="Texture" id=61]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube43.png" type="Texture" id=62]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube46.png" type="Texture" id=63]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube44.png" type="Texture" id=64]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube45.png" type="Texture" id=65]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube47.png" type="Texture" id=66]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube48.png" type="Texture" id=67]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube49.png" type="Texture" id=68]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube50.png" type="Texture" id=69]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube51.png" type="Texture" id=70]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube52.png" type="Texture" id=71]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Chair.png" type="Texture" id=72]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube53.png" type="Texture" id=73]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube56.png" type="Texture" id=74]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube54.png" type="Texture" id=75]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube55.png" type="Texture" id=76]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube57.png" type="Texture" id=77]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube60.png" type="Texture" id=78]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube58.png" type="Texture" id=79]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube59.png" type="Texture" id=80]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube61.png" type="Texture" id=81]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube63.png" type="Texture" id=82]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube62.png" type="Texture" id=83]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube66.png" type="Texture" id=84]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube64.png" type="Texture" id=85]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube65.png" type="Texture" id=86]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube67.png" type="Texture" id=87]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank2.png" type="Texture" id=88]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank3.png" type="Texture" id=89]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner4.png" type="Texture" id=90]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank5.png" type="Texture" id=91]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner3.png" type="Texture" id=92]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank4.png" type="Texture" id=93]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner5.png" type="Texture" id=94]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -42,6 +119,9 @@ roughness = 0.71
 
 [sub_resource type="CubeMesh" id=5]
 material = ExtResource( 5 )
+
+[sub_resource type="BakedLightmapData" id=6]
+user_data = [ NodePath("../Player/DrinkAnimation/Spatial/Potion/Trank"), ExtResource( 16 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Player/DrinkAnimation/Spatial/Potion/Trank/TrankInner"), ExtResource( 6 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor1/Cube"), ExtResource( 19 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor2/Cube"), ExtResource( 20 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor3/Cube"), ExtResource( 17 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor4/Cube"), ExtResource( 22 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor5/Cube"), ExtResource( 21 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor6/Cube"), ExtResource( 25 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor7/Cube"), ExtResource( 23 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor9/Cube"), ExtResource( 24 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor10/Cube"), ExtResource( 26 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor11/Cube"), ExtResource( 27 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor13/Cube"), ExtResource( 28 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor14/Cube"), ExtResource( 30 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor12/Cube"), ExtResource( 32 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor8/Cube"), ExtResource( 29 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Table/Cube"), ExtResource( 31 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Table2/Cube"), ExtResource( 35 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody6/Cube"), ExtResource( 36 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody/Cube"), ExtResource( 34 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody2/Cube"), ExtResource( 33 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody3/Cube"), ExtResource( 38 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody7/Cube"), ExtResource( 37 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody8/Cube"), ExtResource( 40 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody16/Cube"), ExtResource( 39 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody37/Cube"), ExtResource( 41 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody36/Cube"), ExtResource( 42 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody9/Cube"), ExtResource( 43 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody10/Cube"), ExtResource( 45 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody14/Cube"), ExtResource( 46 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody19/Cube"), ExtResource( 44 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody11/Cube"), ExtResource( 48 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody12/Cube"), ExtResource( 49 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody29/Cube"), ExtResource( 47 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody30/Cube"), ExtResource( 51 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody13/Cube"), ExtResource( 52 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody15/Cube"), ExtResource( 50 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody17/Cube"), ExtResource( 54 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody18/Cube"), ExtResource( 55 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody20/Cube"), ExtResource( 53 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody35/Cube"), ExtResource( 58 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody38/Cube"), ExtResource( 60 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody39/Cube"), ExtResource( 59 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody40/Cube"), ExtResource( 61 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody41/Cube"), ExtResource( 62 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody21/Cube"), ExtResource( 64 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody22/Cube"), ExtResource( 65 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody23/Cube"), ExtResource( 63 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody24/Cube"), ExtResource( 66 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody25/Cube"), ExtResource( 67 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody26/Cube"), ExtResource( 68 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody27/Cube"), ExtResource( 69 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody33/Cube"), ExtResource( 70 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody28/Cube"), ExtResource( 71 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Objects/StaticBody/chair/Chair"), ExtResource( 72 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody/Cube"), ExtResource( 73 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody2/Cube"), ExtResource( 75 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody3/Cube"), ExtResource( 76 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody4/Cube"), ExtResource( 74 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody5/Cube"), ExtResource( 77 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody6/Cube"), ExtResource( 79 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody7/Cube"), ExtResource( 80 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody8/Cube"), ExtResource( 78 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody10/Cube"), ExtResource( 81 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody11/Cube"), ExtResource( 83 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody12/Cube"), ExtResource( 82 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody14/Cube"), ExtResource( 85 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody15/Cube"), ExtResource( 86 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody13/Cube"), ExtResource( 84 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody9/Cube"), ExtResource( 87 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ubershader/Potion/Trank"), ExtResource( 88 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ubershader/Potion/Trank/TrankInner"), ExtResource( 18 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion2/Trank"), ExtResource( 89 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion2/Trank/TrankInner"), ExtResource( 92 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion3/Trank"), ExtResource( 93 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion3/Trank/TrankInner"), ExtResource( 90 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion4/Trank"), ExtResource( 91 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion4/Trank/TrankInner"), ExtResource( 94 ), -1, Rect2( 0, 0, 1, 1 ), -1 ]
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.289265, 0.491648, 0.275386 )
@@ -201,10 +281,10 @@ transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5,
 transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, 2, -40 )
 
 [node name="StaticBody38" parent="Walls" instance=ExtResource( 10 )]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, -3, -50 )
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, -4, -50 )
 
 [node name="StaticBody39" parent="Walls" instance=ExtResource( 10 )]
-transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, -3, -60 )
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, -4, -60 )
 
 [node name="StaticBody40" parent="Walls" instance=ExtResource( 10 )]
 transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -6, -4, -60 )
@@ -325,12 +405,12 @@ mesh = SubResource( 5 )
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35 )
 extents = Vector3( 16, 10, 45 )
-quality = 2
+quality = 0
 use_hdr = false
 default_texels_per_unit = 1.0
 atlas_generate = false
 capture_enabled = false
-light_data = ExtResource( 6 )
+light_data = SubResource( 6 )
 
 [node name="Lights" type="Spatial" parent="."]
 
@@ -433,14 +513,8 @@ shape = SubResource( 4 )
 [node name="Bob" parent="Enemies" groups=["trigger0"] instance=ExtResource( 56 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -50 )
 
-[node name="Bob2" parent="Enemies" groups=["trigger0"] instance=ExtResource( 56 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -54 )
-
 [node name="Bob3" parent="Enemies" groups=["trigger0"] instance=ExtResource( 56 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -61 )
-
-[node name="Bob4" parent="Enemies" groups=["trigger0"] instance=ExtResource( 56 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -58 )
 
 [node name="TriggerArea" parent="Enemies" instance=ExtResource( 57 )]
 transform = Transform( 5.6, 0, 0, 0, 7.68, 0, 0, 0, 1, 0, 0, -44 )

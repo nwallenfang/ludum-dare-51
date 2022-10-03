@@ -10,6 +10,8 @@ func _ready():
 	$Player.rotate_y(deg2rad(-180.0))
 	$Player/DrinkAnimation.queue_free()
 	
+	Game.player.show_gun()
+	
 	
 
 func _physics_process(delta):
