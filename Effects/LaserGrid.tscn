@@ -42,7 +42,7 @@ void vertex() {
 }
 
 void fragment() {
-	float grid_size = 1.9;
+	float grid_size = 1.6;
 	
 	vec2 base_uv = UV;
 	vec4 albedo_tex = texture(texture_albedo,base_uv);

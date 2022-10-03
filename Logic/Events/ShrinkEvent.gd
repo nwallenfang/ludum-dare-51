@@ -9,6 +9,7 @@ func event():
 	$Tween.reset_all()
 		
 	$Tween.interpolate_property(Game.player, "scale", Game.player.scale, Game.player.default_scale - Vector3(size_multiplier, size_multiplier, size_multiplier), 1)
+	$Tween.interpolate_property(Game.player, "speed", Game.player.speed, 30, 1)
 	
 	$Tween.start()
 	
@@ -19,6 +20,7 @@ func end_event():
 	$Tween.reset_all()
 		
 	$Tween.interpolate_property(Game.player, "scale", Game.player.scale, Game.player.default_scale, 0.5)
+	$Tween.interpolate_property(Game.player, "speed", Game.player.speed, 10, 1)
 	
 	$Tween.start()
 	

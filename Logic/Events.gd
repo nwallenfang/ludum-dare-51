@@ -92,3 +92,4 @@ func _on_UpdateUITimer_timeout() -> void:
 
 var explosion_on_shot := false
 var second_gun := false
+var banana := false

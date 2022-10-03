@@ -6,7 +6,9 @@ var ray_path := NodePath("RayCast")
 onready var ray: RayCast = get_node(ray_path)
 
 var laser_sound_path := NodePath("../../LaserStream")
+var banana_sound_path := NodePath("../../BananaStream")
 onready var laser_sound: AudioStreamPlayer = get_node(laser_sound_path)
+onready var banana_sound: AudioStreamPlayer = get_node(banana_sound_path)
 
 var autofire = false setget set_autofire
 
@@ -142,7 +144,11 @@ func _input(event: InputEvent):
 		laser_drawer.draw_line(Game.player.get_node("%GunHead").global_translation, hit_point)
 		
 		if not autofire:
-			laser_sound.play()
+			if not Events.banana:
+				laser_sound.play()
+			else:
+				banana_sound.play()
+
 
 func set_autofire(val):
 	$Firerate.start()
@@ -151,6 +157,8 @@ func set_autofire(val):
 	else:
 		$AutofireSound.stop()
 	autofire = val
+
+
 
 func _on_Firerate_timeout() -> void:
 	if autofire:

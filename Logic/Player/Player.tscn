@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Logic/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Logic/Player/Head.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/GLTF/WeaponPrimary.material" type="Material" id=10]
 [ext_resource path="res://Assets/GLTF/WeaponSecondary.material" type="Material" id=11]
 [ext_resource path="res://Assets/GLTF/WeaponRöhre.material" type="Material" id=12]
+[ext_resource path="res://Assets/Sound/pew.ogg" type="AudioStream" id=13]
 
 [sub_resource type="CapsuleMesh" id=13]
 
@@ -535,6 +536,11 @@ stream = ExtResource( 5 )
 volume_db = -6.117
 bus = "Laser Lowpass"
 
+[node name="BananaStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -6.117
+bus = "Laser Lowpass"
+
 [node name="PickupStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -10.645
@@ -569,6 +575,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406672, 1.57277, -1.54685 )
 background = Color( 0, 1, 0.25098, 1 )
 background2 = Color( 0, 0.0627451, 1, 1 )
 bubbles = Color( 0.831373, 0.207843, 0.882353, 1 )
+make_random_colors = true
 
 [node name="DrinkAnimationPlayer" type="AnimationPlayer" parent="DrinkAnimation"]
 root_node = NodePath("../..")
