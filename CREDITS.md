@@ -8,5 +8,9 @@
 - https://thenounproject.com/icon/laser-190316/
 - https://thenounproject.com/icon/destruction-4884732/
 - https://thenounproject.com/icon/run-4018015/
+- https://thenounproject.com/icon/fog-174928/
+- https://thenounproject.com/icon/eye-4303378/
+- https://thenounproject.com/icon/laser-206489/
+- https://thenounproject.com/icon/empty-194055/
 - https://thenounproject.com/icon/eye-4303378/
 - https://thenounproject.com/icon/eye-closed-2616528/
