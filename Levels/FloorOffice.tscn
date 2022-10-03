@@ -1,0 +1,685 @@
+[gd_scene load_steps=99 format=2]
+
+[ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
+[ext_resource path="res://Levels/FloorOffice.gd" type="Script" id=3]
+[ext_resource path="res://Objects/Potion.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Materials/ScreenMaterial.tres" type="Material" id=5]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GLTF/chair.gltf" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/LabFloor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/LabWall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/LabRoof.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Effects/Ubershader.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/TestTube_Holder.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank.png" type="Texture" id=16]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube3.png" type="Texture" id=17]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner2.png" type="Texture" id=18]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube.png" type="Texture" id=19]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube2.png" type="Texture" id=20]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube5.png" type="Texture" id=21]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube4.png" type="Texture" id=22]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube7.png" type="Texture" id=23]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube8.png" type="Texture" id=24]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube6.png" type="Texture" id=25]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube9.png" type="Texture" id=26]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube10.png" type="Texture" id=27]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube11.png" type="Texture" id=28]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube14.png" type="Texture" id=29]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube12.png" type="Texture" id=30]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube15.png" type="Texture" id=31]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube13.png" type="Texture" id=32]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube19.png" type="Texture" id=33]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube18.png" type="Texture" id=34]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube16.png" type="Texture" id=35]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube17.png" type="Texture" id=36]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube21.png" type="Texture" id=37]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube20.png" type="Texture" id=38]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube23.png" type="Texture" id=39]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube22.png" type="Texture" id=40]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube24.png" type="Texture" id=41]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube25.png" type="Texture" id=42]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube26.png" type="Texture" id=43]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube29.png" type="Texture" id=44]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube27.png" type="Texture" id=45]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube28.png" type="Texture" id=46]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube32.png" type="Texture" id=47]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube30.png" type="Texture" id=48]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube31.png" type="Texture" id=49]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube35.png" type="Texture" id=50]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube33.png" type="Texture" id=51]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube34.png" type="Texture" id=52]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube38.png" type="Texture" id=53]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube36.png" type="Texture" id=54]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube37.png" type="Texture" id=55]
+[ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=56]
+[ext_resource path="res://Logic/Enemies/TriggerArea.tscn" type="PackedScene" id=57]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube39.png" type="Texture" id=58]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube41.png" type="Texture" id=59]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube40.png" type="Texture" id=60]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube42.png" type="Texture" id=61]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube43.png" type="Texture" id=62]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube46.png" type="Texture" id=63]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube44.png" type="Texture" id=64]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube45.png" type="Texture" id=65]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube47.png" type="Texture" id=66]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube48.png" type="Texture" id=67]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube49.png" type="Texture" id=68]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube50.png" type="Texture" id=69]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube51.png" type="Texture" id=70]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube52.png" type="Texture" id=71]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Chair.png" type="Texture" id=72]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube53.png" type="Texture" id=73]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube56.png" type="Texture" id=74]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube54.png" type="Texture" id=75]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube55.png" type="Texture" id=76]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube57.png" type="Texture" id=77]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube60.png" type="Texture" id=78]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube58.png" type="Texture" id=79]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube59.png" type="Texture" id=80]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube61.png" type="Texture" id=81]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube63.png" type="Texture" id=82]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube62.png" type="Texture" id=83]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube66.png" type="Texture" id=84]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube64.png" type="Texture" id=85]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube65.png" type="Texture" id=86]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Cube67.png" type="Texture" id=87]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank2.png" type="Texture" id=88]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank3.png" type="Texture" id=89]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner4.png" type="Texture" id=90]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank5.png" type="Texture" id=91]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner3.png" type="Texture" id=92]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/Trank4.png" type="Texture" id=93]
+[ext_resource path="res://Effects/Lightmaps/Tutorial/TrankInner5.png" type="Texture" id=94]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="ArrayMesh" id=2]
+resource_name = "cube_Cube"
+lightmap_size_hint = Vector2( 86, 130 )
+surfaces/0 = {
+"aabb": AABB( -1, -1, -1, 2.00001, 2.00001, 2 ),
+"array_data": PoolByteArray( 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 127, 129, 64, 0, 57, 0, 56, 35, 56, 114, 57, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 127, 129, 64, 0, 59, 0, 52, 244, 59, 248, 59, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 0, 127, 129, 64, 0, 59, 0, 56, 244, 59, 114, 57, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 127, 129, 64, 0, 57, 0, 52, 35, 56, 248, 59, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 127, 0, 54, 0, 52, 35, 56, 224, 27, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 127, 0, 57, 0, 0, 244, 59, 27, 53, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 127, 0, 57, 0, 52, 35, 56, 27, 53, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 127, 0, 54, 0, 0, 244, 59, 224, 27, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 129, 0, 0, 127, 0, 54, 0, 60, 184, 55, 248, 59, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 129, 0, 0, 127, 0, 57, 0, 58, 244, 29, 114, 57, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 129, 0, 0, 127, 0, 57, 0, 60, 244, 29, 248, 59, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 129, 0, 0, 127, 0, 54, 0, 58, 184, 55, 114, 57, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 0, 129, 127, 64, 0, 48, 0, 56, 184, 55, 122, 53, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 129, 127, 64, 0, 54, 0, 52, 244, 29, 66, 57, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 0, 129, 127, 64, 0, 54, 0, 56, 244, 29, 122, 53, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 0, 129, 127, 64, 0, 48, 0, 52, 184, 55, 66, 57, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 127, 0, 0, 127, 0, 54, 0, 56, 184, 55, 224, 27, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 127, 0, 0, 127, 0, 57, 0, 52, 244, 29, 27, 53, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 127, 0, 0, 127, 0, 57, 0, 56, 244, 29, 224, 27, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 127, 0, 0, 127, 0, 54, 0, 52, 184, 55, 27, 53, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 127, 127, 0, 127, 0, 54, 0, 58, 35, 56, 122, 53, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 127, 127, 0, 127, 0, 57, 0, 56, 244, 59, 66, 57, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 127, 127, 0, 127, 0, 57, 0, 58, 35, 56, 66, 57, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 127, 127, 0, 127, 0, 54, 0, 56, 244, 59, 122, 53 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 4, 0, 5, 0, 6, 0, 4, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 17, 0, 18, 0, 16, 0, 19, 0, 17, 0, 20, 0, 21, 0, 22, 0, 20, 0, 23, 0, 21, 0 ),
+"blend_shape_data": [  ],
+"format": 2194743,
+"index_count": 36,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.517647, 0.517647, 0.517647, 1 )
+roughness = 0.71
+
+[sub_resource type="CubeMesh" id=5]
+material = ExtResource( 5 )
+
+[sub_resource type="BakedLightmapData" id=6]
+user_data = [ NodePath("../Player/DrinkAnimation/Spatial/Potion/Trank"), ExtResource( 16 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Player/DrinkAnimation/Spatial/Potion/Trank/TrankInner"), ExtResource( 6 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor1/Cube"), ExtResource( 19 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor2/Cube"), ExtResource( 20 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor3/Cube"), ExtResource( 17 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor4/Cube"), ExtResource( 22 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor5/Cube"), ExtResource( 21 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor6/Cube"), ExtResource( 25 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor7/Cube"), ExtResource( 23 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor9/Cube"), ExtResource( 24 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor10/Cube"), ExtResource( 26 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor11/Cube"), ExtResource( 27 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor13/Cube"), ExtResource( 28 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor14/Cube"), ExtResource( 30 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor12/Cube"), ExtResource( 32 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Floor8/Cube"), ExtResource( 29 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Table/Cube"), ExtResource( 31 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/Table2/Cube"), ExtResource( 35 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Floors/StaticBody6/Cube"), ExtResource( 36 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody/Cube"), ExtResource( 34 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody2/Cube"), ExtResource( 33 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody3/Cube"), ExtResource( 38 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody7/Cube"), ExtResource( 37 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody8/Cube"), ExtResource( 40 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody16/Cube"), ExtResource( 39 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody37/Cube"), ExtResource( 41 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody36/Cube"), ExtResource( 42 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody9/Cube"), ExtResource( 43 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody10/Cube"), ExtResource( 45 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody14/Cube"), ExtResource( 46 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody19/Cube"), ExtResource( 44 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody11/Cube"), ExtResource( 48 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody12/Cube"), ExtResource( 49 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody29/Cube"), ExtResource( 47 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody30/Cube"), ExtResource( 51 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody13/Cube"), ExtResource( 52 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody15/Cube"), ExtResource( 50 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody17/Cube"), ExtResource( 54 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody18/Cube"), ExtResource( 55 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody20/Cube"), ExtResource( 53 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody35/Cube"), ExtResource( 58 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody38/Cube"), ExtResource( 60 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody39/Cube"), ExtResource( 59 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody40/Cube"), ExtResource( 61 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody41/Cube"), ExtResource( 62 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody21/Cube"), ExtResource( 64 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody22/Cube"), ExtResource( 65 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody23/Cube"), ExtResource( 63 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody24/Cube"), ExtResource( 66 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody25/Cube"), ExtResource( 67 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody26/Cube"), ExtResource( 68 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody27/Cube"), ExtResource( 69 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody33/Cube"), ExtResource( 70 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Walls/StaticBody28/Cube"), ExtResource( 71 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Objects/StaticBody/chair/Chair"), ExtResource( 72 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody/Cube"), ExtResource( 73 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody2/Cube"), ExtResource( 75 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody3/Cube"), ExtResource( 76 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody4/Cube"), ExtResource( 74 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody5/Cube"), ExtResource( 77 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody6/Cube"), ExtResource( 79 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody7/Cube"), ExtResource( 80 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody8/Cube"), ExtResource( 78 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody10/Cube"), ExtResource( 81 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody11/Cube"), ExtResource( 83 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody12/Cube"), ExtResource( 82 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody14/Cube"), ExtResource( 85 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody15/Cube"), ExtResource( 86 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody13/Cube"), ExtResource( 84 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ceilings/StaticBody9/Cube"), ExtResource( 87 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ubershader/Potion/Trank"), ExtResource( 88 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Ubershader/Potion/Trank/TrankInner"), ExtResource( 18 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion2/Trank"), ExtResource( 89 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion2/Trank/TrankInner"), ExtResource( 92 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion3/Trank"), ExtResource( 93 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion3/Trank/TrankInner"), ExtResource( 90 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion4/Trank"), ExtResource( 91 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Potion4/Trank/TrankInner"), ExtResource( 94 ), -1, Rect2( 0, 0, 1, 1 ), -1 ]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.289265, 0.491648, 0.275386 )
+
+[node name="FloorOffice" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.736706, -68.7226 )
+
+[node name="Floors" type="Spatial" parent="."]
+
+[node name="Floor1" parent="Floors" instance=ExtResource( 9 )]
+
+[node name="Floor2" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -10 )
+
+[node name="Floor3" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -10 )
+
+[node name="Floor4" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -20 )
+
+[node name="Floor5" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -20 )
+
+[node name="Floor6" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -30 )
+
+[node name="Floor7" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -30 )
+
+[node name="Floor9" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -40 )
+
+[node name="Floor10" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -50 )
+
+[node name="Floor11" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -60 )
+
+[node name="Floor13" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -50 )
+
+[node name="Floor14" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -60 )
+
+[node name="Floor15" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -20, 0, -50 )
+
+[node name="Floor16" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -20, 0, -60 )
+
+[node name="Floor12" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -70 )
+
+[node name="Floor8" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 0, -30 )
+
+[node name="Table" type="StaticBody" parent="Floors"]
+transform = Transform( 0.5, 0, -1.73205, 0, 0.2, 0, 0.866025, 0, 1, -2, 1.46595, -2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floors/Table"]
+shape = SubResource( 1 )
+
+[node name="Cube" type="MeshInstance" parent="Floors/Table"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="Table2" type="StaticBody" parent="Floors"]
+transform = Transform( 0.25, 0, -0.866025, 0, 1, 0, 0.433013, 0, 0.5, -2, 0.504303, -2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floors/Table2"]
+shape = SubResource( 1 )
+
+[node name="Cube" type="MeshInstance" parent="Floors/Table2"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody6" type="StaticBody" parent="Floors"]
+transform = Transform( 1.7, 0, 0, 0, 10, 0, 0, 0, 1.7, 0, -9.8, -20 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floors/StaticBody6"]
+shape = SubResource( 1 )
+
+[node name="Cube" type="MeshInstance" parent="Floors/StaticBody6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="Cube2" type="MeshInstance" parent="Floors/StaticBody6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6471, 0, -5.88235 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="Cube3" type="MeshInstance" parent="Floors/StaticBody6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4118, 0, -5.88235 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="Floor17" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -20, 0, -30 )
+
+[node name="Floor18" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -40, 0, -30 )
+
+[node name="Floor20" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -60, 0, -30 )
+
+[node name="Floor21" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -70, 0, -30 )
+
+[node name="Floor22" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -70, 0, -20 )
+
+[node name="Floor23" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -80, 0, -20 )
+
+[node name="Floor24" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -80, 0, -30 )
+
+[node name="Floor25" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -70, 0, -10 )
+
+[node name="Floor26" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -80, 0, -10 )
+
+[node name="Floor27" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -90, 0, -10 )
+
+[node name="Floor28" parent="Floors" instance=ExtResource( 9 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -100, 0, -10 )
+
+[node name="Walls" type="Spatial" parent="."]
+
+[node name="StaticBody" parent="Walls" instance=ExtResource( 10 )]
+
+[node name="StaticBody2" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 5, 2, -5.96046e-08 )
+
+[node name="StaticBody3" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -5, 2, -5.96046e-08 )
+
+[node name="StaticBody7" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, -5, 2, -10 )
+
+[node name="StaticBody8" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 10, 2, -10 )
+
+[node name="StaticBody16" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -5, 3.72529e-09, 0, 0, -8.74228e-09, -5, -1.19209e-07, -0.2, 2.18557e-07, 7, 2, -5 )
+
+[node name="StaticBody37" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -1.5, 1.11759e-09, 0, 0, -8.74228e-09, -5, -1.19209e-07, -0.2, 2.18557e-07, 0.5, 9, -5 )
+
+[node name="StaticBody36" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -5, 3.72529e-09, 0, 0, -8.74228e-09, -5, -1.19209e-07, -0.2, 2.18557e-07, -6, 2, -5 )
+
+[node name="StaticBody9" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, -8.74228e-09, 9.55343e-15, 10, 2, -20 )
+
+[node name="StaticBody10" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 10, 2, -25 )
+
+[node name="StaticBody14" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 10, 2, -35 )
+
+[node name="StaticBody19" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -35 )
+
+[node name="StaticBody11" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -2.18557e-08, -12.5, 0, 0.2, -2.18557e-07, 0, 2, -25 )
+
+[node name="StaticBody12" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -2.09815e-08, -12, 0, 0.2, -2.18557e-07, 0, 2, -15 )
+
+[node name="StaticBody29" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 0, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, 0, 3.55271e-15, 5, -5, -20 )
+
+[node name="StaticBody30" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 0, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, 0, 3.55271e-15, -5, -5, -20 )
+
+[node name="StaticBody13" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -15 )
+
+[node name="StaticBody17" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -25 )
+
+[node name="StaticBody15" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -15, 2, -20 )
+
+[node name="StaticBody18" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 4.96412, 2, -30 )
+
+[node name="StaticBody20" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, -40 )
+
+[node name="StaticBody35" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, 2, -40 )
+
+[node name="StaticBody21" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, -50 )
+
+[node name="StaticBody22" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, -60 )
+
+[node name="StaticBody23" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, 5, 2, -70 )
+
+[node name="StaticBody24" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -5, 2, -70 )
+
+[node name="StaticBody25" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -25, 2, -50 )
+
+[node name="StaticBody53" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -65, 2, -20 )
+
+[node name="StaticBody57" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -85, 2, -20 )
+
+[node name="StaticBody58" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -85, 2, -30 )
+
+[node name="StaticBody26" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -25, 2, -60 )
+
+[node name="StaticBody27" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -65 )
+
+[node name="StaticBody33" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -45 )
+
+[node name="StaticBody28" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0, 2, -75 )
+
+[node name="StaticBody31" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -20, 2, -65 )
+
+[node name="StaticBody34" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -20, 2, -45 )
+
+[node name="StaticBody32" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -2.18557e-08, -12.5, 0, 0.2, -2.18557e-07, -30, 2, -35 )
+
+[node name="StaticBody38" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -2.09815e-08, -12, 0, 0.2, -2.18557e-07, -30, 2, -25 )
+
+[node name="StaticBody39" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 0, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, 0, 3.55271e-15, -25, -5, -30 )
+
+[node name="StaticBody40" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 0, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, 0, 3.55271e-15, -35, -5, -30 )
+
+[node name="StaticBody41" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -40, 2, -25 )
+
+[node name="StaticBody42" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -20, 2, -35 )
+
+[node name="StaticBody44" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -20, 2, -25 )
+
+[node name="StaticBody43" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -40, 2, -35 )
+
+[node name="StaticBody47" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -60, 2, -25 )
+
+[node name="StaticBody48" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -60, 2, -35 )
+
+[node name="StaticBody49" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -70, 2, -5 )
+
+[node name="StaticBody50" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -70, 2, -35 )
+
+[node name="StaticBody45" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -2.18557e-08, -12.5, 0, 0.2, -2.18557e-07, -50, 2, -35 )
+
+[node name="StaticBody46" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -2.09815e-08, -12, 0, 0.2, -2.18557e-07, -50, 2, -25 )
+
+[node name="StaticBody51" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 0, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, 0, 3.55271e-15, -45, -5, -30 )
+
+[node name="StaticBody52" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 0, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, 0, 3.55271e-15, -55, -5, -30 )
+
+[node name="StaticBody54" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -80, 2, -5 )
+
+[node name="StaticBody55" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -80, 2, -35 )
+
+[node name="StaticBody56" parent="Walls" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -65, 2, -10 )
+
+[node name="Text" type="Spatial" parent="."]
+
+[node name="ScreenBackgrounds" type="Spatial" parent="Text"]
+
+[node name="Screen1" type="MeshInstance" parent="Text/ScreenBackgrounds"]
+transform = Transform( 2.33684, 0, 0, 0, 1.35789, 0, 0, 0, 0.0129367, 0.595747, 5.40371, -4.80397 )
+visible = false
+mesh = SubResource( 5 )
+
+[node name="Screen2" type="MeshInstance" parent="Text/ScreenBackgrounds"]
+transform = Transform( 4.80226, 0, 0, 0, 2.27799, 0, 0, 0, 0.0129367, 0.0696347, 3.61862, -14.6003 )
+visible = false
+mesh = SubResource( 5 )
+
+[node name="Screen3" type="MeshInstance" parent="Text/ScreenBackgrounds"]
+transform = Transform( 2.74477, 0, 0, 0, 1.90065, 0, 0, 0, 0.0129367, 6.99688, 3.16631, -24.5157 )
+visible = false
+mesh = SubResource( 5 )
+
+[node name="Screen4" type="MeshInstance" parent="Text/ScreenBackgrounds"]
+transform = Transform( -1.85269e-07, 0, 0.0129367, 0, 1.38422, 0, -4.23847, 0, -5.65479e-10, -14.4823, 3.62359, -19.8621 )
+visible = false
+mesh = SubResource( 5 )
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35 )
+extents = Vector3( 16, 10, 45 )
+quality = 0
+use_hdr = false
+default_texels_per_unit = 1.0
+atlas_generate = false
+capture_enabled = false
+light_data = SubResource( 6 )
+
+[node name="Lights" type="Spatial" parent="."]
+
+[node name="OmniLight" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.510509, 6.49711, -2.23073 )
+light_color = Color( 0.713726, 1, 0.960784, 1 )
+light_energy = 8.779
+light_indirect_energy = 3.495
+light_bake_mode = 2
+light_cull_mask = 4294966273
+shadow_enabled = true
+
+[node name="SpotLight" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -11.0033, 6.58665, -51.0072 )
+light_color = Color( 0.737255, 1, 0.992157, 1 )
+light_energy = 1.44
+light_indirect_energy = 4.963
+shadow_enabled = true
+spot_range = 26.796
+
+[node name="SpotLight2" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -11.0033, 6.58665, -59.0072 )
+light_color = Color( 0.737255, 1, 0.992157, 1 )
+light_energy = 1.44
+light_indirect_energy = 4.963
+shadow_enabled = true
+spot_range = 26.796
+
+[node name="OmniLight2" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51146, 6.43379, -10.0824 )
+light_color = Color( 0.713726, 1, 0.960784, 1 )
+light_energy = 8.779
+light_indirect_energy = 3.495
+light_bake_mode = 2
+light_cull_mask = 4294966273
+shadow_enabled = true
+
+[node name="OmniLight3" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.510509, 5.5863, -17.3639 )
+light_color = Color( 0.713726, 1, 0.960784, 1 )
+light_energy = 8.779
+light_indirect_energy = 3.495
+light_bake_mode = 2
+light_cull_mask = 4294966273
+shadow_enabled = true
+
+[node name="OmniLight4" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5462, 5.5863, -25.0197 )
+light_color = Color( 0.713726, 1, 0.960784, 1 )
+light_energy = 8.779
+light_indirect_energy = 3.495
+light_bake_mode = 2
+light_cull_mask = 4294966273
+shadow_enabled = true
+omni_range = 13.483
+omni_attenuation = 4.14106
+
+[node name="OmniLight5" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.908996, 5.5863, -28.5724 )
+light_color = Color( 0.713726, 1, 0.960784, 1 )
+light_energy = 8.779
+light_indirect_energy = 3.495
+light_bake_mode = 2
+light_cull_mask = 4294966273
+shadow_enabled = true
+
+[node name="OmniLight6" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575199, 5.5863, -54.5688 )
+light_color = Color( 0.713726, 1, 0.960784, 1 )
+light_energy = 4.522
+light_indirect_energy = 3.495
+light_bake_mode = 2
+light_cull_mask = 4294966273
+shadow_enabled = true
+
+[node name="OmniLight7" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.424801, 5.5863, -70.5688 )
+light_color = Color( 0.713726, 1, 0.960784, 1 )
+light_energy = 8.779
+light_indirect_energy = 3.495
+light_bake_mode = 2
+light_cull_mask = 4294966273
+shadow_enabled = true
+omni_range = 3.163
+
+[node name="Objects" type="Spatial" parent="."]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -1.95908, 0.438809, -0.106684 )
+
+[node name="StaticBody" type="StaticBody" parent="Objects"]
+transform = Transform( -0.904336, 0, 0.426821, 0, 1, 0, -0.426821, 0, -0.904336, -0.695894, 0, 0.136179 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Objects/StaticBody"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0.0159702, 0.058541, 0.00500453 )
+shape = SubResource( 4 )
+
+[node name="chair" parent="Objects/StaticBody" instance=ExtResource( 7 )]
+
+[node name="Enemies" type="Spatial" parent="."]
+
+[node name="Bob" parent="Enemies" groups=["trigger0"] instance=ExtResource( 56 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -50 )
+
+[node name="Bob3" parent="Enemies" groups=["trigger0"] instance=ExtResource( 56 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -61 )
+
+[node name="TriggerArea" parent="Enemies" instance=ExtResource( 57 )]
+transform = Transform( 5.6, 0, 0, 0, 7.68, 0, 0, 0, 1, 0, 0, -44 )
+
+[node name="Flag" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100.343, 1.00349, -10.212 )
+
+[node name="Ceilings" type="Spatial" parent="."]
+
+[node name="StaticBody" parent="Ceilings" instance=ExtResource( 11 )]
+
+[node name="StaticBody2" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -10 )
+
+[node name="StaticBody3" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -10 )
+
+[node name="StaticBody4" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -20 )
+
+[node name="StaticBody5" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -20 )
+
+[node name="StaticBody6" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -20 )
+
+[node name="StaticBody7" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 10, 7, -30 )
+
+[node name="StaticBody8" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -30 )
+
+[node name="StaticBody10" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -40 )
+
+[node name="StaticBody11" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -50 )
+
+[node name="StaticBody12" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -60 )
+
+[node name="StaticBody14" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -50 )
+
+[node name="StaticBody15" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -60 )
+
+[node name="StaticBody13" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -70 )
+
+[node name="StaticBody9" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
+
+[node name="StaticBody16" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -20, 7, -50 )
+
+[node name="StaticBody17" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -20, 7, -60 )
+
+[node name="StaticBody18" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -20, 7, -30 )
+
+[node name="StaticBody20" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -30, 7, -30 )
+
+[node name="StaticBody19" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -40, 7, -30 )
+
+[node name="StaticBody22" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -60, 7, -30 )
+
+[node name="StaticBody23" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -70, 7, -30 )
+
+[node name="StaticBody24" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -70, 7, -20 )
+
+[node name="StaticBody21" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -50, 7, -30 )
+
+[node name="StaticBody25" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -80, 7, -20 )
+
+[node name="StaticBody26" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -80, 7, -30 )
+
+[node name="StaticBody27" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -70, 7, -10 )
+
+[node name="StaticBody28" parent="Ceilings" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -80, 7, -10 )
+
+[node name="Ubershader" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.0348362, 0, 0, 0, 0.0348362, 0, 0, 0, 0.0348362, -2.00813, 2.33504, 4.65104 )
+
+[node name="Potion2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.535625, 0, 1.69662, 0, 1.77916, 0, -1.69662, 0, 0.535625, -3.45701, 1.66567, -1.46444 )
+background = Color( 0.87451, 0.760784, 0.141176, 1 )
+background2 = Color( 0.921569, 0.690196, 0.14902, 1 )
+bubbles = Color( 0.427451, 0.760784, 0.172549, 1 )
+
+[node name="Potion3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.535625, 0, 1.69662, 0, 1.77916, 0, -1.69662, 0, 0.535625, -2.35652, 1.66567, -1.47026 )
+background = Color( 0.333333, 0.866667, 0.0627451, 1 )
+background2 = Color( 0.180392, 0.360784, 0.835294, 1 )
+bubbles = Color( 0.905882, 0.905882, 0.905882, 1 )
+
+[node name="Potion4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.535625, 0, 1.69662, 0, 1.77916, 0, -1.69662, 0, 0.535625, -1.23438, 1.66567, -2.96414 )
+background = Color( 0.0627451, 0.780392, 0.729412, 1 )
+background2 = Color( 0.470588, 0.298039, 0.298039, 1 )
+bubbles = Color( 0.917647, 0.12549, 0.905882, 1 )
+
+[node name="TestTube_Holder" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1.43487, 0, 0.785829, 0, 1.63596, 0, -0.785829, 0, 1.43487, -2.43272, 1.66382, -2.45509 )
