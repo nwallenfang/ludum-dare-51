@@ -291,6 +291,7 @@ anchor_bottom = 1.0
 
 [node name="Crosshair" type="Control" parent="CanvasLayer/CenterContainer"]
 unique_name_in_owner = true
+visible = false
 material = SubResource( 2 )
 margin_left = 504.0
 margin_top = 292.0
