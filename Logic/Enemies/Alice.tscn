@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Logic/Enemies/Alice.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Materials/RedOverlay.tres" type="Material" id=2]
-[ext_resource path="res://Assets/Sound/robo_death.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sound/robo_death.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/GLTF/Material_015.material" type="Material" id=4]
 [ext_resource path="res://Assets/GLTF/Key.material" type="Material" id=5]
 [ext_resource path="res://Assets/GLTF/EnemySationaryBody.material" type="Material" id=6]

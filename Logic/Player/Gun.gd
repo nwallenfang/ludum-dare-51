@@ -129,6 +129,7 @@ func _input(event: InputEvent):
 				get_tree().current_scene.add_child(stain)
 				stain.global_translation = hit_point + hit_normal * .05
 		else:
+			# Explosion
 			var ex = EXPLOSION.instance()
 			get_tree().current_scene.add_child(ex)
 			ex.global_translation = hit_point + hit_normal * .2
@@ -143,6 +144,7 @@ func _input(event: InputEvent):
 		get_tree().current_scene.add_child(laser_drawer)
 		laser_drawer.draw_line(Game.player.get_node("%GunHead").global_translation, hit_point)
 		
+
 		if not autofire:
 			if not Events.banana:
 				laser_sound.play()
