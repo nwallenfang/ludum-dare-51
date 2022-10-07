@@ -33,6 +33,9 @@ func shoot():
 	var hit_point: Vector3 = ray.get_collision_point()
 	var hit_normal: Vector3 = ray.get_collision_normal()
 	
+	
+	print(collider.name)
+	
 	if not Events.explosion_on_shot:
 		if Events.second_gun:
 			if collider.has_method("damage"):
@@ -102,6 +105,9 @@ func _input(event: InputEvent):
 
 		var hit_point: Vector3 = ray.get_collision_point()
 		var hit_normal: Vector3 = ray.get_collision_normal()
+		
+		if ray.get_collider().is_in_group("gui_panel"):
+			ray.get_collider().put_mouse_event(ray.get_collision_point())
 		
 		if not Events.explosion_on_shot:
 			if Events.second_gun:

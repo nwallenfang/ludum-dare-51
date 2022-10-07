@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		else:
 			show_settings()
 
-#	$CanvasLayer/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
+	$CanvasLayer/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
 
 func intro_over():
 	$CanvasLayer/IntroLabel.visible = false

@@ -266,7 +266,6 @@ script = ExtResource( 2 )
 visible = false
 
 [node name="FPS" type="Label" parent="CanvasLayer"]
-visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 text = "FPS:"
@@ -288,16 +287,17 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="Crosshair" type="Control" parent="CanvasLayer/CenterContainer"]
 unique_name_in_owner = true
-visible = false
 material = SubResource( 2 )
 margin_left = 504.0
 margin_top = 292.0
 margin_right = 519.0
 margin_bottom = 307.0
 rect_min_size = Vector2( 15, 15 )
+mouse_filter = 2
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/CenterContainer/Crosshair"]
 scale = Vector2( 1.5, 1.5 )

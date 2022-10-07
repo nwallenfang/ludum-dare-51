@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Promo/level1.png" type="Texture" id=1]
+[ext_resource path="res://UI/HoverButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/LevelPanel2D.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Font/WalltextFontEvenSmaller.tres" type="DynamicFont" id=4]
+
+[node name="LevelPanel2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Jump" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 4 )
+text = "CHANGE LEVEL"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+margin_top = 44.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="HoverButton" parent="VBoxContainer/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 510.0
+margin_bottom = 276.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+level_screenshot = ExtResource( 1 )
+level_name = "1"
+
+[node name="HoverButton2" parent="VBoxContainer/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 276.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+level_screenshot = ExtResource( 1 )
+level_name = "2"
+
+[node name="HoverButton3" parent="VBoxContainer/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 280.0
+margin_right = 510.0
+margin_bottom = 556.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+level_screenshot = ExtResource( 1 )
+level_name = "3"
+
+[node name="HoverButton4" parent="VBoxContainer/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_top = 280.0
+margin_right = 1024.0
+margin_bottom = 556.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+level_screenshot = ExtResource( 1 )
+level_name = "4"
+
+[connection signal="clicked" from="VBoxContainer/GridContainer/HoverButton" to="." method="_on_HoverButton_clicked"]
+[connection signal="clicked" from="VBoxContainer/GridContainer/HoverButton2" to="." method="_on_HoverButton_clicked"]
+[connection signal="clicked" from="VBoxContainer/GridContainer/HoverButton3" to="." method="_on_HoverButton_clicked"]
+[connection signal="clicked" from="VBoxContainer/GridContainer/HoverButton4" to="." method="_on_HoverButton_clicked"]
