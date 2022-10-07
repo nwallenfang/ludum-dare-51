@@ -14,7 +14,12 @@ var MANAGED_SOUND_SCENE = preload("res://Logic/AudioManager/ManagedSound.tscn")
 var AUDIO_PLAYER_WITH_INFO = preload("res://Logic/AudioManager/AudioPlayerWithInfo.tscn")
 
 func _ready():
-	# Create an AudioPlayer for each sound in the resources
+	# Generate as many audio players as said in the variable
+	for i in num_players:
+		var audio_player_with_info = AUDIO_PLAYER_WITH_INFO.instance()
+		$Players.add_child(audio_player_with_info, true)
+		available.append(audio_player_with_info)
+
 	var dir = Directory.new()
 	if dir.open(sound_directoy) == OK:
 		dir.list_dir_begin()
@@ -22,7 +27,7 @@ func _ready():
 		while file_name != "":
 			if file_name.ends_with(".ogg"):
 				var node_name = file_name.split(".")[0]
-				print("load ", file_name)
+				print("Loaded ", file_name)
 				if not $Sounds.has_node(node_name): # sound has no custom config in Sounds
 					var managed_sound = MANAGED_SOUND_SCENE.instance()
 					managed_sound.name = node_name
@@ -31,10 +36,6 @@ func _ready():
 				else: # sound exists in Sounds
 					var managed_sound = $Sounds.get_node(node_name)
 					managed_sound.stream = load("res://Assets/Sound/" + file_name)
-					
-				var audio_player_with_info = AUDIO_PLAYER_WITH_INFO.instance()
-				$Players.add_child(audio_player_with_info, true)
-				available.append(audio_player_with_info)
 			file_name = dir.get_next()
 	else:
 		print("An error encountered loading the sounds")
@@ -44,8 +45,8 @@ func play(sound_name: String):
 
 func stop(sound_name: String):
 	for player_with_info in playing:
-		print(player_with_info.sound.file_name)
-		if player_with_info.sound.file_name == sound_name:
+		print(player_with_info.sound.name)
+		if player_with_info.sound.name == sound_name:
 			player_with_info.stop()
 #
 func set_volume(sound_name, volume):
