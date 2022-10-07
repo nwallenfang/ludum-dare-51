@@ -5,62 +5,15 @@ export var sound_directoy = "res://Assets/Sound"
 var num_players = 32
 var bus = "master"
 
-var available = []  # The available players.
+var available = []  # The available players, instances of type AudioPlayerWithInfo
 var queue = []  # The queue of sounds to play.
 var playing = [] # The players that are currently active, indexed by the sound name
 
-var sound_streams = {}
-var sound_config
 
-class StreamTuple:
-	var player: AudioStreamPlayer
-	var file_name: String
-	var manager
-	
-	func _init(audio_manager, new_player):
-		player = new_player
-		file_name = ""
-		manager = audio_manager
-		player.connect("finished", self, "inner_finish")
-		
-	func inner_finish():
-		print("finished")
-		manager.available.append(self)
-		manager.playing.erase(self)
-		
-
-#func _ready():
-#	# Create the pool of AudioStreamPlayer nodes.
-#	for i in num_players:
-#		var p = StreamTuple.new(self, AudioStreamPlayer.new())
-#		add_child(p.player, true)
-#		available.append(p)
-##		p.connect("cooler_finished", self, "_on_stream_connect", [p])
-#		p.player.bus = bus
-#
-#	# Create an AudioPlayer for each sound in the resources
-#	var dir = Directory.new()
-#	if dir.open(sound_directoy) == OK:
-#		dir.list_dir_begin()
-#		var file_name = dir.get_next()
-#		while file_name != "":
-#			if file_name.ends_with(".ogg"):
-#				print("Loading " + file_name)
-#				sound_streams[file_name] = load("res://Assets/Sound/" + file_name)
-#			file_name = dir.get_next()
-#	else:
-#		print("An error encountered loading the sounds")
-#
+var MANAGED_SOUND_SCENE = preload("res://Logic/AudioManager/ManagedSound.tscn")
+var AUDIO_PLAYER_WITH_INFO = preload("res://Logic/AudioManager/AudioPlayerWithInfo.tscn")
 
 func _ready():
-	# Create the pool of AudioStreamPlayer nodes.
-#	for i in num_players:
-#		var p = StreamTuple.new(self, AudioStreamPlayer.new())
-#		add_child(p.player, true)
-#		available.append(p)
-##		p.connect("cooler_finished", self, "_on_stream_connect", [p])
-#		p.player.bus = bus
-
 	# Create an AudioPlayer for each sound in the resources
 	var dir = Directory.new()
 	if dir.open(sound_directoy) == OK:
@@ -68,49 +21,47 @@ func _ready():
 		var file_name = dir.get_next()
 		while file_name != "":
 			if file_name.ends_with(".ogg"):
-				print("Loading " + file_name)
-				sound_streams[file_name] = load("res://Assets/Sound/" + file_name)
-				var p = StreamTuple.new(self, AudioStreamPlayer.new())
-				p.player.stream = load("res://Assets/Sound/" + file_name)
-				add_child(p.player, true)
-				available.append(p)
+				var node_name = file_name.split(".")[0]
+				print("load ", file_name)
+				if not $Sounds.has_node(node_name): # sound has no custom config in Sounds
+					var managed_sound = MANAGED_SOUND_SCENE.instance()
+					managed_sound.name = node_name
+					managed_sound.stream = load("res://Assets/Sound/" + file_name)
+					$Sounds.add_child(managed_sound, true)
+				else: # sound exists in Sounds
+					var managed_sound = $Sounds.get_node(node_name)
+					managed_sound.stream = load("res://Assets/Sound/" + file_name)
+					
+				var audio_player_with_info = AUDIO_PLAYER_WITH_INFO.instance()
+				$Players.add_child(audio_player_with_info, true)
+				available.append(audio_player_with_info)
 			file_name = dir.get_next()
 	else:
 		print("An error encountered loading the sounds")
+	
+func play(sound_name: String):
+	queue.append(sound_name)
 
-	
-	
-func play(file_name: String):
-	if !file_name.ends_with(".ogg"):
-		file_name += ".ogg"
-	queue.append(file_name)
-	
-func stop(file_name: String):
-	if !file_name.ends_with(".ogg"):
-		file_name += ".ogg"
-		
-	for stream_tuple in playing:
-		print(stream_tuple.file_name)
-		if stream_tuple.file_name == file_name:
-			stream_tuple.player.stop()
-
-func set_volume(file_name, volume):
-	if !file_name.ends_with(".ogg"):
-		file_name += ".ogg"
-	
-	for stream_tuple in playing:
-		print(stream_tuple.file_name)
-		if stream_tuple.file_name == file_name:
-			stream_tuple.player.set_volume_db(volume)
-
+func stop(sound_name: String):
+	for player_with_info in playing:
+		print(player_with_info.sound.file_name)
+		if player_with_info.sound.file_name == sound_name:
+			player_with_info.stop()
+#
+func set_volume(sound_name, volume):
+	for player_with_info in playing:
+#		print(stream_tuple.sound.file_name)
+		if player_with_info.sound.name == sound_name:
+			player_with_info.set_volume_db(volume)
+#
 func _process(delta):
-	# Play a queued sound if any players are available.
-	print(available.size())
+#	# Play a queued sound if any players are available.
 	if not queue.empty() and not available.empty():
-		var file_name = queue.pop_front()
+		var sound_name = queue.pop_front()
+		var player = available.pop_front()
 		# Reset all player variables
-		available[0].player.set_volume_db(0)
-		available[0].player.stream = sound_streams[file_name]
-		available[0].file_name = file_name
-		available[0].player.play()
-		playing.append(available.pop_front())
+
+		player.stream = $Sounds.get_node(sound_name).stream
+		player.sound = $Sounds.get_node(sound_name)
+		player.play()
+		playing.append(player)

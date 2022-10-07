@@ -301,6 +301,13 @@ script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.884979, 0, 0.46563, 0, 1, 0, -0.46563, 0, 0.884979, -0.831547, 0.736706, 0.371768 )
+gravity_multiplier = null
+speed = null
+acceleration = null
+deceleration = null
+air_control = null
+jump_height = null
+jump_extra_frames = null
 
 [node name="Floors" type="Spatial" parent="."]
 

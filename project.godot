@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "AudioStreamPlayer",
+"class": "AudioPlayerWithInfo",
+"language": "GDScript",
+"path": "res://Logic/AudioManager/AudioPlayerWithInfo.gd"
+}, {
 "base": "Spatial",
 "class": "Enemy",
 "language": "GDScript",
@@ -30,9 +35,10 @@ _global_script_classes=[ {
 "path": "res://Logic/Player/Player.gd"
 } ]
 _global_script_class_icons={
+"AudioPlayerWithInfo": "",
 "Enemy": "",
 "EventBar": "",
-"ManagedSound": "",
+"ManagedSound": "res://Assets/Sprites/managed_sound.png",
 "MovementController": ""
 }
 
@@ -47,7 +53,7 @@ config/icon="res://icon.png"
 Game="*res://Logic/Game.tscn"
 Events="*res://Logic/Events.tscn"
 Ui="*res://UI/UI.tscn"
-AudioManager="*res://Logic/AudioManager/AudioManager.gd"
+AudioManager="*res://Logic/AudioManager/AudioManager.tscn"
 
 [debug]
 
