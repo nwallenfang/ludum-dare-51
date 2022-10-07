@@ -4,6 +4,15 @@ export var icon: Texture
 export var event_name: String
 export var size_multiplier: float
 
+func _ready():
+	set_process(false)
+
+func _process(_delta):
+	if $Tween.is_active():
+		if Game.player.is_on_ceiling():
+			$Tween.set_speed_scale(0)
+		else:
+			$Tween.set_speed_scale(1)
 
 func event():
 	$Tween.reset_all()
@@ -17,6 +26,7 @@ func event():
 	print("shrink event", event_name)
 
 func end_event():
+	set_process(true)
 	$Tween.reset_all()
 		
 	$Tween.interpolate_property(Game.player, "scale", Game.player.scale, Game.player.default_scale, 0.5)
@@ -24,5 +34,10 @@ func end_event():
 	
 	$Tween.start()
 	
+#	while $Tween.is_active():
+#		if Game.player.is_on_ceiling():
+#			$Tween.stop_all()
+	
 	yield($Tween, "tween_all_completed")
+	set_process(false)
 	print("End shrink event", event_name)

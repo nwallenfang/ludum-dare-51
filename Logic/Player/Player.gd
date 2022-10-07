@@ -146,9 +146,9 @@ func get_hurt():
 		emit_signal("player_got_hurt", hp)
 		if hp <= 0:
 			Game.world.restart_level()
-			$DieStream.play()
+			AudioManager.play("player_hurt_2")
 		else:
-			$HurtStream.play()
+			AudioManager.play("player_hurt")
 
 
 func _on_HurtBox_area_entered(area):
@@ -168,7 +168,7 @@ func drink_animation():
 	$DrinkAnimation.queue_free()
 	
 func play_key_sound():
-	$PickupStream.play()
+	AudioManager.play("key_pickup")
 
 func show_gun():
 	$Head/GunModel.visible = true

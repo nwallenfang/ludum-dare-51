@@ -6,7 +6,7 @@ func _ready():
 	for area in $Area.get_overlapping_areas():
 		if area.get_parent().has_method("damage"):
 			area.get_parent().damage(damage)
-	$BoomStream.play()
+	AudioManager.play("boom")
 	$Particles.emitting = true
 	$Particles2.emitting = true
 	$Particles3.emitting = true
