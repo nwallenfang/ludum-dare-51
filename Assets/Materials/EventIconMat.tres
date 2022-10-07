@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Sprites/banana.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/eye.png" type="Texture" id=1]
 
 [sub_resource type="Shader" id=11]
 code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
