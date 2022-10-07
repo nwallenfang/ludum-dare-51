@@ -4,7 +4,7 @@
 [ext_resource path="res://Logic/World.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sound/ludum_dare_51.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Shader/Vignette.gdshader" type="Shader" id=4]
-[ext_resource path="res://Assets/Sound/ludum_dare_51_idle.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sound/ludum_dare_51_idle.ogg" type="AudioStream" id=5]
 [ext_resource path="res://new_default_env.tres" type="Environment" id=7]
 [ext_resource path="res://UI/TextScreenUI.tscn" type="PackedScene" id=10]
 

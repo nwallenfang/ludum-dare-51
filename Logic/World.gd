@@ -19,7 +19,7 @@ func _ready() -> void:
 	self.connect("intro_over", Ui, "intro_over")
 
 	if not Game.disable_music:
-		$IdleStream.play()
+		AudioManager.play("ludum_dare_51_idle")
 
 #	$ViewportContainer/Viewport/FollowCamera.make_current()
 	
@@ -61,7 +61,7 @@ func intro_sequence():
 	
 	set_process_input(false)
 	set_process_unhandled_input(false)
-	$IdleStream.stop()
+	AudioManager.stop("ludum_dare_51_idle")
 	Game.player.show_gun()
 	print("INTRO OVER")
 	emit_signal("intro_over")
@@ -70,8 +70,6 @@ func intro_sequence():
 func _input(event: InputEvent) -> void:
 	if not Game.settings_open:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-#	if movement_disabled:
-#		return
 
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit() # Quits the game
@@ -118,7 +116,7 @@ func restart_level():
 	yield($Tween, "tween_all_completed")
 	
 	$"%VignetteRect".material.set_shader_param("vignette_intensity", 0.0)
-	$Level1Stream.stop()
+	AudioManager.stop("ludum_dare_51")
 
 	$"%Viewport".remove_child(Game.level)
 	Game.level.queue_free()
@@ -128,7 +126,7 @@ func restart_level():
 		set_process_input(true)
 		set_process_unhandled_input(true)
 		if not Game.disable_music:
-			$IdleStream.play()
+			AudioManager.play("ludum_dare_51_idle")
 	Ui.reset()
 	Events.reset()
 	if Game.level_index > 0:
@@ -169,7 +167,7 @@ func intro_over():
 	Game.player.gravity_multiplier = 3
 	
 	if not Game.disable_music:
-		$Level1Stream.play()
+		AudioManager.play("ludum_dare_51")
 
 signal fade_done
 func fade_out(duration):

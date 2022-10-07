@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/robo_death.ogg-8da0eb69077745177eaf42beb74a8fe4.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/robo_death.ogg"
+dest_files=[ "res://.import/robo_death.ogg-8da0eb69077745177eaf42beb74a8fe4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

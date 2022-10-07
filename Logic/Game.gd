@@ -56,8 +56,10 @@ func event_triggered(event):
 # When reaching the end
 func load_next_level():
 	Game.player.movement_disabled = true
-	world.get_node("IdleStream").stop()
-	world.get_node("Level1Stream").stop()
+	AudioManager.stop("ludum_dare_51_idle")
+	AudioManager.stop("ludum_dare_51")
+#	world.get_node("IdleStream").stop()
+#	world.get_node("Level1Stream").stop()
 	yield(get_tree(), "idle_frame")
 
 	world.fade_out(0.4)
@@ -82,7 +84,8 @@ func load_next_level():
 		
 		Ui.reset()
 		
-		world.get_node("IdleStream").play(0.2)
+		AudioManager.play("ludum_dare_51_idle")
+#		world.get_node("IdleStream").play(0.2)
 		
 		if level_index < number_of_levels - 1:
 			text_screen_ui.set_text("Click to drink")

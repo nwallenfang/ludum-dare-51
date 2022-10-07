@@ -117,7 +117,7 @@ func dash():
 
 const DEATH_EFFECT = preload("res://Effects/DeathEffect.tscn")
 func death_animation():
-	$DeathStream.play()
+	AudioManager.play("robo_death")
 	$AnimationPlayer.play("death")
 	yield(get_tree().create_timer(1),"timeout")
 	var death_effect = DEATH_EFFECT.instance()

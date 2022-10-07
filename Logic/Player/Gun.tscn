@@ -17,5 +17,6 @@ one_shot = true
 [node name="AutofireSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -10.0
+bus = "Laser Lowpass"
 
 [connection signal="timeout" from="Firerate" to="." method="_on_Firerate_timeout"]
