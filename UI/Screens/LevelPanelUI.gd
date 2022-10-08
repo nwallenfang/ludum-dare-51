@@ -3,4 +3,5 @@ extends Control
 
 
 func _on_HoverButton_clicked(level_name) -> void:
-	print("CLICKED! YAY ", level_name)
+	var level_index = int(level_name) - 1
+	Game.load_level(level_index)

@@ -16,7 +16,7 @@ signal clicked
 func _on_Panel_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		event = event as InputEventMouseButton
-		print("pos: ", event.global_position)
+
 		if event.pressed:
 			emit_signal("clicked", level_name)
 

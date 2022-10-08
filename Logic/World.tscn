@@ -5,8 +5,8 @@
 [ext_resource path="res://Assets/Sound/ludum_dare_51.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Shader/Vignette.gdshader" type="Shader" id=4]
 [ext_resource path="res://Assets/Sound/ludum_dare_51_idle.ogg" type="AudioStream" id=5]
-[ext_resource path="res://new_default_env.tres" type="Environment" id=7]
-[ext_resource path="res://UI/TextScreenUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://default_env.tres" type="Environment" id=7]
+[ext_resource path="res://UI/EventLabel.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
@@ -23,16 +23,16 @@ potion_color = Color( 0.337255, 0.929412, 0.0352941, 1 )
 hurt_color = Color( 0.764706, 0.247059, 0.247059, 1 )
 hurt_base_strength = 0.6
 
-[node name="Viewport2D" type="Viewport" parent="."]
+[node name="EventLabelViewport" type="Viewport" parent="."]
 size = Vector2( 256, 256 )
 transparent_bg = true
 hdr = false
 usage = 0
 render_target_v_flip = true
 
-[node name="2DText" parent="Viewport2D" instance=ExtResource( 10 )]
+[node name="EventLabel" parent="EventLabelViewport" instance=ExtResource( 10 )]
 
-[node name="Camera2D" type="Camera2D" parent="Viewport2D"]
+[node name="Camera2D" type="Camera2D" parent="EventLabelViewport"]
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 unique_name_in_owner = true

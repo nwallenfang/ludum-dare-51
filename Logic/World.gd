@@ -8,12 +8,9 @@ var intro_sequence_should_run := false
 # var b: String = "text"
 signal intro_over
 
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Game.world = self
-	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")  # had to put this there to connect Events once, bug could be fixed
 	self.connect("intro_over", self, "intro_over")
 	self.connect("intro_over", Events, "intro_over")
 	self.connect("intro_over", Ui, "intro_over")
@@ -21,21 +18,14 @@ func _ready() -> void:
 	if not Game.disable_music:
 		AudioManager.play("ludum_dare_51_idle")
 
-#	$ViewportContainer/Viewport/FollowCamera.make_current()
 	
-	#set_process_input(false)
-	#set_process_unhandled_input(false)
-	
-	Game.viewport = $Viewport2D
-	
+	Game.viewport = $EventLabelViewport
 	Game.player.connect("player_got_hurt", self, "player_hurt")
 	Game.player.connect("player_got_hurt", Ui.get_node("CanvasLayer/EventBar"), "update_health_bar")
 	
 	
 	$"%VignetteRect".material.set_shader_param("vignette_intensity", 2.4)
 	$"%VignetteRect".material.set_shader_param("vignette_rgb", intro_color)
-	
-#	Game.player.movement_disabled = true
 
 export var intro_color: Color
 export var potion_color: Color

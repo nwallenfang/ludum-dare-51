@@ -1,16 +1,17 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://UI/EventBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UI.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Font/IntroFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Sprites/banana.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/crosshair.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Font/EventNameFontSmaller.tres" type="DynamicFont" id=6]
+[ext_resource path="res://UI/Screens/SettingsUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sprites/noun-settings-5210870.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Font/WalltextFontEvenSmaller.tres" type="DynamicFont" id=8]
 [ext_resource path="res://Assets/Font/Fyodor-Bold.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Assets/Font/WalltextFont.tres" type="DynamicFont" id=10]
 [ext_resource path="res://Assets/Sprites/godot_icon.png" type="Texture" id=11]
+[ext_resource path="res://UI/Screens/LevelPanelUI.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -321,71 +322,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Settings" type="Control" parent="CanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Settings"]
-anchor_left = 0.2
-anchor_top = 0.4
-anchor_right = 0.8
-anchor_bottom = 0.6
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Settings/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
-margin_right = 614.0
-margin_bottom = 41.0
-
-[node name="Label" type="Label" parent="CanvasLayer/Settings/Panel/VBoxContainer/HBoxContainer"]
-margin_right = 305.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 6 )
-text = "Volume         "
-
-[node name="SoundSlider" type="HSlider" parent="CanvasLayer/Settings/Panel/VBoxContainer/HBoxContainer"]
-margin_left = 309.0
-margin_right = 614.0
-margin_bottom = 16.0
-size_flags_horizontal = 3
-size_flags_vertical = 2
-max_value = 1.0
-step = 0.01
-value = 0.8
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
-margin_top = 45.0
-margin_right = 614.0
-margin_bottom = 86.0
-
-[node name="Label" type="Label" parent="CanvasLayer/Settings/Panel/VBoxContainer/HBoxContainer2"]
-margin_right = 306.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 6 )
-text = "Mouse Sensitivity"
-align = 1
-
-[node name="SensitivitySlider" type="HSlider" parent="CanvasLayer/Settings/Panel/VBoxContainer/HBoxContainer2"]
-margin_left = 310.0
-margin_right = 614.0
-margin_bottom = 16.0
-size_flags_horizontal = 3
-size_flags_vertical = 2
-max_value = 1.0
-step = 0.01
-value = 0.33
-
-[node name="Button" type="Button" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
-margin_top = 90.0
-margin_right = 614.0
-margin_bottom = 137.0
-custom_fonts/font = ExtResource( 6 )
-text = "DONE"
+[node name="SettingsUI" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="SettingsIcon" type="ColorRect" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0.878431 )
@@ -495,6 +432,13 @@ __meta__ = {
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 11 )
 
+[node name="LevelPanelUI" parent="CanvasLayer" instance=ExtResource( 12 )]
+visible = false
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+
 [node name="IconGrow" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 9 )
 anims/grow = SubResource( 8 )
@@ -502,7 +446,3 @@ anims/grow = SubResource( 8 )
 [node name="CreditsAnimation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 14 )
 anims/fade_credits_out = SubResource( 15 )
-
-[connection signal="value_changed" from="CanvasLayer/Settings/Panel/VBoxContainer/HBoxContainer/SoundSlider" to="." method="_on_SoundSlider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/Settings/Panel/VBoxContainer/HBoxContainer2/SensitivitySlider" to="." method="_on_SensitivitySlider_value_changed"]
-[connection signal="pressed" from="CanvasLayer/Settings/Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]

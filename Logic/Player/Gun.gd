@@ -33,8 +33,9 @@ func shoot():
 	var hit_point: Vector3 = ray.get_collision_point()
 	var hit_normal: Vector3 = ray.get_collision_normal()
 	
-	
-	print(collider.name)
+	if collider is LevelSelectButton:
+		get_tree().set_input_as_handled()
+		collider.button_effect()
 	
 	if not Events.explosion_on_shot:
 		if Events.second_gun:

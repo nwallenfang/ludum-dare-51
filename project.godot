@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/EventBar.gd"
 }, {
+"base": "Spatial",
+"class": "LevelSelectButton",
+"language": "GDScript",
+"path": "res://Objects/LevelSelectButton.gd"
+}, {
 "base": "Node",
 "class": "ManagedSound",
 "language": "GDScript",
@@ -38,6 +43,7 @@ _global_script_class_icons={
 "AudioPlayerWithInfo": "",
 "Enemy": "",
 "EventBar": "",
+"LevelSelectButton": "",
 "ManagedSound": "res://Assets/Sprites/managed_sound.png",
 "MovementController": ""
 }
@@ -1227,4 +1233,4 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/default_clear_color=Color( 0.458824, 0.458824, 0.458824, 1 )
-environment/default_environment="res://new_default_env.tres"
+environment/default_environment="res://default_env.tres"

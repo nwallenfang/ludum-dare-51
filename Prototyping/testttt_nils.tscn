@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Logic/2DViewport.gd" type="Script" id=1]
 [ext_resource path="res://Objects/SimpleScreen.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/TextScreenUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/EventLabel.tscn" type="PackedScene" id=3]
 
 [sub_resource type="QuadMesh" id=4]
 

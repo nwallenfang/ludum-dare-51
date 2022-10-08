@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Levels/second/SecondFloor.lmbake" type="BakedLightmapData" id=1]
-[ext_resource path="res://Assets/Sound/ludum_dare_51_level_1.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sound/ludum_dare_51_idle.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Objects/WallText.gd" type="Script" id=3]
 [ext_resource path="res://Objects/TestTube_Holder.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Font/Fyodor-Bold.ttf" type="DynamicFontData" id=5]
