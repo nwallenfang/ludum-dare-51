@@ -170,4 +170,87 @@ func fade_in(duration):
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
 	emit_signal("fade_done")
+	
+func load_level(index):
+	if Game.level_index != 0:
+		# going from tutorial to lv 1
+		intro_sequence_should_run = true
+	else:
+		intro_sequence_should_run = false
+	if Game.level_index >= Game.level_list.size():
+		print("No Levels left")
+		return
+		
+	Game.player.movement_disabled = true
+	AudioManager.stop("ludum_dare_51_idle")
+	AudioManager.stop("ludum_dare_51")
+
+	yield(get_tree(), "idle_frame")
+
+	fade_out(0.4)
+	yield(self, "fade_done")
+		
+	Game.level_index = index
+	var new_level = Game.level_list[Game.level_index].instance()
+	$ViewportContainer/Viewport.remove_child(Game.level)
+	Game.level.queue_free()
+	Game.level = null
+	$ViewportContainer/Viewport.add_child(new_level)
+	Game.level = new_level
+	Events.reset()
+	
+	Ui.reset()
+	
+	AudioManager.play("ludum_dare_51_idle")
+	
+	if Game.level_index < Game.number_of_levels - 1:
+		Game.text_screen_ui.set_text("Click to drink")
+	new_level()	
+		
+	Game.emit_signal("viewport_texture_changed", Game.viewport)	
+	fade_in(0.4)
+	yield(self, "fade_done")
+
+# When reaching the end
+func load_next_level():
+	Game.player.movement_disabled = true
+	AudioManager.stop("ludum_dare_51_idle")
+	AudioManager.stop("ludum_dare_51")
+
+	yield(get_tree(), "idle_frame")
+
+	fade_out(0.4)
+	yield(self, "fade_done")
+	
+
+		
+	Game.level_index = Game.level_index + 1
+	
+	if Game.level_index != 0:
+		# going from tutorial to lv 1
+		intro_sequence_should_run = true
+	else:
+		intro_sequence_should_run = false
+	if Game.level_index >= Game.level_list.size():
+		print("No Levels left")
+	else:
+		var new_level = Game.level_list[Game.level_index].instance()
+		$ViewportContainer/Viewport.remove_child(Game.level)
+		Game.level.queue_free()
+		Game.level = null
+		$ViewportContainer/Viewport.add_child(new_level)
+		Game.level = new_level
+		Events.reset()
+		
+		Ui.reset()
+		
+		AudioManager.play("ludum_dare_51_idle")
+		
+		if Game.level_index < Game.number_of_levels - 1:
+			Game.text_screen_ui.set_text("Click to drink")
+	new_level()	
+		
+	Game.emit_signal("viewport_texture_changed", Game.viewport)
+	fade_in(0.4)
+	yield(self, "fade_done")
 

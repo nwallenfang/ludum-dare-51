@@ -12,4 +12,4 @@ func _ready() -> void:
 
 
 func _on_Area_area_entered(area: Area) -> void:
-	Game.load_next_level()
+	Game.world.load_next_level()
