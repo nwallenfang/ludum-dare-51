@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://UI/EventBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UI.gd" type="Script" id=2]
@@ -8,9 +8,8 @@
 [ext_resource path="res://UI/Screens/SettingsUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sprites/noun-settings-5210870.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Font/WalltextFontEvenSmaller.tres" type="DynamicFont" id=8]
-[ext_resource path="res://Assets/Font/Fyodor-Bold.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Assets/Font/WalltextFont.tres" type="DynamicFont" id=10]
-[ext_resource path="res://Assets/Sprites/godot_icon.png" type="Texture" id=11]
+[ext_resource path="res://UI/CreditsUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/DebugUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/Screens/LevelPanelUI.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Shader" id=1]
@@ -63,10 +62,6 @@ shader_param/fill_color = Color( 1, 1, 1, 1 )
 shader_param/empty_color = Color( 1, 1, 1, 0 )
 shader_param/enabled = null
 shader_param/texture_resource = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=13]
-size = 36
-font_data = ExtResource( 9 )
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -266,11 +261,6 @@ script = ExtResource( 2 )
 [node name="EventBar" parent="CanvasLayer" instance=ExtResource( 1 )]
 visible = false
 
-[node name="FPS" type="Label" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "FPS:"
-
 [node name="IntroLabel" type="Label" parent="CanvasLayer"]
 visible = false
 anchor_top = 0.683333
@@ -354,83 +344,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="CreditsUI" type="Control" parent="CanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/CreditsUI"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CreditsUI/CenterContainer"]
-margin_left = 252.0
-margin_top = 178.0
-margin_right = 772.0
-margin_bottom = 421.0
-
-[node name="Label" type="Label" parent="CanvasLayer/CreditsUI/CenterContainer/VBoxContainer"]
-margin_right = 520.0
-margin_bottom = 64.0
-rect_pivot_offset = Vector2( 244, 32 )
-custom_fonts/font = ExtResource( 10 )
-text = "Thanks for playing!"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Label2" type="Label" parent="CanvasLayer/CreditsUI/CenterContainer/VBoxContainer"]
-margin_top = 68.0
-margin_right = 520.0
-margin_bottom = 109.0
-rect_pivot_offset = Vector2( 244, 32 )
-custom_fonts/font = SubResource( 13 )
-text = "Game by"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Label3" type="Label" parent="CanvasLayer/CreditsUI/CenterContainer/VBoxContainer"]
-margin_top = 113.0
-margin_right = 520.0
-margin_bottom = 154.0
-rect_pivot_offset = Vector2( 244, 32 )
-custom_fonts/font = SubResource( 13 )
-text = "orangejam, nilolo, ritz1321, ni3lz"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Label4" type="Label" parent="CanvasLayer/CreditsUI/CenterContainer/VBoxContainer"]
-margin_top = 158.0
-margin_right = 520.0
-margin_bottom = 243.0
-rect_pivot_offset = Vector2( 244, 32 )
-custom_fonts/font = SubResource( 13 )
-text = "
-Made with GODOT"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Control" type="Control" parent="CanvasLayer/CreditsUI"]
-anchor_left = 0.5
-anchor_top = 0.611
-anchor_right = 0.565
-anchor_bottom = 0.611
-margin_top = 105.4
-margin_bottom = 105.4
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Label5" type="Sprite" parent="CanvasLayer/CreditsUI/Control"]
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 11 )
+[node name="CreditsUI" parent="CanvasLayer" instance=ExtResource( 9 )]
 
 [node name="LevelPanelUI" parent="CanvasLayer" instance=ExtResource( 12 )]
 visible = false
@@ -438,6 +352,8 @@ anchor_left = 0.1
 anchor_top = 0.1
 anchor_right = 0.9
 anchor_bottom = 0.9
+
+[node name="DebugUI" parent="CanvasLayer" instance=ExtResource( 10 )]
 
 [node name="IconGrow" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 9 )

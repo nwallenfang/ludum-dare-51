@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/GLTF/Table.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Lamp.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Levels/FirstFloor.gd" type="Script" id=5]
 [ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/DoorNew.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/LevelSelectButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Poster.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/WallText.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=11]
@@ -674,3 +675,6 @@ transform = Transform( 0.873135, 0.487478, -0.00106349, 0, 0.00218161, 0.999998,
 
 [node name="TestTube_Holder2" parent="Deco" instance=ExtResource( 27 )]
 transform = Transform( 0.814238, 0, 1.82675, 0, 2, 0, -1.82675, 0, 0.814238, -26.2147, 3.70055, 0.885612 )
+
+[node name="LevelSelectButton" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 11.3873, 2.33001, -2.60928 )

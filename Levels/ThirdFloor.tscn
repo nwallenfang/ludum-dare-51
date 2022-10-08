@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Levels/ThirdFloor.gd" type="Script" id=1]
 [ext_resource path="res://Objects/LabFloor.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Objects/DoorNew.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/LevelSelectButton.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Effects/Lightmaps/ThirdFloor/ThirdFloor.lmbake" type="BakedLightmapData" id=18]
 [ext_resource path="res://Objects/SimpleScreen.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Font/WalltextFont.tres" type="DynamicFont" id=20]
@@ -722,3 +723,6 @@ use_hdr = false
 atlas_generate = false
 capture_enabled = false
 light_data = ExtResource( 18 )
+
+[node name="LevelSelectButton" parent="." instance=ExtResource( 17 )]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 9.59479, 2.61034, -4.57753 )

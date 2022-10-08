@@ -120,10 +120,10 @@ __meta__ = {
 
 [node name="Icon2" type="ColorRect" parent="AspectRatioContainer/EventBar"]
 material = SubResource( 7 )
-anchor_left = 0.358398
-anchor_top = 0.823333
-anchor_right = 0.358398
-anchor_bottom = 0.823333
+anchor_left = 0.358501
+anchor_top = 0.84897
+anchor_right = 0.358501
+anchor_bottom = 0.84897
 margin_left = -43.5001
 margin_top = -36.354
 margin_right = -8.50006
@@ -134,10 +134,10 @@ __meta__ = {
 
 [node name="Icon3" type="ColorRect" parent="AspectRatioContainer/EventBar"]
 material = SubResource( 7 )
-anchor_left = 0.46875
-anchor_top = 0.823333
-anchor_right = 0.46875
-anchor_bottom = 0.823333
+anchor_left = 0.470394
+anchor_top = 0.830655
+anchor_right = 0.470394
+anchor_bottom = 0.830655
 margin_left = -9.59995
 margin_top = -36.354
 margin_right = 25.4001
@@ -162,10 +162,10 @@ __meta__ = {
 
 [node name="Icon5" type="ColorRect" parent="AspectRatioContainer/EventBar"]
 material = SubResource( 7 )
-anchor_left = 0.692383
-anchor_top = 0.823333
-anchor_right = 0.692383
-anchor_bottom = 0.823333
+anchor_left = 0.689971
+anchor_top = 0.84897
+anchor_right = 0.689971
+anchor_bottom = 0.84897
 margin_left = 59.1001
 margin_top = -36.354
 margin_right = 94.1001
@@ -221,6 +221,9 @@ anchor_top = 0.84
 anchor_right = 0.85
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="GetHitBlink" type="AnimationPlayer" parent="."]
 anims/get_hit = SubResource( 15 )

@@ -2,8 +2,9 @@ extends Control
 
 func _ready() -> void:
 	Events.connect("trigger_event", self, "trigger_event")
+	if OS.is_debug_build():
+		$CanvasLayer/DebugUI.visible = true
 	$IconGrow.play("RESET")
-
 
 
 func show_settings():
@@ -22,8 +23,6 @@ func _process(delta: float) -> void:
 			hide_settings()
 		else:
 			show_settings()
-
-	$CanvasLayer/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
 
 func intro_over():
 	$CanvasLayer/IntroLabel.visible = false
@@ -69,3 +68,7 @@ func _on_SensitivitySlider_value_changed(value: float) -> void:
 
 func _on_SoundSlider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear2db(value))
+
+
+func _on_FPSUpdateTimer_timeout() -> void:
+	pass # Replace with function body.

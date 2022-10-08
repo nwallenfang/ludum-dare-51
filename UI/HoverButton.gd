@@ -2,6 +2,7 @@ extends Control
 
 export var level_screenshot: Texture
 export var level_name: String
+export var level_index: int
 
 
 onready var style_box_default: StyleBoxFlat
@@ -18,7 +19,7 @@ func _on_Panel_gui_input(event: InputEvent) -> void:
 		event = event as InputEventMouseButton
 
 		if event.pressed:
-			emit_signal("clicked", level_name)
+			emit_signal("clicked", level_index)
 
 func _on_Panel_mouse_entered() -> void:
 	$Panel.set("custom_styles/panel", style_box_hovered)
@@ -26,11 +27,3 @@ func _on_Panel_mouse_entered() -> void:
 
 func _on_Panel_mouse_exited() -> void:
 	$Panel.set("custom_styles/panel", style_box_default)
-
-
-func _on_CreateLobby_gui_input(event: InputEvent) -> void:
-	pass # Replace with function body.
-
-
-func _on_JoinLobby_gui_input(event: InputEvent) -> void:
-	pass # Replace with function body.

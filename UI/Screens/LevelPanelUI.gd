@@ -1,7 +1,4 @@
 extends Control
 
-
-
-func _on_HoverButton_clicked(level_name) -> void:
-	var level_index = int(level_name) - 1
+func _on_HoverButton_clicked(level_index) -> void:
 	Game.world.load_level(level_index)

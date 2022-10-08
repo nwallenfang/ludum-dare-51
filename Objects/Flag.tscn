@@ -4,6 +4,9 @@
 [ext_resource path="res://Objects/Flag.gd" type="Script" id=2]
 [ext_resource path="res://Effects/SpinCircle.tscn" type="PackedScene" id=3]
 
+[sub_resource type="SphereShape" id=3]
+radius = 1.28313
+
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "bezier"
@@ -132,9 +135,6 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="SphereShape" id=3]
-radius = 1.28313
-
 [node name="Flag" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -143,6 +143,15 @@ transform = Transform( 1.12369, 0.343213, 0, -0.301092, 1.28089, 0, 0, 0, 1, 0, 
 
 [node name="SpinCircle" parent="Flag" instance=ExtResource( 3 )]
 transform = Transform( 1.38893, -0.36492, -0.0730636, 0.326488, 1.19476, 0.239213, 0, -0.328404, 1.64023, 0.858853, 2.06924, 0 )
+
+[node name="Area" type="Area" parent="Flag"]
+transform = Transform( 0.830311, -0.222481, 0, 0.195177, 0.72841, 0, 0, 0, 1, 0, 0, 0 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Flag/Area"]
+transform = Transform( 1.6169, 0, 0, 0, 1.6169, 0, 0, 0, 0.853422, 1.71303, 1.66047, 0 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
@@ -154,12 +163,4 @@ light_color = Color( 0.360784, 0.862745, 0.133333, 1 )
 light_energy = 1.4
 omni_range = 8.035
 
-[node name="Area" type="Area" parent="."]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 1.6169, 0, 0, 0, 1.6169, 0, 0, 0, 0.853422, 1.71303, 1.66047, 0 )
-shape = SubResource( 3 )
-
-[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Flag/Area" to="." method="_on_Area_area_entered"]

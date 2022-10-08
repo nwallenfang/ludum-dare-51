@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Font/iosevka-extended-regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/DebugUI.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=16]
+size = 18
+font_data = ExtResource( 1 )
+
+[node name="DebugUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -72.0
+grow_horizontal = 0
+
+[node name="FPS" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 150.0
+margin_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_fonts/font = SubResource( 16 )
+text = "FPS:"
+
+[node name="AvgFPS" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 27.0
+margin_right = 150.0
+margin_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_fonts/font = SubResource( 16 )
+text = "avg building up"
+
+[node name="SubScreenRate" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+margin_top = 54.0
+margin_right = 150.0
+margin_bottom = 77.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_fonts/font = SubResource( 16 )
+text = "variance:"
+
+[node name="FPSUpdateTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="FPSUpdateTimer" to="." method="_on_FPSUpdateTimer_timeout"]
