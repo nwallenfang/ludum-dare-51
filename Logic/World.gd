@@ -3,9 +3,6 @@ extends Control
 # gets set to true after Tutorial
 var intro_sequence_should_run := false
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
 signal intro_over
 
 func _ready() -> void:

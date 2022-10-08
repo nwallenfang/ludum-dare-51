@@ -3,15 +3,13 @@ extends Node
 export var sound_directoy = "res://Assets/Sound"
 
 var num_players = 32
-var bus = "master"
 
 var available = []  # The available players, instances of type AudioPlayerWithInfo
 var queue = []  # The queue of sounds to play.
 var playing = [] # The players that are currently active, indexed by the sound name
 
-
-var MANAGED_SOUND_SCENE = preload("res://Logic/AudioManager/ManagedSound.tscn")
-var AUDIO_PLAYER_WITH_INFO = preload("res://Logic/AudioManager/AudioPlayerWithInfo.tscn")
+var MANAGED_SOUND_SCENE = preload("res://Logic/Sound/ManagedSound.tscn")
+var AUDIO_PLAYER_WITH_INFO = preload("res://Logic/Sound/AudioPlayerWithInfo.tscn")
 
 func _ready():
 	# Generate as many audio players as said in the variable
