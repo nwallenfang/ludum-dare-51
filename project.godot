@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Prototyping/TestEnemy.gd"
+"path": "res://Levels/Prototyping/TestEnemy.gd"
 }, {
 "base": "Control",
 "class": "EventBar",
