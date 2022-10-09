@@ -3,6 +3,8 @@ extends Node
 signal trigger_event(event)
 signal progress_update(time)
 
+var stacking_events := false
+var event_stack = []
 
 # level -> [event_number -> Event] fixed events and their timestamps
 var fixed_events = {
@@ -50,8 +52,14 @@ func reset():
 	time = 0.0
 	number_triggered = 0
 	random_event_names = random_event_names_start.duplicate()
-	if Game.previous_event != null:
+	if stacking_events:
+		for event in event_stack:
+			event.end_event()
+		
+	elif Game.previous_event != null:
 		Game.previous_event.end_event()
+		
+	
 	
 	
 func _ready():
@@ -86,6 +94,7 @@ func _process(delta: float) -> void:
 		var rand_name = random_event_names.pop_at(rand_index)
 		emit_signal("trigger_event", $EventScenes.get_node(rand_name))
 
+  
 
 func _on_UpdateUITimer_timeout() -> void:
 	emit_signal("progress_update", time)
