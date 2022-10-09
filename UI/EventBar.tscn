@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://UI/EventBar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/circle_white.png" type="Texture" id=2]
@@ -55,10 +55,10 @@ color = Color( 0.905882, 0.113725, 0.113725, 1 )
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 7 )
 shader_param/scale = Vector2( 3, 0.8 )
-shader_param/speed = 0.2
-shader_param/direction = Vector2( -0.1, 0.9 )
-shader_param/mod_color = Color( 0.592157, 0.901961, 0.180392, 1 )
-shader_param/mod_color_2 = Color( 0.407843, 1, 0, 1 )
+shader_param/speed = 0.08
+shader_param/direction = Vector2( 1.054, 11.948 )
+shader_param/mod_color = Color( 0.168627, 0.560784, 0.0627451, 1 )
+shader_param/mod_color_2 = Color( 0, 0, 0, 1 )
 shader_param/noise = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=13]
@@ -73,8 +73,35 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:material:shader_param/mod_color_2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+
 [sub_resource type="Animation" id=15]
 resource_name = "get_hit"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:material:shader_param/mod_color_2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="EventBar" type="Control"]
 modulate = Color( 1, 1, 1, 0.776471 )
@@ -83,7 +110,7 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 greyed_out = Color( 0.376471, 0.376471, 0.376471, 1 )
 question_mark_tex = ExtResource( 6 )
-full_health_color = Color( 0.254902, 0.952941, 0.0588235, 1 )
+full_health_color = Color( 0.168627, 0.560784, 0.0627451, 1 )
 partial_health_color = Color( 0.929412, 0.784314, 0.12549, 1 )
 low_health_color = Color( 0.941176, 0.223529, 0.0823529, 1 )
 
@@ -220,10 +247,12 @@ anchor_left = 0.15
 anchor_top = 0.84
 anchor_right = 0.85
 anchor_bottom = 1.0
+rect_scale = Vector2( 1.095, 1.2 )
 custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="GetHitBlink" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 16 )
 anims/get_hit = SubResource( 15 )

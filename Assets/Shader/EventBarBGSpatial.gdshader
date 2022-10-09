@@ -1,4 +1,4 @@
-shader_type canvas_item;
+shader_type spatial;
 
 uniform vec2 scale;
 uniform sampler2D noise;
@@ -8,8 +8,7 @@ uniform vec4 mod_color: hint_color;
 uniform vec4 mod_color_2: hint_color;
 
 void fragment() {
-	float tex_val = texture(noise, scale * (UV)  + speed * direction).r;
-	COLOR.rgb = mix((mod_color.rgb), mod_color_2.rgb, tex_val + 0.4);
+	ALBEDO = mod_color.rgb * vec3(texture(noise, scale * UV + speed * TIME * direction).r);
 //	COLOR.a = 0.2 * float(UV.y < 0.1 || UV.y >= 0.5) + 0.6 * float(UV.y >= 0.1 && UV.y < 0.5);
 //	COLOR.a = 0.5;
 }

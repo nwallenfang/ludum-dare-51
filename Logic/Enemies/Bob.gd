@@ -103,7 +103,7 @@ func trigger():
 
 func dash():
 	pass # TODO Warning
-	print("REEEE")
+#	print("REEEE")
 	yield(get_tree().create_timer(1.5),"timeout")
 	if state == STATES.DEATH:
 		return
@@ -130,6 +130,6 @@ func hurt_visuals():
 	for m in $Model.get_children():
 		if m is MeshInstance:
 			m = m as MeshInstance
-			if m.material_overlay != null:
-				$HurtTween.interpolate_property(m.material_overlay, "albedo_color:a", 1, .0, .4)
+			if m.material_override != null:
+				$HurtTween.interpolate_property(m.material_override, "shader_param/hurt_mix", 0.0, 1.0, .4)
 	$HurtTween.start()

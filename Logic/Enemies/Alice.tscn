@@ -224,4 +224,3 @@ anims/death = SubResource( 5 )
 
 [node name="DeathStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-bus = "Enemy Sounds"

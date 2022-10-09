@@ -16,13 +16,12 @@ func _ready() -> void:
 	Events.connect("progress_update", self, "set_progress")
 	Events.connect("trigger_event", self, "event_triggered")
 
-	# TODO on new level reload fixed !!!
 	init_fixed_events()
 	
 
 
 func update_health_bar(hp):
-	# TODO trigger blink animation
+	$GetHitBlink.play("get_hit")
 	if hp == 3:
 		$Background.material.set_shader_param("mod_color", full_health_color)
 	if hp == 2:
@@ -92,3 +91,12 @@ func event_triggered(event):
 	icon_node.material.set_shader_param("texture_resource", event.icon)
 	$TriggerParticles.position = icon_node.rect_global_position + 0.5 * icon_node.rect_size
 	$TriggerParticles.restart()
+
+
+var offset = Vector2(0.0, 0.0)
+func _process(delta: float) -> void:
+	var forward_direction = Game.player.global_transform.basis.z
+	var look_direction_xz = Vector2(forward_direction.x, forward_direction.z)
+
+	offset += delta * Vector2(Game.player.velocity.x, Game.player.velocity.z).rotated(deg2rad(90) + look_direction_xz.angle())
+	$Background.material.set_shader_param("direction", offset)

@@ -172,3 +172,7 @@ func play_key_sound():
 
 func show_gun():
 	$Head/GunModel.visible = true
+	
+func get_in_plane_velocity() -> Vector2:
+	var global_vel: Vector3 = velocity
+	return Vector2(global_vel.x, global_vel.z)

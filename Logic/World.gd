@@ -91,6 +91,7 @@ func new_level():
 # When dying
 var already_restarting = false
 func restart_level():
+	AudioManager.stop("laser_grid")
 	if already_restarting:
 		return
 	already_restarting = true
@@ -187,6 +188,7 @@ func load_level(index):
 	Game.player.movement_disabled = true
 	AudioManager.stop("ludum_dare_51_idle")
 	AudioManager.stop("ludum_dare_51")
+	AudioManager.stop("laser_grid")
 
 	yield(get_tree(), "idle_frame")
 

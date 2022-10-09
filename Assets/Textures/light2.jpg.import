@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/fire_noise_test3.png-736c180191d171a337b39c55d8d801a1.s3tc.stex"
-path.etc2="res://.import/fire_noise_test3.png-736c180191d171a337b39c55d8d801a1.etc2.stex"
+path.s3tc="res://.import/light2.jpg-10c8a10ce6aaa00851b496b9af14e3a8.s3tc.stex"
+path.etc2="res://.import/light2.jpg-10c8a10ce6aaa00851b496b9af14e3a8.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/fire_noise_test3.png"
-dest_files=[ "res://.import/fire_noise_test3.png-736c180191d171a337b39c55d8d801a1.s3tc.stex", "res://.import/fire_noise_test3.png-736c180191d171a337b39c55d8d801a1.etc2.stex" ]
+source_file="res://Assets/Textures/light2.jpg"
+dest_files=[ "res://.import/light2.jpg-10c8a10ce6aaa00851b496b9af14e3a8.s3tc.stex", "res://.import/light2.jpg-10c8a10ce6aaa00851b496b9af14e3a8.etc2.stex" ]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
+flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1
