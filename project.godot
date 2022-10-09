@@ -44,7 +44,7 @@ _global_script_class_icons={
 "Enemy": "",
 "EventBar": "",
 "LevelSelectButton": "",
-"ManagedSound": "",
+"ManagedSound": "res://Assets/Sprites/managed_sound.png",
 "MovementController": ""
 }
 

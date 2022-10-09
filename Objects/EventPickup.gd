@@ -12,3 +12,7 @@ func _ready():
 func _on_PickupBox_area_entered(area):
 	Events.event_stack.append(event)
 	event.event()
+
+
+func _on_ChangeLookArea_body_entered(body: Node) -> void:
+	print("entered")
