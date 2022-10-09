@@ -313,6 +313,7 @@ __meta__ = {
 }
 
 [node name="SettingsUI" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
 
 [node name="SettingsIcon" type="ColorRect" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0.878431 )

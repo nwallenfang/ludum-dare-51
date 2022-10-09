@@ -1,0 +1,4 @@
+[2022-10-09, '99f1a4d'], level0, info: test2, fps: 1695.07
+81.66
+[2022-10-09, '99f1a4d'], level0, info: test1f, fps: 1141.12
+[2022-10-09, '99f1a4d'], level0, info: test1f, fps: 1414.10

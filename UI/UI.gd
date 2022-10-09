@@ -55,6 +55,8 @@ func reset():
 func _on_Button_pressed() -> void:
 	hide_settings()
 
+func get_avg_fps() -> float:
+	return $CanvasLayer/DebugUI.average_fps
 
 func to_credits():
 	$"%Crosshair".visible = false
