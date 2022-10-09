@@ -1,6 +1,7 @@
 extends Control
 
 
+
 func _ready() -> void:
 	$Panel/VBoxContainer/HBoxContainer3.visible = OS.is_debug_build() 
 
@@ -40,3 +41,19 @@ onready var metadata_default_text = $"%Metadata".text
 func _on_Metadata_focus_entered() -> void:
 	if $"%Metadata".text == metadata_default_text:
 		$"%Metadata".text = ""
+
+func _on_SensitivitySlider_value_changed(value: float) -> void:
+	Game.set_sensitivity(Game.min_sensitivity + value * (Game.max_sensitivity - Game.min_sensitivity))
+
+
+func _on_SoundSlider_value_changed(value: float) -> void:
+	print(AudioServer.get_bus_name(0))
+	AudioServer.set_bus_volume_db(0, linear2db(value))
+
+func hide_settings():
+	Game.settings_open = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	self.visible = false
+
+func _on_DoneButton_pressed():
+	hide_settings()

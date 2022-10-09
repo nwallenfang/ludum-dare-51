@@ -19,6 +19,8 @@ var stop_on_slope := true
 onready var floor_max_angle: float = deg2rad(45.0)
 onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity") * gravity_multiplier)
 
+var knockback := Vector3.ZERO
+
 export var dash_chance := .5
 export var dash_range := 5.0
 export var dash_acc := 3.0
@@ -57,6 +59,10 @@ func _physics_process(delta):
 		snap = Vector3.ZERO
 		
 		velocity.y -= gravity * delta
+		
+	if knockback != Vector3.ZERO:
+		velocity -= knockback
+		knockback = Vector3.ZERO
 	
 	accelerate(delta)
 	
@@ -87,8 +93,10 @@ func accelerate(delta: float) -> void:
 	velocity.z = temp_vel.z
 
 var hp := 50
-func damage(amount: int):
+func damage(amount: int, damage_position: Vector3):
 	hp -= amount
+	# Only add knockback if it was a laser. Since with this approach it isn't clear where an explosion came from
+	knockback = self.global_translation.direction_to(damage_position + Vector3.UP) * 24
 	hurt_visuals()
 	if hp <= 0:
 		if state != STATES.DEATH:

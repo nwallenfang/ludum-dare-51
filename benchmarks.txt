@@ -3,3 +3,5 @@
 [2022-10-09, '99f1a4d'], level0, info: test1f, fps: 1141.12
 [2022-10-09, '99f1a4d'], level0, info: test1f, fps: 1414.10
 [2022-10-09 18:27:01, '868855a'], level2, info: (benchmark metadata), fps: 1664.83
+[2022-10-09 17:32:07, '78cee10'], level2, info: (benchmark metadata), fps: 167.45
+[2022-10-09 17:32:12, '78cee10'], level2, info: test, fps: 131.24

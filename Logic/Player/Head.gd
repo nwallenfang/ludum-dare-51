@@ -42,4 +42,7 @@ func camera_rotation() -> void:
 		rot.x = clamp(rot.x - mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
 	
 	get_owner().rotation.y = rot.y
-	rotation.x = rot.x
+	rotation.x = rot.x  
+	
+	mouse_axis.x = 0
+	mouse_axis.y = 0

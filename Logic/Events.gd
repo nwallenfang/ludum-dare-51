@@ -3,6 +3,8 @@ extends Node
 signal trigger_event(event)
 signal progress_update(time)
 
+var stacking_events := false
+var event_stack = []
 
 # level -> [event_number -> Event] fixed events and their timestamps
 var fixed_events = {
@@ -22,6 +24,22 @@ var fixed_events = {
 	4: {
 		3: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),
 	}
+}
+
+var event_index = {
+	"autofire": preload("res://Logic/Events/AutofireEvent.tscn").instance(),
+	"gravity": preload("res://Logic/Events/GravityEvent.tscn").instance(),
+	"disco": preload("res://Logic/Events/DiscoEvent.tscn").instance(),
+	"shrink": preload("res://Logic/Events/ShrinkEvent.tscn").instance(),
+	"jump": preload("res://Logic/Events/JumpEvent.tscn").instance(),
+	"control": preload("res://Logic/Events/ControlEvent.tscn").instance(),
+	"invincible": preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
+	"banana": preload("res://Logic/Events/BananaEvent.tscn").instance(),
+	"explosion": preload("res://Logic/Events/ExplosionEvent.tscn").instance(),
+	"akimbo": preload("res://Logic/Events/SecondGunEvent.tscn").instance(),
+	"fog": preload("res://Logic/Events/FogEvent.tscn").instance(),
+	"nothing": preload("res://Logic/Events/EmptyEvent.tscn").instance(),
+	"fov": preload("res://Logic/Events/FovEvent.tscn").instance(),
 }
 
 var random_events_start = [
@@ -50,9 +68,12 @@ func reset():
 	time = 0.0
 	number_triggered = 0
 	random_event_names = random_event_names_start.duplicate()
+	for event in event_stack:
+		event.end_event()
+		
 	if Game.previous_event != null:
 		Game.previous_event.end_event()
-	
+		
 	
 func _ready():
 	set_process(false)
@@ -86,6 +107,7 @@ func _process(delta: float) -> void:
 		var rand_name = random_event_names.pop_at(rand_index)
 		emit_signal("trigger_event", $EventScenes.get_node(rand_name))
 
+  
 
 func _on_UpdateUITimer_timeout() -> void:
 	emit_signal("progress_update", time)
