@@ -64,13 +64,5 @@ func to_credits():
 	$CanvasLayer/FLabel.visible = false
 	$CanvasLayer/CreditsUI.visible = true
 
-func _on_SensitivitySlider_value_changed(value: float) -> void:
-	Game.set_sensitivity(Game.min_sensitivity + value * (Game.max_sensitivity - Game.min_sensitivity))
-
-
-func _on_SoundSlider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(0, linear2db(value))
-
-
 func _on_FPSUpdateTimer_timeout() -> void:
 	pass # Replace with function body.
