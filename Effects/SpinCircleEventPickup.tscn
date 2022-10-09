@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("PivotO/PivotA/PivotB/Particles:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PivotO/PivotA/PivotB:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PivotO:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "spin"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PivotO/PivotA/PivotB:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 720 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PivotO:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 3.17673, 0, 0, Vector2( 0.484772, 1 ), 0.0885614, 0.0885614, 0, 0, Vector2( 1, 0 ), -2.97607, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 5
+emission_ring_radius = 2.0
+emission_ring_inner_radius = 1.8
+emission_ring_height = 0.1
+emission_ring_axis = Vector3( 0, 0, 1 )
+gravity = Vector3( 0, 0, 0 )
+scale = 0.15
+scale_curve = SubResource( 4 )
+color = Color( 1, 0.984314, 0.027451, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_unshaded = true
+flags_vertex_lighting = true
+vertex_color_use_as_albedo = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+
+[node name="SpinCircle" type="Spatial"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "spin"
+playback_speed = 0.15
+anims/RESET = SubResource( 1 )
+anims/spin = SubResource( 2 )
+
+[node name="PivotO" type="Spatial" parent="."]
+
+[node name="PivotA" type="Spatial" parent="PivotO"]
+transform = Transform( 1, 0, 0, 0, 0.782793, 0.622282, 0, -0.622282, 0.782793, 0, 0, 0 )
+
+[node name="PivotB" type="Spatial" parent="PivotO/PivotA"]
+
+[node name="Particles" type="Particles" parent="PivotO/PivotA/PivotB"]
+amount = 50
+lifetime = 2.0
+visibility_aabb = AABB( -2.97776, -2.99192, -1.04692, 5.96989, 5.95752, 2.09586 )
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 7 )

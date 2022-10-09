@@ -5,3 +5,6 @@
 [2022-10-09 18:27:01, '868855a'], level2, info: (benchmark metadata), fps: 1664.83
 [2022-10-09 17:32:07, '78cee10'], level2, info: (benchmark metadata), fps: 167.45
 [2022-10-09 17:32:12, '78cee10'], level2, info: test, fps: 131.24
+[2022-10-09 19:47:39, '9f00cda'], level0, info: (benchmark metadata), fps: 236.73
+[2022-10-09 19:49:31, '9f00cda'], level3, info: (benchmark metadata), fps: 131.07
+[2022-10-09 19:49:58, '9f00cda'], level4, info: (benchmark metadata), fps: 184.00
