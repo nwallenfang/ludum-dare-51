@@ -43,3 +43,6 @@ func camera_rotation() -> void:
 	
 	get_owner().rotation.y = rot.y
 	rotation.x = rot.x
+	
+	rot.x = 0
+	rot.y = 0

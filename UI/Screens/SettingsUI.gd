@@ -55,6 +55,5 @@ func hide_settings():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	self.visible = false
 
-
-func _on_Button_pressed():
+func _on_DoneButton_pressed():
 	hide_settings()

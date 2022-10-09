@@ -131,9 +131,7 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 text = "DONE"
 
-[connection signal="value_changed" from="Panel/VBoxContainer/HBoxContainer/SoundSlider" to="." method="_on_SoundSlider_value_changed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/HBoxContainer2/SensitivitySlider" to="." method="_on_SensitivitySlider_value_changed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]
-
 [connection signal="focus_entered" from="Panel/VBoxContainer/HBoxContainer3/Metadata" to="." method="_on_Metadata_focus_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer3/SaveFPSButton" to="." method="_on_SaveFPSButton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/DoneButton" to="." method="_on_DoneButton_pressed"]
