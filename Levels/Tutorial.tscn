@@ -816,4 +816,4 @@ transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08,
 
 [node name="EventPickup" parent="." instance=ExtResource( 98 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -10 )
-event_name = "banana"
+event_name = "fog"
