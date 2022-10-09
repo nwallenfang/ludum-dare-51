@@ -26,6 +26,22 @@ var fixed_events = {
 	}
 }
 
+var event_index = {
+	"autofire": preload("res://Logic/Events/AutofireEvent.tscn").instance(),
+	"gravity": preload("res://Logic/Events/GravityEvent.tscn").instance(),
+	"disco": preload("res://Logic/Events/DiscoEvent.tscn").instance(),
+	"shrink": preload("res://Logic/Events/ShrinkEvent.tscn").instance(),
+	"jump": preload("res://Logic/Events/JumpEvent.tscn").instance(),
+	"control": preload("res://Logic/Events/ControlEvent.tscn").instance(),
+	"invincible": preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
+	"banana": preload("res://Logic/Events/BananaEvent.tscn").instance(),
+	"explosion": preload("res://Logic/Events/ExplosionEvent.tscn").instance(),
+	"akimbo": preload("res://Logic/Events/SecondGunEvent.tscn").instance(),
+	"fog": preload("res://Logic/Events/FogEvent.tscn").instance(),
+	"nothing": preload("res://Logic/Events/EmptyEvent.tscn").instance(),
+	"fov": preload("res://Logic/Events/FovEvent.tscn").instance(),
+}
+
 var random_events_start = [
 	preload("res://Logic/Events/AutofireEvent.tscn").instance(),
 	preload("res://Logic/Events/GravityEvent.tscn").instance(),
@@ -52,15 +68,12 @@ func reset():
 	time = 0.0
 	number_triggered = 0
 	random_event_names = random_event_names_start.duplicate()
-	if stacking_events:
-		for event in event_stack:
-			event.end_event()
+	for event in event_stack:
+		event.end_event()
 		
-	elif Game.previous_event != null:
+	if Game.previous_event != null:
 		Game.previous_event.end_event()
 		
-	
-	
 	
 func _ready():
 	set_process(false)
