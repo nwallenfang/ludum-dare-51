@@ -78,7 +78,8 @@ func reset():
 func _ready():
 	set_process(false)
 	for event in random_events_start:
-		$EventScenes.add_child(event)
+		event.name = event.event_name  # dorky line :p
+		$EventScenes.add_child(event, true)
 		random_event_names_start.append(event.name)
 		
 	random_event_names = random_event_names_start.duplicate()

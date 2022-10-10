@@ -53,6 +53,9 @@ mixer_bus = "SFX"
 volume_db = -6.0
 mixer_bus = "SFX"
 
+[node name="event_pickup" parent="Sounds" instance=ExtResource( 2 )]
+mixer_bus = "SFX"
+
 [node name="Players" type="Node" parent="."]
 __meta__ = {
 "_editor_description_": "gets filled with AudioPlayers in _ready of AudioManager"

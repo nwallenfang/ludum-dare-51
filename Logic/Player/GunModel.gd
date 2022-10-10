@@ -16,7 +16,7 @@ var interpolated_target: Vector3
 var lerping_accel = 15.0
 func _process(delta: float) -> void:
 	var target_transform: Transform = get_parent().get_global_transform_interpolated()
-	target_transform.origin.y -= 2
+	target_transform.origin.y -= 2  # weapon below head
 	target_transform.origin =  lerp(interpolated_target, target_transform.origin, min(lerping_accel * delta, 1.0))
 	self.global_transform = target_transform
-	interpolated_target = target_transform.origin
+	interpolated_target = target_transform.origin  # save for next lerping step
