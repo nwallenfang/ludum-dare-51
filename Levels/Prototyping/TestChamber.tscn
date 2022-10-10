@@ -33,9 +33,13 @@ transform = Transform( -4.37114e-08, 0, 2.1, 0, 2.1, 0, -1, 0, -9.17939e-08, 1.8
 transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 11.3873, 2.33001, 0.39072 )
 
 [node name="EventPickup" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, -5 )
 event_name = "jump"
 
 [node name="EventPickup2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 8 )
 event_name = "explosion"
+
+[node name="EventPickup3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 3 )
+event_name = "invincible"

@@ -21,6 +21,8 @@ func _ready() -> void:
 		
 
 var old_fps
+var visuals_every = 5
+var counter = 0
 func _on_FPSUpdateTimer_timeout() -> void:
 	var fps = Engine.get_frames_per_second()
 #	if fps_history.empty():
@@ -40,4 +42,8 @@ func _on_FPSUpdateTimer_timeout() -> void:
 
 		
 	$"%FPS".text = "FPS: %d" % fps
-	$"%AvgFPS".text = "avg FPS: %.2f" % average_fps
+	if counter == 0:
+		$"%AvgFPS".text = "avg FPS: %.0f" % average_fps
+	
+	counter += 1
+	counter %= visuals_every
