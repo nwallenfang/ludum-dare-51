@@ -7,15 +7,19 @@ extends Node
 
 signal viewport_texture_changed
 
-var player: Spatial
+signal new_player_set
+var player: Spatial setget set_player
 
 var level_index := 0 # current level number
-var level_list := [preload("res://Levels/Tutorial.tscn"), 
-				preload("res://Levels/FloorOffice.tscn"),
-				preload("res://Levels/FirstFloor.tscn"),
-				preload("res://Levels/ThirdFloor.tscn"),
-				preload("res://Levels/SecondFloor.tscn"),
-				preload("res://Levels/Credits.tscn")] # all levels
+var level_list := [
+	preload("res://Levels/Prototyping/TestChamber.tscn"), 
+	preload("res://Levels/Tutorial.tscn"), 
+	preload("res://Levels/FloorOffice.tscn"),
+	preload("res://Levels/FirstFloor.tscn"),
+	preload("res://Levels/ThirdFloor.tscn"),
+	preload("res://Levels/SecondFloor.tscn"),
+	preload("res://Levels/Credits.tscn")
+] # all levels
 var number_of_levels = len(level_list)
 var level # current level scene
 var world
@@ -38,6 +42,10 @@ export var max_sensitivity := 0.015
 
 func _ready() -> void:
 	Events.connect("trigger_event", self, "event_triggered")
+
+func set_player(playerr: Spatial):
+	player = playerr
+	emit_signal("new_player_set")
 
 func set_sensitivity(val):
 	player.get_node("Head").mouse_sensitivity = val

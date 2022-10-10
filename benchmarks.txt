@@ -8,3 +8,4 @@
 [2022-10-09 19:47:39, '9f00cda'], level0, info: (benchmark metadata), fps: 236.73
 [2022-10-09 19:49:31, '9f00cda'], level3, info: (benchmark metadata), fps: 131.07
 [2022-10-09 19:49:58, '9f00cda'], level4, info: (benchmark metadata), fps: 184.00
+[2022-10-10 11:44:45, '4bd0ef9'], level2, info: physicsinterpolatedof, fps: 1373.43

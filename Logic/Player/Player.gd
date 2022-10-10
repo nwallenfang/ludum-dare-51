@@ -105,9 +105,6 @@ func _physics_process(delta) -> void:
 	velocity = move_and_slide_with_snap(velocity, snap, up_direction, 
 			stop_on_slope, 4, floor_max_angle)
 
-func _process(delta: float) -> void:
-	pass
-
 func direction_input() -> void:
 	direction = Vector3()
 	var aim: Basis = get_global_transform().basis

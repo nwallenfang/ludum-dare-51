@@ -453,6 +453,7 @@ tracks/5/keys = {
 }
 
 [node name="Player" type="KinematicBody"]
+physics_interpolation_mode = 2
 collision_layer = 0
 script = ExtResource( 1 )
 
@@ -465,6 +466,7 @@ transform = Transform( 0.7, 0, 0, 0, -3.0598e-08, -1, 0, 0.7, -4.37114e-08, 0, 1
 shape = SubResource( 2 )
 
 [node name="Head" parent="." instance=ExtResource( 2 )]
+physics_interpolation_mode = 0
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 

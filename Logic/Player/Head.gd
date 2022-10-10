@@ -12,11 +12,18 @@ var rot := Vector3()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	set_process(false)
 	y_limit = deg2rad(y_limit)
 	Game.player_camera = $Camera
 	
 	if Game.level_index == 0:
 		rot.y = deg2rad(27.0)
+	
+	yield(get_tree(), "idle_frame")
+	# Find the target node
+	_target = Game.player
+	set_process(true)
+#	set_as_toplevel(true)
 
 
 # Called when there is an input event
@@ -46,3 +53,13 @@ func camera_rotation() -> void:
 	
 	mouse_axis.x = 0
 	mouse_axis.y = 0
+
+
+# Node that the camera will follow
+var _target
+
+# We will smoothly lerp to follow the target
+# rather than follow exactly
+var _target_pos : Vector3 = Vector3()
+
+

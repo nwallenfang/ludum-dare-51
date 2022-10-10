@@ -8,6 +8,7 @@ func _on_Area_area_entered(area):
 
 func _ready():
 	$AnimationPlayer.play("dance")
+	$Tween.playback_process_mode = Tween.TWEEN_PROCESS_PHYSICS
 	while true:
 		$Tween.reset_all()
 		

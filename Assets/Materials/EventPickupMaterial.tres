@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Sprites/banana.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/double_jump.png" type="Texture" id=1]
 
 [sub_resource type="Shader" id=14]
 code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
@@ -68,7 +68,7 @@ shader_param/specular = 0.5
 shader_param/metallic = 0.0
 shader_param/roughness = 1.0
 shader_param/point_size = 1.0
-shader_param/uv1_blend_sharpness = 1.0
+shader_param/uv1_blend_sharpness = 6.226
 shader_param/uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 shader_param/uv1_offset = Vector3( 0.5, 0.5, 0.5 )
 shader_param/uv2_scale = Vector3( 1, 1, 1 )

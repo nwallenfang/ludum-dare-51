@@ -87,7 +87,7 @@ func shoot():
 const LASER_STAIN = preload("res://Effects/LaserStain.tscn")
 const EXPLOSION = preload("res://Effects/Explosion.tscn")
 const HIT_PARTICLES = preload("res://Effects/HitParticles.tscn")
-func _input(event: InputEvent):
+func _input(event):
 	if Game.settings_open:
 		return
 	if not Game.player.movement_disabled and Input.is_action_just_pressed("shoot"):
