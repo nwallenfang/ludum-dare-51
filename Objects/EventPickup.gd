@@ -9,7 +9,7 @@ func _ready():
 	$AnimationPlayer.play("dance")
 	event = Events.event_index[event_name]
 	icon = event.icon
-	physics_interpolation_mode = PHYSICS_INTERPOLATION_MODE_OFF
+
 	set_process(false)
 	
 	$PickupCube.mesh.surface_get_material(0).set_shader_param("texture_albedo", icon)

@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/GLTF/WeaponSecondary.material" type="Material" id=11]
 [ext_resource path="res://Assets/GLTF/WeaponRöhre.material" type="Material" id=12]
 [ext_resource path="res://Assets/Sound/pew.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Logic/Player/GunModel.gd" type="Script" id=14]
 
 [sub_resource type="CapsuleMesh" id=13]
 
@@ -56,8 +57,6 @@ surfaces/2 = {
 "skeleton_aabb": [  ],
 "vertex_count": 518
 }
-
-[sub_resource type="CubeMesh" id=6]
 
 [sub_resource type="ArrayMesh" id=9]
 resource_name = "Banana_Cylinder018"
@@ -204,36 +203,6 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id=11]
 length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("Head/GunModel/GunStandardAlt2:translation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/keys = {
-"points": PoolRealArray( -0.311066, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("Head/GunModel/GunStandardAlt2:translation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/keys = {
-"points": PoolRealArray( 2.81469, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("Head/GunModel/GunStandardAlt2:translation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/keys = {
-"points": PoolRealArray( -0.380278, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
 
 [sub_resource type="Animation" id=10]
 resource_name = "down"
@@ -466,27 +435,33 @@ transform = Transform( 0.7, 0, 0, 0, -3.0598e-08, -1, 0, 0.7, -4.37114e-08, 0, 1
 shape = SubResource( 2 )
 
 [node name="Head" parent="." instance=ExtResource( 2 )]
-physics_interpolation_mode = 0
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+
+[node name="Camera" parent="Head" index="0"]
+physics_interpolation_mode = 2
 
 [node name="Gun" parent="Head" instance=ExtResource( 4 )]
 
 [node name="GunModel" type="Spatial" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
 visible = false
+script = ExtResource( 14 )
 
 [node name="GunStandard" type="MeshInstance" parent="Head/GunModel"]
+physics_interpolation_mode = 2
 unique_name_in_owner = true
 transform = Transform( -0.0740959, 0.0226578, 1.2531, 0.210191, 0.977646, -0.00524861, -0.975877, 0.209481, -0.0614915, 0.885403, 1.5, -0.327744 )
 mesh = SubResource( 14 )
 skeleton = NodePath("")
 
 [node name="GunHead" type="Spatial" parent="Head/GunModel/GunStandard"]
+physics_interpolation_mode = 2
 unique_name_in_owner = true
 transform = Transform( -0.0590175, 0.210191, -0.975877, 0.018047, 0.977646, 0.20948, 0.998094, -0.00524863, -0.0614916, 1.1571, -0.00475764, 0.00434977 )
 
 [node name="GunStandard2" type="MeshInstance" parent="Head/GunModel"]
+physics_interpolation_mode = 2
 unique_name_in_owner = true
 transform = Transform( 0.0953066, 0.0884764, 1.24116, -0.297027, 0.953553, -0.0510707, -0.951156, -0.288265, 0.176001, -0.74, 2.64, -0.38 )
 visible = false
@@ -494,21 +469,12 @@ mesh = SubResource( 14 )
 skeleton = NodePath("")
 
 [node name="GunHead2" type="Spatial" parent="Head/GunModel/GunStandard2"]
+physics_interpolation_mode = 2
 unique_name_in_owner = true
 transform = Transform( -0.0590175, 0.210191, -0.975877, 0.018047, 0.977646, 0.20948, 0.998094, -0.00524863, -0.0614916, 1.1571, -0.00475764, 0.00434977 )
 
-[node name="GunStandardAlt" type="MeshInstance" parent="Head/GunModel"]
-transform = Transform( 0.0676559, 2.52905e-10, 0.0698985, 0.00176528, 0.0644473, -0.264704, -0.00533116, 0.0213401, 0.799407, 0.879547, 1.47081, -0.380278 )
-visible = false
-mesh = SubResource( 6 )
-
-[node name="GunStandardAlt2" type="MeshInstance" parent="Head/GunModel"]
-unique_name_in_owner = true
-transform = Transform( -0.0676559, 5.38126e-09, -0.0698985, -0.00176529, -0.0644473, 0.264704, -0.00533116, 0.0213401, 0.799407, -0.74, 2.64, -0.38 )
-visible = false
-mesh = SubResource( 6 )
-
 [node name="Banana" type="MeshInstance" parent="Head/GunModel"]
+physics_interpolation_mode = 2
 unique_name_in_owner = true
 transform = Transform( 0.0515458, -0.0523509, 0.307602, -0.161233, -0.27139, -0.0191698, 0.267139, -0.153698, -0.0709232, 0.857016, 1.7782, -0.934508 )
 visible = false
