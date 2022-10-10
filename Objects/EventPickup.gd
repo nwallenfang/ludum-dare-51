@@ -29,6 +29,7 @@ func _on_PickupBox_area_entered(area):
 
 	$ChangeLookArea.set_deferred("monitoring", false)
 	$PickupBox.set_deferred("monitoring", false)
+	AudioManager.play("event_pickup")
 	yield(get_tree().create_timer(1.0), "timeout")
 	queue_free()
 
