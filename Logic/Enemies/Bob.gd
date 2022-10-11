@@ -95,7 +95,7 @@ func accelerate(delta: float) -> void:
 var hp := 50
 func damage(amount: int, damage_position: Vector3):
 	hp -= amount
-	# Only add knockback if it was a laser. Since with this approach it isn't clear where an explosion came from
+
 	knockback = self.global_translation.direction_to(damage_position + Vector3.UP) * 24
 	hurt_visuals()
 	if hp <= 0:
