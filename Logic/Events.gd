@@ -43,19 +43,19 @@ var event_index = {
 }
 
 var random_events_start = [
-	preload("res://Logic/Events/AutofireEvent.tscn").instance(),
-	preload("res://Logic/Events/GravityEvent.tscn").instance(),
-	preload("res://Logic/Events/DiscoEvent.tscn").instance(),
-	preload("res://Logic/Events/ShrinkEvent.tscn").instance(),
-	preload("res://Logic/Events/JumpEvent.tscn").instance(),
-	preload("res://Logic/Events/ControlEvent.tscn").instance(),
-	preload("res://Logic/Events/InvincibleEvent.tscn").instance(),
-	preload("res://Logic/Events/BananaEvent.tscn").instance(),
-	preload("res://Logic/Events/ExplosionEvent.tscn").instance(),
-	preload("res://Logic/Events/SecondGunEvent.tscn").instance(),
-	preload("res://Logic/Events/FogEvent.tscn").instance(),
-	preload("res://Logic/Events/EmptyEvent.tscn").instance(),
-	preload("res://Logic/Events/FovEvent.tscn").instance(),
+	event_index.get("autofire"),
+	event_index.get("gravity"),
+	event_index.get("disco"),
+	event_index.get("shrink"),
+	event_index.get("jump"),
+	event_index.get("control"),
+	event_index.get("invincible"),
+	event_index.get("banana"),
+	event_index.get("explosion"),
+	event_index.get("akimbo"),
+	event_index.get("fog"),
+	event_index.get("nothing"),
+	event_index.get("fov"),
 ]
 var random_event_names_start = []
 var random_event_names

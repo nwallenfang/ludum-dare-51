@@ -6,7 +6,7 @@ export var health := 10
 func _ready():
 	pass
 
-func damage(amount: int, damage_position: Vector3):
+func damage(amount: int, damage_position: Vector3, _laser:bool):
 	health -= amount
 	if health <= 0:
 		self.queue_free()

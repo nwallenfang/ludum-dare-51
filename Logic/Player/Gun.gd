@@ -41,7 +41,7 @@ func shoot():
 		if Events.second_gun:
 			if collider.has_method("damage"):
 				# Call it with damage
-				collider.damage(10, self.global_translation)
+				collider.damage(10, self.global_translation, true)
 				var hit = HIT_PARTICLES.instance()
 				get_tree().current_scene.add_child(hit)
 				hit.global_translation = hit_point
@@ -53,7 +53,7 @@ func shoot():
 		# If the target can be damaged
 		if collider.has_method("damage"):
 			# Call it with damage
-			collider.damage(10, self.global_translation)
+			collider.damage(10, self.global_translation, true)
 			var hit = HIT_PARTICLES.instance()
 			get_tree().current_scene.add_child(hit)
 			hit.global_translation = hit_point

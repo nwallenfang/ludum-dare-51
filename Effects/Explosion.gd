@@ -5,7 +5,7 @@ export var damage := 40
 func _ready():
 	for area in $Area.get_overlapping_areas():
 		if area.get_parent().has_method("damage"):
-			area.get_parent().damage(damage, self.global_translation)
+			area.get_parent().damage(damage, self.global_translation, false)
 	AudioManager.play("boom")
 	$Particles.emitting = true
 	$Particles2.emitting = true
@@ -21,5 +21,5 @@ func _ready():
 
 func _on_Area_area_entered(area):
 	if area.get_parent().has_method("damage"):
-		area.get_parent().damage(damage, self.global_translation)
+		area.get_parent().damage(damage, self.global_translation, false)
 		
