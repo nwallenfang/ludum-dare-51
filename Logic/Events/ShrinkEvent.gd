@@ -6,7 +6,7 @@ export var size_multiplier: float
 
 func _ready():
 	set_process(false)
-
+	
 func _process(_delta):
 	if $Tween.is_active():
 		if Game.player.is_on_ceiling():
