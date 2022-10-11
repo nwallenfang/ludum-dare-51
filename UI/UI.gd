@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 		$CanvasLayer/DebugUI.visible = photo_mode
 		$CanvasLayer/SettingsIcon.visible = photo_mode
 		$CanvasLayer/FLabel.visible = photo_mode
+		Game.player.get_node("Head/GunModel").visible = photo_mode
 
 func intro_over():
 	$CanvasLayer/IntroLabel.visible = false

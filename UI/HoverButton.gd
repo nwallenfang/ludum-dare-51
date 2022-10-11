@@ -9,7 +9,7 @@ onready var style_box_default: StyleBoxFlat = preload("res://UI/Styles/panel.tre
 var style_box_hovered: StyleBoxFlat = preload("res://UI/Styles/panel_menu_button_hovered.tres")
 
 func _ready() -> void:	
-	$Panel.set("shader_param/level_image", level_screenshot)
+	$Panel.material.set_shader_param("level_image", level_screenshot)
 	$Panel/CenterContainer/Label.text = level_name
 
 signal clicked

@@ -1,22 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/HoverButton.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Font/Fyodor-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Promo/level1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Materials/HoverButtonPanel.tres" type="Material" id=3]
 [ext_resource path="res://UI/Styles/panel.tres" type="StyleBox" id=4]
-
-[sub_resource type="Shader" id=2]
-code = "shader_type canvas_item;
-
-uniform sampler2D level_image;
-
-void fragment() {
-	COLOR = mix(COLOR, texture(level_image, UV), 0.6);
-}"
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
-shader_param/level_image = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 26
@@ -34,7 +21,7 @@ size_flags_vertical = 3
 script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-material = SubResource( 3 )
+material = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -49,13 +36,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Panel/CenterContainer"]
-margin_left = 475.0
+margin_left = 512.0
 margin_top = 285.0
-margin_right = 548.0
+margin_right = 512.0
 margin_bottom = 315.0
 mouse_filter = 1
 custom_fonts/font = SubResource( 4 )
-text = "LEVEL 1"
 align = 1
 valign = 1
 

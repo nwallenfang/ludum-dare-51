@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Promo/level1.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=2]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform sampler2D level_image;
+
+void fragment() {
+	COLOR = mix(COLOR, texture(level_image, UV), 0.6);
+}"
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/level_image = ExtResource( 1 )
