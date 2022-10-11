@@ -96,6 +96,7 @@ func _physics_process(delta) -> void:
 			used_second_jump = true
 			
 	if knockback != Vector3.ZERO:
+		snap = Vector3.ZERO
 		velocity += knockback
 		knockback = Vector3.ZERO
 	
