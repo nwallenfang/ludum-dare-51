@@ -20,7 +20,6 @@ func _ready():
 
 
 func _on_PickupBox_area_entered(area):
-	print("Event pickup ", event)
 	picked_up = true
 	Events.event_stack.append(event)
 	event.event()

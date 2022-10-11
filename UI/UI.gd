@@ -17,12 +17,19 @@ func hide_settings():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$CanvasLayer/SettingsUI.visible = false
 
+var photo_mode = false
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("open_settings"):
 		if $CanvasLayer/SettingsUI.visible:
 			hide_settings()
 		else:
 			show_settings()
+	if Input.is_action_just_pressed("photo_mode"):
+		photo_mode = not photo_mode
+		$CanvasLayer/CenterContainer/Crosshair.visible = photo_mode
+		$CanvasLayer/DebugUI.visible = photo_mode
+		$CanvasLayer/SettingsIcon.visible = photo_mode
+		$CanvasLayer/FLabel.visible = photo_mode
 
 func intro_over():
 	$CanvasLayer/IntroLabel.visible = false

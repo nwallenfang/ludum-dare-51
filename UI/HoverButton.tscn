@@ -3,6 +3,7 @@
 [ext_resource path="res://UI/HoverButton.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Font/Fyodor-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Promo/level1.png" type="Texture" id=3]
+[ext_resource path="res://UI/Styles/panel.tres" type="StyleBox" id=4]
 
 [sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
@@ -17,13 +18,6 @@ void fragment() {
 shader = SubResource( 2 )
 shader_param/level_image = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.176471, 0.176471, 0.176471, 1 )
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
 [sub_resource type="DynamicFont" id=4]
 size = 26
 outline_size = 4
@@ -35,18 +29,24 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
 material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 1 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 4 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Panel/CenterContainer"]
 margin_left = 475.0

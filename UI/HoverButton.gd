@@ -1,15 +1,14 @@
 extends Control
-
+tool
 export var level_screenshot: Texture
 export var level_name: String
 export var level_index: int
 
 
-onready var style_box_default: StyleBoxFlat
+onready var style_box_default: StyleBoxFlat = preload("res://UI/Styles/panel.tres")
 var style_box_hovered: StyleBoxFlat = preload("res://UI/Styles/panel_menu_button_hovered.tres")
 
-func _ready() -> void:
-	style_box_default = $Panel.get("custom_styles/panel") 
+func _ready() -> void:	
 	$Panel.set("shader_param/level_image", level_screenshot)
 	$Panel/CenterContainer/Label.text = level_name
 

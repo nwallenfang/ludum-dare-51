@@ -29,23 +29,19 @@ void vertex() {
 uniform int pixelSize = 4;
 void fragment() {
 	
-	vec2 size = VIEWPORT_SIZE;
+//	vec2 size = VIEWPORT_SIZE;
+//
+//	float xRes = size.x;
+//	float yRes = size.y;
+//
+//	float xFactor = float(xRes) / float(pixelSize);
+//	float yFactor = float(yRes) / float(pixelSize);
+//
+//	float grid_uv_x = round(UV.x * xFactor) / xFactor;
+//	float grid_uv_y = round(UV.y * yFactor) / yFactor;
 	
-	float xRes = size.x;
-	float yRes = size.y;
-	
-	float xFactor = float(xRes) / float(pixelSize);
-	float yFactor = float(yRes) / float(pixelSize);
-	
-	float grid_uv_x = round(UV.x * xFactor) / xFactor;
-	float grid_uv_y = round(UV.y * yFactor) / yFactor;
-	
-	vec4 albedo_tex = texture(texture_albedo, vec2(grid_uv_x, grid_uv_y));
-	
-//	COLOR = text;
-	
-	vec2 base_uv = UV;
-//	vec4 albedo_tex = texture(texture_albedo,base_uv);
+//	vec4 albedo_tex = texture(texture_albedo, vec2(grid_uv_x, grid_uv_y));
+	vec4 albedo_tex = texture(texture_albedo,UV);
 	ALBEDO = mix(albedo1.rgb, albedo2.rgb, texture(noise, UV + vec2(0.7, 0.7) * 0.13 * TIME).r) * albedo_tex.rgb;
 	ALPHA = albedo_tex.a;
 	ALPHA_SCISSOR=alpha_scissor_threshold;
