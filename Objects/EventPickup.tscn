@@ -8,7 +8,7 @@
 
 [sub_resource type="QuadMesh" id=20]
 resource_local_to_scene = true
-size = Vector2( 4, 4 )
+size = Vector2( 3.5, 3.5 )
 
 [sub_resource type="SphereShape" id=22]
 radius = 0.490638
@@ -84,7 +84,7 @@ material/0 = ExtResource( 2 )
 transform = Transform( 0.820034, -0.533865, 0.206232, 0.558235, 0.666688, -0.493864, 0.126165, 0.520111, 0.844729, 0, 0, 0 )
 
 [node name="PickupQuad" type="MeshInstance" parent="."]
-transform = Transform( -0.708586, 0.705624, -1.23288e-07, 0.576142, 0.578561, -0.577345, -0.407388, -0.409099, -0.8165, 0, 1.08845, 0 )
+transform = Transform( -0.999999, 0, 8.74228e-08, 0, 1, 0, -8.74227e-08, 0, -1, 0, 1.08845, 0 )
 visible = false
 mesh = SubResource( 20 )
 material/0 = ExtResource( 3 )
@@ -116,6 +116,8 @@ light_energy = 1.5
 spot_range = 1.984
 spot_attenuation = 1.27456
 spot_angle = 61.52
+
+[node name="Tween" type="Tween" parent="."]
 
 [connection signal="area_entered" from="PickupBox" to="." method="_on_PickupBox_area_entered"]
 [connection signal="area_entered" from="ChangeLookArea" to="." method="_on_ChangeLookArea_area_entered"]

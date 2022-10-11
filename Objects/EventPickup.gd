@@ -26,10 +26,14 @@ func _on_PickupBox_area_entered(area):
 	event.event()
 	AudioManager.play("event_pickup")
 	$PickupCube.visible = false
-
+	set_process(false)
 	$ChangeLookArea.set_deferred("monitoring", false)
 	$PickupBox.set_deferred("monitoring", false)
-	yield(get_tree().create_timer(1.0), "timeout")
+	yield(get_tree().create_timer(.4), "timeout")
+	$Tween.reset_all()
+	$Tween.interpolate_property($PickupQuad.mesh, "size", $PickupQuad.mesh.size, Vector2(0.0, 0.0), 0.7)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
 	queue_free()
 
 
@@ -47,18 +51,20 @@ var max_distance = 0.0
 
 var distance_to_player = 1000.0
 func _process(delta: float) -> void:
-	distance_to_player = Game.player.global_translation.distance_to(global_translation)
-	
-	$PickupCube.scale = cube_min_scale + distance_to_player/max_distance * (cube_max_scale - cube_min_scale)
-	$PickupQuad.mesh.size = size_percentage(distance_to_player, max_distance) * quad_max_scale
+	if not picked_up:
+		distance_to_player = Game.player.global_translation.distance_to(global_translation)
+		
+		$PickupCube.scale = cube_min_scale + distance_to_player/max_distance * (cube_max_scale - cube_min_scale)
+		$PickupQuad.mesh.size = size_percentage(distance_to_player, max_distance) * quad_max_scale
 	
 
 
 
 func _on_ChangeLookArea_area_entered(area: Area) -> void:
-	set_process(true)
-	$PickupQuad.visible = true
-	max_distance = Game.player.global_translation.distance_to(global_translation)
+	if not picked_up:
+		set_process(true)
+		$PickupQuad.visible = true
+		max_distance = Game.player.global_translation.distance_to(global_translation)
 
 
 func _on_ChangeLookArea_area_exited(area: Area) -> void:

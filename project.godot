@@ -65,6 +65,7 @@ AudioManager="*res://Logic/Sound/AudioManager.tscn"
 
 gdscript/warnings/unassigned_variable=false
 gdscript/warnings/unused_variable=false
+gdscript/warnings/shadowed_variable=false
 gdscript/warnings/unused_argument=false
 gdscript/warnings/return_value_discarded=false
 
