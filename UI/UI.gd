@@ -27,6 +27,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("photo_mode"):
 		photo_mode = not photo_mode
 		$CanvasLayer/CenterContainer/Crosshair.visible = photo_mode
+		if OS.is_debug_build():
+			$CanvasLayer/DebugUI.visible = photo_mode
 		$CanvasLayer/DebugUI.visible = photo_mode
 		$CanvasLayer/SettingsIcon.visible = photo_mode
 		$CanvasLayer/FLabel.visible = photo_mode

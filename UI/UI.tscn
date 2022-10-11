@@ -355,6 +355,7 @@ anchor_right = 0.9
 anchor_bottom = 0.9
 
 [node name="DebugUI" parent="CanvasLayer" instance=ExtResource( 10 )]
+visible = false
 
 [node name="IconGrow" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 9 )

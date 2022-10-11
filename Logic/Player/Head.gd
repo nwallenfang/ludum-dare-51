@@ -1,8 +1,8 @@
 extends Spatial
 
 
-export(NodePath) var cam_path := NodePath("Camera")
-onready var cam: Camera = get_node(cam_path)
+#export(NodePath) var cam_path := NodePath("Camera")
+#onready var cam: Camera = get_node(cam_path)
 
 export var mouse_sensitivity := 0.005
 export var y_limit := 90.0

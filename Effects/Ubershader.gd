@@ -10,3 +10,7 @@ func _ready():
 				cc.one_shot = true
 				cc.emitting = true
 	$LaserDrawer.draw_line(self.global_translation, self.global_translation+ Vector3.UP * .01)
+	
+	
+	yield(get_tree().create_timer(2.0), "timeout")
+	self.queue_free()

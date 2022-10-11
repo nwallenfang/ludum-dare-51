@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/FloorsWalls/neu/Lv1FloorLabN.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/FloorsWalls/neu/Lv1WallLabN.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Levels/Prototyping/TestChamber.gd" type="Script" id=4]
 [ext_resource path="res://Objects/LevelSelectButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/EventPickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Effects/Ubershader.tscn" type="PackedScene" id=7]
 
 [node name="TestChamber" type="Spatial"]
 script = ExtResource( 4 )
@@ -39,3 +40,6 @@ event_name = "explosion"
 [node name="EventPickupInvincible" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 0 )
 event_name = "invincible"
+
+[node name="Ubershader" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2 )
