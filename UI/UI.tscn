@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/Font/WalltextFontEvenSmaller.tres" type="DynamicFont" id=8]
 [ext_resource path="res://UI/CreditsUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/DebugUI.tscn" type="PackedScene" id=10]
-[ext_resource path="res://UI/Screens/LevelPanelUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://UI/Screens/LevelSelectUI.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;

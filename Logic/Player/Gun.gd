@@ -54,7 +54,14 @@ func shoot():
 		if collider.has_method("damage"):
 			# Call it with damage
 			collider.damage(10, self.global_translation, true)
+			var health_percent
+			if "max_health" in collider:
+				health_percent = float(collider.hp) / collider.max_health
+			else:
+				health_percent = 1.0
+
 			var hit = HIT_PARTICLES.instance()
+			hit.health_percent = health_percent
 			get_tree().current_scene.add_child(hit)
 			hit.global_translation = hit_point
 			hit.particles_look_at(hit_normal)

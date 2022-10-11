@@ -3,7 +3,7 @@
 [ext_resource path="res://UI/HoverButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Font/WalltextFontEvenSmaller.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Promo/level1.png" type="Texture" id=3]
-[ext_resource path="res://UI/Screens/LevelPanelUI.gd" type="Script" id=4]
+[ext_resource path="res://UI/Screens/LevelSelectUI.gd" type="Script" id=4]
 [ext_resource path="res://Promo/level0.png" type="Texture" id=5]
 [ext_resource path="res://Promo/level3.png" type="Texture" id=6]
 [ext_resource path="res://Promo/level2.png" type="Texture" id=7]
@@ -16,7 +16,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="LevelPanelUI" type="Control"]
+[node name="LevelSelectUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )

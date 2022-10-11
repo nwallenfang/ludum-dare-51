@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Textures/lab_floor_2_albedo.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Models/cube_same_UV.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="Shader" id=6]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
+
+shader_type spatial;
+render_mode async_visible,blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo : hint_color;
+uniform sampler2D texture_albedo : hint_albedo;
+//uniform float specular;
+//uniform float metallic;
+//uniform float roughness : hint_range(0,1);
+//uniform float point_size : hint_range(0,128);
+varying vec3 uv1_triplanar_pos;
+uniform float uv1_blend_sharpness;
+varying vec3 uv1_power_normal;
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+
+varying vec3 scale;
+
+void vertex() {
+	scale = vec3(WORLD_MATRIX[0][0], WORLD_MATRIX[1][1], WORLD_MATRIX[2][2]);
+	TANGENT = vec3(0.0,0.0,-1.0) * abs(NORMAL.x);
+	TANGENT+= vec3(1.0,0.0,0.0) * abs(NORMAL.y);
+	TANGENT+= vec3(1.0,0.0,0.0) * abs(NORMAL.z);
+	TANGENT = normalize(TANGENT);
+	BINORMAL = vec3(0.0,1.0,0.0) * abs(NORMAL.x);
+	BINORMAL+= vec3(0.0,0.0,-1.0) * abs(NORMAL.y);
+	BINORMAL+= vec3(0.0,1.0,0.0) * abs(NORMAL.z);
+	BINORMAL = normalize(BINORMAL);
+	uv1_power_normal=pow(abs(NORMAL),vec3(uv1_blend_sharpness));
+	uv1_power_normal/=dot(uv1_power_normal,vec3(1.0));
+//	uv1_triplanar_pos = VERTEX * vec3(WORLD_MATRIX[0][0], WORLD_MATRIX[1][1], WORLD_MATRIX[2][2]) + uv1_offset;
+	uv1_triplanar_pos = VERTEX + uv1_offset;
+	uv1_triplanar_pos *= vec3(1.0,-1.0, 1.0);
+	
+
+}
+
+
+vec4 triplanar_texture(sampler2D p_sampler,vec3 p_weights,vec3 p_triplanar_pos) {
+	vec4 samp=vec4(0.0);
+	samp+= texture(p_sampler,p_triplanar_pos.xy) * p_weights.z;
+	samp+= texture(p_sampler,p_triplanar_pos.xz) * p_weights.y;
+	samp+= texture(p_sampler,p_triplanar_pos.zy * vec2(-1.0,1.0)) * p_weights.x;
+	return samp;
+}
+
+
+void fragment() {
+	vec4 albedo_tex = texture(texture_albedo, UV*scale.xz);
+//	vec4 albedo_tex = triplanar_texture(texture_albedo,uv1_power_normal,uv1_triplanar_pos);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	
+	
+//	METALLIC = metallic;
+//	ROUGHNESS = roughness;
+//	SPECULAR = specular;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/uv1_blend_sharpness = 1.0
+shader_param/uv1_scale = Vector3( 5, 5, 5 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 0.2, 1 )
+
+[node name="FloorTriplanar" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Cube" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0 )
+use_in_baked_light = true
+mesh = ExtResource( 2 )
+material/0 = SubResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )

@@ -10,6 +10,7 @@ export var acceleration := 8
 export var deceleration := 10
 export(float, 0.0, 1.0, 0.05) var air_control := 0.3
 export var jump_height := 10
+export var max_health := 50
 var direction := Vector3()
 var input_axis := Vector2()
 var velocity := Vector3()
@@ -92,7 +93,7 @@ func accelerate(delta: float) -> void:
 	velocity.x = temp_vel.x
 	velocity.z = temp_vel.z
 
-var hp := 50
+var hp := max_health
 func damage(amount: int, damage_position: Vector3, _laser:bool):
 	hp -= amount
 

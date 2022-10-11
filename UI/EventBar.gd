@@ -43,7 +43,9 @@ func init_fixed_events():
 	if Game.level_index == Game.number_of_levels - 1:
 		# we're in credit level
 		return
-	
+	if not Game.level_index in Events.fixed_events:
+		# no fixed events for this
+		return
 	var fixed_events = Events.fixed_events[Game.level_index]
 	var amount = len(fixed_events)
 	var i = 0

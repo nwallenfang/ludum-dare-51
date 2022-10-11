@@ -5,6 +5,9 @@ func _ready() -> void:
 	for button in $VBoxContainer/GridContainer.get_children():
 		button.connect("clicked", self, "_on_HoverButton_clicked")
 
+	for button in $VBoxContainer/GridContainer2.get_children():
+		button.connect("clicked", self, "_on_HoverButton_clicked")
+
 
 func _on_HoverButton_clicked(level_index) -> void:
 	Game.world.load_level(level_index)

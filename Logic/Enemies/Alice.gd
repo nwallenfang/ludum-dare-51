@@ -2,11 +2,12 @@ extends Spatial
 
 export var shooting_distance := 30.0
 export var projectile_curve_height := .2
+export var max_health := 50
 
 enum STATES {IDLE, AGGRO, SHOOTING, SHOOT_COOLDOWN, DEATH}
 var state = STATES.IDLE
 
-var hp := 50
+var hp := max_health
 func damage(amount: int, _damage_position: Vector3, _laser:bool):
 	hp -= amount
 	hurt_visuals()

@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Effects/HitParticles.gd" type="Script" id=1]
 
-[sub_resource type="Gradient" id=6]
-colors = PoolColorArray( 0.670588, 0.611765, 0.156863, 1, 0.911133, 0.461899, 0.0747414, 1 )
-
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
+[sub_resource type="Gradient" id=8]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.300771, 0.62982, 0.994859 )
+colors = PoolColorArray( 0.925781, 0.757678, 0.311005, 1, 0.757813, 0.318268, 0.103607, 1, 0.730469, 0.0970154, 0.0970154, 1, 0.101563, 0.0116787, 0.00952148, 1 )
 
 [sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 0.573864 ), 0.0, 0.0, 0, 0, Vector2( 0.241117, 0.964773 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
@@ -23,7 +22,6 @@ scale = 6.0
 scale_random = 0.79
 scale_curve = SubResource( 5 )
 color = Color( 0.670588, 0.611765, 0.156863, 1 )
-color_ramp = SubResource( 7 )
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_unshaded = true
@@ -39,6 +37,7 @@ size = Vector2( 0.05, 0.05 )
 
 [node name="HitParticles" type="Spatial"]
 script = ExtResource( 1 )
+gradient = SubResource( 8 )
 
 [node name="Particles" type="Particles" parent="."]
 emitting = false
