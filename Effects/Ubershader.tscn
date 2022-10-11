@@ -128,11 +128,11 @@ script = null
 monitoring = false
 monitorable = false
 
+[node name="KeyModel" parent="KeyPickup" index="2"]
+transform = Transform( 1.28345, -1.95416e-08, -1.16078, -1.16078, -5.07395e-08, -1.28345, -1.95416e-08, 1.73051, -5.07394e-08, -0.197563, 0.406832, 1.87264e-08 )
+
 [node name="HitParticles" parent="." instance=ExtResource( 12 )]
 script = null
-
-[node name="Particles" parent="HitParticles" index="0"]
-emitting = false
 
 [editable path="DeathEffect"]
 [editable path="Explosion"]
