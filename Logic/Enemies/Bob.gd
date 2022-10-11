@@ -93,7 +93,7 @@ func accelerate(delta: float) -> void:
 	velocity.z = temp_vel.z
 
 var hp := 50
-func damage(amount: int, damage_position: Vector3):
+func damage(amount: int, damage_position: Vector3, _laser:bool):
 	hp -= amount
 
 	knockback = self.global_translation.direction_to(damage_position + Vector3.UP) * 24

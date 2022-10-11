@@ -7,7 +7,7 @@ enum STATES {IDLE, AGGRO, SHOOTING, SHOOT_COOLDOWN, DEATH}
 var state = STATES.IDLE
 
 var hp := 50
-func damage(amount: int, _damage_position: Vector3):
+func damage(amount: int, _damage_position: Vector3, _laser:bool):
 	hp -= amount
 	hurt_visuals()
 	if hp <= 0:
