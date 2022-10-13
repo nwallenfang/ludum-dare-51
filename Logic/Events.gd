@@ -108,11 +108,19 @@ func _process(delta: float) -> void:
 		var rand_name = random_event_names.pop_at(rand_index)
 		emit_signal("trigger_event", $EventScenes.get_node(rand_name))
 
-  
-
 func _on_UpdateUITimer_timeout() -> void:
 	emit_signal("progress_update", time)
 
 var explosion_on_shot := false
 var second_gun := false
 var banana := false
+
+
+func trigger_event_pickup(event, duration):
+	event_stack.append(event)
+	event.event()
+	Ui.event_picked_up(event)
+	yield(get_tree().create_timer(duration), "timeout")
+	event.end_event()
+	Ui.end_event_pickup(event)
+

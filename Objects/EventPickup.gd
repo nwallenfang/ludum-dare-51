@@ -1,6 +1,7 @@
 extends Spatial
 
 export var event_name: String
+export var event_duration: float = 10.0
 var event
 var icon: Texture
 var picked_up = false
@@ -9,6 +10,9 @@ onready var cube_max_scale = $PickupCube.scale
 onready var cube_min_scale = $PickupCube.scale * 0.5
 onready var quad_max_scale = $PickupQuad.mesh.size
 
+export var cube_default_color: Color
+export var cube_disabled_color: Color
+
 func _ready():
 	$AnimationPlayer.play("dance")
 	event = Events.event_index[event_name]
@@ -16,26 +20,46 @@ func _ready():
 
 	set_process(false)
 	$PickupCube.get_active_material(0).set_shader_param("texture_albedo", icon)
+	$PickupCube.get_active_material(0).set_shader_param("albedo2", cube_default_color)
 	$PickupQuad.get_active_material(0).set_shader_param("texture_albedo", icon)
 
 
 func _on_PickupBox_area_entered(area):
+	$Timer.start(event_duration)
+	Events.trigger_event_pickup(event, event_duration)
 	picked_up = true
-	Events.event_stack.append(event)
-	event.event()
 	AudioManager.play("event_pickup")
-	$PickupCube.visible = false
+#	$PickupCube.visible = false
 	set_process(false)
-	$ChangeLookArea.set_deferred("monitoring", false)
-	$PickupBox.set_deferred("monitoring", false)
-	yield(get_tree().create_timer(.4), "timeout")
+
+	make_inactive()
+	yield(get_tree().create_timer(.25), "timeout")
 	$Tween.reset_all()
-	$Tween.interpolate_property($PickupQuad.mesh, "size", $PickupQuad.mesh.size, Vector2(0.0, 0.0), 0.7)
+	$Tween.interpolate_property($PickupQuad.mesh, "size", $PickupQuad.mesh.size, Vector2(0.0, 0.0), 0.5)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
-	queue_free()
 
 
+
+func make_inactive():
+	$ChangeLookArea.set_deferred("monitoring", false)
+	$PickupBox.set_deferred("monitoring", false)
+
+	$PickupCube/SpinCircleEventPickup.get_node("PivotO/PivotA/PivotB/Particles").emitting = false
+	$PickupCube.scale = cube_min_scale
+	$AnimationPlayer.stop()
+	$PickupCube.get_active_material(0).set_shader_param("albedo2", cube_disabled_color)
+	
+func make_active_again():
+	$AnimationPlayer.play("dance")
+	$ChangeLookArea.set_deferred("monitoring", true)
+	$PickupBox.set_deferred("monitoring", true)
+	
+	# could Tween the scale later
+	$PickupCube.scale = cube_max_scale
+	$PickupCube/SpinCircleEventPickup.get_node("PivotO/PivotA/PivotB/Particles").emitting = true
+	$PickupCube.get_active_material(0).set_shader_param("albedo2", cube_default_color)
+	$AnimationPlayer.play("dance")
 
 var start_distance = 0.10   # 10 Percent to get rid of some artifacts
 func size_percentage(distance, max_distance):  # for the quad for now
@@ -71,3 +95,7 @@ func _on_ChangeLookArea_area_exited(area: Area) -> void:
 		$PickupCube.scale = cube_max_scale
 		$PickupQuad.visible = false
 		set_process(false)
+
+
+func _on_Timer_timeout() -> void:
+	make_active_again()

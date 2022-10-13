@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objects/EventPickup.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Materials/EventPickupMaterial.tres" type="Material" id=2]
@@ -69,11 +69,16 @@ tracks/1/keys = {
 "values": [ Vector3( 35.264, 0, 44.88 ), Vector3( 35.264, 180, 44.88 ), Vector3( 35.264, 360, 44.88 ) ]
 }
 
+[sub_resource type="Animation" id=23]
+resource_name = "inactive"
+
 [sub_resource type="SphereShape" id=19]
 radius = 1.66414
 
 [node name="EventPickup" type="Spatial"]
 script = ExtResource( 1 )
+cube_default_color = Color( 0.85098, 0.635294, 0.054902, 1 )
+cube_disabled_color = Color( 0.309804, 0.305882, 0.305882, 1 )
 
 [node name="PickupCube" type="MeshInstance" parent="."]
 transform = Transform( 0.354293, -0.352812, 0, 0.288071, 0.28928, -0.288672, 0.203694, 0.204549, 0.40825, 0, 1, 0 )
@@ -84,7 +89,7 @@ material/0 = ExtResource( 2 )
 transform = Transform( 0.820034, -0.533865, 0.206232, 0.558235, 0.666688, -0.493864, 0.126165, 0.520111, 0.844729, 0, 0, 0 )
 
 [node name="PickupQuad" type="MeshInstance" parent="."]
-transform = Transform( -0.999999, 0, 8.74228e-08, 0, 1, 0, -8.74227e-08, 0, -1, 0, 1.08845, 0 )
+transform = Transform( -0.999999, 0, 8.74228e-08, 0, 1, 0, -8.74227e-08, 0, -1, 0, 2.09017, 0 )
 visible = false
 mesh = SubResource( 20 )
 material/0 = ExtResource( 3 )
@@ -100,6 +105,7 @@ shape = SubResource( 22 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 18 )
 anims/dance = SubResource( 17 )
+anims/inactive = SubResource( 23 )
 
 [node name="ChangeLookArea" type="Area" parent="."]
 collision_layer = 2
@@ -119,6 +125,10 @@ spot_angle = 61.52
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="PickupBox" to="." method="_on_PickupBox_area_entered"]
 [connection signal="area_entered" from="ChangeLookArea" to="." method="_on_ChangeLookArea_area_entered"]
 [connection signal="area_exited" from="ChangeLookArea" to="." method="_on_ChangeLookArea_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

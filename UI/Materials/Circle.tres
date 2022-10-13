@@ -1,0 +1,15 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform sampler2D icon;
+uniform vec4 empty_color: hint_color;
+uniform vec4 circle_color: hint_color;
+uniform float filling = 1.0;
+
+void fragment() {
+	bool is_in_circle = (UV.x-0.5) * (UV.x-0.5) + (UV.y-0.5) * (UV.y-0.5) < 0.247;
+	COLOR = mix(circle_color, empty_color, float(UV.y < 1.0 - filling)) * float(is_in_circle);
+}"

@@ -17,7 +17,7 @@ func _ready() -> void:
 	Events.connect("trigger_event", self, "event_triggered")
 
 	init_fixed_events()
-	
+	init_pickup_events()
 
 
 func update_health_bar(hp):
@@ -102,3 +102,53 @@ func _process(delta: float) -> void:
 
 	offset += delta * Vector2(Game.player.velocity.x, Game.player.velocity.z).rotated(deg2rad(90) + look_direction_xz.angle())
 	$Background.material.set_shader_param("direction", offset)
+
+
+onready var icon_positions = []  # array of vector 2s
+onready var index_to_event = {}  # key: position (1 to 3 for now), value: event
+func init_pickup_events():  # called from _ready
+	for event_icon in $Pickups.get_children():
+		if event_icon is ColorRect:
+			icon_positions.append(event_icon.rect_global_position)
+
+
+func new_event_has_place():
+	return true  # not used yet
+
+func add_new_event_pickup(event):
+	# TODO play Particles as well (TriggerParticles
+	# find empty spot
+	var empty_index
+	for i in range(3):
+		if not (i+1) in index_to_event:
+			empty_index = i+1
+			break
+	if empty_index == null:
+		# no place for this event 
+		return
+
+	index_to_event[empty_index] = event
+	var icon_node = get_node("Pickups/EventPickupIcon" + str(empty_index))
+	var circle_node = icon_node.get_node("Circle")
+	icon_node.visible = true
+	icon_node.material.set_shader_param("icon", event.icon)
+	
+	var tween = get_tree().create_tween()
+	circle_node.material.set_shader_param("filling", 1.0)
+	tween.tween_property(circle_node.material, "shader_param/filling", 0.0, 10.0)
+	tween.play()
+	
+func remove_old_event_pickup(event):
+	# find index
+	var index
+	for test in index_to_event:
+		if index_to_event[test] == event:
+			index = test
+			break
+			
+	var icon_node = get_node("Pickups/EventPickupIcon" + str(index))
+	var circle_node = icon_node.get_node("Circle")
+	circle_node.material.set_shader_param("filling", 1.0)
+	icon_node.visible = false
+	index_to_event.erase(index)
+	

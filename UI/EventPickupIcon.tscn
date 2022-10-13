@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/Materials/Circle.tres" type="Shader" id=1]
+[ext_resource path="res://UI/Materials/EventPickup.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Sprites/circle_white.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=17]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/empty_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+shader_param/circle_color = Color( 0.803922, 0.576471, 0.0392157, 1 )
+shader_param/filling = 1.0
+shader_param/icon = ExtResource( 3 )
+
+[node name="EventPickupIcon1" type="ColorRect"]
+material = ExtResource( 2 )
+margin_left = 15.696
+margin_top = 25.4
+margin_right = 63.696
+margin_bottom = 73.4
+rect_scale = Vector2( 0.714021, 0.714021 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Circle" type="ColorRect" parent="."]
+show_behind_parent = true
+material = SubResource( 17 )
+margin_left = -14.0
+margin_top = -16.6
+margin_right = 66.0
+margin_bottom = 63.4
+size_flags_horizontal = 3
+size_flags_vertical = 3

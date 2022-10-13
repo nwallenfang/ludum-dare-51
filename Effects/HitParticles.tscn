@@ -14,6 +14,7 @@ _data = [ Vector2( 0, 0.573864 ), 0.0, 0.0, 0, 0, Vector2( 0.241117, 0.964773 ),
 curve = SubResource( 4 )
 
 [sub_resource type="ParticlesMaterial" id=1]
+resource_local_to_scene = true
 direction = Vector3( 0, 0.7, -1 )
 spread = 25.0
 initial_velocity = 5.0

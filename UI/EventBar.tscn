@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://UI/EventBar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/circle_white.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Assets/Sprites/event_bar.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/question.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Shader/EventBarBG.gdshader" type="Shader" id=7]
+[ext_resource path="res://UI/Materials/EventPickup.tres" type="Material" id=8]
+[ext_resource path="res://UI/Materials/Circle.tres" type="Shader" id=9]
+[ext_resource path="res://Assets/Sprites/run.png" type="Texture" id=10]
+[ext_resource path="res://UI/EventPickupIcon.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 4 )
@@ -102,6 +106,71 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
+
+[sub_resource type="ShaderMaterial" id=17]
+resource_local_to_scene = true
+shader = ExtResource( 9 )
+shader_param/empty_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+shader_param/circle_color = Color( 0.803922, 0.576471, 0.0392157, 1 )
+shader_param/filling = 1.0
+shader_param/icon = ExtResource( 2 )
+
+[sub_resource type="Shader" id=1]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform sampler2D icon;
+uniform vec4 circle_color: hint_color;
+uniform float cut = 0.17;
+
+void fragment() {
+	COLOR = texture(icon, UV);
+}"
+
+[sub_resource type="ShaderMaterial" id=18]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/circle_color = Color( 0.858824, 0.533333, 0.121569, 1 )
+shader_param/cut = 0.17
+shader_param/icon = ExtResource( 10 )
+
+[sub_resource type="Shader" id=19]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform sampler2D icon;
+uniform vec4 circle_color: hint_color;
+uniform float cut = 0.17;
+
+void fragment() {
+	COLOR = texture(icon, UV);
+}"
+
+[sub_resource type="ShaderMaterial" id=20]
+resource_local_to_scene = true
+shader = SubResource( 19 )
+shader_param/circle_color = Color( 0.858824, 0.533333, 0.121569, 1 )
+shader_param/cut = 0.17
+shader_param/icon = ExtResource( 10 )
+
+[sub_resource type="Shader" id=21]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform sampler2D icon;
+uniform vec4 circle_color: hint_color;
+uniform float cut = 0.17;
+
+void fragment() {
+	COLOR = texture(icon, UV);
+}"
+
+[sub_resource type="ShaderMaterial" id=22]
+resource_local_to_scene = true
+shader = SubResource( 21 )
+shader_param/circle_color = Color( 0.858824, 0.533333, 0.121569, 1 )
+shader_param/cut = 0.17
+shader_param/icon = ExtResource( 10 )
 
 [node name="EventBar" type="Control"]
 modulate = Color( 1, 1, 1, 0.776471 )
@@ -256,3 +325,81 @@ __meta__ = {
 [node name="GetHitBlink" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 16 )
 anims/get_hit = SubResource( 15 )
+
+[node name="PickupContainer" type="HBoxContainer" parent="."]
+visible = false
+anchor_left = 0.346
+anchor_top = 0.711
+anchor_right = 0.686
+anchor_bottom = 0.753
+margin_top = -85.6
+margin_right = 40.0
+margin_bottom = -45.6
+
+[node name="EventPickupIcon1" type="ColorRect" parent="PickupContainer"]
+material = ExtResource( 8 )
+margin_right = 60.0
+margin_bottom = 65.0
+rect_pivot_offset = Vector2( 30, 32 )
+
+[node name="Circle" type="ColorRect" parent="PickupContainer/EventPickupIcon1"]
+show_behind_parent = true
+material = SubResource( 17 )
+margin_left = -14.0
+margin_top = -16.6
+margin_right = 66.0
+margin_bottom = 63.4
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EventPickupIcon2" type="ColorRect" parent="PickupContainer"]
+material = ExtResource( 8 )
+margin_left = 4.0
+margin_right = 388.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Circle" type="ColorRect" parent="PickupContainer/EventPickupIcon2"]
+show_behind_parent = true
+material = SubResource( 17 )
+margin_left = -14.0
+margin_top = -16.6
+margin_right = 66.0
+margin_bottom = 63.4
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Pickups" type="Control" parent="."]
+anchor_left = 0.346
+anchor_top = 0.711
+anchor_right = 0.634
+anchor_bottom = 0.768
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="EventPickupIcon1" parent="Pickups" instance=ExtResource( 11 )]
+visible = false
+material = SubResource( 18 )
+margin_left = -303.304
+margin_top = 102.4
+margin_right = -255.304
+margin_bottom = 150.4
+
+[node name="EventPickupIcon2" parent="Pickups" instance=ExtResource( 11 )]
+visible = false
+material = SubResource( 20 )
+margin_left = -302.304
+margin_top = 36.4
+margin_right = -254.304
+margin_bottom = 84.4
+
+[node name="EventPickupIcon3" parent="Pickups" instance=ExtResource( 11 )]
+visible = false
+material = SubResource( 22 )
+margin_left = -301.304
+margin_top = -27.6
+margin_right = -253.304
+margin_bottom = 20.4
+
+[node name="PickupAnimatorMaybe" type="AnimationPlayer" parent="Pickups"]
