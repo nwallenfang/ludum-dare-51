@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GLTF/Material.material" type="Material" id=2]
@@ -52,6 +52,9 @@ roughness = 0.71
 
 [sub_resource type="CubeMesh" id=5]
 material = ExtResource( 5 )
+
+[sub_resource type="OccluderShapePolygon" id=6]
+polygon_points = PoolVector2Array( 5.94557, -2.41483, 5.69219, 21.0276, -103, 19, -103, -3 )
 
 [node name="FloorOffice" type="Spatial"]
 script = ExtResource( 3 )
@@ -948,3 +951,11 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 20.2246, 2.54775, -74.7707 )
 
 [node name="LevelSelectButton" parent="." instance=ExtResource( 25 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 26.0545, 3.5204, -74.5714 )
+
+[node name="Occluder" type="Occluder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0772, 1.94221, -44.0971 )
+shape = SubResource( 6 )
+
+[node name="Occluder2" type="Occluder" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -60.0772, 1.94221, 79.4418 )
+shape = SubResource( 6 )

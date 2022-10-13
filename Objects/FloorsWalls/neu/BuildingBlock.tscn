@@ -5,6 +5,7 @@
 [ext_resource path="res://Objects/FloorsWalls/neu/BuildingBlock.gd" type="Script" id=3]
 
 [sub_resource type="Shader" id=4]
+resource_local_to_scene = true
 code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
 
 shader_type spatial;
@@ -61,6 +62,7 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
 shader = SubResource( 4 )
 shader_param/albedo = Color( 1, 1, 1, 1 )
 shader_param/specular = 0.5
@@ -68,7 +70,7 @@ shader_param/metallic = 0.0
 shader_param/roughness = 1.0
 shader_param/point_size = 1.0
 shader_param/uv1_blend_sharpness = 1.0
-shader_param/uv1_scale = Vector3( 5, 5, 0.1 )
+shader_param/uv1_scale = Vector3( 0, 0, 0 )
 shader_param/uv1_offset = Vector3( 0, 0, 0 )
 shader_param/uv2_scale = Vector3( 1, 1, 1 )
 shader_param/uv2_offset = Vector3( 0, 0, 0 )

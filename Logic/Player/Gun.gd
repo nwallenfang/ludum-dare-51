@@ -48,6 +48,7 @@ func shoot():
 				else:
 					health_percent = 1.0
 				var hit = HIT_PARTICLES.instance()
+				hit.health_percent = health_percent
 				get_tree().current_scene.add_child(hit)
 				hit.global_translation = hit_point
 				hit.particles_look_at(hit_normal)
