@@ -17,16 +17,20 @@ func _ready() -> void:
 	if Engine.editor_hint:
 		set_notify_transform(true)
 		set_notify_local_transform(true)
+	$Mesh.get_active_material(0).set_shader_param("uv1_scale", extra_scaling * scale)
 
 
 func set_extra_scaling(extra):
 	extra_scaling = extra
-	if is_instance_valid($Mesh):
-		$Mesh.get_active_material(0).set_shader_param("uv1_scale", extra_scaling * scale)
+	if is_inside_tree():
+
+		if is_instance_valid($Mesh):
+			$Mesh.get_active_material(0).set_shader_param("uv1_scale", extra_scaling * scale)
 
 # TODO THIS SHOULD ONLY BE IN TOOL MODE
 func _notification(what: int) -> void:
 	if Engine.editor_hint and not disable_automatic_scaling:
 		if what == NOTIFICATION_TRANSFORM_CHANGED:
 			$Mesh.get_active_material(0).set_shader_param("uv1_scale", extra_scaling * scale)
+
 

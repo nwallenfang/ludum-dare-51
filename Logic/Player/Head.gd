@@ -14,7 +14,7 @@ var rot := Vector3()
 func _ready() -> void:
 	set_process(false)
 	y_limit = deg2rad(y_limit)
-	Game.player_camera = $Camera
+#	Game.player_camera = $Camera
 	
 	if Game.level_index == 0:
 		rot.y = deg2rad(27.0)

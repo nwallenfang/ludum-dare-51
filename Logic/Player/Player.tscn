@@ -438,9 +438,6 @@ shape = SubResource( 2 )
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 
-[node name="Camera" parent="Head" index="0"]
-physics_interpolation_mode = 2
-
 [node name="Gun" parent="Head" instance=ExtResource( 4 )]
 
 [node name="GunModel" type="Spatial" parent="Head"]

@@ -11,6 +11,10 @@ func _ready():
 	Game.player.show_gun()
 	
 	
+	yield(get_tree().create_timer(3.0), "timeout")
+	get_tree().call_group("tilting", "tilt")
+	
+	
 
 func _physics_process(delta):
 	if Game.player.global_translation.y < -30:

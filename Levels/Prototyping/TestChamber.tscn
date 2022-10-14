@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Textures/rubber.jpg" type="Texture" id=1]
 [ext_resource path="res://Objects/FloorsWalls/neu/Lv1WallLabN.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Effects/Ubershader.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Textures/lab_floor_2_albedo.png" type="Texture" id=8]
 [ext_resource path="res://Objects/FloorsWalls/neu/BuildingBlock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/NewLevels/Room.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/NewLevels/TiltingRamp.tscn" type="PackedScene" id=11]
 
 [node name="TestChamber" type="Spatial"]
 script = ExtResource( 4 )
@@ -30,71 +32,93 @@ transform = Transform( -4.37114e-08, 0, 2.1, 0, 2.1, 0, -1, 0, -9.17939e-08, 1.8
 [node name="BuildingBlock" parent="Blocks" instance=ExtResource( 9 )]
 transform = Transform( 10, 0, 0, 0, -4.37114e-07, 0.2, 0, -10, -8.74228e-09, 2, -0.5, 1 )
 texture_albedo = ExtResource( 8 )
-extra_scaling = Vector3( 0.5, 0.5, 0.5 )
+extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock2" parent="Blocks" instance=ExtResource( 9 )]
 transform = Transform( 20.16, 0, 0, 0, -1.87959e-06, 0.86, 0, -8.82, -7.71069e-09, -40, -0.5, 1 )
 texture_albedo = ExtResource( 8 )
-extra_scaling = Vector3( 0.5, 0.5, 0.5 )
-
-[node name="BuildingBlock4" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -1.4687e-07, -7.51836e-07, 0.344, -8.4, 8.21595e-14, -3.75918e-08, 0, -8.82, -7.71069e-09, -48, 7.5, 1 )
-texture_albedo = ExtResource( 8 )
-extra_scaling = Vector3( 0.5, 0.5, 0.5 )
+extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock5" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 6.4199e-15, -8.82, -2.27474e-08, -8.316, 8.13379e-14, -3.72159e-08, 1.4687e-07, 1.13737e-06, -0.344, -40, 7.5, 10 )
+transform = Transform( 4.41865e-15, -6.07058, -1.56565e-08, -8.316, 8.13379e-14, -3.72159e-08, 2.05618e-07, 1.59232e-06, -0.4816, -39.78, 7.5, 13.52 )
 texture_albedo = ExtResource( 8 )
-extra_scaling = Vector3( 0.5, 0.5, 0.5 )
+extra_scaling = Vector3( 1, 1, 1 )
 
-[node name="BuildingBlock6" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 6.4199e-15, -8.82, -2.27474e-08, -8.4, 8.21595e-14, -3.75918e-08, 1.4687e-07, 1.13737e-06, -0.344, -40, 7.5, -8 )
+[node name="BuildingBlock9" parent="Blocks" instance=ExtResource( 9 )]
+transform = Transform( -2.05618e-07, -1.32696e-06, 0.4816, -8.316, 8.13379e-14, -3.72159e-08, -4.56919e-15, -6.07058, 5.39494e-09, -51.54, 7.5, 0.92 )
 texture_albedo = ExtResource( 8 )
-extra_scaling = Vector3( 0.5, 0.5, 0.5 )
+extra_scaling = Vector3( 1, 1, 1 )
+
+[node name="BuildingBlock20" parent="Blocks" instance=ExtResource( 9 )]
+transform = Transform( -2.05618e-07, -1.32696e-06, 0.4816, -8.316, 8.13379e-14, -3.72159e-08, -4.56919e-15, -6.07058, 5.39494e-09, -27.46, 7.5, 0.92 )
+texture_albedo = ExtResource( 8 )
+extra_scaling = Vector3( 1, 1, 1 )
+
+[node name="BuildingBlock13" parent="Blocks" instance=ExtResource( 9 )]
+transform = Transform( 1.3557e-14, 6.07058, -2.64463e-08, -8.316, 8.13379e-14, -3.72159e-08, -2.05618e-07, -1.06161e-06, 0.4816, -39.64, 7.5, -11.12 )
+texture_albedo = ExtResource( 8 )
+extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock8" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 1.995, 5.87858e-09, -5.86722e-15, -2.25701e-08, 0.389711, 2.66112, 1.30309e-08, -0.225, 4.60919, -45.6, 7.5, 1.13397 )
+transform = Transform( 2.793, 8.23001e-09, -8.21411e-15, -2.25701e-08, 0.389711, 2.66112, 1.82433e-08, -0.315, 6.45287, -48.04, 7.5, 1.10756 )
 texture_albedo = ExtResource( 1 )
 extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock7" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 2, 0, 0, 0, 0.45, 0, 0, 0, 2, -45.7, 5, -5 )
+transform = Transform( 2.8, 0, 0, 0, 0.45, 0, 0, 0, 2.8, -48.18, 5, -7.48 )
 texture_albedo = ExtResource( 1 )
 extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock10" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -1.00235e-07, 0.225, -4.60919, -2.25701e-08, 0.389711, 2.66112, 1.995, 1.57136e-08, -2.01474e-07, -39.534, 2.5, -5.1 )
+transform = Transform( -1.40329e-07, 0.315, -6.45287, -2.25701e-08, 0.389711, 2.66112, 2.793, 2.1999e-08, -2.82064e-07, -39.5476, 2.5, -7.62 )
 texture_albedo = ExtResource( 1 )
 extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock12" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -8.74228e-08, 0, -2, 0, 0.45, 0, 2, 0, -8.74228e-08, -45.9, 5.1, -4.8 )
+transform = Transform( -1.22392e-07, 0, -2.8, 0, 0.45, 0, 2.8, 0, -1.22392e-07, -48.46, 5.1, -7.76 )
 texture_albedo = ExtResource( 1 )
 extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock11" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -7.41734e-08, -0.225, 4.60919, -2.25701e-08, 0.389711, 2.66112, -1.995, 3.95648e-09, -2.01474e-07, -39.7093, 12.5, 7.575 )
+transform = Transform( -1.22392e-07, -0.315, 6.30466, 0, 0.389711, 2.6, -2.8, 1.37691e-08, -2.75586e-07, -39.793, 12.5, 10.125 )
 texture_albedo = ExtResource( 1 )
 extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock14" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 2, 0, 5.96046e-08, 0, 0.45, 0, -5.96046e-08, 0, 2, -45.9433, 10.1, 7.475 )
+transform = Transform( 2.8, 0, 8.34464e-08, 0, 0.45, 0, -8.34464e-08, 0, 2.8, -48.5206, 10.1, 9.985 )
 texture_albedo = ExtResource( 1 )
 extra_scaling = Vector3( 1, 1, 1 )
 
-[node name="BuildingBlock15" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -1.995, 1.72856e-08, -4.39893e-07, -2.25701e-08, 0.389711, 2.66112, 2.06414e-07, 0.225, -4.60919, -33.1433, 17.5, 1.34103 )
+[node name="BuildingBlock18" parent="Blocks" instance=ExtResource( 9 )]
+transform = Transform( 2.8, 0, 8.34464e-08, 0, 0.45, 0, -8.34464e-08, 0, 2.8, -30.3206, 10.1, 9.985 )
 texture_albedo = ExtResource( 1 )
 extra_scaling = Vector3( 1, 1, 1 )
+
+[node name="BuildingBlock19" parent="Blocks" instance=ExtResource( 9 )]
+transform = Transform( 2.8, 0, 8.34464e-08, 0, 0.45, 0, -8.34464e-08, 0, 2.8, -30.6006, 10.1, -7.655 )
+texture_albedo = ExtResource( 1 )
+extra_scaling = Vector3( 1, 1, 1 )
+
+[node name="TiltingRamp1" parent="Blocks" instance=ExtResource( 11 )]
 
 [node name="BuildingBlock16" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -2, 0, -2.06632e-07, 0, 0.45, 0, 2.06632e-07, 0, -2, -33.0433, 20.1, -5.025 )
+transform = Transform( -2.8, 0, -2.89285e-07, 0, 0.45, 0, 2.89285e-07, 0, -2.8, -30.4606, 20.1, -7.515 )
 texture_albedo = ExtResource( 1 )
 extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="BuildingBlock17" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -1.47027e-07, 0, 2, 0, 0.45, 0, -2, 0, -1.47027e-07, -33.2433, 15.1, 7.57499 )
+transform = Transform( -2.05838e-07, 0, 2.8, 0, 0.45, 0, -2.8, 0, -2.05838e-07, -30.7406, 15.1, 10.125 )
 texture_albedo = ExtResource( 1 )
+extra_scaling = Vector3( 1, 1, 1 )
+
+[node name="SmallWall" parent="Blocks" instance=ExtResource( 9 )]
+transform = Transform( 2.94, 0, 0, 0, 6.8, 0, 0, 0, 0.4816, -48.6, 7.1, -11.12 )
+texture_albedo = ExtResource( 8 )
+extra_scaling = Vector3( 1, 1, 1 )
+
+[node name="SmallWall2" parent="Blocks" instance=ExtResource( 9 )]
+transform = Transform( -1.28511e-07, 0, 0.4816, 0, 6.8, 0, -2.94, 0, -2.10514e-08, -51.54, 7.1, -8.04 )
+texture_albedo = ExtResource( 8 )
 extra_scaling = Vector3( 1, 1, 1 )
 
 [node name="LevelSelectButton" parent="." instance=ExtResource( 5 )]
@@ -110,3 +134,6 @@ event_name = "invincible"
 
 [node name="Ubershader" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2 )
+
+[node name="Room" parent="." instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.8, 10.1, 24.2 )
