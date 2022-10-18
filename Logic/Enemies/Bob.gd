@@ -69,7 +69,9 @@ func _physics_process(delta):
 	
 	
 	velocity = move_and_slide_with_snap(velocity, snap, up_direction, stop_on_slope, 4, floor_max_angle)
-	if state != STATES.IDLE:
+	if Events.dancing:
+		self.global_rotate(Vector3.UP, delta * 5.5)
+	elif state != STATES.IDLE:
 		self.look_at(Game.player.global_translation, Vector3.UP)
 
 func accelerate(delta: float) -> void:
