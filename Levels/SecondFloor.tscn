@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Objects/Level2Ceiling.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Level2Wall.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Effects/Lightmaps/SecondFloor/SecondFloor.lmbake" type="BakedLightmapData" id=15]
 [ext_resource path="res://Objects/SimpleScreen.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/EventPickup.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/SurveilanceCam.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BridgeBoom"
@@ -1786,3 +1787,26 @@ event_name = "explosion"
 [node name="EventPickup2" parent="TESTRemoveThis" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36535, -8.04718 )
 event_name = "invincible"
+
+[node name="Cams" type="Spatial" parent="."]
+
+[node name="SurveilanceCam" parent="Cams" instance=ExtResource( 18 )]
+transform = Transform( 2.00361, 0, 0, 0, 2.00361, 0, 0, 0, 2.00361, 4.61432, 7.26407, -24.4164 )
+
+[node name="SurveilanceCam2" parent="Cams" instance=ExtResource( 18 )]
+transform = Transform( -8.75806e-08, 0, 2.00361, 0, 2.00361, 0, -2.00361, 0, -8.75806e-08, -10.2602, 10.1737, -40.694 )
+
+[node name="SurveilanceCam3" parent="Cams" instance=ExtResource( 18 )]
+transform = Transform( 2.00361, 0, 0, 0, 2.00361, 0, 0, 0, 2.00361, -7.4, 10.5696, -29.4962 )
+
+[node name="SurveilanceCam4" parent="Cams" instance=ExtResource( 18 )]
+transform = Transform( -8.75806e-08, 0, 2.00361, 0, 2.00361, 0, -2.00361, 0, -8.75806e-08, -19.7174, 18.8846, -48.9 )
+
+[node name="SurveilanceCam5" parent="Cams" instance=ExtResource( 18 )]
+transform = Transform( -8.75806e-08, 0, 2.00361, 0, 2.00361, 0, -2.00361, 0, -8.75806e-08, -44.6616, 21.868, -48.9 )
+
+[node name="SurveilanceCam6" parent="Cams" instance=ExtResource( 18 )]
+transform = Transform( -2.00361, 0, -1.75161e-07, 0, 2.00361, 0, 1.75161e-07, 0, -2.00361, -52.7, 21.459, -26.4671 )
+
+[node name="SurveilanceCam7" parent="Cams" instance=ExtResource( 18 )]
+transform = Transform( -2.00361, 0, -1.75161e-07, 0, 2.00361, 0, 1.75161e-07, 0, -2.00361, -64.7, 21.4516, -25.9996 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Assets/GLTF/Table.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Lamp.tscn" type="PackedScene" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Objects/TrashBin.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Assets/GLTF/Certifacte.gltf" type="PackedScene" id=30]
 [ext_resource path="res://Assets/GLTF/TestTube_v1.gltf" type="PackedScene" id=31]
+[ext_resource path="res://Objects/SurveilanceCam.tscn" type="PackedScene" id=32]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 9.93161, 0.222879, 10 )
@@ -678,3 +679,32 @@ transform = Transform( 0.814238, 0, 1.82675, 0, 2, 0, -1.82675, 0, 0.814238, -26
 
 [node name="LevelSelectButton" parent="." instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 11.3873, 2.33001, -2.60928 )
+
+[node name="Cam" type="Spatial" parent="."]
+
+[node name="SurveilanceCam" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( -2.00361, 0, -1.75161e-07, 0, 2.00361, 0, 1.75161e-07, 0, -2.00361, -7.18849, 4.47699, -6.25527 )
+
+[node name="SurveilanceCam2" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( -8.75806e-08, 0, 2.00361, 0, 2.00361, 0, -2.00361, 0, -8.75806e-08, -24.2927, 7.43601, -8.51591 )
+
+[node name="SurveilanceCam3" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( 2.62742e-07, 0, -2.00361, 0, 2.00361, 0, 2.00361, 0, 2.62742e-07, -24.2927, 7.43601, -8.65369 )
+
+[node name="SurveilanceCam4" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( 2.62742e-07, 0, -2.00361, 0, 2.00361, 0, 2.00361, 0, 2.62742e-07, -16.6206, 7.76387, -8.896 )
+
+[node name="SurveilanceCam5" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( 2.62742e-07, 0, -2.00361, 0, 2.00361, 0, 2.00361, 0, 2.62742e-07, 7.21103, 12.5428, -16.5517 )
+
+[node name="SurveilanceCam6" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( 2.00361, 0, 2.98023e-07, 0, 2.00361, 0, -2.98023e-07, 0, 2.00361, 16.9265, 12.5428, -33.2509 )
+
+[node name="SurveilanceCam7" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( -2.00361, 0, -4.73184e-07, 0, 2.00361, 0, 4.73184e-07, 0, -2.00361, 17.0675, 13.9758, -26.7474 )
+
+[node name="SurveilanceCam8" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( 2.00361, 0, 6.48345e-07, 0, 2.00361, 0, -6.48345e-07, 0, 2.00361, 33.4148, 27.5807, -24.7409 )
+
+[node name="SurveilanceCam9" parent="Cam" instance=ExtResource( 32 )]
+transform = Transform( -7.35926e-07, 0, 2.00361, 0, 2.00361, 0, -2.00361, 0, -7.35926e-07, 20.6476, 14.3958, -40.8144 )
