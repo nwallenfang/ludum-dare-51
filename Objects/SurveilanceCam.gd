@@ -16,4 +16,4 @@ func _physics_process(delta):
 			
 			$"%UpDownAngle".look_at(player_global, Vector3.RIGHT)
 			#print($"%UpDownAngle".rotation_degrees)
-			$"%PivotUpDown".rotation_degrees.z = clamp(-$"%UpDownAngle".rotation_degrees.x, -30, 30)
+			$"%PivotUpDown".rotation_degrees.z = clamp(-$"%UpDownAngle".rotation_degrees.x, -30, 35)
