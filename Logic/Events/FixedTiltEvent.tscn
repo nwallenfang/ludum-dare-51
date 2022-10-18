@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Logic/Events/FixedTiltEvent.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/tilt_event.png" type="Texture" id=2]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+icon = ExtResource( 2 )
+event_name = "Tilt"
+
+[node name="Tween" type="Tween" parent="."]

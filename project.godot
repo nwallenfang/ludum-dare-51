@@ -44,7 +44,7 @@ _global_script_class_icons={
 "Enemy": "",
 "EventBar": "",
 "LevelSelectButton": "",
-"ManagedSound": "res://Assets/Sprites/managed_sound.png",
+"ManagedSound": "",
 "MovementController": ""
 }
 
@@ -1243,6 +1243,11 @@ move_backwards={
 photo_mode={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":80,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump_to_next_level={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":74,"unicode":0,"echo":false,"script":null)
  ]
 }
 

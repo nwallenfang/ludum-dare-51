@@ -7,12 +7,13 @@ func _ready():
 	Game.player = $Player
 #	$Player.rotate_y(deg2rad(-180.0))
 	has_key = false
-	$Player/DrinkAnimation.queue_free()
-	Game.player.show_gun()
+#	$Player/DrinkAnimation.queue_free()
+#	Game.player.show_gun()
 	
+#	Game.world.intro_sequence_should_run = true
 	
-	yield(get_tree().create_timer(3.0), "timeout")
-	get_tree().call_group("tilting", "tilt")
+#	yield(get_tree().create_timer(3.0), "timeout")
+#	get_tree().call_group("tilting", "tilt")
 	
 	
 

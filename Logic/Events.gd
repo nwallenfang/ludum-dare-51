@@ -7,14 +7,21 @@ var stacking_events := false
 var event_stack = []
 
 # level -> [event_number -> Event] fixed events and their timestamps
+# TODO adding some events to Room 0 but this is for the TestChamber (bonus level)
+# change this!!
 var fixed_events = {
 	0: {
-		2: 	preload("res://Logic/Events/FixedEventTest.tscn").instance(),
-		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
+#		2: 	preload("res://Logic/Events/FixedEventTest.tscn").instance(),
+#		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
 	},
-	1: {
-		
+	1: {  # move this to the end!!!
+		1: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		2: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		3: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
 	},
+#	1: {
+#
+#	},
 	2: {
 		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
 	},

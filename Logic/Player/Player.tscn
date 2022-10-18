@@ -203,6 +203,36 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id=11]
 length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Head/GunModel/GunStandard2:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -0.97, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Head/GunModel/GunStandard2:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Head/GunModel/GunStandard2:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -0.38, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "down"
@@ -225,7 +255,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -0.970099, -0.25, 0, 0.25, 0, -0.74, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -0.97, -0.25, 0, 0.25, 0, -0.74, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
 tracks/2/type = "bezier"
@@ -235,7 +265,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 3.49871, -0.25, 0, 0.25, 0, 2.64, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0, 0.64, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
 tracks/3/type = "bezier"
@@ -245,7 +275,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( -0.380278, -0.25, 0, 0.25, 0, -0.38, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -0.38, -0.25, 0, 0.25, 0, -0.38, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
 
@@ -270,7 +300,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -0.74, -0.25, 0, 0.25, 0, -1.30261, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -0.74, -0.25, 0, 0.25, 0, -1.303, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
 tracks/2/type = "bezier"
@@ -280,7 +310,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 2.64, -0.25, 0, 0.25, 0, 3.56286, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0.64, -0.25, 0, 0.25, 0, 1.563, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
 tracks/3/type = "bezier"
@@ -290,7 +320,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( -0.38, -0.25, 0, 0.25, 0, -0.380278, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -0.38, -0.25, 0, 0.25, 0, -0.38, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
 
@@ -459,7 +489,7 @@ transform = Transform( -0.0590175, 0.210191, -0.975877, 0.018047, 0.977646, 0.20
 [node name="GunStandard2" type="MeshInstance" parent="Head/GunModel"]
 physics_interpolation_mode = 2
 unique_name_in_owner = true
-transform = Transform( 0.0953066, 0.0884764, 1.24116, -0.297027, 0.953553, -0.0510707, -0.951156, -0.288265, 0.176001, -0.74, 0.64, -0.38 )
+transform = Transform( 0.0953066, 0.0884764, 1.24116, -0.297027, 0.953553, -0.0510707, -0.951156, -0.288265, 0.176001, -0.97, 1.5, -0.38 )
 visible = false
 mesh = SubResource( 14 )
 skeleton = NodePath("")
@@ -472,7 +502,7 @@ transform = Transform( -0.0590175, 0.210191, -0.975877, 0.018047, 0.977646, 0.20
 [node name="Banana" type="MeshInstance" parent="Head/GunModel"]
 physics_interpolation_mode = 2
 unique_name_in_owner = true
-transform = Transform( 0.0515458, -0.0523509, 0.307602, -0.161233, -0.27139, -0.0191698, 0.267139, -0.153698, -0.0709232, 0.857016, 1.7782, -0.934508 )
+transform = Transform( 0.0515458, -0.0523509, 0.307602, -0.161233, -0.27139, -0.0191698, 0.267139, -0.153698, -0.0709232, 0.857, -0.278, -1.235 )
 visible = false
 mesh = SubResource( 9 )
 
