@@ -62,6 +62,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit() # Quits the game
 		
+	if Input.is_action_just_pressed("jump_to_next_level"):
+		load_next_level()
+		
 	# not movement_disabled
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		if not Game.settings_open:
