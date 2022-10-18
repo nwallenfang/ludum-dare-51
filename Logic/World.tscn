@@ -51,6 +51,7 @@ physics_object_picking = true
 
 [node name="InterpolatedCamera" type="Camera" parent="ViewportContainer/Viewport"]
 physics_interpolation_mode = 1
+unique_name_in_owner = true
 transform = Transform( 0.0789289, 0, 0.99688, 0, 1, 0, -0.99688, 0, 0.0789289, 4.85402, 1.10238, -0.767857 )
 current = true
 script = ExtResource( 3 )

@@ -3,6 +3,7 @@ extends Node
 export var icon: Texture
 export var event_name: String
 export var size_multiplier: float
+var is_pickup
 
 func _ready():
 	set_process(false)
@@ -26,6 +27,13 @@ func event():
 	print("shrink event", event_name)
 
 func end_event():
+	if is_pickup and Events.current_event.event_name == self.event_name:
+		return
+	if !is_pickup:
+		for event in Events.pickup_stack:
+			if event.event_name == self.event_name:
+				return
+	
 	set_process(true)
 	$Tween.reset_all()
 		

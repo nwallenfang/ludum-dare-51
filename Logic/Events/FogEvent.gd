@@ -4,6 +4,7 @@ export var icon: Texture
 export var event_name: String
 
 var old_env
+var is_pickup
 
 func event():
 	old_env = Game.world.get_node("WorldEnvironment").get_environment()

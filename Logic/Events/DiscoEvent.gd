@@ -3,6 +3,7 @@ extends Node
 export var icon: Texture
 export var event_name: String
 export var disco_material = preload("res://Assets/Materials/Disco.tres")
+var is_pickup
 
 func event():
 	Game.world.get_node("ViewportContainer").material = disco_material

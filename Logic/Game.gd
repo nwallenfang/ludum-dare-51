@@ -57,22 +57,24 @@ func set_2d_viewport(viewport_t):
 
 func event_triggered(event):
 	
-	if !Events.stacking_events:
-		# Stop the previous non-fixed event and start the next one.
-		# If we are working on a fixed event (no end method) don't stop anything
-		if event.has_method("end_event") and previous_event != null:
-			previous_event.end_event()
-			
-		event.event()
+	# Stop the previous non-fixed event and start the next one.
+	# If we are working on a fixed event (no end method) don't stop anything
+	if event.has_method("end_event") and previous_event != null:
+		var event_still_exists = false
+		for pickup_event in Events.pickup_stack:
+			if pickup_event.event_name == event.event_name:
+				event_still_exists = true
 		
-		if event.has_method("end_event"):
-			previous_event = event
-	else:
-		# If it is a non-fixed event, add it to the event stack
-		if event.has_method("end_event"):
-			Events.event_stack.append(event)
-			
-		event.event()
+		if event_still_exists: 
+			previous_event.end_event()
+
+		
+		
+	Events.current_event = event
+	event.event()
+	
+	if event.has_method("end_event"):
+		previous_event = event
 
 
 
