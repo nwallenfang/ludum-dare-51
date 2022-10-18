@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/FloorsWalls/neu/Lv1FloorLabDarkerN.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Models/cube_same_UV.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Assets/Materials/FloorLabTriplanar.tres" type="Material" id=6]
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="RoomHole" type="Spatial"]
+transform = Transform( -0.6, 0, 5.24537e-08, 0, 1, 0, -5.24537e-08, 0, -0.6, -57.8, 18, 8.9 )
+
+[node name="Floor" type="Spatial" parent="."]
+transform = Transform( 10, 0, 0, 0, -3.49691e-07, -0.5, 0, 8, -2.18557e-08, 1.43488e-06, 0, 0.1 )
+
+[node name="Mesh" type="MeshInstance" parent="Floor"]
+transform = Transform( 1.05, -3.49686e-09, 9.55342e-18, -5.46392e-09, 1, 0, 3.82137e-15, -2.84217e-13, 1, -0.0833321, 0, 0 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Lv1FloorLabDarkerN" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.31135e-07, 0, 0.5, 0, 0.29376, 0, -3, 0, -2.18558e-08, 3.8147e-05, 3.2, -8.5 )
+
+[node name="Lv1FloorLabDarkerN2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -3, 0, -3.67832e-08, 0, 0.29376, 0, 2.62269e-07, 0, -0.42075, 10, 3.2, -0.333336 )
+
+[node name="Lv1FloorLabDarkerN6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.88495e-07, 1.07712, -3.67831e-08, 1.8, -1.28407e-08, 2.66454e-14, 1.64257e-13, -9.41649e-08, -0.42075, -0.33326, 6.19999, -0.333335 )
+
+[node name="Lv1FloorLabDarkerN3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.04908e-07, 0, 0.5049, 0, 0.29376, 0, -3, 0, -2.57483e-08, 4.57764e-05, 3.2, 8 )
+
+[node name="Lv1FloorLabDarkerN4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 3, 0, -2.65573e-08, 0, 0.29376, 0, -1.71393e-07, 0, 0.159043, -10.6666, 3.2, 5.33333 )
+
+[node name="Lv1FloorLabDarkerN7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 3, 0, -3.10761e-08, 0, 0.105754, 0, -2.00928e-07, 0, 0.107354, -10.6666, 5.1, 0.166661 )
+
+[node name="Lv1FloorLabDarkerN5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 3, 0, -2.51669e-08, 0, 0.29376, 0, -1.62306e-07, 0, 0.174948, -10.6666, 3.2, -5.5 )
