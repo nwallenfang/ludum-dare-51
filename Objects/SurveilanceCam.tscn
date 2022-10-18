@@ -117,6 +117,7 @@ top_radius = 0.0
 bottom_radius = 0.078
 
 [node name="SurveilanceCam" type="Spatial"]
+transform = Transform( 2.00361, 0, 0, 0, 2.00361, 0, 0, 0, 2.00361, 0, 0, 0 )
 script = ExtResource( 5 )
 
 [node name="CamHolder" type="MeshInstance" parent="."]
@@ -133,11 +134,36 @@ unique_name_in_owner = true
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
 
 [node name="Cam" type="MeshInstance" parent="CamHolder/Pivot/PivotUpDown"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 use_in_baked_light = true
 mesh = SubResource( 2 )
 skeleton = NodePath("../../../..")
 material/1 = SubResource( 4 )
+
+[node name="Lights" type="Spatial" parent="CamHolder/Pivot/PivotUpDown/Cam"]
+unique_name_in_owner = true
+transform = Transform( -2.54855e-08, 4.45579e-08, 1.17432, 0.487973, 1.06814, -2.99387e-08, -1.06814, 0.487973, -4.16963e-08, -0.383508, 0.224945, -1.12001e-14 )
+visible = false
+
+[node name="SpotLight" type="SpotLight" parent="CamHolder/Pivot/PivotUpDown/Cam/Lights"]
+transform = Transform( 0.999995, -0.00148964, 0.00271494, 0.000666469, 0.959684, 0.281079, -0.00302421, -0.281076, 0.959681, 0, 0, 0 )
+light_color = Color( 0.901961, 1, 0.0313726, 1 )
+light_energy = 10.0
+spot_range = 17.0
+spot_angle = 12.7378
+
+[node name="SpotLight2" type="SpotLight" parent="CamHolder/Pivot/PivotUpDown/Cam/Lights"]
+transform = Transform( 0.972667, 1.69863e-09, 0.232206, 0.0209809, 0.99591, -0.0878848, -0.231256, 0.0903545, 0.968688, 0, 0, 0 )
+light_color = Color( 0.909804, 0.12549, 1, 1 )
+light_energy = 10.0
+spot_range = 17.0
+spot_angle = 12.7378
+
+[node name="SpotLight3" type="SpotLight" parent="CamHolder/Pivot/PivotUpDown/Cam/Lights"]
+transform = Transform( 0.969401, -0.000622094, -0.245482, -0.0215624, 0.995916, -0.0876729, 0.244534, 0.0902833, 0.965428, 0, 0, 0 )
+light_color = Color( 0.0196078, 1, 0.952941, 1 )
+light_energy = 10.0
+spot_range = 17.0
+spot_angle = 12.7378
 
 [node name="UpDownAngle" type="Spatial" parent="CamHolder/Pivot"]
 unique_name_in_owner = true

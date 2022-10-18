@@ -114,7 +114,7 @@ func _on_UpdateUITimer_timeout() -> void:
 var explosion_on_shot := false
 var second_gun := false
 var banana := false
-
+var dancing := false
 
 func trigger_event_pickup(event, duration):
 	event_stack.append(event)
