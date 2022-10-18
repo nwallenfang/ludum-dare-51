@@ -60,6 +60,12 @@ func make_active_again():
 	$PickupCube/SpinCircleEventPickup.get_node("PivotO/PivotA/PivotB/Particles").emitting = true
 	$PickupCube.get_active_material(0).set_shader_param("albedo2", cube_default_color)
 	$AnimationPlayer.play("dance")
+	picked_up = false
+	
+	distance_to_player = Game.player.global_translation.distance_to(global_translation)
+		
+	$PickupCube.scale = cube_min_scale + distance_to_player/max_distance * (cube_max_scale - cube_min_scale)
+	$PickupQuad.mesh.size = size_percentage(distance_to_player, max_distance) * quad_max_scale
 
 var start_distance = 0.10   # 10 Percent to get rid of some artifacts
 func size_percentage(distance, max_distance):  # for the quad for now

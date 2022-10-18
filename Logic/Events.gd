@@ -3,8 +3,8 @@ extends Node
 signal trigger_event(event)
 signal progress_update(time)
 
-var stacking_events := false
-var event_stack = []
+var pickup_stack = []
+var current_event
 
 # level -> [event_number -> Event] fixed events and their timestamps
 # TODO adding some events to Room 0 but this is for the TestChamber (bonus level)
@@ -50,19 +50,19 @@ var event_index = {
 }
 
 var random_events_start = [
-	event_index.get("autofire"),
-	event_index.get("gravity"),
-	event_index.get("disco"),
-	event_index.get("shrink"),
-	event_index.get("jump"),
-	event_index.get("control"),
-	event_index.get("invincible"),
-	event_index.get("banana"),
+#	event_index.get("autofire"),
+#	event_index.get("gravity"),
+#	event_index.get("disco"),
+#	event_index.get("shrink"),
+#	event_index.get("jump"),
+#	event_index.get("control"),
+#	event_index.get("invincible"),
+#	event_index.get("banana"),
 	event_index.get("explosion"),
-	event_index.get("akimbo"),
-	event_index.get("fog"),
-	event_index.get("nothing"),
-	event_index.get("fov"),
+#	event_index.get("akimbo"),
+#	event_index.get("fog"),
+#	event_index.get("nothing"),
+#	event_index.get("fov"),
 ]
 var random_event_names_start = []
 var random_event_names
@@ -75,7 +75,7 @@ func reset():
 	time = 0.0
 	number_triggered = 0
 	random_event_names = random_event_names_start.duplicate()
-	for event in event_stack:
+	for event in pickup_stack:
 		event.end_event()
 		
 	if Game.previous_event != null:
@@ -124,10 +124,13 @@ var banana := false
 var dancing := false
 
 func trigger_event_pickup(event, duration):
-	event_stack.append(event)
+	pickup_stack.push_back(event)
 	event.event()
 	Ui.event_picked_up(event)
 	yield(get_tree().create_timer(duration), "timeout")
-	event.end_event()
 	Ui.end_event_pickup(event)
+	if current_event.event_name == event.event_name:
+		return
+	event.end_event()
+	pickup_stack.pop_front()
 

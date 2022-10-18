@@ -4,6 +4,7 @@ export var icon: Texture
 export var event_name: String
 
 var saved_gravity = 29.4
+var is_pickup
 
 func event():
 	# Revert the effect of the gravity_modifier

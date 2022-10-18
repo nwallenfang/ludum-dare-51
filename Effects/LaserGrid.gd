@@ -11,7 +11,7 @@ func _physics_process(delta):
 		Game.world.restart_level()
 
 	
-	if Game.player.global_translation.y - self.global_translation.y < 30:
-		var new_db = (Game.player.global_translation.y - self.global_translation.y) / 18 * -80
-		AudioManager.set_volume("laser_grid", clamp(new_db,-80, -6))
+	if Game.player.global_translation.y - self.global_translation.y < 100:
+		var new_db = (Game.player.global_translation.y - self.global_translation.y) / 30 * -80
+		AudioManager.set_volume("laser_grid", clamp(new_db,-80, -12))
 #		$MenacingStream.set_volume_db(clamp(new_db,-80, -6))
