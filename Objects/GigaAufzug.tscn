@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Logic/Events/GigaAufzug.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GLTF/Material_007.material" type="Material" id=2]
-[ext_resource path="res://Objects/Cube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Models/UVCube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Materials/LiftMaterial.tres" type="Material" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "GasBottle_v1_Cylinder008"
@@ -42,9 +43,6 @@ radius = 0.372631
 transform = Transform( 3.6, 0, 0, 0, 3.5, 0, 0, 0, 3.6, -40.4, 0.0999999, 0 )
 script = ExtResource( 1 )
 
-[node name="cube" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1.38842, 0, 0, 0, 0.290416, 0, 0, 0, 1.38842, 0, 0, 0 )
-
 [node name="Tween" type="Tween" parent="."]
 
 [node name="GasBottle_v1" type="MeshInstance" parent="."]
@@ -59,3 +57,7 @@ shape = SubResource( 2 )
 [node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.8314, 0 )
 shape = SubResource( 3 )
+
+[node name="cube" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.4, 0, 0, 0, 0.32, 0, 0, 0, 1.4, 0, 0, 0 )
+material/0 = ExtResource( 4 )
