@@ -9,7 +9,6 @@ func compare_eq(f1: float, f2: float, eps=1.0):
 
 func tilt():
 	var target_angle = 30.0 if compare_eq(rotation_degrees.x, -30.0) else -30.0
-	print("rotation: ", rotation_degrees.x, " target:", target_angle)
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "rotation_degrees:x", target_angle, 1.0)
 	tween.play()

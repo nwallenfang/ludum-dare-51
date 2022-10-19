@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://Objects/NewLevels/Platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/FloorsWalls/neu/Lv1WallLabN.tscn" type="PackedScene" id=2]
@@ -6,8 +6,8 @@
 [ext_resource path="res://Levels/Prototyping/TestChamber.gd" type="Script" id=4]
 [ext_resource path="res://Objects/LevelSelectButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/EventPickup.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Materials/concrete_wall/concrete_wall_albedo.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Textures/lab_floor_2_albedo.png" type="Texture" id=8]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh15.exr" type="Texture" id=7]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/TrankInner.exr" type="Texture" id=8]
 [ext_resource path="res://Objects/FloorsWalls/neu/BuildingBlock.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/NewLevels/Room.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/NewLevels/TiltingRamp.tscn" type="PackedScene" id=11]
@@ -16,6 +16,86 @@
 [ext_resource path="res://Assets/Font/WalltextFontSmaller.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Objects/NewLevels/HoleRoom.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objects/FloorsWalls/neu/Lv1FloorLabDarkerN.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Models/cube_same_UV.obj" type="ArrayMesh" id=17]
+[ext_resource path="res://Objects/NewLevels/StairwellWall.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube4.exr" type="Texture" id=19]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh12.exr" type="Texture" id=20]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh16.exr" type="Texture" id=21]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh17.exr" type="Texture" id=22]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube2.exr" type="Texture" id=23]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh18.exr" type="Texture" id=24]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh19.exr" type="Texture" id=25]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh5.exr" type="Texture" id=26]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh8.exr" type="Texture" id=27]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh9.exr" type="Texture" id=28]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh13.exr" type="Texture" id=29]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh20.exr" type="Texture" id=30]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh10.exr" type="Texture" id=31]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh2.exr" type="Texture" id=32]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube.exr" type="Texture" id=33]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh4.exr" type="Texture" id=34]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh21.exr" type="Texture" id=35]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh22.exr" type="Texture" id=36]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh23.exr" type="Texture" id=37]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Trank.exr" type="Texture" id=38]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh24.exr" type="Texture" id=39]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube3.exr" type="Texture" id=40]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh.exr" type="Texture" id=41]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh3.exr" type="Texture" id=42]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh6.exr" type="Texture" id=43]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh7.exr" type="Texture" id=44]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh11.exr" type="Texture" id=45]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh14.exr" type="Texture" id=46]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh29.exr" type="Texture" id=47]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh34.exr" type="Texture" id=48]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh38.exr" type="Texture" id=49]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh44.exr" type="Texture" id=50]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh47.exr" type="Texture" id=51]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube5.exr" type="Texture" id=52]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh40.exr" type="Texture" id=53]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh39.exr" type="Texture" id=54]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh37.exr" type="Texture" id=55]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh41.exr" type="Texture" id=56]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/EdgeButtonTop.exr" type="Texture" id=57]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube10.exr" type="Texture" id=58]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube12.exr" type="Texture" id=59]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh27.exr" type="Texture" id=60]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh32.exr" type="Texture" id=61]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube13.exr" type="Texture" id=62]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube8.exr" type="Texture" id=63]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh36.exr" type="Texture" id=64]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh28.exr" type="Texture" id=65]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh26.exr" type="Texture" id=66]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh33.exr" type="Texture" id=67]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh42.exr" type="Texture" id=68]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh43.exr" type="Texture" id=69]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube9.exr" type="Texture" id=70]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube14.exr" type="Texture" id=71]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh30.exr" type="Texture" id=72]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh45.exr" type="Texture" id=73]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube15.exr" type="Texture" id=74]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh46.exr" type="Texture" id=75]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube16.exr" type="Texture" id=76]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube17.exr" type="Texture" id=77]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/MeshInstance.exr" type="Texture" id=78]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/MeshInstance4.exr" type="Texture" id=79]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/MeshInstance5.exr" type="Texture" id=80]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/MeshInstance6.exr" type="Texture" id=81]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/EdgeButtonBot.exr" type="Texture" id=82]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/MeshInstance2.exr" type="Texture" id=83]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/MeshInstance7.exr" type="Texture" id=84]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube6.exr" type="Texture" id=85]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh25.exr" type="Texture" id=86]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh31.exr" type="Texture" id=87]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/MeshInstance3.exr" type="Texture" id=88]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube7.exr" type="Texture" id=89]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Cube11.exr" type="Texture" id=90]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/Mesh35.exr" type="Texture" id=91]
+[ext_resource path="res://Effects/Lightmaps/BonusLevel/MeshInstance8.exr" type="Texture" id=92]
+
+[sub_resource type="BakedLightmapData" id=1]
+energy = 0.3
+user_data = [ NodePath("../Player/DrinkAnimation/Spatial/Potion/Trank"), ExtResource( 38 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Player/DrinkAnimation/Spatial/Potion/Trank/TrankInner"), ExtResource( 8 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Lv1WallLab3/Cube"), ExtResource( 33 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Lv1WallLab5/Cube"), ExtResource( 23 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Lv1WallLab6/Cube"), ExtResource( 40 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Lv1WallLab7/Cube"), ExtResource( 19 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/BuildingBlock/Mesh"), ExtResource( 41 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/BuildingBlock4/Mesh"), ExtResource( 32 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/BuildingBlock3/Mesh"), ExtResource( 42 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall/Mesh"), ExtResource( 34 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall2/Mesh"), ExtResource( 26 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall5/Mesh"), ExtResource( 43 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall14/Mesh"), ExtResource( 44 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall15/Mesh"), ExtResource( 27 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall16/Mesh"), ExtResource( 28 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall10/Mesh"), ExtResource( 31 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall11/Mesh"), ExtResource( 45 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall12/Mesh"), ExtResource( 20 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall13/Mesh"), ExtResource( 29 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall6/Mesh"), ExtResource( 46 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall17/Mesh"), ExtResource( 7 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall7/Mesh"), ExtResource( 21 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall8/Mesh"), ExtResource( 22 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall3/Mesh"), ExtResource( 24 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall9/Mesh"), ExtResource( 25 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/JungleWall4/Mesh"), ExtResource( 30 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform/Mesh"), ExtResource( 35 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform2/Mesh"), ExtResource( 36 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform8/Mesh"), ExtResource( 37 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform9/Mesh"), ExtResource( 39 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform7/Mesh"), ExtResource( 86 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform10/Mesh"), ExtResource( 66 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform11/Mesh"), ExtResource( 60 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform3/Mesh"), ExtResource( 65 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform6/Mesh"), ExtResource( 47 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform4/Mesh"), ExtResource( 72 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Platform5/Mesh"), ExtResource( 87 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/TiltingRamp1/Mesh"), ExtResource( 61 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/TiltingRamp3/Mesh"), ExtResource( 67 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/TiltingRamp4/Mesh"), ExtResource( 48 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/TiltingRamp9/Mesh"), ExtResource( 91 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/TiltingRamp7/Mesh"), ExtResource( 64 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/TiltingRamp8/Mesh"), ExtResource( 55 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/TiltingRamp5/Mesh"), ExtResource( 49 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/TiltingRamp6/Mesh"), ExtResource( 54 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/SmallWall/Mesh"), ExtResource( 53 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Blocks/Aufzug/cube/Cube"), ExtResource( 52 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../LevelSelectButton/EdgeButtonBot"), ExtResource( 82 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../LevelSelectButton/EdgeButtonTop"), ExtResource( 57 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Room/Floor/Mesh"), ExtResource( 56 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Room/LongWall1/Mesh"), ExtResource( 68 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Room/LongWall2/Mesh"), ExtResource( 69 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Room/DoorWall1/Mesh"), ExtResource( 50 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Room/DoorWall2/Mesh"), ExtResource( 73 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Room/ShortWall1/Mesh"), ExtResource( 75 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../Room/DoorFloor/Mesh"), ExtResource( 51 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN/Cube"), ExtResource( 85 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN2/Cube"), ExtResource( 89 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN6/Cube"), ExtResource( 63 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN3/Cube"), ExtResource( 70 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN4/Cube"), ExtResource( 58 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN7/Cube"), ExtResource( 90 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN5/Cube"), ExtResource( 59 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN8/Cube"), ExtResource( 62 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN9/Cube"), ExtResource( 71 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN12/Cube"), ExtResource( 74 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN10/Cube"), ExtResource( 76 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../RoomHole/Lv1FloorLabDarkerN11/Cube"), ExtResource( 77 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../StairWellWalls/StairwellWall/MeshInstance"), ExtResource( 78 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../StairWellWalls/StairwellWall3/MeshInstance"), ExtResource( 83 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../StairWellWalls/StairwellWall8/MeshInstance"), ExtResource( 88 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../StairWellWalls/StairwellWall6/MeshInstance"), ExtResource( 79 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../StairWellWalls/StairwellWall7/MeshInstance"), ExtResource( 80 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../StairWellWalls/StairwellWall4/MeshInstance"), ExtResource( 81 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../StairWellWalls/StairwellWall2/MeshInstance"), ExtResource( 84 ), -1, Rect2( 0, 0, 1, 1 ), -1, NodePath("../StairWellWalls/StairwellWall5/MeshInstance"), ExtResource( 92 ), -1, Rect2( 0, 0, 1, 1 ), -1 ]
 
 [node name="TestChamber" type="Spatial"]
 script = ExtResource( 4 )
@@ -37,20 +117,14 @@ transform = Transform( -1.5299e-08, 0, -0.735, 0, 2.1, 0, 1, 0, -9.17939e-08, -3
 [node name="Lv1WallLab7" parent="Blocks" instance=ExtResource( 2 )]
 transform = Transform( -1.5299e-08, 0, -0.735, 0, 2.1, 0, 1, 0, -9.17939e-08, -43.4035, 27.3, -10.4965 )
 
-[node name="Lv1WallLab4" parent="Blocks" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -1.83588e-07, 0, 2.1, 0, 8.74228e-08, 0, -2.1, -47.0965, 27.3, -20.6523 )
-
 [node name="BuildingBlock" parent="Blocks" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-07, -10, -8.74228e-09, 0, -4.37114e-07, 0.2, -10, 4.37114e-07, 3.82137e-16, -37.5035, 24.4, -20.7965 )
-texture_albedo = ExtResource( 8 )
 
 [node name="BuildingBlock4" parent="Blocks" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-07, -10, -8.74228e-09, 0, -4.37114e-07, 0.2, -10, 4.37114e-07, 3.82137e-16, -37.5035, 24.4, -20.7965 )
-texture_albedo = ExtResource( 8 )
 
 [node name="BuildingBlock3" parent="Blocks" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-07, -10, -8.74228e-09, 0, -4.37114e-07, 0.2, -10, 4.37114e-07, 3.82137e-16, -37.5035, 32.5, -20.7965 )
-texture_albedo = ExtResource( 8 )
 
 [node name="JungleWall" parent="Blocks" instance=ExtResource( 13 )]
 transform = Transform( 35.9716, 0, 0, 0, -4.37114e-08, 1, 0, -35.9716, -1.57237e-06, -40, -0.5, 1 )
@@ -59,37 +133,40 @@ transform = Transform( 35.9716, 0, 0, 0, -4.37114e-08, 1, 0, -35.9716, -1.57237e
 transform = Transform( -1.57237e-06, -4.37114e-08, 1, -10.7915, 5.73206e-16, -1.31134e-08, 0, -35.9716, -1.57237e-06, -76.9599, -0.5, 1 )
 
 [node name="JungleWall5" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( -11.8706, 2.73228e-15, -6.25073e-08, 2.04408e-06, 4.37114e-08, -1, 0, -28.0578, -1.22645e-06, -64.5599, 11.2, -21 )
+transform = Transform( -11.8706, 2.73228e-15, -6.25073e-08, 2.04408e-06, 4.37114e-08, -1, 0, -28.0578, -1.22645e-06, -64.5599, 10.8, -21 )
 
 [node name="JungleWall14" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( -11.8706, 2.73228e-15, -6.25073e-08, 2.04408e-06, 4.37114e-08, -1, 0, -28.0578, -1.22645e-06, -64.5599, 11.2, 40 )
+transform = Transform( -11.8706, 2.73228e-15, -6.25073e-08, 2.04408e-06, 4.37114e-08, -1, 0, -28.0578, -1.22645e-06, -64.5599, 10.8, 39.9 )
 
 [node name="JungleWall15" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( -11.8706, 2.73228e-15, -6.25073e-08, 2.04408e-06, 4.37114e-08, -1, 0, -2.3765, -1.0388e-07, -72.0599, 11.2, 9.5 )
+transform = Transform( -11.8706, 2.73228e-15, -6.25073e-08, 2.04408e-06, 4.37114e-08, -1, 0, -2.3765, -1.0388e-07, -72.0599, 10.8, 9.5 )
 
 [node name="JungleWall16" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( -1.70937, 3.93448e-16, -9.00105e-09, 2.04408e-06, 4.37114e-08, -1, 0, -2.3765, -1.0388e-07, -53.7599, 11.2, 9.5 )
+transform = Transform( -1.70937, 3.93448e-16, -9.00105e-09, 2.04408e-06, 4.37114e-08, -1, 0, -2.3765, -1.0388e-07, -52.6599, 10.8, 9.5 )
 
 [node name="JungleWall10" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( -6.64754, 1.53008e-15, -3.50041e-08, -8.93495e-15, -3.59716, -1.52866e-07, -2.04408e-06, 1.52866e-06, 1, -58.7599, 16.2, 3 )
+transform = Transform( -6.64754, 1.53008e-15, -3.50041e-08, -8.93495e-15, -3.59716, -1.52866e-07, -2.04408e-06, 1.52866e-06, 1, -58.7599, 15.3, 3 )
 
 [node name="JungleWall11" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( -1.75351e-06, 1.52866e-06, 1, -8.93495e-15, -3.59716, -1.52866e-07, 6.64754, -6.83498e-14, -8.7073e-09, -64.7599, 16.2, 9 )
+transform = Transform( -1.75351e-06, 1.52866e-06, 1, -8.93495e-15, -3.59716, -1.52866e-07, 6.64754, -6.83498e-14, -8.7073e-09, -64.7599, 15.3, 9 )
 
 [node name="JungleWall12" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( 6.64754, -1.3517e-13, -5.24187e-08, -8.93495e-15, -3.59716, -1.52866e-07, 1.46293e-06, -1.52866e-06, -1, -57.7599, 16.2, 15 )
+transform = Transform( 6.64754, -1.3517e-13, -5.24187e-08, -8.93495e-15, -3.59716, -1.52866e-07, 1.46293e-06, -1.52866e-06, -1, -57.7599, 15.3, 15 )
 
 [node name="JungleWall13" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( 1.17236e-06, -1.52866e-06, -1, -8.93495e-15, -3.59716, -1.52866e-07, -1.59541, 4.84774e-14, 2.30712e-08, -49.7599, 16.2, 14 )
+transform = Transform( 1.17236e-06, -1.52866e-06, -1, -8.93495e-15, -3.59716, -1.52866e-07, -1.59541, 4.84774e-14, 2.30712e-08, -50.0599, 15.4, 14.9 )
 
 [node name="JungleWall6" parent="Blocks" instance=ExtResource( 13 )]
 transform = Transform( -11.8706, 2.73228e-15, -6.25073e-08, 2.04408e-06, 4.37114e-08, -1, 0, -35.9716, -1.57237e-06, -10.9599, 11.2, 1 )
+
+[node name="JungleWall17" parent="Blocks" instance=ExtResource( 13 )]
+transform = Transform( -2.45721, -1.85759e-06, 6.60024e-15, 0, -5.3775e-07, -1, 3.71029e-07, -12.3023, 4.37114e-08, -25.3599, 11.2, 1 )
 
 [node name="JungleWall7" parent="Blocks" instance=ExtResource( 13 )]
 transform = Transform( 2.1793e-07, -15.1081, -6.60395e-07, 2.04408e-06, 4.37114e-08, -1, 11.8706, 1.57237e-06, 6.25074e-08, -37.9599, 11.2, -23 )
 
 [node name="JungleWall8" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( 2.1575e-07, -14.957, -6.53791e-07, 2.04408e-06, 4.37114e-08, -1, 11.8706, 1.57237e-06, 6.25074e-08, -37.8599, 11.2, 25 )
+transform = Transform( 2.1575e-07, -14.957, -6.53791e-07, 2.04408e-06, 4.37114e-08, -1, 11.8706, 1.57237e-06, 6.25074e-08, -37.8599, 10.8, 23.7 )
 
 [node name="JungleWall3" parent="Blocks" instance=ExtResource( 13 )]
 transform = Transform( 7.21669e-14, 37.7702, 1.60509e-06, -10.7915, 5.73206e-16, -1.31134e-08, -1.57237e-06, 1.52866e-06, 1, -39.6599, -0.5, -35 )
@@ -98,37 +175,7 @@ transform = Transform( 7.21669e-14, 37.7702, 1.60509e-06, -10.7915, 5.73206e-16,
 transform = Transform( 7.21669e-14, 37.7702, 1.60509e-06, -10.7915, 5.73206e-16, -1.31134e-08, -1.57237e-06, 1.52866e-06, 1, -39.6599, -0.5, 36 )
 
 [node name="JungleWall4" parent="Blocks" instance=ExtResource( 13 )]
-transform = Transform( 1.57237e-06, -3.10102e-06, -1, -10.7915, 5.73206e-16, -1.31134e-08, 1.37461e-13, 35.9716, 1.48494e-06, -1.9599, -0.5, -1.19209e-07 )
-
-[node name="BuildingBlock5" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 1.30861e-06, -8.01317, -7.27196e-08, -29.9376, -3.50267e-07, -3.30773e-09, 2.05618e-07, 1.20995e-06, -0.4816, -42.58, 7.5, 11.72 )
-texture_albedo = ExtResource( 7 )
-extra_scaling = Vector3( 0.5, 0.5, 1 )
-
-[node name="BuildingBlock9" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -2.05618e-07, -1.32696e-06, 0.4816, -29.106, 2.84683e-13, -1.30256e-07, -4.56919e-15, -6.07058, 5.39494e-09, -51.54, 7.5, 0.92 )
-texture_albedo = ExtResource( 7 )
-extra_scaling = Vector3( 0.5, 0.5, 1 )
-
-[node name="BuildingBlock10" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -2.05618e-07, -1.32696e-06, 0.4816, -14.553, 1.42342e-13, -6.5128e-08, -3.19843e-15, -4.24941, 3.77646e-09, -51.54, 38.7, 11.22 )
-texture_albedo = ExtResource( 7 )
-extra_scaling = Vector3( 0.5, 0.5, 1 )
-
-[node name="BuildingBlock20" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -2.05618e-07, -1.32696e-06, 0.4816, -31.9334, 3.12338e-13, -1.42909e-07, -9.5953e-15, -12.7482, 1.13294e-08, -27.46, 7.5, 0.92 )
-texture_albedo = ExtResource( 7 )
-extra_scaling = Vector3( 0.5, 0.5, 1 )
-
-[node name="BuildingBlock13" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 1.3557e-14, 6.07058, -2.64463e-08, -17.0644, 1.66905e-13, -7.6367e-08, -2.05618e-07, -1.06161e-06, 0.4816, -39.64, 7.5, -11.12 )
-texture_albedo = ExtResource( 7 )
-extra_scaling = Vector3( 0.5, 0.5, 1 )
-
-[node name="BuildingBlock14" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 1.3557e-14, 6.07058, -2.64463e-08, -17.0644, 1.66905e-13, -7.6367e-08, -2.05618e-07, -1.06161e-06, 0.4816, -39.64, 7.5, -11.12 )
-texture_albedo = ExtResource( 7 )
-extra_scaling = Vector3( 0.5, 0.5, 1 )
+transform = Transform( 1.57237e-06, -3.10102e-06, -1, -10.7915, 5.73206e-16, -1.31134e-08, 1.37461e-13, 35.9716, 1.48494e-06, -2.9599, -0.5, -1.19209e-07 )
 
 [node name="Platform" parent="Blocks" instance=ExtResource( 1 )]
 transform = Transform( -1.21168e-07, 0, -2.772, 0, 0.405, 0, 2.772, 0, -1.21168e-07, -48, 5, -8 )
@@ -140,7 +187,7 @@ transform = Transform( -1.21168e-07, 0, -2.772, 0, 0.405, 0, 2.772, 0, -1.21168e
 transform = Transform( -1.21168e-07, 0, -2.772, 0, 0.405, 0, 2.772, 0, -1.21168e-07, -31.2, 11.4, 8.6 )
 
 [node name="Platform9" parent="Blocks" instance=ExtResource( 1 )]
-transform = Transform( -4.73293e-08, 1.18588e-09, -2.772, 0.4851, 0.35074, -6.0584e-08, 0.840218, -0.2025, -1.21168e-07, -31.2, 11.9, 11.466 )
+transform = Transform( -8.54146e-08, 1.18587e-09, -2.772, 0.875454, 0.35074, -6.05841e-08, 1.51633, -0.2025, -1.21168e-07, -31.9, 12.15, 11.299 )
 
 [node name="Platform7" parent="Blocks" instance=ExtResource( 1 )]
 transform = Transform( -1.45402e-07, 0, -3.3264, 0, 0.405, 0, 3.3264, 0, -1.45402e-07, -48.6, 18, 8.6 )
@@ -172,6 +219,9 @@ transform = Transform( 2.69325, 0, 0, 0, 0.389711, 3.19334, 0, -0.225, 5.53103, 
 [node name="TiltingRamp4" parent="Blocks" instance=ExtResource( 11 )]
 transform = Transform( -1.17726e-07, 0.225, 5.53103, 0, 0.389711, -3.19334, -2.69325, -9.83505e-09, -2.41769e-07, -39.7, 14.5, 8.5 )
 
+[node name="TiltingRamp9" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( -2.69325, 1.96701e-08, 4.83538e-07, 0, 0.389711, -3.19334, -2.35451e-07, -0.225, -5.53103, -26.3077, 16.1679, 23.7 )
+
 [node name="TiltingRamp7" parent="Blocks" instance=ExtResource( 11 )]
 transform = Transform( -5.88628e-08, -0.225, 5.53103, -1.01953e-07, 0.389711, 3.19334, -2.69325, -9.83505e-09, -2.41769e-07, -39.7, 33.5, 8.5 )
 
@@ -186,26 +236,11 @@ transform = Transform( -2.69325, -1.96701e-08, -4.83538e-07, 0, 0.389711, -3.193
 
 [node name="SmallWall" parent="Blocks" instance=ExtResource( 9 )]
 transform = Transform( 2.94, 0, 0, 0, 6.8, 0, 0, 0, 0.4816, -48.6, 7.1, -11.12 )
-texture_albedo = ExtResource( 7 )
-
-[node name="SmallWall2" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( -1.28511e-07, 0, 0.4816, 0, 29.92, 0, -2.94, 0, -2.10514e-08, -51.54, 7.1, -8.04 )
-texture_albedo = ExtResource( 7 )
-extra_scaling = Vector3( 0.5, 0.5, 1 )
-
-[node name="SmallWall3" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 2.94, 0, -3.55271e-15, 0, 29.92, 0, 4.83169e-13, 0, 0.4816, -50.14, 7.1, -11.34 )
-texture_albedo = ExtResource( 7 )
-extra_scaling = Vector3( 0.5, 0.5, 1 )
 
 [node name="Aufzug" parent="Blocks" instance=ExtResource( 12 )]
 transform = Transform( 3.6, 0, 0, 0, 3.5, 0, 0, 0, 3.6, -39.9, 0.0999999, 0.5 )
 target_translation = Vector3( 0, 40, 0 )
 duration = 8.0
-
-[node name="BuildingBlock6" parent="Blocks" instance=ExtResource( 9 )]
-transform = Transform( 5.6, 0, 0, 0, 0.3625, 0, 0, 0, 2.73, -40, 24.2, -8 )
-texture_albedo = ExtResource( 8 )
 
 [node name="LevelSelectButton" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, -1.06581e-14, 4.02341e-21, 0, -4.37114e-08, -1, 1.06581e-14, 1, -4.37114e-08, -38.1128, 27.23, -30.1838 )
@@ -226,6 +261,9 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31, 12
 [node name="Floor" parent="RoomHole" index="0"]
 transform = Transform( 4, 4.1963e-07, -1.14641e-15, 0, -3.49691e-07, -0.5, 5.24537e-07, 8, -2.18557e-08, 5.33334, 0, 0.1 )
 visible = false
+
+[node name="Mesh" parent="RoomHole/Floor" index="0"]
+material/0 = null
 
 [node name="Lv1FloorLabDarkerN8" parent="RoomHole" instance=ExtResource( 16 )]
 transform = Transform( -9.17939e-09, 0.833333, 4.37114e-08, -0.252, -4.37114e-08, 2.20305e-08, 4.37114e-08, -7.28524e-08, 0.5, 10.5, 0.299997, -2.16667 )
@@ -269,12 +307,70 @@ transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159,
 event_name = "fog"
 
 [node name="Label3D6" type="Label3D" parent="."]
-transform = Transform( -0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, -43.1973, 27.2331, -10.6178 )
+transform = Transform( -0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, -43.1973, 44.2331, -10.6178 )
 generate_lightmap = false
 pixel_size = 0.018
 text = "FIND THE KEY
 THEN GET TO 
 THE TOP"
 font = ExtResource( 14 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2 )
+mesh = ExtResource( 17 )
+
+[node name="StairWellWalls" type="Spatial" parent="."]
+
+[node name="StairwellWall" parent="StairWellWalls" instance=ExtResource( 18 )]
+transform = Transform( 0.34, 0, 0, 0, 9.18, 0, 0, 0, 3.91, -28.1, 27.3, 1.2 )
+
+[node name="StairwellWall3" parent="StairWellWalls" instance=ExtResource( 18 )]
+transform = Transform( 0.34, 0, 0, 0, 9.18, 0, 0, 0, 2.92272, -52.1, 27.3, -1.9 )
+
+[node name="StairwellWall8" parent="StairWellWalls" instance=ExtResource( 18 )]
+transform = Transform( 0.34, 0, 0, 0, 5.1408, 0, 0, 0, 0.876817, -52.1, 39.3, 9.1 )
+
+[node name="StairwellWall6" parent="StairWellWalls" instance=ExtResource( 18 )]
+transform = Transform( -1.48619e-08, 0, 2.90007, 0, 9.18, 0, -0.34, 0, -1.26766e-07, -42.3, 27.3, 12.3 )
+
+[node name="StairwellWall7" parent="StairWellWalls" instance=ExtResource( 18 )]
+transform = Transform( -4.01271e-09, 0, 0.78302, 0, 9.18, 0, -0.34, 0, -1.26766e-07, -31.3, 51.3, 12.3 )
+
+[node name="StairwellWall4" parent="StairWellWalls" instance=ExtResource( 18 )]
+transform = Transform( -1.07005e-08, 0, -2.92272, 0, 9.18, 0, 0.2448, 0, -1.27756e-07, -48.1, 27.3, -11 )
+
+[node name="StairwellWall2" parent="StairWellWalls" instance=ExtResource( 18 )]
+transform = Transform( -5.94475e-09, 0, 4.5356, 0, 2.64384, 0, -0.136, 0, -1.98257e-07, -42.1, 16.3, -10.9 )
+
+[node name="StairwellWall5" parent="StairWellWalls" instance=ExtResource( 18 )]
+transform = Transform( -5.94475e-09, -1.84408, -1.98257e-07, 0, -8.06072e-08, 4.5356, -0.136, 8.06072e-08, 8.6661e-15, -33.9, 46.2, -10.7 )
+
+[node name="Lights" type="Spatial" parent="."]
+
+[node name="SpotLight" type="SpotLight" parent="Lights"]
+transform = Transform( 1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -4.37114e-08, -39, 50, 0 )
+light_color = Color( 0.517647, 0.654902, 0.509804, 1 )
+light_energy = 3.0
+spot_range = 45.0
+
+[node name="OmniLight" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 4, 0 )
+light_color = Color( 0.368627, 0.941176, 0.160784, 1 )
+light_energy = 3.0
+omni_range = 10.0
+
+[node name="OmniLight2" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 4, 26.4 )
+light_color = Color( 0.368627, 0.941176, 0.160784, 1 )
+light_energy = 3.0
+omni_range = 10.0
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 28.4, 0 )
+extents = Vector3( 43, 41, 38 )
+atlas_generate = false
+environment_mode = 1
+capture_enabled = false
+light_data = SubResource( 1 )
 
 [editable path="RoomHole"]
