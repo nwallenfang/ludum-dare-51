@@ -210,27 +210,31 @@ transform = Transform( -9.23185e-09, 3.12764e-08, -0.1056, -0.252, -4.37114e-08,
 [node name="Pickups" type="Spatial" parent="."]
 
 [node name="DarknessPickup1" parent="Pickups" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1, 0.7, 12.3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3052, 0.7, 11.6522 )
 event_name = "fog"
 
 [node name="DarknessPickup2" parent="Pickups" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1, 0.7, 8.3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3844, 2.49883, 12.3111 )
+event_name = "fog"
+
+[node name="DarknessPickup7" parent="Pickups" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6816, 2.49883, -12.4956 )
 event_name = "fog"
 
 [node name="DarknessPickup3" parent="Pickups" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7008, 0.7, 10.3875 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.3112, 0.7, 11.7153 )
 event_name = "fog"
 
 [node name="DarknessPickup4" parent="Pickups" instance=ExtResource( 6 )]
-transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159, -28.889, 0.7, -6.29497 )
+transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159, -31.2193, 0.7, -11.5883 )
 event_name = "fog"
 
 [node name="DarknessPickup5" parent="Pickups" instance=ExtResource( 6 )]
-transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159, -32.2152, 0.7, -10.0282 )
+transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159, -36.9151, 0.7, -13.6268 )
 event_name = "fog"
 
 [node name="DarknessPickup6" parent="Pickups" instance=ExtResource( 6 )]
-transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159, -30.4863, 0.7, -8.04544 )
+transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159, -34.1399, 0.7, -12.9689 )
 event_name = "fog"
 
 [node name="Label3D6" type="Label3D" parent="."]
@@ -299,6 +303,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.0436, 29.1985, 0 )
 extents = Vector3( 40.9451, 41.9553, 39.2085 )
 use_hdr = false
 atlas_generate = false
+capture_enabled = false
 light_data = ExtResource( 7 )
 
 [editable path="RoomHole"]
