@@ -22,7 +22,7 @@ void fragment() {
 	METALLIC = 0.0;
 	ROUGHNESS = 1.0;
 	SPECULAR = 1.0;
-	
+	EMISSION = (0.3 + 0.7 * (0.5 + 0.5 * sin(2.5 * TIME))) * ALBEDO;
 	// ALPHA = (albedo_tex.x + albedo_tex.y + albedo_tex.z) / 3.;
 }
 "

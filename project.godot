@@ -1266,4 +1266,4 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/default_clear_color=Color( 0.458824, 0.458824, 0.458824, 1 )
-environment/default_environment="res://editor_env.tres"
+environment/default_environment="res://game_env.tres"

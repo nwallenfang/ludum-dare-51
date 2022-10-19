@@ -18,6 +18,7 @@ uniform sampler2D texture_normal : hint_normal;
 uniform float normal_scale : hint_range(-16,16);
 uniform vec2 uv_scale = vec2(1.0, 1.0);
 uniform vec2 uv_offset;
+uniform float uv_rotation;
 
 
 void vertex() {
@@ -42,8 +43,12 @@ void vertex() {
 
     // Project the worldspace position of the vertex into our texturing plane,
     // and use this result as the primary texture coordinate.
-    UV = uv_scale * vec2(dot(world_pos, h_direction), dot(world_pos, v_direction));
+	mat2 rotation = mat2(vec2(sin(uv_rotation), -cos(uv_rotation)),
+						vec2(cos(uv_rotation), sin(uv_rotation)));
+    UV =  vec2(dot(world_pos, h_direction), dot(world_pos, v_direction)) + uv_offset;
+	UV = (uv_scale * UV + uv_offset) * rotation;
 //	UV=UV*uv1_scale.xy+uv1_offset.xy;
+
 }
 
 
@@ -70,5 +75,6 @@ shader_param/point_size = 1.0
 shader_param/normal_scale = 0.5
 shader_param/uv_scale = Vector2( 0.2, 0.2 )
 shader_param/uv_offset = null
+shader_param/uv_rotation = null
 shader_param/texture_albedo = ExtResource( 1 )
 shader_param/texture_normal = ExtResource( 2 )
