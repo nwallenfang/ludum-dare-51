@@ -61,9 +61,7 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit() # Quits the game
-		
-	if Input.is_action_just_pressed("jump_to_next_level"):
-		load_next_level()
+	
 		
 	# not movement_disabled
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
@@ -222,4 +220,9 @@ func load_level(index):
 # When reaching the end flag
 func load_next_level():
 	load_level(Game.level_index + 1)
+	
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("jump_to_next_level"):
+		load_next_level()
 
