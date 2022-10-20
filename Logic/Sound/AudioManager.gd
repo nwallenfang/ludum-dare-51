@@ -1,5 +1,7 @@
 extends Node
 
+# IMPORTANT NOTE: this is dangerous, I can't even explain it properly, see this thread
+# guide: https://github.com/godotengine/godot/issues/25672#issuecomment-461541415
 export var sound_directoy = "res://Assets/Sound"
 
 var num_players = 32
@@ -22,8 +24,13 @@ func _ready():
 	if dir.open(sound_directoy) == OK:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
+
 		while file_name != "":
-			if file_name.ends_with(".ogg"):
+			print(file_name)
+			if file_name.ends_with(".ogg") or (OS.has_feature("standalone") and file_name.ends_with(".import")):
+				if OS.has_feature("standalone"):  # hack -> see first comment of this file
+					file_name = file_name.split(".import")[0]
+					print("good")
 				var node_name = file_name.split(".")[0]
 				print("Loaded ", file_name)
 				if not $Sounds.has_node(node_name): # sound has no custom config in Sounds

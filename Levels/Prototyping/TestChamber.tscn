@@ -315,6 +315,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.0436, 29.1985, 0 )
 extents = Vector3( 40.9451, 41.9553, 39.2085 )
 use_hdr = false
 atlas_generate = false
+environment_mode = 3
+environment_custom_color = Color( 0.356863, 0.509804, 0.509804, 1 )
+environment_custom_energy = 0.1
 capture_enabled = false
 light_data = ExtResource( 7 )
 
