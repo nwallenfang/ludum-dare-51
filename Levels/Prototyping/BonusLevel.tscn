@@ -10,10 +10,10 @@
 [ext_resource path="res://Objects/NewLevels/HoleRoom.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/NewLevels/TiltingRamp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/GigaAufzug.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Effects/Lightmaps/BonusLevelFixed/BonusLevel.lmbake" type="BakedLightmapData" id=11]
 [ext_resource path="res://Objects/JungleWall.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/NewLevels/Platform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/NewLevels/LabFloor.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Effects/Lightmaps/BonusLevel/TestChamber.lmbake" type="BakedLightmapData" id=15]
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/FloorsWalls/neu/BuildingBlock.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Objects/FloorsWalls/neu/Lv1WallLabN.tscn" type="PackedScene" id=18]
@@ -420,19 +420,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 35.6, 22 )
 [node name="Lamp3" parent="Lights" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 23.6, 22 )
 
-[node name="BakedLightmap" type="BakedLightmap" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.0436, 29.1985, 0 )
-extents = Vector3( 46, 41.9553, 52 )
-use_hdr = false
-atlas_generate = false
-environment_mode = 3
-environment_custom_color = Color( 0.356863, 0.509804, 0.509804, 1 )
-environment_custom_energy = 0.05
-capture_enabled = false
-light_data = ExtResource( 15 )
-
 [node name="Enemies" type="Spatial" parent="."]
 
 [node name="Deco" type="Spatial" parent="."]
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+extents = Vector3( 108, 97, 75 )
+quality = 2
+use_hdr = false
+atlas_generate = false
+capture_enabled = false
+light_data = ExtResource( 11 )
 
 [editable path="RoomHole"]
