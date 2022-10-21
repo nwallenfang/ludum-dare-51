@@ -103,7 +103,9 @@ func _process(delta: float) -> void:
 			if number_triggered in fixed_events_for_this_lv:
 				var fixed_event = fixed_events_for_this_lv[number_triggered]
 				emit_signal("trigger_event", fixed_event)
-				AudioManager.play("big_event")
+				if Game.level_index != 5:	# I don't want this sound every 10 secs in the bonus lv
+
+					AudioManager.play("big_event")
 			
 		# always a random event
 		randomize()

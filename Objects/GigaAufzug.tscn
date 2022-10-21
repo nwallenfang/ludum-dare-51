@@ -3,7 +3,7 @@
 [ext_resource path="res://Logic/Events/GigaAufzug.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GLTF/Material_007.material" type="Material" id=2]
 [ext_resource path="res://Assets/Models/UVCube.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Materials/LiftMaterial.tres" type="Material" id=4]
+[ext_resource path="res://Assets/Materials/GigaAufzug.tres" type="Material" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "GasBottle_v1_Cylinder008"
@@ -39,8 +39,9 @@ extents = Vector3( 1.39652, 0.325342, 1.38789 )
 height = 23.1415
 radius = 0.372631
 
-[node name="GigaAufzug" type="Spatial"]
+[node name="GigaAufzug" type="RigidBody"]
 transform = Transform( 3.6, 0, 0, 0, 3.5, 0, 0, 0, 3.6, -40.4, 0.0999999, 0 )
+mode = 3
 script = ExtResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
@@ -49,16 +50,21 @@ script = ExtResource( 1 )
 transform = Transform( -2.37844, 2.0793e-07, 0, -2.12291e-06, -24.2832, 0, 0, 0, 2.37844, 0, 0.244194, 0 )
 mesh = SubResource( 1 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-shape = SubResource( 2 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.8314, 0 )
-shape = SubResource( 3 )
-
 [node name="cube" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1.4, 0, 0, 0, 0.32, 0, 0, 0, 1.4, 0, 0, 0 )
 use_in_baked_light = false
 material/0 = ExtResource( 4 )
+
+[node name="SpotLight" type="OmniLight" parent="."]
+transform = Transform( -1.21421e-08, -0.277778, -1.17624e-22, -1.2489e-08, 5.4591e-16, 0.285714, -0.277778, 1.21421e-08, -1.2142e-08, 0, -0.714286, -0.0277778 )
+light_color = Color( 0.321569, 0.572549, 0.192157, 1 )
+light_bake_mode = 0
+omni_range = 15.594
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.8314, 0 )
+shape = SubResource( 3 )
