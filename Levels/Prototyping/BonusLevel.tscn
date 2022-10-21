@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Levels/Prototyping/BonusLevel.gd" type="Script" id=1]
 [ext_resource path="res://Logic/Enemies/Alice.tscn" type="PackedScene" id=2]
@@ -31,6 +31,11 @@
 [ext_resource path="res://Objects/WallText.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Objects/FloorsWalls/neu/Lv1FloorCarpetN.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Objects/GasBottle_v1.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Objects/GasBottle_v2.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Objects/SurveilanceCam.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Objects/Regal.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Objects/Potion.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Objects/ExplosiveBarrel.tscn" type="PackedScene" id=36]
 
 [sub_resource type="BoxShape" id=3]
 
@@ -44,6 +49,9 @@ albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 8, 8, 2 )
+
+[sub_resource type="OccluderShapePolygon" id=8]
+polygon_points = PoolVector2Array( 4, -3, 9, 35, -9, 34, -9, -3 )
 
 [node name="BonusLevel" type="Spatial"]
 script = ExtResource( 1 )
@@ -139,6 +147,15 @@ transform = Transform( -0.957051, -0.970704, 0.0963325, -0.294972, 2.61335, 0.32
 
 [node name="JungleWall20" parent="Geometry" instance=ExtResource( 12 )]
 transform = Transform( -0.957051, -1.6845, -0.0135856, -0.294972, 3.66786, 0.59579, -0.197682, 2.68229, -0.823237, -60.1826, 7.69903, 25.6722 )
+
+[node name="JungleWall29" parent="Geometry" instance=ExtResource( 12 )]
+transform = Transform( -0.957051, -3.20056, -0.0135859, -0.294972, 6.96893, 0.59579, -0.197682, 5.09635, -0.823237, -70.0978, -1.46549, 16.2528 )
+
+[node name="JungleWall30" parent="Geometry" instance=ExtResource( 12 )]
+transform = Transform( -0.957051, -2.71022, -0.188396, -0.294972, 3.33633, 0.900567, -0.197682, 8.14285, -0.43169, -71.3545, 10.1848, 4.95277 )
+
+[node name="JungleWall31" parent="Geometry" instance=ExtResource( 12 )]
+transform = Transform( -0.300464, 8.20107, -0.188396, 0.369877, 2.52765, 0.900567, 0.902743, 1.69396, -0.43169, -59.8892, 10.5018, 0.61043 )
 
 [node name="JungleWall21" parent="Geometry" instance=ExtResource( 12 )]
 transform = Transform( -0.98436, -1.27036, 0.0381011, -0.214783, 4.09236, 0.500606, -0.164125, 2.26367, -0.883635, -48.9419, 2.83828, 17.8339 )
@@ -938,6 +955,39 @@ transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -32, 40
 
 [node name="Cameras" type="Spatial" parent="Deco"]
 
+[node name="SurveilanceCam" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -1.36626e-07, 0, -3.12563, 0, 3.12563, 0, 3.12563, 0, -1.36626e-07, -38.2, 20.6, 41.5 )
+
+[node name="SurveilanceCam2" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0, -3.12563, -42.5, 32.4, 37.5 )
+
+[node name="SurveilanceCam3" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0, -3.12563, -51, 38.2, 8.5 )
+
+[node name="SurveilanceCam4" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( 6.08583e-07, 0, 3.12563, 0, 3.12563, 0, -3.12563, 0, 6.08583e-07, -48, 56.4, -10.4 )
+
+[node name="SurveilanceCam5" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0, -3.12563, -50.9, 69.6, 16.5 )
+
+[node name="SurveilanceCam6" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -5.0923e-07, 0, -3.12563, 0, 3.12563, 0, 3.12563, 0, -5.0923e-07, -47.8, 27.2, 11.2 )
+
+[node name="SurveilanceCam7" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0, -3.12563, -47.7, 31, -14.4 )
+
+[node name="SurveilanceCam8" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0, -3.12563, -75.9, 6.29999, -22 )
+
+[node name="SurveilanceCam9" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0, -3.12563, -75.9, 6.29999, 27.9 )
+
+[node name="SurveilanceCam10" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -5.0923e-07, 0, -3.12563, 0, 3.12563, 0, 3.12563, 0, -5.0923e-07, -21.7, 6.29999, 34.9 )
+
+[node name="SurveilanceCam11" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( 3.12563, 0, -3.72604e-07, 0, 3.12563, 0, 3.72604e-07, 0, 3.12563, -3.99999, 6.39999, -20.9 )
+
 [node name="Rest" type="Spatial" parent="Deco"]
 
 [node name="GasBottle_v1" parent="Deco/Rest" instance=ExtResource( 31 )]
@@ -949,6 +999,51 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -41, 24.5, 41 )
 [node name="GasBottle_v3" parent="Deco/Rest" instance=ExtResource( 31 )]
 transform = Transform( 1.87939, -0.68404, 0, 0.68404, 1.87939, 0, 0, 0, 2, -41.994, 24.4658, 40.4 )
 
+[node name="GasBottle_v8" parent="Deco/Rest" instance=ExtResource( 32 )]
+transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, -27.1, 24.9, 40.7 )
+
+[node name="GasBottle_v13" parent="Deco/Rest" instance=ExtResource( 32 )]
+transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, -40.1, 14.1, 16.7 )
+
+[node name="GasBottle_v15" parent="Deco/Rest" instance=ExtResource( 32 )]
+transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, -41.4, 13.568, 38.7 )
+
+[node name="GasBottle_v10" parent="Deco/Rest" instance=ExtResource( 32 )]
+transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, -40.1, 13.568, 40.1 )
+
+[node name="Regal" parent="Deco/Rest" instance=ExtResource( 34 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -42, 13.2218, 32 )
+
+[node name="Potion" parent="Deco/Rest/Regal" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.96743, -0.0999985 )
+
+[node name="Potion2" parent="Deco/Rest/Regal" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.799999, 2.96743, -0.0999985 )
+
+[node name="Potion3" parent="Deco/Rest/Regal" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.96743, -0.0999985 )
+
+[node name="Regal2" parent="Deco/Rest" instance=ExtResource( 34 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -42, 24.4218, 18.5 )
+
+[node name="Potion" parent="Deco/Rest/Regal2" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.96743, -0.0999985 )
+
+[node name="Potion2" parent="Deco/Rest/Regal2" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.799999, 2.96743, -0.0999985 )
+
+[node name="Potion3" parent="Deco/Rest/Regal2" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.96743, -0.0999985 )
+
+[node name="ExplosiveBarrel" parent="Deco/Rest" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0.5, -33 )
+
+[node name="ExplosiveBarrel2" parent="Deco/Rest" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4, 0.5, -33 )
+
+[node name="ExplosiveBarrel3" parent="Deco/Rest" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6, 0.5, 23 )
+
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
 extents = Vector3( 108, 114, 159 )
 quality = 2
@@ -956,6 +1051,22 @@ use_hdr = false
 atlas_generate = false
 capture_enabled = false
 light_data = ExtResource( 11 )
+
+[node name="Occluder1" type="Occluder" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.8, 17, -4.41868e-07 )
+shape = SubResource( 8 )
+
+[node name="Occluder4" type="Occluder" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -51.1, 17, -3 )
+shape = SubResource( 8 )
+
+[node name="Occluder2" type="Occluder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8, 35, 11.3 )
+shape = SubResource( 8 )
+
+[node name="Occluder3" type="Occluder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8, 59, 31.8 )
+shape = SubResource( 8 )
 
 [connection signal="area_entered" from="Geometry/EndingRoom/EndArea" to="." method="_on_EndArea_area_entered"]
 [connection signal="key_collected" from="Pickups/KeyPickup" to="." method="_on_KeyPickup_key_collected"]
