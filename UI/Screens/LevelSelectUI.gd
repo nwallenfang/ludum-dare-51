@@ -6,7 +6,8 @@ func _ready() -> void:
 		button.connect("clicked", self, "_on_HoverButton_clicked")
 
 	for button in $VBoxContainer/GridContainer2.get_children():
-		button.connect("clicked", self, "_on_HoverButton_clicked")
+		if not button.name.begins_with("Gap"):
+			button.connect("clicked", self, "_on_HoverButton_clicked")
 
 
 func _on_HoverButton_clicked(level_index) -> void:

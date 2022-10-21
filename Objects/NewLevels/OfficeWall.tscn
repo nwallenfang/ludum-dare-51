@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Materials/RoomWall.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Models/UVCube.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="RoomWall" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )
+
+[node name="UVCube" parent="." instance=ExtResource( 2 )]
+material/0 = ExtResource( 1 )
