@@ -141,7 +141,7 @@ margin_left = 412.0
 margin_right = 614.0
 margin_bottom = 175.0
 level_name = "Tower"
-level_index = 6
+level_index = 5
 
 [node name="Gap3" type="Control" parent="VBoxContainer/GridContainer2"]
 margin_left = 618.0

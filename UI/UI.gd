@@ -78,13 +78,13 @@ func _on_FPSUpdateTimer_timeout() -> void:
 	pass # Replace with function body.
 
 # gets called directly from EventPickup
-func event_picked_up(event):
+func event_picked_up(event, duration):
 	# TODO find empty spot fill in dictionary
 #	$CanvasLayer/EventBar/Pickups/EventPickupIcon1.material.set_shader_param("icon", event.icon)
-	$CanvasLayer/EventBar.add_new_event_pickup(event)
+	$CanvasLayer/EventBar.add_new_event_pickup(event, duration)
 
-func event_pickup_reset(event):
-	$CanvasLayer/EventBar.reset_event_pickup(event)
+func event_pickup_reset(event, duration):
+	$CanvasLayer/EventBar.reset_event_pickup(event, duration)
 	
 func end_event_pickup(event):
 	$CanvasLayer/EventBar.remove_old_event_pickup(event)

@@ -1,0 +1,39 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=3]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
+
+shader_type spatial;
+render_mode async_visible,blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo : hint_color;
+uniform vec4 light : hint_color;
+uniform float number_of_circles = 8.0;
+uniform float emission_strength = 2.0;
+
+float clamp_and_map(float value, float istart, float istop, float ostart, float ostop) {
+    value = clamp(value, istart, istop);
+    return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+}
+
+void fragment() {
+	vec2 uv = UV;
+	
+	float dark_border = distance(uv, vec2(.5)) + .5;
+	ALBEDO = mix(albedo.rgb, vec3(0.0), dark_border);
+	
+	
+	vec2 uv_centered = uv - vec2(.5);
+	float _number_of_circles = number_of_circles / 2.0;
+	float x = pow(abs(clamp_and_map(mod(atan(uv_centered.y / uv_centered.x), 3.1415/_number_of_circles), 0.0, 3.1415/_number_of_circles, 0.0, 1.0) - .5), 1.8);
+	float xx = x * (.5 - abs(clamp_and_map(length(uv_centered), 0.3, 0.45, 0.0, 1.0) - .5));
+	ALBEDO = mix(ALBEDO, light.rgb, xx);
+	EMISSION = xx * light.rgb * emission_strength;
+}
+"
+
+[resource]
+shader = SubResource( 3 )
+shader_param/albedo = Color( 0.301961, 0.301961, 0.301961, 1 )
+shader_param/light = Color( 1, 0.305882, 0, 1 )
+shader_param/number_of_circles = 8.0
+shader_param/emission_strength = 4.0

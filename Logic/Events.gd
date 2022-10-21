@@ -30,6 +30,15 @@ var fixed_events = {
 		1: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
 		2: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
 		3: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		4: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		5: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		6: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		7: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		8: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		9: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		10: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		11: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),  # etc..
+		
 	},
 }
 
@@ -135,11 +144,11 @@ func trigger_event_pickup(event, duration):
 	if event in pickup_stack:
 		# find the timer belonging to this event and reset its timer
 		timer_dict[event.event_name].time_left = duration
-		Ui.event_pickup_reset(event)
+		Ui.event_pickup_reset(event, duration)
 		return
 	pickup_stack.push_back(event)
 	event.event()
-	Ui.event_picked_up(event)
+	Ui.event_picked_up(event, duration)
 
 	var timer: SceneTreeTimer = get_tree().create_timer(duration)
 	timer_dict[event.event_name] = timer

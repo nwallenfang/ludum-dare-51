@@ -50,6 +50,8 @@ func init_fixed_events():
 	var amount = len(fixed_events)
 	var i = 0
 	for fixed_number in fixed_events:
+		if fixed_number > 6:
+			break
 		var fixed = fixed_events[fixed_number]
 		i += 1
 		var new_icon = $FixedIcons/FixedIcon.duplicate()
@@ -113,7 +115,7 @@ func init_pickup_events():  # called from _ready
 
 
 var tweens = {}
-func add_new_event_pickup(event):
+func add_new_event_pickup(event, duration):
 	# TODO play Particles as well (TriggerParticles
 	# find empty spot
 	var empty_index
@@ -134,7 +136,7 @@ func add_new_event_pickup(event):
 	var tween = get_tree().create_tween()
 	tweens[event] = tween
 	circle_node.material.set_shader_param("filling", 1.0)
-	tween.tween_property(circle_node.material, "shader_param/filling", 0.0, 10.0)
+	tween.tween_property(circle_node.material, "shader_param/filling", 0.0, duration)
 	tween.play()
 	
 func remove_old_event_pickup(event):
@@ -155,7 +157,7 @@ func remove_old_event_pickup(event):
 	icon_node.visible = false
 	index_to_event.erase(index)
 	
-func reset_event_pickup(event):
+func reset_event_pickup(event, duration):
 	tweens[event].stop()
 	var tween = get_tree().create_tween()
 	tweens[event] = tween
@@ -173,5 +175,5 @@ func reset_event_pickup(event):
 	icon_node.material.set_shader_param("icon", event.icon)
 	
 	circle_node.material.set_shader_param("filling", 1.0)
-	tween.tween_property(circle_node.material, "shader_param/filling", 0.0, 10.0)
+	tween.tween_property(circle_node.material, "shader_param/filling", 0.0, duration)
 	tween.play()
