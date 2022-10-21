@@ -150,7 +150,7 @@ func remove_old_event_pickup(event):
 			
 	var icon_node = get_node("Pickups/EventPickupIcon" + str(index))
 	if icon_node == null:
-		printerr("Event ", event.name, " with index ", str(index), " does not exist!")
+		printerr("Event ", event.event_name, " with index ", str(index), " does not exist!")
 		return
 	
 	var circle_node = icon_node.get_node("Circle")
