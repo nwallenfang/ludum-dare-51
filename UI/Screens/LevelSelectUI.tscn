@@ -46,7 +46,7 @@ align = 1
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 margin_top = 80.0
 margin_right = 1024.0
-margin_bottom = 273.0
+margin_bottom = 255.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 5
@@ -55,7 +55,7 @@ columns = 5
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 202.0
-margin_bottom = 193.0
+margin_bottom = 175.0
 level_screenshot = ExtResource( 5 )
 level_name = "Tutorial"
 
@@ -64,7 +64,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 206.0
 margin_right = 408.0
-margin_bottom = 193.0
+margin_bottom = 175.0
 level_screenshot = ExtResource( 3 )
 level_name = "Lab"
 level_index = 1
@@ -74,7 +74,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 412.0
 margin_right = 614.0
-margin_bottom = 193.0
+margin_bottom = 175.0
 level_screenshot = ExtResource( 7 )
 level_name = "Library"
 level_index = 2
@@ -84,7 +84,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 618.0
 margin_right = 819.0
-margin_bottom = 193.0
+margin_bottom = 175.0
 level_screenshot = ExtResource( 6 )
 level_name = "Pit"
 level_index = 3
@@ -94,40 +94,74 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 823.0
 margin_right = 1024.0
-margin_bottom = 193.0
+margin_bottom = 175.0
 level_screenshot = ExtResource( 8 )
 level_name = "Depths"
 level_index = 4
 
 [node name="Gap2" type="Control" parent="VBoxContainer"]
-margin_top = 277.0
+margin_top = 259.0
 margin_right = 1024.0
-margin_bottom = 309.0
+margin_bottom = 291.0
 rect_min_size = Vector2( 0, 32 )
 
 [node name="Jump3" type="Label" parent="VBoxContainer"]
-margin_top = 313.0
+margin_top = 295.0
 margin_right = 1024.0
-margin_bottom = 353.0
+margin_bottom = 335.0
 custom_fonts/font = ExtResource( 2 )
-text = "BONUS LEVELS"
+text = "BONUS LEVEL"
 align = 1
 
 [node name="GridContainer2" type="GridContainer" parent="VBoxContainer"]
-margin_top = 357.0
+margin_top = 339.0
 margin_right = 1024.0
-margin_bottom = 550.0
+margin_bottom = 514.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-columns = 3
+columns = 5
+
+[node name="Gap2" type="Control" parent="VBoxContainer/GridContainer2"]
+margin_right = 202.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+
+[node name="Gap5" type="Control" parent="VBoxContainer/GridContainer2"]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
 
 [node name="HoverButton1" parent="VBoxContainer/GridContainer2" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 342.0
-margin_bottom = 193.0
-level_name = "Test Chamber"
+margin_left = 412.0
+margin_right = 614.0
+margin_bottom = 175.0
+level_name = "Tower"
 level_index = 6
+
+[node name="Gap3" type="Control" parent="VBoxContainer/GridContainer2"]
+margin_left = 618.0
+margin_right = 819.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+
+[node name="Gap4" type="Control" parent="VBoxContainer/GridContainer2"]
+margin_left = 823.0
+margin_right = 1024.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+
+[node name="Gap6" type="Control" parent="VBoxContainer"]
+margin_top = 518.0
+margin_right = 1024.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 0, 32 )
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 554.0

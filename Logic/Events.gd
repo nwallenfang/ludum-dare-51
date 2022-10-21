@@ -14,14 +14,9 @@ var fixed_events = {
 #		2: 	preload("res://Logic/Events/FixedEventTest.tscn").instance(),
 #		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
 	},
-	1: {  # move this to the end!!!
-		1: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
-		2: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
-		3: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+	1: {
+
 	},
-#	1: {
-#
-#	},
 	2: {
 		4: 	preload("res://Logic/Events/LaserGridFixedEvent.tscn").instance()
 	},
@@ -30,7 +25,12 @@ var fixed_events = {
 	},
 	4: {
 		3: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),
-	}
+	},
+	5: {
+		1: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		2: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		3: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+	},
 }
 
 var event_index = {

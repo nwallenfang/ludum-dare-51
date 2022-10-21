@@ -224,5 +224,5 @@ func load_next_level():
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump_to_next_level"):
-		load_next_level()
+		load_level(5)
 
