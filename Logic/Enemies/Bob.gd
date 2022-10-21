@@ -97,6 +97,17 @@ func accelerate(delta: float) -> void:
 
 var hp := max_health
 func damage(amount: int, damage_position: Vector3, _laser:bool):
+	if state == STATES.IDLE:
+		var trigger_group = ""
+		for g in get_groups():
+			if g.begins_with("trigger"):
+				trigger_group = g
+				break
+		if trigger_group != "":
+			get_tree().call_group(trigger_group, "trigger")
+		else:
+			trigger()
+	
 	hp -= amount
 
 	knockback = self.global_translation.direction_to(damage_position + Vector3.UP) * 24

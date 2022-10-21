@@ -4,11 +4,25 @@ export var shooting_distance := 30.0
 export var projectile_curve_height := .2
 export var max_health := 50
 
+export var special_attacks := false
+export var shoot_cooldown := 4.0
+
 enum STATES {IDLE, AGGRO, SHOOTING, SHOOT_COOLDOWN, DEATH}
 var state = STATES.IDLE
 
 var hp := max_health
 func damage(amount: int, _damage_position: Vector3, _laser:bool):
+	if state == STATES.IDLE:
+		var trigger_group = ""
+		for g in get_groups():
+			if g.begins_with("trigger"):
+				trigger_group = g
+				break
+		if trigger_group != "":
+			get_tree().call_group(trigger_group, "trigger")
+		else:
+			trigger()
+	
 	hp -= amount
 	hurt_visuals()
 	if hp <= 0:
@@ -31,7 +45,7 @@ func _physics_process(delta):
 				state = STATES.SHOOTING
 		STATES.SHOOTING:
 			make_shot()
-			$ShootCooldown.start()
+			$ShootCooldown.start(shoot_cooldown + (randf() * 2.0 - 1.0))
 			state = STATES.SHOOT_COOLDOWN
 		STATES.SHOOT_COOLDOWN:
 			if $ShootCooldown.time_left <= 0.05:
@@ -39,10 +53,31 @@ func _physics_process(delta):
 
 const PROJECTILE = preload("res://Logic/Enemies/Projectile.tscn")
 func make_shot():
-	var projectile = PROJECTILE.instance()
-	get_tree().current_scene.add_child(projectile)
-	projectile.global_translation = $"%ShotPoint".global_translation
-	projectile.fly($"%ShotPoint".global_translation, Game.player.global_translation, dist_to_player * projectile_curve_height, 8.0)
+	var shot_type = randi() % 3
+	if not special_attacks: shot_type = 0
+	
+	match shot_type:
+		0:
+			var projectile = PROJECTILE.instance()
+			get_tree().current_scene.add_child(projectile)
+			projectile.global_translation = $"%ShotPoint".global_translation
+			projectile.fly($"%ShotPoint".global_translation, Game.player.global_translation, dist_to_player * projectile_curve_height, 9.5)
+		1:
+			for i in range(2):
+				var projectile = PROJECTILE.instance()
+				get_tree().current_scene.add_child(projectile)
+				projectile.global_translation = $"%ShotPoint".global_translation
+				projectile.scale = Vector3.ONE * 1.8
+				projectile.fly($"%ShotPoint".global_translation, Game.player.global_translation, dist_to_player * projectile_curve_height, 10.0)
+				yield(get_tree().create_timer(1.5),"timeout")
+		2:
+			for i in range(4):
+				var projectile = PROJECTILE.instance()
+				get_tree().current_scene.add_child(projectile)
+				projectile.global_translation = $"%ShotPoint".global_translation
+				projectile.scale = Vector3.ONE * .7
+				projectile.fly($"%ShotPoint".global_translation, Game.player.global_translation, dist_to_player * projectile_curve_height, 13.0)
+				yield(get_tree().create_timer(.6),"timeout")
 
 const DEATH_EFFECT = preload("res://Effects/DeathEffect.tscn")
 func death_animation():
