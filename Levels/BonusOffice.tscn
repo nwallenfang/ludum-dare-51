@@ -162,6 +162,9 @@ transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -30, 0, 0 )
 [node name="Floor56" parent="Floors" instance=ExtResource( 21 )]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -50, 0, 10 )
 
+[node name="Floor84" parent="Floors" instance=ExtResource( 21 )]
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -57.0431, 11.1199, 10 )
+
 [node name="Floor57" parent="Floors" instance=ExtResource( 21 )]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -40, 0, 10 )
 
@@ -271,7 +274,7 @@ transform = Transform( -5, 0, -4.37114e-07, 0, 0.2, 0, 4.37114e-07, 0, -5, -9.95
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 0, -30 )
 
 [node name="Floor77" parent="Floors" instance=ExtResource( 21 )]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, -30 )
+transform = Transform( 5.0396, 0, 0, 0, 0.2, 0, 0, 0, 5, 0.0587382, -0.0222273, -30 )
 
 [node name="Walls" type="Spatial" parent="."]
 
@@ -331,12 +334,6 @@ transform = Transform( 6.55671e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, 2
 
 [node name="StaticBody24" parent="Walls" instance=ExtResource( 22 )]
 transform = Transform( 6.55671e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, 2.62268e-08, -2.86603e-14, 25.0469, 2, 19.8765 )
-
-[node name="StaticBody95" parent="Walls" instance=ExtResource( 22 )]
-transform = Transform( 6.55671e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, 2.62268e-08, -2.86603e-14, 4.04693, 10.4146, 19.8765 )
-
-[node name="StaticBody37" parent="Walls" instance=ExtResource( 22 )]
-transform = Transform( 6.55671e-07, -0.2, 2.18557e-07, 0, -8.74228e-09, -5, 5, 2.62268e-08, -2.86603e-14, 4.04693, 0.48914, 29.0386 )
 
 [node name="StaticBody25" parent="Walls" instance=ExtResource( 22 )]
 transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5, -8.74228e-09, 9.55343e-15, -25, 2, -50 )
@@ -933,10 +930,10 @@ transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 
 transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, -10, 2, -25 )
 
 [node name="StaticBody225" parent="Walls" instance=ExtResource( 22 )]
-transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0, 2, -35 )
+transform = Transform( 5.0396, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0.0587382, 2, -35 )
 
 [node name="StaticBody226" parent="Walls" instance=ExtResource( 22 )]
-transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0, 2, -25 )
+transform = Transform( 5.0396, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0.0587382, 2, -25 )
 
 [node name="Text" type="Spatial" parent="."]
 
@@ -986,7 +983,7 @@ transform = Transform( -4.37112e-08, 0, -1, 0, 1, 0, 1, 0, -4.37112e-08, -19.963
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -74.9897, 6.81606, -30.0447 )
 
 [node name="Lamp23" parent="Lights" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -44.9897, 16.8161, -30.0447 )
+transform = Transform( 0.738666, -0.407594, 0.53688, -0.273719, -0.909222, -0.313676, 0.615996, 0.0847478, -0.783177, -42.2585, 0.906334, -29.7558 )
 
 [node name="Lamp24" parent="Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -34.9897, 16.8161, -30.0447 )
@@ -1010,7 +1007,7 @@ transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -44.9897,
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -34.9897, 16.8161, -0.0447006 )
 
 [node name="Lamp39" parent="Lights" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -44.9897, 16.8161, 9.9553 )
+transform = Transform( -2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -53.2824, 11.0171, 9.9553 )
 
 [node name="Lamp40" parent="Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -34.9897, 16.8161, 9.9553 )
@@ -1025,7 +1022,7 @@ transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -34.9897,
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -44.9897, 16.8161, -50.0447 )
 
 [node name="Lamp32" parent="Lights" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -34.9897, 16.8161, -50.0447 )
+transform = Transform( 0.335747, 0.941952, -5.87041e-08, -0.941952, 0.335747, 1.64697e-07, 1.74846e-07, 0, 1, -32.6461, 2.70695, -50.0447 )
 
 [node name="Lamp33" parent="Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -44.9897, 16.8161, -40.0447 )
@@ -1040,7 +1037,7 @@ transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -44.9897,
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -34.9897, 16.8161, -70.0447 )
 
 [node name="Lamp37" parent="Lights" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -44.9897, 16.8161, -60.0447 )
+transform = Transform( 0.574366, -0.603468, -0.553109, 0.557397, 0.783155, -0.275639, 0.599509, -0.149984, 0.786189, -44.4693, 1.85688, -59.1274 )
 
 [node name="Lamp38" parent="Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -34.9897, 16.8161, -60.0447 )
@@ -1092,6 +1089,43 @@ transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -134.99, 
 
 [node name="Lamp20" parent="Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -124.99, 26.8161, -5.0447 )
+
+[node name="SpotLight" type="SpotLight" parent="Lights"]
+transform = Transform( 0.852731, -0.268881, 0.44783, 0.52235, 0.438947, -0.731079, 0, 0.857338, 0.514754, -142.497, -7.24334, -19.9288 )
+light_color = Color( 0.85098, 0.129412, 0.129412, 1 )
+light_energy = 1.542
+spot_range = 32.5415
+spot_angle = 36.28
+
+[node name="SpotLight4" type="SpotLight" parent="Lights"]
+transform = Transform( 0.852731, -0.268881, 0.44783, 0.52235, 0.438947, -0.731079, 0, 0.857338, 0.514754, -157.445, -0.536439, -0.63158 )
+light_color = Color( 0.85098, 0.129412, 0.129412, 1 )
+light_energy = 1.542
+shadow_enabled = true
+spot_range = 32.5415
+spot_angle = 36.28
+
+[node name="SpotLight5" type="SpotLight" parent="Lights"]
+transform = Transform( 0.852731, -0.268881, 0.44783, 0.1563, -0.686714, -0.709926, 0.498417, 0.675372, -0.543556, -157.445, -0.536439, 3.55138 )
+light_color = Color( 0.85098, 0.129412, 0.129412, 1 )
+light_energy = 1.542
+shadow_enabled = true
+spot_range = 32.5415
+spot_angle = 36.28
+
+[node name="SpotLight2" type="SpotLight" parent="Lights"]
+transform = Transform( 0.910366, 0.213007, -0.35477, -0.413804, 0.468614, -0.780492, 0, 0.857338, 0.514754, -133.523, -10.2799, -19.9269 )
+light_color = Color( 0.85098, 0.129412, 0.129412, 1 )
+light_energy = 1.542
+spot_range = 32.5415
+spot_angle = 36.28
+
+[node name="SpotLight3" type="SpotLight" parent="Lights"]
+transform = Transform( -0.455183, -0.84898, -0.268405, -0.413804, 0.468614, -0.780492, 0.7884, -0.2442, -0.564616, -137.649, -10.2799, 2.42317 )
+light_color = Color( 0.85098, 0.129412, 0.129412, 1 )
+light_energy = 1.542
+spot_range = 32.5415
+spot_angle = 36.28
 
 [node name="Enemies" type="Spatial" parent="."]
 
@@ -1383,7 +1417,7 @@ transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -169.
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -10, 7, -30 )
 
 [node name="StaticBody101" parent="Ceilings" instance=ExtResource( 23 )]
-transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 7, -30 )
+transform = Transform( 5.0396, 0, 0, 0, 0.2, 0, 0, 0, 5, 0.0587382, 7.04375, -30 )
 
 [node name="Objects" type="Spatial" parent="."]
 
@@ -1850,6 +1884,21 @@ transform = Transform( 3, 0, 7.15255e-07, 0, 3, 0, -7.15255e-07, 0, 3, -49.069, 
 [node name="GasBottle_v23" parent="Deco" instance=ExtResource( 7 )]
 transform = Transform( 3, 0, 7.15255e-07, 0, 3, 0, -7.15255e-07, 0, 3, -49.2762, 0.226822, -83.1268 )
 
+[node name="GasBottle_v30" parent="Deco" instance=ExtResource( 7 )]
+transform = Transform( 3, 0, 7.15255e-07, 0, 3, 0, -7.15255e-07, 0, 3, -43.1069, 0.226822, -57.3406 )
+
+[node name="GasBottle_v31" parent="Deco" instance=ExtResource( 7 )]
+transform = Transform( 3, 0, 7.15255e-07, 0, 3, 0, -7.15255e-07, 0, 3, -43.2447, 0.226822, -58.3484 )
+
+[node name="GasBottle_v32" parent="Deco" instance=ExtResource( 7 )]
+transform = Transform( 3, 0, 7.15255e-07, 0, 3, 0, -7.15255e-07, 0, 3, -44.1348, 0.226822, -57.6357 )
+
+[node name="GasBottle_v33" parent="Deco" instance=ExtResource( 7 )]
+transform = Transform( 3, 0, 7.15255e-07, 0, 3, 0, -7.15255e-07, 0, 3, -41.8396, 0.226822, -55.2481 )
+
+[node name="GasBottle_v34" parent="Deco" instance=ExtResource( 7 )]
+transform = Transform( 3, 0, 7.15255e-07, 0, 3, 0, -7.15255e-07, 0, 3, -42.0796, 0.226822, -56.3778 )
+
 [node name="GasBottle_v24" parent="Deco" instance=ExtResource( 7 )]
 transform = Transform( 3, 0, 7.15255e-07, 0, 3, 0, -7.15255e-07, 0, 3, -48.021, 0.226822, -83.8483 )
 
@@ -2176,9 +2225,10 @@ transform = Transform( -8.75806e-08, 0, 2.00361, 0, 2.00361, 0, -2.00361, 0, -8.
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -169.241, 8.50964, 78.7716 )
 
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172855, 2.32405, -0.169918 )
 extents = Vector3( 195.066, 51.5651, 96.0342 )
-quality = 2
-bounces = 5
+quality = 3
+bounces = 6
 use_hdr = false
 atlas_generate = false
 capture_enabled = false

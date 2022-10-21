@@ -111,21 +111,21 @@ visible = false
 transform = Transform( 0.999995, -0.00148964, 0.00271494, 0.000666469, 0.959684, 0.281079, -0.00302421, -0.281076, 0.959681, 0, 0, 0 )
 light_color = Color( 0.901961, 1, 0.0313726, 1 )
 light_energy = 10.0
-spot_range = 17.0
+spot_range = 25.0
 spot_angle = 12.7378
 
 [node name="SpotLight2" type="SpotLight" parent="CamHolder/Pivot/PivotUpDown/Cam/Lights"]
 transform = Transform( 0.972667, 1.69863e-09, 0.232206, 0.0209809, 0.99591, -0.0878848, -0.231256, 0.0903545, 0.968688, 0, 0, 0 )
 light_color = Color( 0.909804, 0.12549, 1, 1 )
 light_energy = 10.0
-spot_range = 17.0
+spot_range = 25.0
 spot_angle = 12.7378
 
 [node name="SpotLight3" type="SpotLight" parent="CamHolder/Pivot/PivotUpDown/Cam/Lights"]
 transform = Transform( 0.969401, -0.000622094, -0.245482, -0.0215624, 0.995916, -0.0876729, 0.244534, 0.0902833, 0.965428, 0, 0, 0 )
 light_color = Color( 0.0196078, 1, 0.952941, 1 )
 light_energy = 10.0
-spot_range = 17.0
+spot_range = 25.0
 spot_angle = 12.7378
 
 [node name="UpDownAngle" type="Spatial" parent="CamHolder/Pivot"]
