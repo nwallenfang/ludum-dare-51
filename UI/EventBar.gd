@@ -112,9 +112,7 @@ func init_pickup_events():  # called from _ready
 			icon_positions.append(event_icon.rect_global_position)
 
 
-func new_event_has_place():
-	return true  # not used yet
-
+var tweens = {}
 func add_new_event_pickup(event):
 	# TODO play Particles as well (TriggerParticles
 	# find empty spot
@@ -134,6 +132,7 @@ func add_new_event_pickup(event):
 	icon_node.material.set_shader_param("icon", event.icon)
 	
 	var tween = get_tree().create_tween()
+	tweens[event] = tween
 	circle_node.material.set_shader_param("filling", 1.0)
 	tween.tween_property(circle_node.material, "shader_param/filling", 0.0, 10.0)
 	tween.play()
@@ -156,3 +155,23 @@ func remove_old_event_pickup(event):
 	icon_node.visible = false
 	index_to_event.erase(index)
 	
+func reset_event_pickup(event):
+	tweens[event].stop()
+	var tween = get_tree().create_tween()
+	tweens[event] = tween
+	
+	
+	var index
+	for test in index_to_event:
+		if index_to_event[test] == event:
+			index = test
+			break
+	
+	var icon_node = get_node("Pickups/EventPickupIcon" + str(index))
+	var circle_node = icon_node.get_node("Circle")
+	icon_node.visible = true
+	icon_node.material.set_shader_param("icon", event.icon)
+	
+	circle_node.material.set_shader_param("filling", 1.0)
+	tween.tween_property(circle_node.material, "shader_param/filling", 0.0, 10.0)
+	tween.play()

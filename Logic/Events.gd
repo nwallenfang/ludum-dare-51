@@ -50,19 +50,19 @@ var event_index = {
 }
 
 var random_events_start = [
-#	event_index.get("autofire"),
-#	event_index.get("gravity"),
-#	event_index.get("disco"),
-#	event_index.get("shrink"),
-#	event_index.get("jump"),
-#	event_index.get("control"),
-#	event_index.get("invincible"),
-#	event_index.get("banana"),
+	event_index.get("autofire"),
+	event_index.get("gravity"),
+	event_index.get("disco"),
+	event_index.get("shrink"),
+	event_index.get("jump"),
+	event_index.get("control"),
+	event_index.get("invincible"),
+	event_index.get("banana"),
 	event_index.get("explosion"),
-#	event_index.get("akimbo"),
-#	event_index.get("fog"),
-#	event_index.get("nothing"),
-#	event_index.get("fov"),
+	event_index.get("akimbo"),
+	event_index.get("fog"),
+	event_index.get("nothing"),
+	event_index.get("fov"),
 ]
 var random_event_names_start = []
 var random_event_names
@@ -123,14 +123,30 @@ var second_gun := false
 var banana := false
 var dancing := false
 
+# event_name -> SceneTreeTimer
+var timer_dict = {
+	
+}
 func trigger_event_pickup(event, duration):
+	# check if this event is already active as a pickup
+	# in that case "just" reset the timer (don't know how yet)
+	if event in pickup_stack:
+		# find the timer belonging to this event and reset its timer
+		timer_dict[event.event_name].time_left = duration
+		Ui.event_pickup_reset(event)
+		return
 	pickup_stack.push_back(event)
 	event.event()
 	Ui.event_picked_up(event)
-	yield(get_tree().create_timer(duration), "timeout")
+
+	var timer: SceneTreeTimer = get_tree().create_timer(duration)
+	timer_dict[event.event_name] = timer
+	yield(timer, "timeout")
 	Ui.end_event_pickup(event)
-	if current_event.event_name == event.event_name:
+	pickup_stack.pop_front()
+	# if by chance the current (random) event equals the picked up event
+	if current_event != null and current_event.event_name == event.event_name:
 		return
 	event.end_event()
-	pickup_stack.pop_front()
+
 

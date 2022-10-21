@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Objects/Level2Ceiling.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Level2Wall.tscn" type="PackedScene" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Effects/Lightmaps/SecondFloor/SecondFloor.lmbake" type="BakedLightmapData" id=15]
 [ext_resource path="res://Objects/SimpleScreen.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Objects/EventPickup.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Objects/SurveilanceCam.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=1]
@@ -1777,16 +1776,6 @@ omni_attenuation = 1.93187
 
 [node name="LevelSelectButton" parent="." instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 9.59274, 3.23753, -2.71309 )
-
-[node name="TESTRemoveThis" type="Spatial" parent="."]
-
-[node name="EventPickup" parent="TESTRemoveThis" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43307, -3.76362 )
-event_name = "explosion"
-
-[node name="EventPickup2" parent="TESTRemoveThis" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36535, -8.04718 )
-event_name = "invincible"
 
 [node name="Cams" type="Spatial" parent="."]
 

@@ -18,4 +18,10 @@ autostart = true
 stream = ExtResource( 2 )
 volume_db = -21.849
 
+[node name="Timer1" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Timer3" type="Timer" parent="."]
+
 [connection signal="timeout" from="UpdateUITimer" to="." method="_on_UpdateUITimer_timeout"]

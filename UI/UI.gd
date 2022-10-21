@@ -82,7 +82,9 @@ func event_picked_up(event):
 	# TODO find empty spot fill in dictionary
 #	$CanvasLayer/EventBar/Pickups/EventPickupIcon1.material.set_shader_param("icon", event.icon)
 	$CanvasLayer/EventBar.add_new_event_pickup(event)
-	
+
+func event_pickup_reset(event):
+	$CanvasLayer/EventBar.reset_event_pickup(event)
 	
 func end_event_pickup(event):
 	$CanvasLayer/EventBar.remove_old_event_pickup(event)

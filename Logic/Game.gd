@@ -56,7 +56,6 @@ func set_2d_viewport(viewport_t):
 	emit_signal("viewport_texture_changed", viewport)
 
 func event_triggered(event):
-	
 	# Stop the previous non-fixed event and start the next one.
 	# If we are working on a fixed event (no end method) don't stop anything
 	if event.has_method("end_event") and previous_event != null:
@@ -65,7 +64,7 @@ func event_triggered(event):
 			if pickup_event.event_name == event.event_name:
 				event_still_exists = true
 		
-		if event_still_exists: 
+		if not event_still_exists: 
 			previous_event.end_event()
 
 		
