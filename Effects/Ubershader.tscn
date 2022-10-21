@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Objects/Potion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Effects/Ubershader.gd" type="Script" id=2]
@@ -70,6 +70,23 @@ shader = SubResource( 2 )
 shader_param/albedo = Color( 1, 0.219608, 0.219608, 1 )
 shader_param/progress = 0.0
 
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0.573864 ), 0.0, 0.0, 0, 0, Vector2( 0.241117, 0.964773 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+resource_local_to_scene = true
+direction = Vector3( 0, 0.7, -1 )
+spread = 25.0
+initial_velocity = 5.0
+initial_velocity_random = 0.3
+scale = 6.0
+scale_random = 0.79
+scale_curve = SubResource( 8 )
+color = Color( 0.670588, 0.611765, 0.156863, 1 )
+
 [node name="Ubershader" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -133,6 +150,9 @@ transform = Transform( 1.28345, -1.95416e-08, -1.16078, -1.16078, -5.07395e-08, 
 
 [node name="HitParticles" parent="." instance=ExtResource( 12 )]
 script = null
+
+[node name="Particles" parent="HitParticles" index="0"]
+process_material = SubResource( 9 )
 
 [editable path="DeathEffect"]
 [editable path="Explosion"]

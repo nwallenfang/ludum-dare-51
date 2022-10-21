@@ -51,11 +51,12 @@ func _physics_process(delta) -> void:
 		return 
 		
 	
-	
 	input_axis = Input.get_vector("move_backwards", "move_forward",
 			"move_left", "move_right")
 	if infinite_run:
 		input_axis[0] = 1
+		
+	
 	
 	direction_input()
 	

@@ -42,7 +42,7 @@ mixer_bus = "Pain"
 mixer_bus = "Pain"
 
 [node name="boom" parent="Sounds" instance=ExtResource( 2 )]
-volume_db = -6.0
+volume_db = -7.5
 mixer_bus = "SFX"
 
 [node name="key_pickup" parent="Sounds" instance=ExtResource( 2 )]

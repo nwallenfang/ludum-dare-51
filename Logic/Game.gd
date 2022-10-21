@@ -13,13 +13,12 @@ var player: Spatial setget set_player
 var level_index := 0 # current level number
 var level_list := [
 	preload("res://Levels/Tutorial.tscn"), 
-	preload("res://Levels/Prototyping/TestChamber.tscn"),
+	preload("res://Levels/Prototyping/BonusLevel.tscn"),
 	preload("res://Levels/FloorOffice.tscn"),
 	preload("res://Levels/FirstFloor.tscn"),
 	preload("res://Levels/ThirdFloor.tscn"),
 	preload("res://Levels/SecondFloor.tscn"),
 	preload("res://Levels/Credits.tscn"),
-	preload("res://Levels/Prototyping/TestChamber.tscn"), 
 ] # all levels
 var number_of_levels = len(level_list)
 var level # current level scene
@@ -37,6 +36,7 @@ var viewport_material: SpatialMaterial
 var text_screen_ui
 
 var settings_open = false
+var invert_y_axis = false
 
 export var min_sensitivity := 0.001
 export var max_sensitivity := 0.015

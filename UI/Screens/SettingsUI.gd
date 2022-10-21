@@ -3,7 +3,12 @@ extends Control
 
 
 func _ready() -> void:
-	$Panel/VBoxContainer/HBoxContainer3.visible = OS.is_debug_build() 
+	$Panel/VBoxContainer/BenchmarkContainer.visible = OS.is_debug_build() 
+	$Panel/VBoxContainer/MusicVolumeH/MusicSlider.value = db2linear(AudioServer.get_bus_volume_db(1))
+	$Panel/VBoxContainer/MusicVolumeH/MusicSlider.value = db2linear(AudioServer.get_bus_volume_db(2))
+	
+	if OS.is_debug_build():
+		$Panel/VBoxContainer/BenchmarkContainer.visible = true
 
 
 func determine_git_hash() -> String:
@@ -57,3 +62,15 @@ func hide_settings():
 
 func _on_DoneButton_pressed():
 	hide_settings()
+
+
+func _on_MusicSlider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(1, linear2db(value))
+
+
+func _on_SFXSlider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(2, linear2db(value))
+
+
+func _on_InvertYButton_pressed() -> void:
+	Game.invert_y_axis = $"%InvertYButton".pressed

@@ -35,18 +35,19 @@ func _input(event: InputEvent) -> void:
 
 
 func camera_rotation() -> void:
+	var y_axis_factor = 2.0 * float(not Game.invert_y_axis) - 1.0  # felt like writing it convoluted but it's just 1.0 or -1.0 depending
 	if Game.player.movement_disabled:
 		return
 	if Game.player.inverted_controls:
 		# Horizontal mouse look.
 		rot.y += mouse_axis.x * mouse_sensitivity
 		# Vertical mouse look.
-		rot.x = clamp(rot.x + mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
+		rot.x = clamp(rot.x + mouse_axis.y * y_axis_factor * mouse_sensitivity, -y_limit, y_limit)
 	else:
 		# Horizontal mouse look.
 		rot.y -= mouse_axis.x * mouse_sensitivity
 		# Vertical mouse look.
-		rot.x = clamp(rot.x - mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
+		rot.x = clamp(rot.x - mouse_axis.y * y_axis_factor * mouse_sensitivity, -y_limit, y_limit)
 	
 	get_owner().rotation.y = rot.y
 	rotation.x = rot.x  
