@@ -12,7 +12,7 @@ vec3 hsv2rgb(vec3 c) {
 
 void fragment() {
 	vec4 mix_color = vec4(hsv2rgb(vec3(0.4 * TIME, 1.0, 1.0)), 1.0);
-	COLOR = mix(texture(TEXTURE, UV), mix_color, 0.3);
+	COLOR = mix(texture(TEXTURE, UV), mix_color, 0.2);
 }"
 
 [resource]

@@ -33,6 +33,7 @@ func crash():
 	var splash = SPLASH.instance()
 	get_tree().current_scene.add_child(splash)
 	splash.global_translation = self.global_translation
+	splash.scale = self.scale
 	queue_free()
 
 
