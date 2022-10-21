@@ -113,7 +113,7 @@ func _process(delta: float) -> void:
 	time += delta
 	if time > (number_triggered + 1) * 10.0:
 		number_triggered += 1
-		# trigger event
+		# trigger fixed event
 		if Game.level_index in fixed_events:
 			var fixed_events_for_this_lv = fixed_events[Game.level_index]
 			if number_triggered in fixed_events_for_this_lv:
@@ -161,7 +161,9 @@ func trigger_event_pickup(event, duration):
 	timer_dict[event.event_name] = timer
 	yield(timer, "timeout")
 	Ui.end_event_pickup(event)
-	pickup_stack.pop_front()
+	pickup_stack.erase(event)
+	
+	
 	# if by chance the current (random) event equals the picked up event
 	if current_event != null and current_event.event_name == event.event_name:
 		return

@@ -982,6 +982,12 @@ transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0,
 [node name="SurveilanceCam9" parent="Deco/Cameras" instance=ExtResource( 33 )]
 transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0, -3.12563, -75.9, 6.29999, 27.9 )
 
+[node name="SurveilanceCam12" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -3.12563, 0, 4.71957e-07, 0, 3.12563, 0, -4.71957e-07, 0, -3.12563, -75.9, 6.29999, 15 )
+
+[node name="SurveilanceCam14" parent="Deco/Cameras" instance=ExtResource( 33 )]
+transform = Transform( -0.579402, -0.920017, 2.93043, 2.76969, 1.13253, 0.903183, -1.32765, 2.76415, 0.605309, -71.1014, 8.70004, 4.23524 )
+
 [node name="SurveilanceCam10" parent="Deco/Cameras" instance=ExtResource( 33 )]
 transform = Transform( -5.0923e-07, 0, -3.12563, 0, 3.12563, 0, 3.12563, 0, -5.0923e-07, -21.7, 6.29999, 34.9 )
 
