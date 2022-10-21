@@ -28,6 +28,7 @@ albedo_texture = ExtResource( 2 )
 normal_enabled = true
 normal_scale = 2.19
 normal_texture = ExtResource( 3 )
+uv1_scale = Vector3( 4, 4, 4 )
 
 [node name="StaticBody" type="StaticBody"]
 transform = Transform( 5, 0, 0, 0, -8.74228e-09, -5, 0, 0.2, -2.18557e-07, 0, 2, 5 )

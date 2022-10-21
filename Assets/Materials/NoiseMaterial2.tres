@@ -32,7 +32,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="OpenSimplexNoise" id=9]
+[sub_resource type="OpenSimplexNoise" id=11]
 period = 0.1
 persistence = 0.0
 lacunarity = 4.0
@@ -41,7 +41,7 @@ lacunarity = 4.0
 flags = 3
 width = 64
 height = 64
-noise = SubResource( 9 )
+noise = SubResource( 11 )
 
 [resource]
 resource_local_to_scene = true

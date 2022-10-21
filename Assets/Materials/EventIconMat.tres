@@ -18,7 +18,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="OpenSimplexNoise" id=15]
+[sub_resource type="OpenSimplexNoise" id=17]
 period = 0.1
 persistence = 0.0
 lacunarity = 4.0
@@ -27,7 +27,7 @@ lacunarity = 4.0
 flags = 2
 width = 64
 height = 64
-noise = SubResource( 15 )
+noise = SubResource( 17 )
 noise_offset = Vector2( 1.02577, 0 )
 
 [resource]
