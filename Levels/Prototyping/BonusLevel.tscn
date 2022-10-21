@@ -161,7 +161,6 @@ transform = Transform( -5.3011e-07, 0, -12.1275, 0, 0.405, 0, 2.772, 0, -1.21168
 shape = SubResource( 3 )
 
 [node name="UVCube" parent="Geometry/Platform5" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 material/0 = ExtResource( 3 )
 
 [node name="Platform15" type="Spatial" parent="Geometry"]
@@ -173,7 +172,6 @@ transform = Transform( -5.40584e-07, 0, -12.1275, 0, 0.405, 0, 3.31808, 0, -1.97
 shape = SubResource( 3 )
 
 [node name="UVCube" parent="Geometry/Platform15" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 material/0 = ExtResource( 3 )
 
 [node name="TiltingRamp1" parent="Geometry" instance=ExtResource( 9 )]
@@ -213,18 +211,28 @@ duration = 8.0
 
 [node name="Alice2" parent="Geometry/GigaAufzug" groups=["trigger1"] instance=ExtResource( 2 )]
 transform = Transform( 0.286, 0, 0, 0, 0.286, 0, 0, 0, 0.286, -1.16667, 0.342857, -1.16667 )
+special_attacks = true
+shoot_cooldown = 3.0
 
 [node name="Alice5" parent="Geometry/GigaAufzug" groups=["trigger1"] instance=ExtResource( 2 )]
 transform = Transform( 0.286, 0, 0, 0, 0.286, 0, 0, 0, 0.286, -1.25, 0.342857, 1.25 )
+special_attacks = true
+shoot_cooldown = 3.0
 
 [node name="Alice6" parent="Geometry/GigaAufzug" groups=["trigger1"] instance=ExtResource( 2 )]
 transform = Transform( 0.286, 0, 0, 0, 0.286, 0, 0, 0, 0.286, 1.25, 0.342857, 1.22222 )
+special_attacks = true
+shoot_cooldown = 3.0
 
 [node name="Alice3" parent="Geometry/GigaAufzug" groups=["trigger1"] instance=ExtResource( 2 )]
 transform = Transform( 0.286, 0, 0, 0, 0.286, 0, 0, 0, 0.286, 1.25, 0.371429, -1.25 )
+special_attacks = true
+shoot_cooldown = 3.0
 
 [node name="Alice4" parent="Geometry/GigaAufzug" groups=["trigger1"] instance=ExtResource( 2 )]
 transform = Transform( 0.286, 0, 0, 0, 0.286, 0, 0, 0, 0.286, -1.13889, 0.4, 0 )
+special_attacks = true
+shoot_cooldown = 3.0
 
 [node name="LabFloor" parent="Geometry" instance=ExtResource( 14 )]
 transform = Transform( 3.49339, 0, 0, 0, 0.109653, 0, 0, 0, 3.49339, -37.459, 24.3778, -20.9822 )
