@@ -12,7 +12,6 @@
 [ext_resource path="res://Assets/Materials/AliceEyes.tres" type="Material" id=10]
 [ext_resource path="res://Assets/Textures/rubber.jpg" type="Texture" id=11]
 [ext_resource path="res://Assets/Materials/BobBase.tres" type="Material" id=12]
-[ext_resource path="res://Assets/Materials/LiftMaterial.tres" type="Material" id=13]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.629402
@@ -90,6 +89,9 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 24
 }
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_color = Color( 0.690196, 0.65098, 0.309804, 1 )
 
 [sub_resource type="ArrayMesh" id=10]
 resource_name = "EnemyStationary_Cylinder003"
@@ -223,9 +225,8 @@ mesh = SubResource( 8 )
 material/0 = SubResource( 14 )
 
 [node name="EnenmyStationaryEyeBrows" type="MeshInstance" parent="Model/EnenmyStationaryBottom"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 9 )
-material/0 = ExtResource( 13 )
+material/0 = SubResource( 18 )
 
 [node name="EnenmyStationaryEyes" type="MeshInstance" parent="Model/EnenmyStationaryBottom"]
 visible = false
@@ -235,7 +236,7 @@ material/0 = ExtResource( 9 )
 [node name="EnenmyStationaryEyeBrows2" type="MeshInstance" parent="Model/EnenmyStationaryBottom"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013881, 0, 0 )
 mesh = SubResource( 9 )
-material/0 = ExtResource( 13 )
+material/0 = SubResource( 18 )
 
 [node name="EnenmyStationaryEyes2" type="MeshInstance" parent="Model/EnenmyStationaryBottom"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013881, 0, 0 )

@@ -9,3 +9,8 @@ func _physics_process(delta):
 		if $Area.get_overlapping_areas().size() > 0:
 			$AnimationPlayer.play("open")
 			open = true
+
+
+func open():
+	$AnimationPlayer.play("open")
+	open = true	

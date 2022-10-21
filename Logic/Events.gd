@@ -38,7 +38,13 @@ var fixed_events = {
 		9: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
 		10: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
 		11: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),  # etc..
-		
+		12: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		13: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		14: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		15: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		16: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		17: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
+		18: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
 	},
 }
 
@@ -56,6 +62,7 @@ var event_index = {
 	"fog": preload("res://Logic/Events/FogEvent.tscn").instance(),
 	"nothing": preload("res://Logic/Events/EmptyEvent.tscn").instance(),
 	"fov": preload("res://Logic/Events/FovEvent.tscn").instance(),
+	"heal": preload("res://Logic/Events/HealEvent.tscn").instance(),
 }
 
 var random_events_start = [

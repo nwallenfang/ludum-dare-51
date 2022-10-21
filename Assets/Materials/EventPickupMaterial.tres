@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Sprites/double_jump.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/disco.png" type="Texture" id=1]
 
 [sub_resource type="Shader" id=14]
 code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
@@ -15,7 +15,7 @@ uniform sampler2D texture_albedo : hint_albedo;
 
 void fragment() {
 	vec4 albedo_tex = texture(texture_albedo, UV);
-	ALBEDO = mix(albedo2.rgb, albedo.rgb, albedo_tex.r);
+	ALBEDO = mix(albedo2.rgb, albedo.rgb, albedo_tex.a);
 
 	
 	

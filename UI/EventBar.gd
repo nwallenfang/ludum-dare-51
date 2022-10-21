@@ -138,6 +138,7 @@ func add_new_event_pickup(event, duration):
 	circle_node.material.set_shader_param("filling", 1.0)
 	tween.tween_property(circle_node.material, "shader_param/filling", 0.0, duration)
 	tween.play()
+	get_node("Pickups/PickupTrigger" + str(empty_index)).emitting = true
 	
 func remove_old_event_pickup(event):
 	# find index
@@ -156,6 +157,9 @@ func remove_old_event_pickup(event):
 	circle_node.material.set_shader_param("filling", 1.0)
 	icon_node.visible = false
 	index_to_event.erase(index)
+	get_node("Pickups/PickupTrigger" + str(index)).emitting = false
+	
+
 	
 func reset_event_pickup(event, duration):
 	tweens[event].stop()

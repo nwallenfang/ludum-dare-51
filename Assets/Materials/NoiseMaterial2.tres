@@ -32,16 +32,16 @@ void fragment() {
 }
 "
 
-[sub_resource type="OpenSimplexNoise" id=9]
+[sub_resource type="OpenSimplexNoise" id=15]
 period = 0.1
 persistence = 0.0
 lacunarity = 4.0
 
 [sub_resource type="NoiseTexture" id=10]
-flags = 3
+flags = 2
 width = 64
 height = 64
-noise = SubResource( 9 )
+noise = SubResource( 15 )
 
 [resource]
 resource_local_to_scene = true

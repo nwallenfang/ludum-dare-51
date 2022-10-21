@@ -20,3 +20,14 @@ func _ready():
 func _physics_process(delta):
 	if Game.player.global_translation.y < -30:
 		Game.world.restart_level()
+
+
+
+func _on_EndArea_area_entered(area: Area) -> void:
+	if has_key:
+		get_tree().call_group("end_door", "open")
+
+
+func _on_KeyPickup_key_collected() -> void:
+	$"%KeyNeededLabel".visible = false
+	$"%EndCover".visible = false

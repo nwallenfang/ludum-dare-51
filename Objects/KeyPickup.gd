@@ -1,7 +1,9 @@
 extends Spatial
 
+signal key_collected
 func _on_Area_area_entered(area):
 	if self.visible:
+		emit_signal("key_collected")
 		Game.level.has_key = true
 		Game.player.play_key_sound()
 		self.queue_free()

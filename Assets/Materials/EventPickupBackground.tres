@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Textures/fire_noise_test3.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 scale;
+uniform sampler2D noise;
+uniform float speed = 0.2;
+uniform vec2 direction = vec2(-0.1, 0.9);
+uniform vec4 mod_color: hint_color;
+uniform vec4 mod_color_2: hint_color;
+
+void fragment() {
+	float tex_val = texture(noise, scale * (UV)  + speed * direction).r;
+	COLOR.rgb = mix((mod_color.rgb), mod_color_2.rgb, tex_val + 0.4);
+//	COLOR.a = 0.2 * float(UV.y < 0.1 || UV.y >= 0.5) + 0.6 * float(UV.y >= 0.1 && UV.y < 0.5);
+//	COLOR.a = 0.5;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/scale = Vector2( 3, 0.8 )
+shader_param/speed = 0.08
+shader_param/direction = Vector2( 1.054, 11.948 )
+shader_param/mod_color = Color( 1, 0.913725, 0, 1 )
+shader_param/mod_color_2 = Color( 0, 0, 0, 1 )
+shader_param/noise = ExtResource( 1 )
