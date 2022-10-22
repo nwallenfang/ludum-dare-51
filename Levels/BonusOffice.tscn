@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Objects/TrashBin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Lamp.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Objects/EventPickup.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objects/SurveilanceCam.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Font/WalltextFontSmaller.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Logic/Enemies/Bob.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Objects/DoorNew.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Objects/LabFloor.tscn" type="PackedScene" id=21]
@@ -24,6 +25,7 @@
 [ext_resource path="res://Objects/LabRoof.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/GLTF/Chairv2.gltf" type="PackedScene" id=24]
 [ext_resource path="res://Objects/Flag.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Logic/Enemies/Alice.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Assets/Materials/ScreenMaterial.tres" type="Material" id=27]
 
 [sub_resource type="CubeMesh" id=4]
@@ -78,12 +80,6 @@ transform = Transform( -5, 0, -4.37114e-07, 0, 0.2, 0, 4.37114e-07, 0, -5, 30.04
 
 [node name="Floor12" parent="Floors" instance=ExtResource( 21 )]
 transform = Transform( -5, 0, -4.37114e-07, 0, 0.2, 0, 4.37114e-07, 0, -5, 20.0469, 0, 19.8765 )
-
-[node name="StaticBody7" type="StaticBody" parent="Floors"]
-transform = Transform( 1.7, 0, 0, 0, 10, 0, 0, 0, 1.7, -30, -9.8, -30 )
-
-[node name="StaticBody8" type="StaticBody" parent="Floors"]
-transform = Transform( 1.7, 0, 0, 0, 10, 0, 0, 0, 1.7, -50, -9.8, -30 )
 
 [node name="Floor17" parent="Floors" instance=ExtResource( 21 )]
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -20, 0, -30 )
@@ -251,10 +247,10 @@ transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -164.
 transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -129.484, 7.03807, 5.12874 )
 
 [node name="Floor82" parent="Floors" instance=ExtResource( 21 )]
-transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -115.048, 15.8381, 5.12874 )
+transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -115.048, 17.1178, 5.12874 )
 
 [node name="Floor83" parent="Floors" instance=ExtResource( 21 )]
-transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -115.048, 15.038, -24.871 )
+transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -115.048, 17.0552, -24.871 )
 
 [node name="Floor41" parent="Floors" instance=ExtResource( 21 )]
 transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -149.484, 7.03807, 50.1287 )
@@ -523,7 +519,7 @@ transform = Transform( -2.18557e-07, 0.2, -2.18557e-07, 0, -8.74228e-09, -5, -5,
 transform = Transform( -5, -1.74846e-08, 1.91069e-14, 0, -8.74228e-09, -5, 4.37114e-07, -0.2, 2.18557e-07, 30.0469, 2, 14.8765 )
 
 [node name="StaticBody33" parent="Walls" instance=ExtResource( 22 )]
-transform = Transform( -5, -1.74846e-08, 1.91069e-14, 0, -8.74228e-09, -5, 4.37114e-07, -0.2, 2.18557e-07, 30.0469, 2, -5.12354 )
+transform = Transform( -5, -1.74846e-08, 1.91069e-14, 0, -8.74228e-09, -5, 4.37114e-07, -0.2, 2.18557e-07, 29.9713, 1.87642, -5.30834 )
 
 [node name="StaticBody28" parent="Walls" instance=ExtResource( 22 )]
 transform = Transform( -5, -1.74846e-08, 1.91069e-14, 0, -8.74228e-09, -5, 4.37114e-07, -0.2, 2.18557e-07, 20.0469, 2, 24.8765 )
@@ -1110,6 +1106,14 @@ light_energy = 1.542
 spot_range = 32.5415
 spot_angle = 36.28
 
+[node name="SpotLight6" type="SpotLight" parent="Lights"]
+transform = Transform( -0.833867, 0.442267, -0.33025, 0.537492, 0.514508, -0.66812, -0.125571, -0.73463, -0.666747, 32.1537, 1.08262, -3.77282 )
+light_color = Color( 1, 0.415686, 0.415686, 1 )
+light_energy = 1.82
+shadow_enabled = true
+spot_range = 21.111
+spot_angle = 36.28
+
 [node name="SpotLight4" type="SpotLight" parent="Lights"]
 transform = Transform( 0.852731, -0.268881, 0.44783, 0.52235, 0.438947, -0.731079, 0, 0.857338, 0.514754, -157.445, -0.536439, -0.63158 )
 light_color = Color( 0.85098, 0.129412, 0.129412, 1 )
@@ -1141,6 +1145,120 @@ spot_range = 32.5415
 spot_angle = 36.28
 
 [node name="Enemies" type="Spatial" parent="."]
+
+[node name="Alice" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -52.8988, 11.3199, 6.01434 )
+
+[node name="Alice2" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -34.3876, 7.04238, 15.7818 )
+
+[node name="Alice3" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -26.6899, 7.03314, 15.9661 )
+
+[node name="Alice4" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -26.4368, 4.29458, -79.5763 )
+
+[node name="Alice5" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -51.3504, 4.17923, -82.803 )
+
+[node name="Alice6" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -160.077, 17.2708, -20.4075 )
+
+[node name="Alice7" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -119.391, 17.3193, 0.768904 )
+
+[node name="Alice8" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -119.444, 17.2552, -20.6423 )
+
+[node name="Bob" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.414868, 0, 0.909882, 0, 1, 0, -0.909882, 0, 0.414868, -146.188, 7.23807, 31.4293 )
+
+[node name="Bob2" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.948512, 0, 0.316742, 0, 1, 0, -0.316742, 0, -0.948512, -149.123, 7.23807, 27.5917 )
+
+[node name="Bob3" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.0159342, 0, -0.999873, 0, 1, 0, 0.999873, 0, 0.0159342, -153.097, 7.23808, 30.6998 )
+
+[node name="Bob4" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -160.087, 7.23808, -3.62482 )
+
+[node name="Bob5" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -88.2525, 0.2, -13.0184 )
+
+[node name="Bob6" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.2839, 0.200155, -7.28709 )
+
+[node name="Alice9" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( -1.03194, 0, 0.612453, 0, 1.2, 0, -0.612453, 0, -1.03194, -66.5824, 0.2, -33.3569 )
+
+[node name="Bob7" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -80.8738, 0.2, -25.42 )
+
+[node name="Bob8" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.0987118, 0, 0.995116, 0, 1, 0, -0.995116, 0, 0.0987118, -70.4253, 0.200019, -10.77 )
+
+[node name="Bob9" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4502, 0.200027, 12.1241 )
+
+[node name="Bob10" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.47458, 0, 0.880212, 0, 1, 0, -0.880212, 0, 0.47458, -29.4897, 0.2, 10.3768 )
+
+[node name="Bob11" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.328537, 0, -0.944491, 0, 1, 0, 0.944491, 0, 0.328537, -34.7068, 0.2, 9.10571 )
+
+[node name="Bob12" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.748169, 0, -0.663508, 0, 1, 0, 0.663508, 0, -0.748169, -36.6002, 0.206027, 3.41896 )
+
+[node name="Bob13" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.406195, 0, 0.913787, 0, 1, 0, -0.913787, 0, -0.406195, -43.0986, 0.200076, 8.92826 )
+
+[node name="Bob14" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.545619, 0, 0.838033, 0, 1, 0, -0.838033, 0, 0.545619, -44.7749, 0.200037, 15.4805 )
+
+[node name="Bob15" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.734642, 0, -0.678455, 0, 1, 0, 0.678455, 0, 0.734642, -48.4556, 2.2441, 14.3351 )
+
+[node name="Bob16" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.257065, 0, -0.966394, 0, 1, 0, 0.966394, 0, -0.257065, -46.8597, 0.200027, 8.61695 )
+
+[node name="Bob17" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.313959, 0, 0.949436, 0, 1, 0, -0.949436, 0, -0.313959, -51.7739, 0.200029, -3.16671 )
+
+[node name="Bob18" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.3494, 7.03319, 22.8204 )
+
+[node name="Bob19" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0374, 0.2, -18.1184 )
+
+[node name="Bob20" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9683, 0.200026, -16.1145 )
+
+[node name="Bob21" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4933, 0.200007, -68.2879 )
+
+[node name="Bob22" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3681, 0.200002, -67.008 )
+
+[node name="Bob23" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5375, 0.2, -64.4095 )
+
+[node name="Bob24" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.199778, 0, 0.979841, 0, 1, 0, -0.979841, 0, -0.199778, -50.9686, 0.2, -31.9244 )
+
+[node name="Bob25" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.271323, 0, 0.962488, 0, 1, 0, -0.962488, 0, 0.271323, -51.3028, 0.200847, -26.2291 )
+
+[node name="Alice10" parent="Enemies" instance=ExtResource( 26 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 27.3849, 0.2, -32.9248 )
+
+[node name="Bob26" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( -0.922659, 0, 0.385616, 0, 1, 0, -0.385616, 0, -0.922659, 29.8396, 2.24399, 2.06056 )
+
+[node name="Bob27" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 0.739878, 0, 0.672741, 0, 1, 0, -0.672741, 0, 0.739878, 32.7278, 0.20004, 8.23022 )
+
+[node name="Bob28" parent="Enemies" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5368, 0.200022, 11.0743 )
 
 [node name="Ceilings" type="Spatial" parent="."]
 
@@ -1734,13 +1852,13 @@ transform = Transform( 0.996391, 0, -0.0848778, 0, 1, 0, 0.0848778, 0, 0.996391,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.598291, 2.91672, -0.0261154 )
 
 [node name="Table2" parent="Deco" instance=ExtResource( 6 )]
-transform = Transform( -9.93477e-08, 0, 1, 0, 1, 0, -1, 0, -9.93477e-08, 30.3607, 0.268047, 0.301758 )
+transform = Transform( -9.93477e-08, 0, 1, 0, 1, 0, -1, 0, -9.93477e-08, 30.3607, 0.268047, 0.839264 )
 
 [node name="Chairv2" parent="Deco/Table2" instance=ExtResource( 24 )]
-transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0.751747, -0.0636206, 1.76162 )
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 2.26388, -0.0636206, 2.56947 )
 
 [node name="Chairv3" parent="Deco/Table2" instance=ExtResource( 24 )]
-transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -1.46607, -0.0636206, 1.76162 )
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0.127461, -0.0636206, 2.57582 )
 
 [node name="Chairv4" parent="Deco/Table2" instance=ExtResource( 24 )]
 transform = Transform( 2, 0, 2.38419e-07, 0, 2, 0, -2.38419e-07, 0, 2, 0.751747, -0.0636206, -1.7201 )
@@ -1930,6 +2048,9 @@ transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, -52.321
 [node name="GasBottle_v25" parent="Deco" instance=ExtResource( 4 )]
 transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, -51.3252, 2.30487, -82.8214 )
 
+[node name="GasBottle_v35" parent="Deco" instance=ExtResource( 4 )]
+transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, -51.3252, 2.30487, -82.8214 )
+
 [node name="GasBottle_v26" parent="Deco" instance=ExtResource( 4 )]
 transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, -51.4034, 2.30487, -81.5807 )
 
@@ -2055,6 +2176,18 @@ transform = Transform( 0.993268, 0, -0.115856, 0, 1, 0, 0.115856, 0, 0.993268, -
 [node name="Regal36" parent="Deco/Row3" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 2.09548e-09, 0, 1, 0, -2.09548e-09, 0, 1, -6.60697, 4.76837e-07, -30.4997 )
 
+[node name="Regal58" parent="Deco/Row3" instance=ExtResource( 11 )]
+transform = Transform( 0.977273, 0, 0.21199, 0, 1, 0, -0.21199, 0, 0.977273, -8.44802, 4.76837e-07, -53.556 )
+
+[node name="Regal61" parent="Deco/Row3" instance=ExtResource( 11 )]
+transform = Transform( 0.977273, 0, 0.21199, 0, 1, 0, -0.21199, 0, 0.977273, -8.44802, 2.72709, -53.556 )
+
+[node name="Regal59" parent="Deco/Row3" instance=ExtResource( 11 )]
+transform = Transform( 0.960158, 0, -0.279461, 0, 1, 0, 0.279461, 0, 0.960158, -4.13673, 4.76837e-07, -53.5508 )
+
+[node name="Regal60" parent="Deco/Row3" instance=ExtResource( 11 )]
+transform = Transform( 0.960159, 0, -0.279461, 0, 1, 0, 0.279461, 0, 0.960159, -4.13672, 2.75584, -53.5508 )
+
 [node name="Regal37" parent="Deco/Row3" instance=ExtResource( 11 )]
 transform = Transform( 0.97096, 0, 0.239246, 0, 1, 0, -0.239246, 0, 0.97096, -26.7779, 0, -31.7262 )
 
@@ -2177,8 +2310,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0601, 2.24398, -0.728729 )
 [node name="SurveilanceCam" parent="Cams" instance=ExtResource( 16 )]
 transform = Transform( 2.00361, 0, 3.50322e-07, 0, 2.00361, 0, -3.50322e-07, 0, 2.00361, 24.8469, 5.11214, 23.2297 )
 
+[node name="SurveilanceCam23" parent="Cams" instance=ExtResource( 16 )]
+transform = Transform( 2.00361, 0, 3.50322e-07, 0, 2.00361, 0, -3.50322e-07, 0, 2.00361, 34.821, 5.11214, 10.7186 )
+
+[node name="SurveilanceCam25" parent="Cams" instance=ExtResource( 16 )]
+transform = Transform( 2.70358e-07, 0.92473, -1.77745, -2.0009, 0.0924048, 0.0480739, 0.104162, 1.77505, 0.923479, 29.8897, 0.213484, 5.88116 )
+
 [node name="SurveilanceCam2" parent="Cams" instance=ExtResource( 16 )]
 transform = Transform( 2.00361, 0, 3.50322e-07, 0, 2.00361, 0, -3.50322e-07, 0, 2.00361, 24.8469, 5.11214, -6.48934 )
+
+[node name="SurveilanceCam24" parent="Cams" instance=ExtResource( 16 )]
+transform = Transform( -4.37903e-07, 0, 2.00361, 0, 2.00361, 0, -2.00361, 0, -4.37903e-07, 28.8839, 5.11214, -5.09822 )
 
 [node name="SurveilanceCam10" parent="Cams" instance=ExtResource( 16 )]
 transform = Transform( -8.75806e-08, 0, 2.00361, 0, 2.00361, 0, -2.00361, 0, -8.75806e-08, -83.1596, 4.84053, -34.7503 )
@@ -2286,23 +2428,22 @@ shape = SubResource( 7 )
 [node name="Pickups" type="Spatial" parent="."]
 
 [node name="EventPickup" parent="Pickups" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 8.1, 29.6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -161.856, 8.1, 32.2752 )
 event_name = "jump"
 event_duration = 15.0
 
 [node name="EventPickup3" parent="Pickups" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117.7, 16.8, 1.6 )
-event_name = "disco"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -118.847, 17.8222, 3.25457 )
+event_name = "invincible"
 
 [node name="EventPickup2" parent="Pickups" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 8.1, 32.7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -136.902, 8.1, 32.7 )
 event_name = "gravity"
 event_duration = 15.0
 
 [node name="EventPickup4" parent="Pickups" instance=ExtResource( 15 )]
 transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -169.307, 7.54988, 60.9136 )
 event_name = "banana"
-event_duration = 5.0
 
 [node name="PickupLabel" type="Label3D" parent="Pickups"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -169.08, 11.7922, 55.4958 )
@@ -2312,3 +2453,31 @@ double_sided = false
 text = "PICK UP
 FOR EFFECTS"
 font = ExtResource( 17 )
+
+[node name="EventPickup5" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8585, 0.420129, -52.3042 )
+event_name = "explosion"
+
+[node name="EventPickup6" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.3474, 0.85144, -32.9652 )
+event_name = "autofire"
+
+[node name="EventPickup11" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4532, 0.85144, -30.2839 )
+event_name = "shrink"
+
+[node name="EventPickup7" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.6378, 0.851441, -11.3654 )
+event_name = "control"
+
+[node name="EventPickup8" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5471, 1.4819, -22.8285 )
+event_name = "disco"
+
+[node name="EventPickup9" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6659, 1.60255, -19.8064 )
+event_name = "disco"
+
+[node name="EventPickup10" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4078, 1.45377, -17.4325 )
+event_name = "disco"
