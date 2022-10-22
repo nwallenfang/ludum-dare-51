@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 			hide_settings()
 		else:
 			show_settings()
-	if Input.is_action_just_pressed("photo_mode"):
+	if Input.is_action_just_pressed("photo_mode") and OS.is_debug_build():
 		photo_mode = not photo_mode
 		$CanvasLayer/CenterContainer/Crosshair.visible = photo_mode
 		if OS.is_debug_build():

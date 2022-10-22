@@ -56,7 +56,7 @@ func intro_sequence():
 	intro_running = false
 
 func _input(event: InputEvent) -> void:
-	if not Game.settings_open:
+	if not Game.settings_open and Game.level_index != 7:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 	if event.is_action_pressed("ui_cancel"):
@@ -65,11 +65,11 @@ func _input(event: InputEvent) -> void:
 		
 	# not movement_disabled
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-		if not Game.settings_open:
+		if not Game.settings_open  and Game.level_index != 7:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 	
-	if event.is_action_pressed("change_mouse_input"):
+	if event.is_action_pressed("change_mouse_input")  and Game.level_index != 7:
 		match Input.get_mouse_mode():
 			Input.MOUSE_MODE_CAPTURED:
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -183,7 +183,7 @@ func load_level(index):
 		intro_sequence_should_run = true
 		
 	if Game.level_index >= Game.level_list.size():
-		print("No Levels left")
+		printerr("No Levels left")
 		return
 		
 	Game.player.movement_disabled = true
@@ -223,6 +223,6 @@ func load_next_level():
 	
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("jump_to_next_level"):
-		load_level(5)
+	if Input.is_action_just_pressed("jump_to_next_level") and OS.is_debug_build():
+		load_level(7)
 

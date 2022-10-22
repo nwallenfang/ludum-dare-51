@@ -11,6 +11,7 @@ func _ready() -> void:
 
 
 func _on_HoverButton_clicked(level_index) -> void:
+	self.visible = false
 	Game.world.load_level(level_index)
 
 

@@ -38,7 +38,6 @@ var extra_frame_idx = 0
 var has_jumped = false
 
 func _ready():
-#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	default_scale = self.scale
 	$MeshInstance.visible = false
 	yield(get_tree(), "idle_frame")
