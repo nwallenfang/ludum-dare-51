@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cube.png-d64c7548a9f86dffd40adbf49da6c26b.stex"
+path="res://.import/cube.png-26ab4151f40de75bee6f62e9299d2af0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Effects/Lightmaps/BonusLevel/Cube.png"
-dest_files=[ "res://.import/Cube.png-d64c7548a9f86dffd40adbf49da6c26b.stex" ]
+source_file="res://Effects/Lightmaps/BonusLevel/cube.png"
+dest_files=[ "res://.import/cube.png-26ab4151f40de75bee6f62e9299d2af0.stex" ]
 
 [params]
 
