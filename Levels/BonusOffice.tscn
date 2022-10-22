@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Objects/TrashBin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Lamp.tscn" type="PackedScene" id=2]
@@ -12,8 +12,11 @@
 [ext_resource path="res://Effects/Lightmaps/BonusOffice/BonusOffice.lmbake" type="BakedLightmapData" id=10]
 [ext_resource path="res://Objects/Regal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/GLTF/TestTube_v2.gltf" type="PackedScene" id=12]
+[ext_resource path="res://Levels/BonusOffice.gd" type="Script" id=13]
 [ext_resource path="res://Objects/KeyPickup.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/EventPickup.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objects/SurveilanceCam.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Font/WalltextFontSmaller.tres" type="DynamicFont" id=17]
 [ext_resource path="res://Objects/DoorNew.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Logic/Player/Player.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Objects/LabFloor.tscn" type="PackedScene" id=21]
@@ -32,7 +35,17 @@ extents = Vector3( 0.240459, 0.593135, 0.230771 )
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.367493, 0.705114, 0.181661 )
 
+[sub_resource type="OccluderShapePolygon" id=7]
+polygon_points = PoolVector2Array( 24, -11, 27, 31, -56.8, 27.6, -57, -5 )
+
+[sub_resource type="OccluderShapePolygon" id=8]
+polygon_points = PoolVector2Array( -30, -14, -29, 23, -57, 22, -57, -15 )
+
+[sub_resource type="OccluderShapePolygon" id=9]
+polygon_points = PoolVector2Array( -28, -15, -29, 39, -113, 40, -130, -16 )
+
 [node name="BonusOffice" type="Spatial"]
+script = ExtResource( 13 )
 
 [node name="Floors" type="Spatial" parent="."]
 
@@ -238,10 +251,10 @@ transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -164.
 transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -129.484, 7.03807, 5.12874 )
 
 [node name="Floor82" parent="Floors" instance=ExtResource( 21 )]
-transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -115.048, 17.0381, 5.12874 )
+transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -115.048, 15.8381, 5.12874 )
 
 [node name="Floor83" parent="Floors" instance=ExtResource( 21 )]
-transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -115.048, 17.0381, -24.8713 )
+transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -115.048, 15.038, -24.871 )
 
 [node name="Floor41" parent="Floors" instance=ExtResource( 21 )]
 transform = Transform( -2.18557e-07, 0, 5, 0, 0.2, 0, -5, 0, -2.18557e-07, -149.484, 7.03807, 50.1287 )
@@ -1500,7 +1513,13 @@ transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -140, 13,
 transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -150, 13, -24.9089 )
 
 [node name="WallText64" parent="Screen" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -169.043, 13, 55.2354 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -144.543, 11.9, 60.035 )
+
+[node name="WallText65" parent="Screen" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -174.343, 11.9, 70.735 )
+
+[node name="WallText66" parent="Screen" instance=ExtResource( 3 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -164.643, 11.9, 70.7354 )
 
 [node name="WallText30" parent="Screen" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -164.441, 10.919, -9.58259 )
@@ -2233,3 +2252,63 @@ use_hdr = false
 atlas_generate = false
 capture_enabled = false
 light_data = ExtResource( 10 )
+
+[node name="Occluders" type="Spatial" parent="."]
+
+[node name="Occluder" type="Occluder" parent="Occluders"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="Occluder3" type="Occluder" parent="Occluders"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -62.2, 0, 0.7 )
+shape = SubResource( 7 )
+
+[node name="Occluder4" type="Occluder" parent="Occluders"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -62.2, 0, -92.8 )
+shape = SubResource( 7 )
+
+[node name="Occluder5" type="Occluder" parent="Occluders"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90.2, 0, -72.8 )
+shape = SubResource( 8 )
+
+[node name="Occluder6" type="Occluder" parent="Occluders"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90.2, 0, -33.1 )
+shape = SubResource( 9 )
+
+[node name="Occluder7" type="Occluder" parent="Occluders"]
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -148.2, 0, -19.1 )
+shape = SubResource( 9 )
+
+[node name="Occluder2" type="Occluder" parent="Occluders"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 0, -92.5 )
+shape = SubResource( 7 )
+
+[node name="Pickups" type="Spatial" parent="."]
+
+[node name="EventPickup" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 8.1, 29.6 )
+event_name = "jump"
+event_duration = 15.0
+
+[node name="EventPickup3" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117.7, 16.8, 1.6 )
+event_name = "disco"
+
+[node name="EventPickup2" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 8.1, 32.7 )
+event_name = "gravity"
+event_duration = 15.0
+
+[node name="EventPickup4" parent="Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -169.307, 7.54988, 60.9136 )
+event_name = "banana"
+event_duration = 5.0
+
+[node name="PickupLabel" type="Label3D" parent="Pickups"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -169.08, 11.7922, 55.4958 )
+generate_lightmap = false
+pixel_size = 0.0296
+double_sided = false
+text = "PICK UP
+FOR EFFECTS"
+font = ExtResource( 17 )

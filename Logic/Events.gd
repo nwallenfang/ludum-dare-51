@@ -27,6 +27,9 @@ var fixed_events = {
 		3: 	preload("res://Logic/Events/FixedBridgeEvent.tscn").instance(),
 	},
 	5: {
+	},
+
+	6: {
 		1: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
 		2: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),
 		3: preload("res://Logic/Events/FixedTiltEvent.tscn").instance(),

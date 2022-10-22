@@ -17,6 +17,7 @@ var level_list := [
 	preload("res://Levels/FirstFloor.tscn"),
 	preload("res://Levels/ThirdFloor.tscn"),
 	preload("res://Levels/SecondFloor.tscn"),
+	preload("res://Levels/BonusOffice.tscn"),
 	preload("res://Levels/Prototyping/BonusLevel.tscn"),
 	preload("res://Levels/Credits.tscn"),
 ] # all levels
