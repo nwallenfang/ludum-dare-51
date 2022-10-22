@@ -57,7 +57,7 @@ polygon_points = PoolVector2Array( 3, -15, 6, 21, -8, 21, -10, -15 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, -37.7035, 25.3137, -22.7965 )
+transform = Transform( 1, 0, 4.76837e-07, 0, 1, 0, -4.76837e-07, 0, 1, -33.7035, 25.3137, -15.7965 )
 
 [node name="Geometry" type="Spatial" parent="."]
 
@@ -266,7 +266,7 @@ transform = Transform( 2.94, 0, 0, 0, 6.8, 0, 0, 0, 0.4816, -48.6, 7.1, -11.12 )
 [node name="GigaAufzug" parent="Geometry" instance=ExtResource( 10 )]
 transform = Transform( 3.6, 0, 0, 0, 3.5, 0, 0, 0, 3.6, -39.9, 0.0817561, 0.5 )
 target_translation = Vector3( 0, 45, 0 )
-duration = 8.0
+duration = 14.0
 
 [node name="Alice2" parent="Geometry/GigaAufzug" groups=["trigger1"] instance=ExtResource( 2 )]
 transform = Transform( 0.286, 0, 0, 0, 0.286, 0, 0, 0, 0.286, -1.16667, 0.342857, -1.16667 )
@@ -566,9 +566,8 @@ event_name = "heal"
 event_duration = 3.0
 
 [node name="DarknessPickup10" parent="Pickups" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.56, 30.7, 8.51445 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.56, 24.9, 28.9145 )
 event_name = "heal"
-event_duration = 3.0
 
 [node name="DarknessPickup2" parent="Pickups" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.3135, 2.49883, 9.0348 )
@@ -588,7 +587,7 @@ event_name = "fog"
 
 [node name="DarknessPickup5" parent="Pickups" instance=ExtResource( 20 )]
 transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159, -9.6241, 0.7, -30.7847 )
-event_name = "invincible"
+event_name = "explosion"
 
 [node name="DarknessPickup8" parent="Pickups" instance=ExtResource( 20 )]
 transform = Transform( -0.595159, 0, 0.803608, 0, 1, 0, -0.803608, 0, -0.595159, -71.6241, 0.7, 30.2153 )
@@ -607,9 +606,8 @@ event_duration = 20.0
 transform = Transform( 0.7, 0, -1.21244, 0, 1.4, 0, 1.21244, 0, 0.7, -15, 3.2, 28 )
 
 [node name="EventPickup" parent="Pickups" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.2482, 26.0596, 24.7882 )
-event_name = "jump"
-event_duration = 20.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.2482, 30.8596, 9.0882 )
+event_name = "akimbo"
 
 [node name="EventPickup2" parent="Pickups" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.2482, 12.3596, 8.2882 )

@@ -50,7 +50,6 @@ func play(sound_name: String):
 
 func stop(sound_name: String):
 	for player_with_info in playing:
-		print(player_with_info.sound.name)
 		if player_with_info.sound.name == sound_name:
 			player_with_info.stop()
 #

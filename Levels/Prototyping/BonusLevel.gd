@@ -5,7 +5,7 @@ var has_key #Does the player have a key?
 func _ready():
 	Game.level = self
 	Game.player = $Player
-#	$Player.rotate_y(deg2rad(-180.0))
+	$Player.rotate_y(deg2rad(-180.0))
 	has_key = false
 #	$Player/DrinkAnimation.queue_free()
 #	Game.player.show_gun()

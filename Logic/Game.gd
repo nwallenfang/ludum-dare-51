@@ -61,8 +61,12 @@ func event_triggered(event):
 	# If we are working on a fixed event (no end method) don't stop anything
 	if event.has_method("end_event") and previous_event != null:
 		var event_still_exists = false
+#		print("STACK: ", Events.pickup_stack)
 		for pickup_event in Events.pickup_stack:
-			if pickup_event.event_name == event.event_name:
+#			print("PICKUP EVENT: ", pickup_event)
+#			print(pickup_event.event_name, " == ", previous_event.event_name, "?")
+			if pickup_event.event_name == previous_event.event_name:
+#				print("EVENT EXISTS STILL AS PICKUP")
 				event_still_exists = true
 		
 		if not event_still_exists: 

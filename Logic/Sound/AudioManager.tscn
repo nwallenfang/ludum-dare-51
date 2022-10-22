@@ -22,6 +22,7 @@ mixer_bus = "Laser Lowpass"
 
 [node name="robo_death" parent="Sounds" instance=ExtResource( 2 )]
 volume_db = -20.0
+mixer_bus = "SFX"
 
 [node name="laser_grid" parent="Sounds" instance=ExtResource( 2 )]
 volume_db = -80.0

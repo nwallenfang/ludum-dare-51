@@ -6,6 +6,7 @@ export var duration: float = 1
 var target: Vector3
 
 func _ready():
+	yield(get_tree().create_timer(6.0), "timeout")
 	while true:
 		$Tween.reset_all()
 		

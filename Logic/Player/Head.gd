@@ -18,6 +18,8 @@ func _ready() -> void:
 	
 	if Game.level_index == 0:
 		rot.y = deg2rad(27.0)
+	if Game.level_index == 6:  # tower
+		rot.y = deg2rad(180.0)
 	
 	yield(get_tree(), "idle_frame")
 	# Find the target node

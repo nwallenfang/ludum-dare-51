@@ -69,19 +69,19 @@ var event_index = {
 }
 
 var random_events_start = [
-	event_index.get("autofire"),
-	event_index.get("gravity"),
+#	event_index.get("autofire"),
+#	event_index.get("gravity"),
 	event_index.get("disco"),
-	event_index.get("shrink"),
+#	event_index.get("shrink"),
 	event_index.get("jump"),
-	event_index.get("control"),
-	event_index.get("invincible"),
-	event_index.get("banana"),
-	event_index.get("explosion"),
-	event_index.get("akimbo"),
-	event_index.get("fog"),
-	event_index.get("nothing"),
-	event_index.get("fov"),
+#	event_index.get("control"),
+#	event_index.get("invincible"),
+#	event_index.get("banana"),
+#	event_index.get("explosion"),
+#	event_index.get("akimbo"),
+#	event_index.get("fog"),
+#	event_index.get("nothing"),
+#	event_index.get("fov"),
 ]
 var random_event_names_start = []
 var random_event_names
@@ -122,8 +122,7 @@ func _process(delta: float) -> void:
 			if number_triggered in fixed_events_for_this_lv:
 				var fixed_event = fixed_events_for_this_lv[number_triggered]
 				emit_signal("trigger_event", fixed_event)
-				if Game.level_index != 5:	# I don't want this sound every 10 secs in the bonus lv
-
+				if Game.level_index != 6:	# I don't want this sound every 10 secs in the bonus lv
 					AudioManager.play("big_event")
 			
 		# always a random event
