@@ -1555,6 +1555,9 @@ transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -15, 5, -36
 transform = Transform( 7.79805, 0, 0, 0, 1, 0, 0, 0, 6.98704, -34, -6, -34 )
 speed = 0.0
 
+[node name="MenacingStream" parent="Objects/LaserGrid" index="1"]
+autoplay = false
+
 [node name="Flag" parent="Objects" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 17.9, -22 )
 
@@ -1799,3 +1802,5 @@ transform = Transform( -2.00361, 0, -1.75161e-07, 0, 2.00361, 0, 1.75161e-07, 0,
 
 [node name="SurveilanceCam7" parent="Cams" instance=ExtResource( 18 )]
 transform = Transform( -2.00361, 0, -1.75161e-07, 0, 2.00361, 0, 1.75161e-07, 0, -2.00361, -64.7, 21.4516, -25.9996 )
+
+[editable path="Objects/LaserGrid"]

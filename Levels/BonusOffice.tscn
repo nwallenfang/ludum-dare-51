@@ -2506,6 +2506,7 @@ event_name = "autofire"
 [node name="EventPickup11" parent="Pickups" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4532, 0.85144, -30.2839 )
 event_name = "shrink"
+event_duration = 4.0
 
 [node name="EventPickup7" parent="Pickups" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.6378, 0.851441, -11.3654 )

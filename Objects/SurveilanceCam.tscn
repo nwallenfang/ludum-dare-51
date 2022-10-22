@@ -139,7 +139,7 @@ mesh = SubResource( 5 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.379531, 0.237715, 0 )
-max_distance = 20.0
+max_distance = 40.0
 
 [connection signal="screen_entered" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
